@@ -98,7 +98,16 @@
       "peso_academico": "sustancial"
     }
   ],
-  "series": [],
+  "series": [
+    {
+      "serie": "pwt100-pib-per-capita-paises",
+      "nota": "La «década perdida» en México, Brasil, Argentina y Costa Rica."
+    },
+    {
+      "serie": "pwt100-apertura-comercial-paises",
+      "nota": "Apertura comercial antes y después de la crisis."
+    }
+  ],
   "aristas": [
     {
       "desde": "crisis-del-petroleo",

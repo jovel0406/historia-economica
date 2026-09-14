@@ -1,0 +1,28 @@
+{
+  "id": "mpd2020-pib-per-capita-paises",
+  "indicador": "pib_per_capita",
+  "fuente_dataset": "maddison-2020",
+  "cobertura_temporal": [
+    1820,
+    2018
+  ],
+  "cobertura_geografica": [
+    "argentina",
+    "brasil",
+    "china",
+    "costa-rica",
+    "estados-unidos",
+    "india",
+    "japon",
+    "mexico",
+    "reino-unido"
+  ],
+  "unidad": "dólares internacionales de 2011 (PPA) por persona y año",
+  "nivel_evidencia": "reconstruccion_documentada",
+  "nota_metodologica": "PIB per cápita en dólares internacionales de 2011 (paridad de poder adquisitivo), según la hoja «GDP pc 2011 prices» de la MPD 2020. Las cifras combinan estadísticas nacionales recientes con reconstrucciones de historiadores económicos a partir de salarios, precios, producción agraria y población; la MPD 2020 volvió parcialmente al método original de Maddison para los niveles históricos (Bolt y van Zanden, 2020). No es una observación: es una estimación con márgenes amplios, mayores cuanto más atrás.",
+  "advertencias": [
+    "Fronteras modernas aplicadas a todo el período."
+  ],
+  "granularidad": "regiones",
+  "archivo": "data/processed/mpd2020-pib-per-capita-paises.csv"
+}

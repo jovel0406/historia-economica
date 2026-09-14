@@ -1,0 +1,102 @@
+---
+import Base from "../layouts/Base.astro";
+import { contenido } from "../lib/contenido.ts";
+import { dataset, leerObservaciones, nombreRegion, seriesDeIndicador } from "../lib/datos.ts";
+import { ETIQUETA_EVIDENCIA } from "../lib/texto.ts";
+import { INDICADORES_CANONICOS, UMBRAL_MEDICION } from "../schemas/index.ts";
+
+const indicadores = INDICADORES_CANONICOS.map((id) => contenido().indicadores.get(id)).filter((i) => i !== undefined);
+const CLASE_BADGE = { estadistica_oficial: "badge-alto", reconstruccion_documentada: "badge-medio", estimacion_conjetural: "badge-conjetural" } as const;
+---
+<Base titulo="Datos">
+  <p class="sobretitulo">Vista Datos</p>
+  <h1>Siete indicadores canónicos</h1>
+  <p class="entradilla">Cada serie lleva su nivel de evidencia a la vista, su nota metodológica a un clic, el enlace a la fuente primaria y la descarga del CSV exacto que dibuja el gráfico. Toda serie anterior a {UMBRAL_MEDICION} es una estimación conjetural y se dibuja con línea discontinua.</p>
+  <nav class="chips" aria-label="Indicadores">
+    {indicadores.map((i) => <a class="chip" href={`#${i.id}`}>{i.nombre}</a>)}
+  </nav>
+
+  {indicadores.map((ind) => {
+    const series = seriesDeIndicador(ind.id).filter((s) => s.granularidad === "regiones");
+    const mapa = seriesDeIndicador(ind.id).filter((s) => s.granularidad === "paises-iso3");
+    return (
+      <section id={ind.id} class="indicador">
+        <h2>{ind.nombre}</h2>
+        <p class="prosa">{ind.descripcion} <span class="meta">Unidad canónica: {ind.unidad_canonica}.</span></p>
+        {series.length === 0 && mapa.length === 0 && <p class="aviso"><strong>Sin datos ingeridos todavía.</strong> Este indicador no tiene ninguna serie en el manifiesto de procedencia; no se muestra ninguna cifra que no sea rastreable a una fuente primaria.</p>}
+        {series.map((s) => {
+          const obs = leerObservaciones(s);
+          const ds = dataset(s.fuente_dataset);
+          const regiones = [...new Set(obs.map((o) => o.region))];
+          const nombres = Object.fromEntries(regiones.map((r) => [r, nombreRegion(r)]));
+          const payload = { unidad: s.unidad, conjetural: s.nivel_evidencia === "estimacion_conjetural", nombres, filas: obs.map((o) => [o.region, o.anio, o.valor]) };
+          return (
+            <article class="tarjeta serie" id={`serie-${s.id}`}>
+              <div class="chips">
+                <span class={`badge ${CLASE_BADGE[s.nivel_evidencia]}`}>{ETIQUETA_EVIDENCIA[s.nivel_evidencia]}</span>
+                <span class="chip">{s.cobertura_temporal[0]}–{s.cobertura_temporal[1]}</span>
+                <span class="chip">{s.id}</span>
+              </div>
+              <figure class="grafico" data-grafico>
+                <script is:inline type="application/json" set:html={JSON.stringify(payload)} />
+                <div class="lienzo"></div>
+                <figcaption class="meta">{s.unidad}. Fuente: {ds ? <a href={ds.url}>{ds.nombre}</a> : s.fuente_dataset}.</figcaption>
+              </figure>
+              <details>
+                <summary>Nota metodológica y advertencias</summary>
+                <p>{s.nota_metodologica}</p>
+                {s.advertencias.length > 0 && <ul>{s.advertencias.map((a) => <li>{a}</li>)}</ul>}
+                {ds && <p class="meta"><strong>Procedencia:</strong> {ds.nombre}, versión {ds.version}, descargado el {ds.fecha_descarga}. Licencia: {ds.licencia}. <strong>Cita requerida:</strong> {ds.cita_requerida}</p>}
+              </details>
+              <p class="acciones-serie"><a class="boton-sec" href={`/datos/${s.id}.csv`}>Descargar CSV</a> {ds && <a class="boton-sec" href={ds.url}>Fuente primaria</a>}</p>
+            </article>
+          );
+        })}
+        {mapa.length > 0 && (
+          <p class="meta">Series por país (código ISO3) usadas por la <a href="/espacio">Vista Espacio</a>: {mapa.map((s, i) => <>{i > 0 ? ", " : ""}<a href={`/datos/${s.id}.csv`}>{s.id}</a> ({ETIQUETA_EVIDENCIA[s.nivel_evidencia]})</>)}.</p>
+        )}
+      </section>
+    );
+  })}
+</Base>
+
+<style>
+  .indicador { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--linea); }
+  .serie { margin-top: 1.2rem; }
+  .grafico { margin: 1rem 0 0.5rem; }
+  .lienzo { min-height: 320px; }
+  .lienzo :global(svg) { max-width: 100%; height: auto; font-family: var(--sans); }
+  details { margin-top: 0.6rem; font-size: 0.95rem; }
+  summary { cursor: pointer; color: var(--acento); }
+  .acciones-serie { margin: 0.8rem 0 0; display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .boton-sec { display: inline-block; border: 1px solid var(--tinta-3); border-radius: 999px; padding: 0.35rem 0.9rem; text-decoration: none; color: var(--tinta); font-size: 0.9rem; }
+  .boton-sec:hover { border-color: var(--tinta); }
+</style>
+
+<script>
+  import * as Plot from "@observablehq/plot";
+  interface Carga { unidad: string; conjetural: boolean; nombres: Record<string, string>; filas: [string, number, number][] }
+  document.querySelectorAll<HTMLElement>("[data-grafico]").forEach((fig) => {
+    const json = fig.querySelector('script[type="application/json"]')?.textContent;
+    const lienzo = fig.querySelector<HTMLElement>(".lienzo");
+    if (!json || !lienzo) return;
+    const carga = JSON.parse(json) as Carga;
+    const datos = carga.filas.map(([region, anio, valor]) => ({ region: carga.nombres[region] ?? region, anio, valor }));
+    const ancho = Math.max(320, lienzo.clientWidth || 900);
+    const grafico = Plot.plot({
+      width: ancho,
+      height: 340,
+      marginLeft: 64,
+      style: { background: "transparent", fontSize: "12px" },
+      x: { label: "año", tickFormat: (d: number) => String(d) },
+      y: { grid: true, label: carga.unidad.length > 48 ? carga.unidad.slice(0, 45) + "…" : carga.unidad, type: carga.conjetural ? "log" : "linear" },
+      color: { legend: true },
+      marks: [
+        Plot.lineY(datos, { x: "anio", y: "valor", stroke: "region", strokeDasharray: carga.conjetural ? "4 4" : undefined, strokeWidth: 1.6, curve: "monotone-x" }),
+        carga.conjetural ? Plot.dot(datos, { x: "anio", y: "valor", fill: "region", r: 2.5 }) : null,
+        Plot.tip(datos, Plot.pointer({ x: "anio", y: "valor", title: (d: { region: string; anio: number; valor: number }) => `${d.region}, ${d.anio}: ${d.valor.toLocaleString("es", { maximumFractionDigits: 1 })}` })),
+      ],
+    });
+    lienzo.replaceChildren(grafico);
+  });
+</script>

@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import { escuelasOrdenadas } from "../lib/contenido.ts";
+const escuelas = escuelasOrdenadas();
 interface Props {
   titulo: string;
   descripcion?: string;
@@ -8,7 +10,10 @@ interface Props {
 const { titulo, descripcion = "Plataforma para explorar la transformación de la economía mundial a través del tiempo, el espacio, los datos y las interpretaciones en disputa.", ancho = "normal" } = Astro.props;
 const ruta = Astro.url.pathname;
 const enlaces = [
-  { href: "/tiempo", texto: "Línea de tiempo" },
+  { href: "/tiempo", texto: "Tiempo" },
+  { href: "/espacio", texto: "Espacio" },
+  { href: "/datos", texto: "Datos" },
+  { href: "/grafo", texto: "Grafo" },
   { href: "/nodos", texto: "Nodos" },
   { href: "/escuelas", texto: "Escuelas" },
   { href: "/fuentes", texto: "Fuentes" },
@@ -33,6 +38,13 @@ const activo = (href: string): "page" | undefined => (ruta === href || (href !==
         <nav class="nav" aria-label="Principal">
           {enlaces.map((e) => <a href={e.href} aria-current={activo(e.href)}>{e.texto}</a>)}
         </nav>
+        <label class="selector-escuela" title="Selector global de escuela: reencuadra el sitio entero (SPEC §5.4)">
+          <span class="etiqueta-sel">Leer según</span>
+          <select id="selector-escuela" aria-label="Escuela interpretativa activa">
+            <option value="">todas las escuelas</option>
+            {escuelas.map((e) => <option value={e.id}>{e.nombre}</option>)}
+          </select>
+        </label>
       </div>
     </header>
     <main>
@@ -40,11 +52,65 @@ const activo = (href: string): "page" | undefined => (ruta === href || (href !==
         <slot />
       </div>
     </main>
+    <div class="banda-escuela" data-banda-escuela hidden>
+      <div class="contenedor">Leyendo según la escuela <strong data-banda-nombre></strong>: se resaltan sus interpretaciones y las aristas que sostiene; se atenúan las que niega. <button type="button" data-quitar-escuela>Quitar</button></div>
+    </div>
     <footer class="pie">
       <div class="contenedor">
         <p>Toda cifra es rastreable a su fuente; toda serie anterior a 1820 es una reconstrucción, no una medición. Las fuentes sin verificar se marcan como tales.</p>
         <p>Contenido versionado en Git. Sin cuentas, sin comentarios, sin texto generado publicado como contenido.</p>
       </div>
     </footer>
+    <script>
+      const CLAVE = "escuela-activa";
+      const selector = document.querySelector<HTMLSelectElement>("#selector-escuela");
+      const banda = document.querySelector<HTMLElement>("[data-banda-escuela]");
+      const bandaNombre = document.querySelector<HTMLElement>("[data-banda-nombre]");
+      const lista = (el: HTMLElement | SVGElement, attr: string): string[] => (el.getAttribute(attr) ?? "").split(" ").filter(Boolean);
+
+      function aplicar(id: string): void {
+        document.documentElement.dataset.escuela = id;
+        document.querySelectorAll<HTMLElement>("[data-escuela]").forEach((el) => {
+          const propia = el.dataset.escuela === id;
+          el.classList.toggle("escuela-activa", id !== "" && propia);
+          el.classList.toggle("escuela-inactiva", id !== "" && !propia);
+        });
+        document.querySelectorAll<HTMLElement>("[data-sostenida], [data-negada]").forEach((el) => {
+          el.classList.toggle("sostenida-activa", id !== "" && lista(el, "data-sostenida").includes(id));
+          el.classList.toggle("negada-activa", id !== "" && lista(el, "data-negada").includes(id));
+        });
+        document.querySelectorAll<HTMLElement | SVGElement>("[data-escuelas]").forEach((el) => {
+          el.classList.toggle("sin-escuela-activa", id !== "" && !lista(el, "data-escuelas").includes(id));
+        });
+        if (banda && bandaNombre && selector) {
+          banda.hidden = id === "";
+          bandaNombre.textContent = selector.selectedOptions[0]?.textContent ?? id;
+        }
+        document.dispatchEvent(new CustomEvent("escuela-cambiada", { detail: id }));
+      }
+
+      let inicial = "";
+      try { inicial = localStorage.getItem(CLAVE) ?? ""; } catch { inicial = ""; }
+      if (selector) {
+        if ([...selector.options].some((o) => o.value === inicial)) selector.value = inicial; else inicial = "";
+        selector.addEventListener("change", () => {
+          try { localStorage.setItem(CLAVE, selector.value); } catch { /* sin almacenamiento */ }
+          aplicar(selector.value);
+        });
+      }
+      document.querySelectorAll<HTMLElement>("[data-activar-escuela]").forEach((b) => {
+        b.addEventListener("click", () => {
+          if (!selector) return;
+          selector.value = b.dataset.activarEscuela ?? "";
+          selector.dispatchEvent(new Event("change"));
+        });
+      });
+      document.querySelector("[data-quitar-escuela]")?.addEventListener("click", () => {
+        if (!selector) return;
+        selector.value = "";
+        selector.dispatchEvent(new Event("change"));
+      });
+      aplicar(inicial);
+    </script>
   </body>
 </html>

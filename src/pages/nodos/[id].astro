@@ -1,8 +1,9 @@
 ---
 import Base from "../../layouts/Base.astro";
 import AvisoFuentes from "../../components/AvisoFuentes.astro";
-import { aristasHacia, colorUnidad, escuela, fuentesDe, lenteDe, nodo, nodosOrdenados, unidadesDe } from "../../lib/contenido.ts";
-import { DESCRIPCION_ESTADO, ETIQUETA_ARISTA, ETIQUETA_CONSENSO, ETIQUETA_ESTADO, ETIQUETA_PESO, ETIQUETA_PRECISION, periodoTexto, renderInline, renderMarkdown } from "../../lib/texto.ts";
+import { aristasHacia, colorUnidad, contenido, escuela, fuentesDe, lenteDe, nodo, nodosOrdenados, unidadesDe } from "../../lib/contenido.ts";
+import { DESCRIPCION_ESTADO, ETIQUETA_ARISTA, ETIQUETA_CONSENSO, ETIQUETA_ESTADO, ETIQUETA_EVIDENCIA, ETIQUETA_PESO, ETIQUETA_PRECISION, periodoTexto, renderInline, renderMarkdown } from "../../lib/texto.ts";
+const serie = (id: string) => contenido().series.get(id);
 
 export function getStaticPaths() {
   return nodosOrdenados().map((n) => ({ params: { id: n.id } }));
@@ -67,9 +68,18 @@ const REGION_LENTE = { "costa-rica": "Costa Rica", "america-latina": "América L
         <p class="sobretitulo">Vista Debate</p>
         <h2 style="margin-top:0">Interpretaciones en disputa</h2>
         <p class="prosa">Cada escuela propone un mecanismo. Se listan la evidencia a favor, la evidencia en contra y, sobre todo, qué observación la refutaría.</p>
+        {n.interpretaciones.length > 2 && (
+          <div class="comparar" data-comparar>
+            <span>Contrastar dos escuelas lado a lado:</span>
+            <select data-comparar-a aria-label="Primera escuela"><option value="">—</option>{n.interpretaciones.map((it) => <option value={it.escuela}>{nombreEscuela(it.escuela)}</option>)}</select>
+            <span>frente a</span>
+            <select data-comparar-b aria-label="Segunda escuela"><option value="">—</option>{n.interpretaciones.map((it) => <option value={it.escuela}>{nombreEscuela(it.escuela)}</option>)}</select>
+            <button type="button" data-comparar-reset hidden>Ver todas</button>
+          </div>
+        )}
         <div class="tarjetas interpretaciones">
           {n.interpretaciones.map((it) => (
-            <div class="tarjeta interpretacion">
+            <div class="tarjeta interpretacion" data-escuela={it.escuela} data-comparable={it.escuela}>
               <div class="chips"><a class="chip" href={`/escuelas#${it.escuela}`}>{nombreEscuela(it.escuela)}</a><span class="badge">{ETIQUETA_PESO[it.peso_academico]}</span></div>
               <h3 set:html={renderInline(it.mecanismo)} />
               <div class="prosa" set:html={renderMarkdown(it.desarrollo)} />
@@ -92,7 +102,7 @@ const REGION_LENTE = { "costa-rica": "Costa Rica", "america-latina": "América L
         <h2 style="margin-top:0">Relaciones con otros nodos</h2>
         <ul class="lista-limpia aristas">
           {aristas.map(({ a }) => (
-            <li class={`arista consenso-${a.consenso}`}>
+            <li class={`arista consenso-${a.consenso}`} data-sostenida={(a.sostenida_por ?? []).join(" ")} data-negada={(a.negada_por ?? []).join(" ")}>
               <div class="arista-linea">
                 <a href={`/nodos/${a.desde}`}>{nombreNodo(a.desde)}</a>
                 <span class="tipo">{ETIQUETA_ARISTA[a.tipo]}</span>
@@ -108,6 +118,26 @@ const REGION_LENTE = { "costa-rica": "Costa Rica", "america-latina": "América L
               )}
             </li>
           ))}
+        </ul>
+      </section>
+    )}
+
+    {n.series.length > 0 && (
+      <section>
+        <p class="sobretitulo">Vista Datos</p>
+        <h2 style="margin-top:0">Series asociadas</h2>
+        <ul class="lista-limpia series">
+          {n.series.map((ref) => {
+            const s = serie(ref.serie);
+            return (
+              <li>
+                <a href={`/datos#serie-${ref.serie}`}>{ref.serie}</a>
+                {s && <span class={`badge ${s.nivel_evidencia === "estimacion_conjetural" ? "badge-conjetural" : s.nivel_evidencia === "estadistica_oficial" ? "badge-alto" : "badge-medio"}`}>{ETIQUETA_EVIDENCIA[s.nivel_evidencia]}</span>}
+                {s && <span class="meta"> {s.cobertura_temporal[0]}–{s.cobertura_temporal[1]}</span>}
+                {ref.nota && <p class="meta" set:html={renderInline(ref.nota)} />}
+              </li>
+            );
+          })}
         </ul>
       </section>
     )}
@@ -158,7 +188,26 @@ const REGION_LENTE = { "costa-rica": "Costa Rica", "america-latina": "América L
   .arista-linea { display: flex; flex-wrap: wrap; gap: 0.5rem 0.7rem; align-items: baseline; font-family: var(--serif); font-size: 1.1rem; }
   .arista-linea .tipo { font-family: var(--sans); font-size: 0.85rem; color: var(--tinta-3); }
   .consenso-disputado .arista-linea { border-left: 3px dashed var(--acento); padding-left: 0.7rem; }
-  .fuentes li { padding: 0.4rem 0; border-bottom: 1px solid var(--linea); font-size: 0.95rem; }
+  .fuentes li, .series li { padding: 0.4rem 0; border-bottom: 1px solid var(--linea); font-size: 0.95rem; }
+  .series li a { font-family: ui-monospace, monospace; font-size: 0.9rem; margin-right: 0.5rem; }
   figure { margin: 0; }
   figure img { width: 100%; border-radius: 6px; }
 </style>
+
+<script>
+  const zona = document.querySelector<HTMLElement>("[data-comparar]");
+  if (zona) {
+    const a = zona.querySelector<HTMLSelectElement>("[data-comparar-a]")!;
+    const b = zona.querySelector<HTMLSelectElement>("[data-comparar-b]")!;
+    const reset = zona.querySelector<HTMLButtonElement>("[data-comparar-reset]")!;
+    const tarjetas = document.querySelectorAll<HTMLElement>("[data-comparable]");
+    const aplicar = (): void => {
+      const elegidas = [a.value, b.value].filter(Boolean);
+      tarjetas.forEach((t) => { t.hidden = elegidas.length === 2 && !elegidas.includes(t.dataset.comparable ?? ""); });
+      reset.hidden = elegidas.length < 2;
+    };
+    a.addEventListener("change", aplicar);
+    b.addEventListener("change", aplicar);
+    reset.addEventListener("click", () => { a.value = ""; b.value = ""; aplicar(); });
+  }
+</script>

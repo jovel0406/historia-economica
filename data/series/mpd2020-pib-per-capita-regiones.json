@@ -1,0 +1,31 @@
+{
+  "id": "mpd2020-pib-per-capita-regiones",
+  "indicador": "pib_per_capita",
+  "fuente_dataset": "maddison-2020",
+  "cobertura_temporal": [
+    1820,
+    2018
+  ],
+  "cobertura_geografica": [
+    "africa-subsahariana",
+    "america-del-norte",
+    "america-latina",
+    "asia-meridional",
+    "asia-occidental-y-norte-de-africa",
+    "asia-oriental",
+    "europa-occidental",
+    "europa-oriental"
+  ],
+  "unidad": "dólares internacionales de 2011 (PPA) por persona y año",
+  "nivel_evidencia": "reconstruccion_documentada",
+  "nota_metodologica": "PIB per cápita en dólares internacionales de 2011 (paridad de poder adquisitivo), según la hoja «GDP pc 2011 prices» de la MPD 2020. Las cifras combinan estadísticas nacionales recientes con reconstrucciones de historiadores económicos a partir de salarios, precios, producción agraria y población; la MPD 2020 volvió parcialmente al método original de Maddison para los niveles históricos (Bolt y van Zanden, 2020). No es una observación: es una estimación con márgenes amplios, mayores cuanto más atrás.",
+  "advertencias": [
+    "Fronteras modernas aplicadas a todo el período: cada país se mide con su territorio actual.",
+    "«Western Offshoots» de Maddison (Estados Unidos, Canadá, Australia, Nueva Zelanda) se asigna a america-del-norte.",
+    "«Asia (South and South-East)» de Maddison se asigna a asia-meridional aunque incluye el sudeste asiático.",
+    "«Middle East» de Maddison se asigna a asia-occidental-y-norte-de-africa; la cobertura del norte de África en esa agregación debe comprobarse en la documentación.",
+    "«Eastern Europe» de Maddison incluye a la ex URSS."
+  ],
+  "granularidad": "regiones",
+  "archivo": "data/processed/mpd2020-pib-per-capita-regiones.csv"
+}

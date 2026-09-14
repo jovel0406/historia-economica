@@ -135,3 +135,60 @@ La línea de tiempo se renderiza como SVG en el build con escalas de D3 (polilin
 siglo XX). El cliente solo agrega tooltip y filtro por unidad. Sin islas de React/Svelte todavía:
 no hay interactividad que lo justifique (§3). El zoom y el subgrafo ancestral (§5.5) vendrán con la
 Vista Grafo.
+
+## 2026-09-14 — Cierre de la v1 (decisión propia: «finalizar el proyecto»)
+
+### D22. Versiones de datos ingeridas: MPD 2020 y PWT 10.0, no las últimas
+Las versiones más recientes (MPD 2023, PWT 10.01) se distribuyen por dataverse.nl, que responde a
+descargas automatizadas con una prueba de trabajo anti-bots (Anubis). No se esquivó: la ingesta usa
+los archivos que Groningen aloja directamente (`mpd2020.xlsx`, `pwt100.xlsx`). El manifiesto registra
+nombre, tamaño y SHA-1 oficiales de los archivos 2023/10.01 (obtenidos de la API de metadatos de
+Dataverse, que sí es pública) para que la actualización manual sea verificable.
+
+### D23. Series partidas por el umbral de 1820
+Una serie tiene un solo `nivel_evidencia`. Las series largas de Maddison se parten en dos: antes de
+1820 (`estimacion_conjetural`) y desde 1820 (`reconstruccion_documentada`). Así el badge de §11.6 es
+exacto y no hay que decidir por observación.
+
+### D24. Series de mapa con `granularidad: "paises-iso3"`
+Las series por país para la Vista Espacio usan códigos ISO3 en la columna `region`; el resto usa ids
+de `content/regiones.json`. El validador comprueba cada fila del CSV contra la granularidad, la serie
+y la cobertura temporal declaradas.
+
+### D25. Mapa: agregación a macrorregión antes de 1900, derivada de las regiones de Maddison
+Antes de 1900 el mapa colorea cada país con el valor de su macrorregión según la serie regional de
+Maddison (que empieza en 1820). La correspondencia país → macrorregión usa las subregiones de
+world-countries; las diferencias con las agregaciones de Maddison se declaran en la advertencia
+permanente de la vista. Para años anteriores a 1820 no hay agregado regional en la MPD 2020 y el
+mapa no dibuja.
+
+### D26. Escuela marxista
+Agregada a pedido propia con sus fuentes cotejadas (Marx, Dobb, Brenner, Aston y Philpin, Wood,
+Blackburn, Harvey, Duménil y Lévy) e interpretaciones en la Gran Divergencia (debate Brenner) y la
+economía esclavista (acumulación originaria). Son ya once escuelas.
+
+### D27. Selector global de escuela sin framework
+Un `<select>` en la cabecera, persistido en localStorage, aplica clases a todo lo que declara
+`data-escuela`, `data-sostenida`, `data-negada` o `data-escuelas` y emite `escuela-cambiada` para las
+vistas con canvas propio (grafo). Sin islas de React/Svelte (§3).
+
+### D28. Subgrafo ancestral
+«Qué tuvo que pasar antes» se calcula con una búsqueda en anchura hacia atrás por aristas
+`precondicion_de`, `causa_directa_de` y `amplifica` (entrantes) y `respuesta_a`, `ruptura_de`
+(salientes). `contiene` y `alternativa_rechazada` no son causales y se excluyen. Cada arista del
+resultado dice qué escuelas la sostienen: ese es el «según quién».
+
+### D29. Estado de los criterios de aceptación (§11)
+1. Los cinco nodos pasan `validar` sin advertencias: sí (modo estricto en verde).
+2. ≥ 2 interpretaciones con `que_la_refutaria`: sí (3 a 6 por nodo).
+3. Toda cifra de la interfaz rastreable al manifiesto: sí; el validador comprueba hashes y filas.
+4. Sin campos inventados; no verificadas marcadas: sí, con nota de cotejo por fuente.
+5. Arista `disputado` renderizada distinto: sí (punteada en el grafo, dashed y con badge en el nodo).
+6. Badge conjetural en series pre-1820: sí (series partidas, D23).
+7. Advertencia de anacronismo en el mapa: sí, permanente y con modo agregado.
+8. `pnpm run build` falla si un adaptador falla: el build verifica hashes y filas de lo ingerido;
+   `pnpm run ingesta` termina con 1 si un adaptador falla. La descarga no forma parte del build
+   porque `data/raw/` no se versiona y el despliegue no debe depender de servidores externos.
+9. README con versiones reales: sí.
+10. DECISIONES.md: este archivo.
+Lo que sigue es editorial: verificar fuentes, pasar nodos a `revisado`, redactar esqueletos.

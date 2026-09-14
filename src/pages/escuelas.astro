@@ -14,6 +14,7 @@ const nodosDe = (id: string) => nodos.filter((n) => n.interpretaciones.some((i) 
     {escuelas.map((e) => (
       <div class="tarjeta" id={e.id}>
         <h3>{e.nombre}</h3>
+        <p><button type="button" class="boton-sec" data-activar-escuela={e.id}>Leer el sitio según esta escuela</button></p>
         <h4>Postulado central</h4>
         <div class="prosa" set:html={renderMarkdown(e.postulado_central)} />
         <h4>Crítica principal</h4>
@@ -25,5 +26,7 @@ const nodosDe = (id: string) => nodos.filter((n) => n.interpretaciones.some((i) 
   </div>
 </Base>
 <style>
+  .boton-sec { font: inherit; font-size: 0.85rem; border: 1px solid var(--tinta-3); border-radius: 999px; padding: 0.3rem 0.8rem; background: transparent; cursor: pointer; color: var(--tinta); }
+  .boton-sec:hover { border-color: var(--acento); color: var(--acento); }
   .tarjeta h4 { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tinta-3); margin: 1rem 0 0.3rem; }
 </style>

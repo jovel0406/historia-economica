@@ -29,6 +29,11 @@ export const Serie = z
     nota_metodologica: TextoNoVacio,
     /** Ej. "fronteras modernas aplicadas a datos de 1700". */
     advertencias: z.array(TextoNoVacio),
+    /**
+     * "regiones": la columna `region` del CSV usa ids de content/regiones.json.
+     * "paises-iso3": usa códigos ISO 3166-1 alfa-3 (para el mapa); `cobertura_geografica` sigue siendo macro.
+     */
+    granularidad: z.enum(["regiones", "paises-iso3"]).default("regiones"),
     /** Ruta del CSV relativa a la raíz del repositorio, dentro de data/processed/. */
     archivo: z.string().regex(/^data\/processed\/[a-z0-9_\-/]+\.csv$/, "debe ser un CSV bajo data/processed/"),
   })
@@ -50,7 +55,7 @@ export type Serie = z.infer<typeof Serie>;
 /** Una fila ya normalizada de `data/processed/*.csv`. */
 export const Observacion = z.strictObject({
   serie: SeriesId,
-  region: RegionId,
+  region: z.string().regex(/^(?:[a-z0-9]+(?:-[a-z0-9]+)*|[A-Z]{3})$/),
   anio: Anio,
   valor: z.number(),
   nota: TextoNoVacio.optional(),
@@ -61,7 +66,8 @@ export type Observacion = z.infer<typeof Observacion>;
 export const FilaCsv = z
   .object({
     serie: SeriesId,
-    region: RegionId,
+    /** Id de región (slug) o código ISO 3166-1 alfa-3 en mayúsculas, según `granularidad`. */
+    region: z.string().regex(/^(?:[a-z0-9]+(?:-[a-z0-9]+)*|[A-Z]{3})$/, "region debe ser un slug o un código ISO3"),
     anio: z.coerce.number().pipe(Anio),
     valor: z.coerce.number(),
     nota: z.string().optional(),

@@ -99,7 +99,12 @@
       "peso_academico": "minoritaria"
     }
   ],
-  "series": [],
+  "series": [
+    {
+      "serie": "mpd2020-pib-per-capita-paises",
+      "nota": "La caída de 1929–1933 y la recuperación desigual en Estados Unidos, Reino Unido, Argentina, Brasil y México."
+    }
+  ],
   "aristas": [
     {
       "desde": "patron-oro-de-entreguerras",

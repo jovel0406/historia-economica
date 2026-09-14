@@ -74,3 +74,19 @@ main { flex: 1; padding: 2.5rem 0 4rem; }
 .meta { color: var(--tinta-3); font-size: 0.9rem; }
 .rejilla-2 { display: grid; gap: 2rem; grid-template-columns: 1fr 1fr; }
 @media (max-width: 800px) { .rejilla-2 { grid-template-columns: 1fr; } .nav { gap: 0.9rem; font-size: 0.9rem; } }
+
+/* selector global de escuela (SPEC §5.4) */
+.selector-escuela { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--tinta-2); }
+.selector-escuela select { font: inherit; font-size: 0.85rem; padding: 0.3rem 0.5rem; border: 1px solid var(--linea); border-radius: 6px; background: white; color: var(--tinta); max-width: 14rem; }
+.etiqueta-sel { white-space: nowrap; }
+.banda-escuela { background: var(--tinta); color: var(--papel); font-size: 0.9rem; padding: 0.5rem 0; }
+.banda-escuela button { margin-left: 0.6rem; font: inherit; font-size: 0.8rem; background: transparent; color: var(--papel); border: 1px solid var(--papel-3); border-radius: 999px; padding: 0.1rem 0.7rem; cursor: pointer; }
+.interpretacion.escuela-inactiva { opacity: 0.45; }
+.interpretacion.escuela-activa { outline: 2px solid var(--acento); outline-offset: 2px; }
+.arista.negada-activa { opacity: 0.4; }
+.arista.negada-activa .arista-linea { text-decoration: line-through; text-decoration-color: var(--acento); }
+.arista.sostenida-activa .arista-linea { border-left: 4px solid #24513d; padding-left: 0.7rem; }
+.nodo.sin-escuela-activa { opacity: 0.18; }
+.comparar { display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; align-items: center; margin: 0.5rem 0 1rem; font-size: 0.9rem; }
+.comparar select { font: inherit; font-size: 0.9rem; padding: 0.3rem 0.5rem; border: 1px solid var(--linea); border-radius: 6px; background: white; }
+@media (max-width: 1000px) { .cabecera .fila { flex-wrap: wrap; } }

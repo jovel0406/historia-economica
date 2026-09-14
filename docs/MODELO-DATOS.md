@@ -16,7 +16,7 @@ de campos está en [SPEC.md §4](SPEC.md).
 | Indicator | `Indicador` | `content/indicadores.json` | exactamente los siete canónicos |
 | Unidad | `Unidad` | `content/unidades.json` | numeradas 1..n; los nodos las referencian en `unidades[]` |
 | Medio | `Medio` | dentro del nodo, `medios[]`; archivo bajo `public/medios/` | ruta |
-| Series | `Serie` | `data/series/<id>.json` | `id`; `archivo` → CSV |
+| Series | `Serie` | `data/series/<id>.json` (las escriben los adaptadores) | `id`; `archivo` → CSV; `granularidad` regiones o ISO3 |
 | Observation | `Observacion` / `FilaCsv` | `data/processed/*.csv` (columnas `serie,region,anio,valor[,nota]`) | (`serie`, `region`, `anio`) |
 | Manifiesto | `Manifiesto` | `data/MANIFIESTO.json` | `datasets[].id`; hash por archivo |
 
@@ -31,7 +31,9 @@ exista en la bibliografía (`referencia-cita`); la interfaz lo convierte en enla
 - Nodo → regiones, unidades, fuentes, series; interpretación → escuela y fuentes; arista → nodos en
   ambos extremos (deben existir como archivo, aunque sea `esqueleto`), fuentes y escuelas.
 - Escuela → fuentes. Lente → nodo (por nombre de archivo y por campo) y fuentes.
-- Serie → dataset del manifiesto, regiones, CSV existente y manifestado con sha256 correcto.
+- Serie → dataset del manifiesto, regiones, CSV existente y manifestado con sha256 correcto; cada
+  fila del CSV parsea, pertenece a la serie, usa una región o ISO3 válido y cae en la cobertura.
+- Archivos de `data/raw/` en el manifiesto: hash verificado si están presentes; info si no (no se versionan).
 - Entre archivos: una arista repetida con el mismo consenso es advertencia; con consenso distinto, error.
 
 ## Estados editoriales

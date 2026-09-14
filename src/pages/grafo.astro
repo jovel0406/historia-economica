@@ -1,0 +1,223 @@
+---
+import Base from "../layouts/Base.astro";
+import { datosGrafo } from "../lib/grafo.ts";
+import { ETIQUETA_ARISTA, ETIQUETA_CONSENSO } from "../lib/texto.ts";
+import { Consenso, TipoArista } from "../schemas/index.ts";
+const datos = datosGrafo();
+const COLOR_TIPO: Record<string, string> = {
+  precondicion_de: "#2f4f6f",
+  causa_directa_de: "#b7412c",
+  contiene: "#8a8177",
+  respuesta_a: "#2e6b5e",
+  ruptura_de: "#5b3a6e",
+  alternativa_rechazada: "#c47a1a",
+  amplifica: "#8a5a2b",
+};
+const TRAZO: Record<string, string> = { alto: "", medio: "9 5", disputado: "2 5", marginal: "1 6" };
+const carga = { ...datos, colorTipo: COLOR_TIPO, trazo: TRAZO, etiquetaTipo: ETIQUETA_ARISTA, etiquetaConsenso: ETIQUETA_CONSENSO };
+const conAristas = new Set(datos.aristas.flatMap((a) => [a.desde, a.hacia]));
+---
+<Base titulo="Grafo causal" ancho="completo">
+  <div class="contenedor">
+    <p class="sobretitulo">Vista Grafo</p>
+    <h1 style="margin-bottom:0.3em">Grafo causal</h1>
+    <p class="entradilla">Nodos y aristas tipadas. El color de la arista es su tipo; el trazo, su grado de consenso: continuo si es alto, discontinuo si es medio, punteado si está en disputa. Hacé clic en un nodo para aislar su subgrafo ancestral: qué tuvo que pasar antes para que ocurriera, y según quién.</p>
+  </div>
+  <div class="grafo" data-grafo>
+    <script is:inline type="application/json" set:html={JSON.stringify(carga)} />
+    <aside class="panel">
+      <fieldset>
+        <legend>Tipo de arista</legend>
+        {TipoArista.options.map((t) => (
+          <label><input type="checkbox" data-filtro-tipo={t} checked /> <span class="muestra-linea" style={`background:${COLOR_TIPO[t]}`}></span> {ETIQUETA_ARISTA[t]}</label>
+        ))}
+      </fieldset>
+      <fieldset>
+        <legend>Consenso</legend>
+        {Consenso.options.map((c) => (
+          <label><input type="checkbox" data-filtro-consenso={c} checked /> <svg width="34" height="8"><line x1="0" y1="4" x2="34" y2="4" stroke="#1e1b17" stroke-width="2" stroke-dasharray={TRAZO[c]} /></svg> {ETIQUETA_CONSENSO[c]}</label>
+        ))}
+      </fieldset>
+      <fieldset>
+        <legend>Nodos</legend>
+        <label><input type="checkbox" data-filtro-aislados /> mostrar nodos sin aristas ({datos.nodos.length - conAristas.size})</label>
+      </fieldset>
+      <div class="seleccion" data-seleccion hidden>
+        <h3 data-sel-titulo></h3>
+        <p class="meta" data-sel-meta></p>
+        <ul class="lista-limpia" data-sel-lista></ul>
+        <button type="button" class="boton-sec" data-sel-cerrar>Volver al grafo completo</button>
+      </div>
+      <p class="meta" data-ayuda>Pasá el cursor por una arista para leer su nota. Con una escuela activa en el selector global, se resaltan las aristas que sostiene y se atenúan las que niega.</p>
+    </aside>
+    <div class="lienzo">
+      <svg data-svg width="100%" height="720" viewBox="0 0 1200 720" role="img" aria-label="Grafo causal de los nodos"></svg>
+      <div class="tooltip" data-tooltip hidden></div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .grafo { display: grid; grid-template-columns: 300px 1fr; gap: 1rem; margin-top: 1.2rem; }
+  @media (max-width: 900px) { .grafo { grid-template-columns: 1fr; } }
+  .panel { font-size: 0.85rem; }
+  .panel fieldset { border: 1px solid var(--linea); border-radius: var(--radio); padding: 0.6rem 0.9rem; margin: 0 0 0.8rem; background: white; }
+  .panel legend { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tinta-3); padding: 0 0.3rem; }
+  .panel label { display: flex; align-items: center; gap: 0.4rem; padding: 0.15rem 0; cursor: pointer; }
+  .muestra-linea { display: inline-block; width: 26px; height: 4px; border-radius: 2px; }
+  .lienzo { position: relative; background: white; border: 1px solid var(--linea); border-radius: var(--radio); overflow: hidden; }
+  .seleccion { border: 1px solid var(--acento); border-radius: var(--radio); padding: 0.8rem 0.9rem; background: #fbeeea; margin-bottom: 0.8rem; }
+  .seleccion h3 { margin: 0 0 0.3rem; font-size: 1.05rem; }
+  .seleccion li { padding: 0.3rem 0; border-top: 1px solid var(--linea); }
+  .boton-sec { font: inherit; font-size: 0.8rem; border: 1px solid var(--tinta-3); border-radius: 999px; padding: 0.25rem 0.7rem; background: white; cursor: pointer; margin-top: 0.5rem; }
+  .tooltip { position: absolute; pointer-events: none; background: white; border: 1px solid var(--linea); border-radius: 8px; padding: 0.5rem 0.7rem; font-size: 0.82rem; max-width: 22rem; box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 5; }
+  svg :global(text) { font-family: var(--sans); }
+</style>
+
+<script>
+  import * as d3 from "d3";
+  interface NodoG { id: string; titulo: string; tipo: string; estado: string; inicio: number; color: string; unidad: number | null; escuelas: string[]; x?: number; y?: number; fx?: number | null; fy?: number | null }
+  interface AristaG { id: string; desde: string; hacia: string; tipo: string; consenso: string; nota: string; sostenida: string[]; negada: string[]; source?: NodoG | string; target?: NodoG | string }
+  interface Carga { nodos: NodoG[]; aristas: AristaG[]; escuelas: Record<string, string>; colorTipo: Record<string, string>; trazo: Record<string, string>; etiquetaTipo: Record<string, string>; etiquetaConsenso: Record<string, string> }
+
+  const raiz = document.querySelector<HTMLElement>("[data-grafo]");
+  if (raiz) {
+    const carga = JSON.parse(raiz.querySelector('script[type="application/json"]')!.textContent!) as Carga;
+    const svg = d3.select(raiz.querySelector<SVGSVGElement>("[data-svg]")!);
+    const tooltip = raiz.querySelector<HTMLElement>("[data-tooltip]")!;
+    const lienzo = raiz.querySelector<HTMLElement>(".lienzo")!;
+    const seleccion = raiz.querySelector<HTMLElement>("[data-seleccion]")!;
+    const W = 1200, H = 720;
+
+    /** Aristas que llevan hacia atrás en el tiempo causal: de X a sus antecedentes. */
+    const antecedentesDe = (id: string, aristas: AristaG[]): AristaG[] =>
+      aristas.filter((a) => (["precondicion_de", "causa_directa_de", "amplifica"].includes(a.tipo) && a.hacia === id) || (["respuesta_a", "ruptura_de"].includes(a.tipo) && a.desde === id));
+    const otroExtremo = (a: AristaG, id: string): string => (a.desde === id ? a.hacia : a.desde);
+
+    let escuelaActiva = document.documentElement.dataset.escuela ?? "";
+    let seleccionado: string | null = null;
+
+    const defs = svg.append("defs");
+    for (const [tipo, color] of Object.entries(carga.colorTipo)) {
+      defs.append("marker").attr("id", `flecha-${tipo}`).attr("viewBox", "0 -5 10 10").attr("refX", 22).attr("refY", 0).attr("markerWidth", 7).attr("markerHeight", 7).attr("orient", "auto")
+        .append("path").attr("d", "M0,-5L10,0L0,5").attr("fill", color);
+    }
+    const capaAristas = svg.append("g");
+    const capaNodos = svg.append("g");
+    const anios = d3.extent(carga.nodos, (n) => n.inicio) as [number, number];
+    const xAnio = d3.scaleLinear().domain(anios).range([90, W - 90]);
+
+    const filtros = (): { tipos: Set<string>; consensos: Set<string>; aislados: boolean } => ({
+      tipos: new Set([...raiz.querySelectorAll<HTMLInputElement>("[data-filtro-tipo]")].filter((i) => i.checked).map((i) => i.dataset.filtroTipo!)),
+      consensos: new Set([...raiz.querySelectorAll<HTMLInputElement>("[data-filtro-consenso]")].filter((i) => i.checked).map((i) => i.dataset.filtroConsenso!)),
+      aislados: raiz.querySelector<HTMLInputElement>("[data-filtro-aislados]")!.checked,
+    });
+
+    function subconjunto(): { nodos: NodoG[]; aristas: AristaG[]; ancestrales: Set<string> } {
+      const f = filtros();
+      let aristas = carga.aristas.filter((a) => f.tipos.has(a.tipo) && f.consensos.has(a.consenso));
+      const ancestrales = new Set<string>();
+      if (seleccionado) {
+        // BFS hacia atrás: qué tuvo que pasar antes.
+        const cola = [seleccionado];
+        const visitados = new Set<string>([seleccionado]);
+        const usadas = new Set<AristaG>();
+        while (cola.length > 0) {
+          const actual = cola.shift()!;
+          for (const a of antecedentesDe(actual, aristas)) {
+            usadas.add(a);
+            const otro = otroExtremo(a, actual);
+            if (!visitados.has(otro)) { visitados.add(otro); cola.push(otro); }
+          }
+        }
+        for (const v of visitados) ancestrales.add(v);
+        aristas = [...usadas];
+      }
+      const conectados = new Set(aristas.flatMap((a) => [a.desde, a.hacia]));
+      const nodos = carga.nodos.filter((n) => (seleccionado ? ancestrales.has(n.id) : f.aislados || conectados.has(n.id)));
+      return { nodos, aristas, ancestrales };
+    }
+
+    let simulacion: d3.Simulation<NodoG, undefined> | null = null;
+
+    function dibujar(): void {
+      const { nodos, aristas } = subconjunto();
+      const porId = new Map(nodos.map((n) => [n.id, n]));
+      const enlaces = aristas.map((a) => ({ ...a, source: porId.get(a.desde)!, target: porId.get(a.hacia)! })).filter((e) => e.source && e.target);
+
+      const lineas = capaAristas.selectAll<SVGLineElement, AristaG>("line").data(enlaces, (d) => d.id);
+      lineas.exit().remove();
+      const lineasNuevas = lineas.enter().append("line");
+      const todas = lineasNuevas.merge(lineas)
+        .attr("stroke", (d) => carga.colorTipo[d.tipo] ?? "#999")
+        .attr("stroke-width", (d) => (d.consenso === "marginal" ? 1.2 : 2.2))
+        .attr("stroke-dasharray", (d) => carga.trazo[d.consenso] ?? "")
+        .attr("marker-end", (d) => `url(#flecha-${d.tipo})`)
+        .attr("opacity", (d) => (escuelaActiva && d.negada.includes(escuelaActiva) ? 0.15 : 0.85))
+        .attr("stroke-width", (d) => (escuelaActiva && d.sostenida.includes(escuelaActiva) ? 4 : d.consenso === "marginal" ? 1.2 : 2.2));
+      todas.on("mousemove", (ev: MouseEvent, d) => {
+        const sost = d.sostenida.map((e) => carga.escuelas[e] ?? e).join(", ");
+        const neg = d.negada.map((e) => carga.escuelas[e] ?? e).join(", ");
+        tooltip.innerHTML = `<strong>${porId.get(d.desde)?.titulo} ${carga.etiquetaTipo[d.tipo]} ${porId.get(d.hacia)?.titulo}</strong><br><span style="color:var(--tinta-3)">${carga.etiquetaConsenso[d.consenso]}${sost ? " · sostenida por " + sost : ""}${neg ? " · negada por " + neg : ""}</span><br>${d.nota.replace(/\[@([a-z0-9-]+)\]/g, "<code>$1</code>")}`;
+        tooltip.hidden = false;
+        const r = lienzo.getBoundingClientRect();
+        tooltip.style.left = `${Math.min(ev.clientX - r.left + 14, r.width - 360)}px`;
+        tooltip.style.top = `${ev.clientY - r.top + 14}px`;
+      }).on("mouseleave", () => { tooltip.hidden = true; });
+
+      const grupos = capaNodos.selectAll<SVGGElement, NodoG>("g.n").data(nodos, (d) => d.id);
+      grupos.exit().remove();
+      const nuevos = grupos.enter().append("g").attr("class", "n").style("cursor", "pointer");
+      nuevos.append("circle");
+      nuevos.append("text").attr("dy", 4).attr("font-size", 11);
+      const todosNodos = nuevos.merge(grupos);
+      todosNodos.select("circle")
+        .attr("r", (d) => (d.tipo === "proceso" ? 15 : 11))
+        .attr("fill", (d) => d.color)
+        .attr("fill-opacity", (d) => (d.estado === "esqueleto" ? 0.25 : 0.95))
+        .attr("stroke", (d) => d.color)
+        .attr("stroke-dasharray", (d) => (d.estado === "esqueleto" ? "3 2" : ""))
+        .attr("stroke-width", (d) => (d.id === seleccionado ? 4 : 1.5))
+        .attr("opacity", (d) => (escuelaActiva && !d.escuelas.includes(escuelaActiva) && d.estado !== "esqueleto" ? 0.45 : 1));
+      todosNodos.select("text").attr("x", (d) => (d.tipo === "proceso" ? 19 : 15)).text((d) => d.titulo);
+      todosNodos.on("click", (_ev, d) => { seleccionado = d.id === seleccionado ? null : d.id; mostrarSeleccion(); dibujar(); });
+      todosNodos.call(d3.drag<SVGGElement, NodoG>()
+        .on("start", (ev, d) => { if (!ev.active) simulacion?.alphaTarget(0.3).restart(); d.fx = d.x ?? null; d.fy = d.y ?? null; })
+        .on("drag", (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
+        .on("end", (ev, d) => { if (!ev.active) simulacion?.alphaTarget(0); d.fx = null; d.fy = null; }));
+
+      simulacion?.stop();
+      simulacion = d3.forceSimulation<NodoG>(nodos)
+        .force("enlace", d3.forceLink<NodoG, AristaG & { source: NodoG; target: NodoG }>(enlaces).id((d) => d.id).distance(150).strength(0.5))
+        .force("carga", d3.forceManyBody().strength(-420))
+        .force("x", d3.forceX<NodoG>((d) => xAnio(d.inicio)).strength(0.25))
+        .force("y", d3.forceY(H / 2).strength(0.06))
+        .force("colision", d3.forceCollide(34))
+        .on("tick", () => {
+          todas.attr("x1", (d) => (d.source as NodoG).x ?? 0).attr("y1", (d) => (d.source as NodoG).y ?? 0).attr("x2", (d) => (d.target as NodoG).x ?? 0).attr("y2", (d) => (d.target as NodoG).y ?? 0);
+          todosNodos.attr("transform", (d) => `translate(${Math.max(20, Math.min(W - 20, d.x ?? 0))},${Math.max(20, Math.min(H - 20, d.y ?? 0))})`);
+        });
+    }
+
+    function mostrarSeleccion(): void {
+      if (!seleccionado) { seleccion.hidden = true; return; }
+      const n = carga.nodos.find((x) => x.id === seleccionado)!;
+      const { aristas, ancestrales } = subconjunto();
+      seleccion.hidden = false;
+      seleccion.querySelector("[data-sel-titulo]")!.textContent = `¿Qué tuvo que pasar antes de «${n.titulo}»?`;
+      seleccion.querySelector("[data-sel-meta]")!.textContent = aristas.length === 0 ? "Ningún antecedente declarado todavía en el grafo (con los filtros actuales)." : `${ancestrales.size - 1} antecedente(s) por ${aristas.length} arista(s). Según quién: cada arista dice qué escuelas la sostienen.`;
+      const lista = seleccion.querySelector("[data-sel-lista]")!;
+      lista.innerHTML = aristas.map((a) => {
+        const de = carga.nodos.find((x) => x.id === a.desde)?.titulo ?? a.desde;
+        const ha = carga.nodos.find((x) => x.id === a.hacia)?.titulo ?? a.hacia;
+        const sost = a.sostenida.map((e) => carga.escuelas[e] ?? e).join(", ");
+        return `<li><a href="/nodos/${a.desde}">${de}</a> <span class="meta">${carga.etiquetaTipo[a.tipo]}</span> <a href="/nodos/${a.hacia}">${ha}</a> <span class="badge badge-${a.consenso}">${carga.etiquetaConsenso[a.consenso]}</span>${sost ? `<br><span class="meta">según: ${sost}</span>` : ""}</li>`;
+      }).join("");
+    }
+
+    raiz.querySelectorAll<HTMLInputElement>("input[type=checkbox]").forEach((i) => i.addEventListener("change", () => { mostrarSeleccion(); dibujar(); }));
+    raiz.querySelector("[data-sel-cerrar]")!.addEventListener("click", () => { seleccionado = null; mostrarSeleccion(); dibujar(); });
+    document.addEventListener("escuela-cambiada", (ev) => { escuelaActiva = (ev as CustomEvent<string>).detail; dibujar(); });
+    dibujar();
+  }
+</script>

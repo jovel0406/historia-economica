@@ -18,18 +18,29 @@
     "bibliografia:reporte": "tsx scripts/reporte-bibliografia.ts",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:cobertura": "vitest run --coverage"
+    "test:cobertura": "vitest run --coverage",
+    "ingesta": "tsx scripts/fetch/todos.ts",
+    "ingesta:maddison": "tsx scripts/fetch/maddison.ts",
+    "ingesta:pwt": "tsx scripts/fetch/pwt.ts"
   },
   "dependencies": {
+    "@observablehq/plot": "0.6.17",
     "astro": "7.3.2",
     "d3": "7.9.0",
     "marked": "18.0.13",
+    "topojson-client": "3.1.0",
+    "world-atlas": "2.0.2",
+    "world-countries": "5.1.0",
+    "xlsx": "0.18.5",
     "zod": "4.6.5"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
     "@types/d3": "^7.4.3",
+    "@types/geojson": "7946.0.16",
     "@types/node": "26.5.1",
+    "@types/topojson-client": "3.1.5",
+    "@types/topojson-specification": "^1.0.5",
     "@vitest/coverage-v8": "5.0.0",
     "tsx": "4.23.13",
     "typescript": "6.0.3",

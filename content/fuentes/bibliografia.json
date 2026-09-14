@@ -899,5 +899,191 @@
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
     "nota_verificacion": "Ficha cotejada contra Open Library el 2026-09-13. Pendiente de verificación manual. Crossref confirma además reseñas de 1987–1988."
+  },
+  {
+    "id": "marx-1867",
+    "tipo": "libro",
+    "autores": [
+      "Marx, Karl"
+    ],
+    "titulo": "El capital. Crítica de la economía política. Libro I",
+    "anio": 1867,
+    "doi": "10.1515/9780691240466",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref registra la edición de Princeton University Press (2024, DOI); Open Library registra ediciones en alemán (Dietz) y en español (FCE, Alianza). Editorial y año de la primera edición (1867) no cotejados contra un catálogo. Pendiente de verificación manual."
+  },
+  {
+    "id": "brenner-1976",
+    "tipo": "articulo",
+    "autores": [
+      "Brenner, Robert"
+    ],
+    "titulo": "Agrarian Class Structure and Economic Development in Pre-Industrial Europe",
+    "anio": 1976,
+    "publicacion": "Past and Present",
+    "doi": "10.1093/past/70.1.30",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "aston-philpin-1985",
+    "tipo": "libro",
+    "autores": [
+      "Aston, T. H. (ed.)",
+      "Philpin, C. H. E. (ed.)"
+    ],
+    "titulo": "The Brenner Debate: Agrarian Class Structure and Economic Development in Pre-Industrial Europe",
+    "anio": 1985,
+    "editorial": "Cambridge University Press",
+    "doi": "10.1017/cbo9780511562358",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual. DOI del volumen inferido de los DOI de sus capítulos (10.1017/cbo9780511562358.xxx); reseñas de 1987 confirman la obra."
+  },
+  {
+    "id": "wood-1999",
+    "tipo": "libro",
+    "autores": [
+      "Wood, Ellen Meiksins"
+    ],
+    "titulo": "The Origin of Capitalism",
+    "anio": 1999,
+    "editorial": "Monthly Review Press",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Open Library el 2026-09-14. Pendiente de verificación manual. Crossref confirma además una reseña de 2000. Existe edición ampliada (Verso, 2002) y traducción al español (Siglo XXI, 2017)."
+  },
+  {
+    "id": "harvey-2005",
+    "tipo": "libro",
+    "autores": [
+      "Harvey, David"
+    ],
+    "titulo": "A Brief History of Neoliberalism",
+    "anio": 2005,
+    "editorial": "Oxford University Press",
+    "doi": "10.1093/oso/9780199283262.001.0001",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "dobb-1946",
+    "tipo": "libro",
+    "autores": [
+      "Dobb, Maurice"
+    ],
+    "titulo": "Studies in the Development of Capitalism",
+    "anio": 1946,
+    "editorial": "Routledge & Kegan Paul",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Open Library el 2026-09-14. Pendiente de verificación manual. Crossref confirma además una reseña de 1947."
+  },
+  {
+    "id": "blackburn-1997",
+    "tipo": "libro",
+    "autores": [
+      "Blackburn, Robin"
+    ],
+    "titulo": "The Making of New World Slavery: From the Baroque to the Modern, 1492–1800",
+    "anio": 1997,
+    "editorial": "Verso",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Open Library el 2026-09-14. Pendiente de verificación manual. Crossref confirma reseñas de 1998–1999."
+  },
+  {
+    "id": "dumenil-levy-2011",
+    "tipo": "libro",
+    "autores": [
+      "Duménil, Gérard",
+      "Lévy, Dominique"
+    ],
+    "titulo": "The Crisis of Neoliberalism",
+    "anio": 2011,
+    "editorial": "Harvard University Press",
+    "doi": "10.4159/harvard.9780674059306",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref registra la edición en línea de 2013 (DOI). Año de primera edición 2011 no cotejado. Pendiente de verificación manual."
+  },
+  {
+    "id": "brenner-1998",
+    "tipo": "articulo",
+    "autores": [
+      "Brenner, Robert"
+    ],
+    "titulo": "The Economics of Global Turbulence",
+    "anio": 1998,
+    "publicacion": "New Left Review (número especial)",
+    "doi": "10.64590/le6",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "feenstra-inklaar-timmer-2015",
+    "tipo": "articulo",
+    "autores": [
+      "Feenstra, Robert C.",
+      "Inklaar, Robert",
+      "Timmer, Marcel P."
+    ],
+    "titulo": "The Next Generation of the Penn World Table",
+    "anio": 2015,
+    "publicacion": "American Economic Review",
+    "doi": "10.1257/aer.20130954",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual. Es la cita que exige la Penn World Table como condición de uso."
+  },
+  {
+    "id": "bolt-vanzanden-2020",
+    "tipo": "documento_oficial",
+    "autores": [
+      "Bolt, Jutta",
+      "van Zanden, Jan Luiten"
+    ],
+    "titulo": "Maddison style estimates of the evolution of the world economy. A new 2020 update",
+    "anio": 2020,
+    "publicacion": "Maddison Project Working Paper",
+    "url": "https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2020",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Título y año tomados de la página oficial de la versión 2020 de la Maddison Project Database (HTTP 200, 2026-09-14). Número del working paper no cotejado. Es la cita que exige la MPD 2020."
+  },
+  {
+    "id": "maddison-project-2020",
+    "tipo": "dataset",
+    "autores": [
+      "Bolt, Jutta",
+      "van Zanden, Jan Luiten"
+    ],
+    "titulo": "Maddison Project Database 2020",
+    "anio": 2020,
+    "publicacion": "Groningen Growth and Development Centre",
+    "url": "https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2020",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "URL comprobada (HTTP 200) el 2026-09-14. Licencia CC BY 4.0 según la página. Procedencia y hash en data/MANIFIESTO.json."
+  },
+  {
+    "id": "pwt-100",
+    "tipo": "dataset",
+    "autores": [
+      "Feenstra, Robert C.",
+      "Inklaar, Robert",
+      "Timmer, Marcel P."
+    ],
+    "titulo": "Penn World Table 10.0",
+    "anio": 2021,
+    "publicacion": "Groningen Growth and Development Centre",
+    "url": "https://www.rug.nl/ggdc/productivity/pwt/pwt-releases/pwt100",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "URL comprobada (HTTP 200) el 2026-09-14. Licencia CC BY 4.0 según la página. El año de publicación (2021) no aparece en la página consultada: verificar. Procedencia y hash en data/MANIFIESTO.json."
   }
 ]

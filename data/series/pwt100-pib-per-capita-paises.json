@@ -1,0 +1,29 @@
+{
+  "id": "pwt100-pib-per-capita-paises",
+  "indicador": "pib_per_capita",
+  "fuente_dataset": "pwt-100",
+  "cobertura_temporal": [
+    1950,
+    2019
+  ],
+  "cobertura_geografica": [
+    "argentina",
+    "brasil",
+    "china",
+    "costa-rica",
+    "estados-unidos",
+    "india",
+    "japon",
+    "mexico",
+    "reino-unido"
+  ],
+  "unidad": "rgdpe / pop: dólares internacionales a PPA encadenadas por persona (base según la leyenda de PWT 10.0)",
+  "nivel_evidencia": "estadistica_oficial",
+  "nota_metodologica": "PIB real por el lado del gasto dividido por la población. Según la leyenda de PWT 10.0: rgdpe = «Expenditure-side real GDP at chained PPPs (in mil. 2017US$)»; pop = «Population (in millions)». Se construye a partir de cuentas nacionales oficiales y de las comparaciones de precios del Programa de Comparación Internacional; el ajuste por paridad de poder adquisitivo es una construcción estadística, no una observación directa.",
+  "advertencias": [
+    "Fronteras actuales; los países que cambiaron de territorio (Alemania, ex URSS) requieren cuidado.",
+    "Las PPA encadenadas hacen comparables niveles entre países pero no reproducen las tasas de crecimiento oficiales."
+  ],
+  "granularidad": "regiones",
+  "archivo": "data/processed/pwt100-pib-per-capita-paises.csv"
+}

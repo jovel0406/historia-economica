@@ -63,6 +63,7 @@ export function serieValida(extra: Partial<Serie> = {}): Serie {
     nivel_evidencia: "estadistica_oficial",
     nota_metodologica: "Nota metodológica de prueba.",
     advertencias: [],
+    granularidad: "regiones",
     archivo: "data/processed/serie-prueba.csv",
     ...extra,
   };

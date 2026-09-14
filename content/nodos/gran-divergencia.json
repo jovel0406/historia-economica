@@ -122,9 +122,44 @@
       ],
       "que_la_refutaria": "Que el crecimiento del centro se hubiera producido igual sin los flujos de excedente periférico, o que los países que más extrajeron de la periferia hubieran sido los primeros en crecer de forma sostenida.",
       "peso_academico": "minoritaria"
+    },
+    {
+      "escuela": "marxista",
+      "mecanismo": "La transformación de las relaciones de clase en el campo inglés —campesinos desposeídos, arrendatarios que compiten y terratenientes que cobran rentas de mercado— creó la compulsión a invertir y elevar la productividad que ninguna otra región tuvo.",
+      "desarrollo": "Brenner sostiene que ni el comercio ni la demografía explican por qué Inglaterra rompió el techo malthusiano: lo hizo la estructura de clases agraria surgida de las luchas de los siglos XV y XVI, que dejó a terratenientes, arrendatarios y jornaleros dependientes del mercado y, por tanto, obligados a mejorar [@brenner-1976]. El debate que siguió —con demógrafos, historiadores franceses y otros marxistas— está recogido en *The Brenner Debate* [@aston-philpin-1985]; Wood lo generaliza como una explicación del origen del capitalismo distinta de la del «comercio que crece» [@wood-1999]. Dobb había planteado el problema de la transición desde el feudalismo en términos similares [@dobb-1946]. En Marx, el punto de partida es la «llamada acumulación originaria»: la separación violenta del productor y la tierra [@marx-1867].",
+      "autores_principales": [
+        "brenner-1976",
+        "aston-philpin-1985",
+        "wood-1999",
+        "dobb-1946",
+        "marx-1867"
+      ],
+      "evidencia_a_favor": [
+        "La singularidad de la estructura agraria inglesa —grandes propiedades arrendadas a agricultores capitalistas con jornaleros— frente al campesinado propietario de Francia [@brenner-1976].",
+        "El aumento de la productividad agrícola inglesa antes de la industrialización, que liberó trabajo para la manufactura y las ciudades."
+      ],
+      "evidencia_en_contra": [
+        "Las reconstrucciones de producto y salarios muestran una «pequeña divergencia» del noroeste europeo que incluye a Holanda, sin la estructura agraria inglesa [@allen-2001].",
+        "La compulsión competitiva no explica por qué las innovaciones decisivas fueron las que fueron ni por qué se concentraron en el siglo XVIII [@allen-2009] [@mokyr-2016]."
+      ],
+      "que_la_refutaria": "Que regiones con estructuras agrarias de campesinado propietario, como el norte de Francia o los Países Bajos, hubieran alcanzado la productividad agrícola y el crecimiento urbano ingleses en las mismas fechas, o que la productividad agraria inglesa no fuera excepcional antes de 1750.",
+      "peso_academico": "minoritaria"
     }
   ],
-  "series": [],
+  "series": [
+    {
+      "serie": "mpd2020-pib-per-capita-paises-pre1820",
+      "nota": "Reconstrucción conjetural del PIB per cápita de Reino Unido, China, India y Japón antes de 1820: es la evidencia numérica sobre la que discuten todas las escuelas, y su fragilidad es parte del debate."
+    },
+    {
+      "serie": "mpd2020-pib-per-capita-paises",
+      "nota": "Continuación de la misma serie desde 1820."
+    },
+    {
+      "serie": "mpd2020-pib-per-capita-regiones",
+      "nota": "Agregados regionales de Maddison desde 1820: Europa occidental frente a Asia oriental y meridional."
+    }
+  ],
   "aristas": [
     {
       "desde": "gran-divergencia",
@@ -171,7 +206,12 @@
     "inikori-2002",
     "eltis-engerman-2000",
     "xu-2011",
-    "findlay-orourke-2007"
+    "findlay-orourke-2007",
+    "brenner-1976",
+    "aston-philpin-1985",
+    "wood-1999",
+    "dobb-1946",
+    "marx-1867"
   ],
   "estado_editorial": "borrador"
 }

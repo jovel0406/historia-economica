@@ -11,17 +11,24 @@ integridad epistémica (§1) mandan sobre todo lo demás: ninguna fuente, cifra 
 
 ## Estado
 
-**MVP de la línea de tiempo** (2026-09-13), adelantando partes de los Hitos 2, 4 y 5 por decisión
-propia (ver D14 en `docs/DECISIONES.md`):
+**v1 completa** (2026-09-14): los siete hitos del SPEC §9 están implementados.
 
-- Fundamentos del Hito 1: esquemas Zod, validador con integridad referencial, tests.
-- Contenido real: 5 nodos con interpretaciones en disputa (`borrador`), 25 nodos `esqueleto`
-  que sitúan el resto de la línea de tiempo, 10 escuelas, 5 lentes regionales y 64 fuentes
-  cotejadas contra catálogos, todas `verified: false` hasta que el autor las verifique.
-- Interfaz: inicio, Vista Tiempo (bandas, marcadores, bordes difuminados, cinta de unidades del
-  curso, filtro y tooltip), páginas de nodo (Vista Debate embebida), escuelas y fuentes.
-- Pendiente: ingesta de datos y Vista Datos (Hito 3), selector global de escuela (Hito 5),
-  Vista Grafo (Hito 6), Vista Espacio (Hito 7).
+- Fundamentos: esquemas Zod, validador con integridad referencial, citas `[@id]`, hashes del
+  manifiesto y filas de CSV; 94 tests.
+- Contenido: 5 nodos con interpretaciones en disputa (`borrador`), 25 nodos `esqueleto`, 11
+  escuelas (las nueve mínimas, neoclásica-cliométrica y marxista), 5 lentes Costa Rica / América
+  Latina y 77 fuentes cotejadas contra catálogos, todas `verified: false` hasta que el autor las
+  verifique a mano.
+- Datos: ingesta de la Maddison Project Database 2020 y de la Penn World Table 10.0 con
+  procedencia y hashes en `data/MANIFIESTO.json`; 8 series con nivel de evidencia.
+- Vistas: Tiempo (D3), Espacio (mapa coroplético con advertencia de anacronismo y agregación a
+  macrorregión antes de 1900), Datos (Observable Plot, badges, notas, descarga de CSV), Debate
+  (en cada nodo, con comparación de dos escuelas), Grafo (D3, subgrafo ancestral «según quién»)
+  y selector global de escuela que reencuadra el sitio.
+- Despliegue: flujo de GitHub Pages en `.github/workflows/deploy.yml`.
+
+Queda como trabajo editorial, no técnico: verificar fuentes, pasar nodos de `borrador` a
+`revisado`, redactar esqueletos, y cargar imágenes con licencia.
 
 ## Requisitos
 
@@ -38,6 +45,7 @@ propia (ver D14 en `docs/DECISIONES.md`):
 | `pnpm test` / `pnpm run test:cobertura` | tests con Vitest; la cobertura exige ≥ 90 % en esquemas, validador e ingesta |
 | `pnpm run check` | `astro check` + `tsc --noEmit` |
 | `pnpm run build` | `validar:estricto && astro build`: si el contenido no pasa, no hay sitio |
+| `pnpm run ingesta` | corre todos los adaptadores (`ingesta:maddison`, `ingesta:pwt`): descarga, hash, normaliza, escribe `data/processed/` y el manifiesto. `-- --reutilizar` evita volver a descargar |
 | `pnpm run dev` | servidor de desarrollo de Astro |
 
 ## Cómo escribir contenido
@@ -60,7 +68,12 @@ propia (ver D14 en `docs/DECISIONES.md`):
 | vitest | 5.0.0 | compatible con el Vite 8 que trae Astro 7 |
 | @vitest/coverage-v8 | 5.0.0 | |
 | @astrojs/check | 0.9.10 | |
-| d3 | 7.9.0 | escalas de la línea de tiempo, calculadas en el build |
+| d3 | 7.9.0 | línea de tiempo (build), grafo de fuerzas y mapa (cliente) |
+| @observablehq/plot | 0.6.17 | gráficos de la Vista Datos |
+| xlsx | 0.18.5 | lectura de los Excel de Maddison y PWT en la ingesta |
+| topojson-client | 3.1.0 | geometrías del mapa |
+| world-atlas | 2.0.2 | Natural Earth 1:110m en TopoJSON |
+| world-countries | 5.1.0 | correspondencia ISO numérico ↔ alfa-3 y subregiones |
 | marked | 18.0.13 | markdown → HTML para los textos de contenido |
 | @types/d3 | 7.4.3 | |
 | tsx | 4.23.13 | ejecuta los scripts `.ts` de `scripts/` |
@@ -68,8 +81,7 @@ propia (ver D14 en `docs/DECISIONES.md`):
 | pnpm | 12.4.1 | fijado en `packageManager` |
 | node | 24.20.0 | entorno de desarrollo |
 
-Pendientes de instalar en hitos posteriores (versiones vigentes al 2026-09-13): `@observablehq/plot` 0.6.17,
-`@astrojs/react` 6.0.5 o `@astrojs/svelte` 9.0.1 (solo si aparece interactividad que lo exija).
+No se instaló ninguna isla de React o Svelte: toda la interactividad cabe en scripts de página.
 
 ## Estructura
 
@@ -89,7 +101,7 @@ data/MANIFIESTO.json         procedencia de cada dataset (origen, versión, fech
 data/series/*.json           metadatos de cada serie (indicador, nivel de evidencia, CSV)
 data/processed/*.csv         observaciones normalizadas, versionadas
 data/raw/                    descargas sin tocar (ignoradas por git)
-scripts/fetch/               un adaptador por dataset (Hito 3)
+scripts/fetch/               adaptadores de ingesta: comun.ts, maddison.ts, pwt.ts, todos.ts
 scripts/validar-contenido.ts
 scripts/reporte-bibliografia.ts
 src/schemas/                 esquemas Zod
@@ -98,13 +110,27 @@ src/lib/                     acceso al contenido validado y utilidades de texto 
 src/layouts/, src/styles/    diseño base
 src/components/              LineaDeTiempo.astro (SVG), AvisoFuentes.astro
 src/vistas/tiempo/layout.ts  geometría de la línea de tiempo (carriles, rangos de unidad), testeada
-src/pages/                   index, tiempo, nodos/, escuelas, fuentes
+src/pages/                   index, tiempo, espacio, datos (+ datos/[serie].csv), grafo, nodos/, escuelas, fuentes
 public/medios/               imágenes de los nodos (cada una con crédito y licencia en el nodo)
 tests/                       Vitest; fixtures válidos e inválidos en tests/fixtures/
 ```
 
+## Datos: procedencia y versiones
+
+`data/MANIFIESTO.json` registra, por dataset, origen, versión, fecha de descarga, licencia, cita
+requerida y el sha256 de cada archivo crudo y procesado. El validador comprueba los hashes de
+`data/processed/` en cada build. Las descargas crudas (`data/raw/`) no se versionan; se regeneran con
+`pnpm run ingesta`.
+
+Versiones ingeridas: **Maddison Project Database 2020** y **Penn World Table 10.0**, descargadas del
+sitio de Groningen. Existen la MPD 2023 y la PWT 10.01, pero se distribuyen por Dataverse detrás de un
+muro anti-bots que la ingesta no esquiva. Para actualizarlas: descargar a mano `mpd2023_web.xlsx` y
+`pwt1001.xlsx` (nombres, tamaños y SHA-1 oficiales en las notas del manifiesto) y adaptar las
+constantes `URL_*`/`RUTA_RAW` de los adaptadores.
+
 ## Despliegue
 
-Sitio estático en **GitHub Pages** (decisión en [docs/DECISIONES.md](docs/DECISIONES.md)). El flujo de
-despliegue se agrega cuando exista contenido publicable; hasta entonces `pnpm run build` es la única
-puerta y falla si el contenido no pasa la validación estricta.
+Sitio estático en **GitHub Pages** mediante `.github/workflows/deploy.yml`. El flujo corre
+`pnpm run build`, que valida el contenido en modo estricto antes de construir. Definí la variable
+`ASTRO_SITE` del repositorio con la URL pública. Los enlaces internos son absolutos, así que el sitio
+debe servirse desde la raíz de un dominio (sitio de usuario u organización, o dominio propio).

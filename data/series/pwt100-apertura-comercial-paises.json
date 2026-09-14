@@ -1,0 +1,29 @@
+{
+  "id": "pwt100-apertura-comercial-paises",
+  "indicador": "apertura_comercial",
+  "fuente_dataset": "pwt-100",
+  "cobertura_temporal": [
+    1950,
+    2019
+  ],
+  "cobertura_geografica": [
+    "argentina",
+    "brasil",
+    "china",
+    "costa-rica",
+    "estados-unidos",
+    "india",
+    "japon",
+    "mexico",
+    "reino-unido"
+  ],
+  "unidad": "(exportaciones + importaciones de mercancías) / PIB, en porcentaje, a PPA corrientes",
+  "nivel_evidencia": "estadistica_oficial",
+  "nota_metodologica": "Suma de las participaciones de exportaciones e importaciones de mercancías en el PIB por el lado del producto a PPA corrientes. Según la leyenda de PWT 10.0: csh_x = «Share of merchandise exports at current PPPs»; csh_m = «Share of merchandise imports at current PPPs» (con signo negativo en la base, aquí en valor absoluto). Excluye servicios: subestima la apertura de economías con exportaciones de servicios.",
+  "advertencias": [
+    "Solo mercancías; excluye servicios.",
+    "Participaciones a PPA, no a tipo de cambio de mercado."
+  ],
+  "granularidad": "regiones",
+  "archivo": "data/processed/pwt100-apertura-comercial-paises.csv"
+}

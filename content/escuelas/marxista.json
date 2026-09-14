@@ -1,0 +1,17 @@
+{
+  "id": "marxista",
+  "nombre": "Marxista",
+  "postulado_central": "El crecimiento moderno es el resultado de un cambio en las relaciones sociales de producción: la separación de los productores directos de sus medios de subsistencia —la «acumulación originaria»— creó una clase obligada a vender su fuerza de trabajo y una clase obligada a competir invirtiendo, y esa compulsión, no el comercio ni la técnica por sí mismos, es el motor de la productividad y de las crisis [@marx-1867]. En el debate sobre el origen del capitalismo, Brenner sitúa ese cambio en la estructura de clases agraria de Inglaterra, no en el comercio ni en la demografía [@brenner-1976] [@aston-philpin-1985] [@wood-1999]. Las crisis —de 1929, de los años setenta, de 2008— se leen como crisis de rentabilidad y de sobreacumulación, y el giro neoliberal como un proyecto de restauración del poder de clase [@brenner-1998] [@harvey-2005] [@dumenil-levy-2011].",
+  "autores_representativos": [
+    "marx-1867",
+    "dobb-1946",
+    "brenner-1976",
+    "aston-philpin-1985",
+    "wood-1999",
+    "brenner-1998",
+    "harvey-2005",
+    "dumenil-levy-2011",
+    "blackburn-1997"
+  ],
+  "critica_principal": "La explicación por relaciones de clase es difícil de contrastar cuantitativamente y tiende a explicar resultados muy distintos con el mismo mecanismo; la contabilidad histórica no encuentra en Inglaterra un salto de productividad agraria tan temprano y excepcional como la tesis de Brenner requiere, y las predicciones sobre la tendencia decreciente de la tasa de ganancia son empíricamente disputadas. Los críticos también señalan que la escuela subestima el papel de los precios relativos, la energía y el conocimiento útil [@allen-2009] [@mokyr-2016]."
+}

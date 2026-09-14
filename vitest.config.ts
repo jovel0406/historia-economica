@@ -7,6 +7,8 @@ export default defineConfig({
       provider: "v8",
       // SPEC §3: cobertura obligatoria en el validador de esquema y en el pipeline de ingesta.
       include: ["src/schemas/**", "src/validacion/**", "scripts/fetch/**"],
+      // todos.ts es solo la orquestación de línea de comandos; los adaptadores se testean directamente.
+      exclude: ["scripts/fetch/todos.ts"],
       thresholds: {
         lines: 90,
         functions: 90,

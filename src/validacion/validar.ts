@@ -1,4 +1,4 @@
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { basename, join, relative } from "node:path";
 import type { z } from "zod";
 import {
@@ -8,6 +8,7 @@ import {
   ArchivoUnidades,
   Bibliografia,
   ESCUELAS_MINIMAS_V1,
+  FilaCsv,
   Escuela,
   Manifiesto,
   Nodo,
@@ -67,6 +68,8 @@ export const REGLAS = {
   referenciaDataset: "referencia-dataset",
   referenciaCita: "referencia-cita",
   medioFaltante: "medio-faltante",
+  filaCsv: "fila-csv",
+  rawAusente: "raw-ausente",
   datoSinManifiesto: "dato-sin-manifiesto",
   hash: "hash",
   evidenciaPre1820: "evidencia-pre-1820",
@@ -240,6 +243,36 @@ export function cargarProyecto(opciones: Opciones, informe = new Informe()): { c
   };
 }
 
+/** Cada fila del CSV debe parsear, pertenecer a la serie y usar regiones conocidas (§11.3). */
+function validarFilasCsv(contenido: Contenido, s: Serie, informe: Informe): void {
+  const texto = readFileSync(join(contenido.raiz, s.archivo), "utf8");
+  const lineas = texto.split(/\r?\n/).filter((l) => l.trim().length > 0);
+  const cabecera = lineas[0]?.split(",") ?? [];
+  const esperada = ["serie", "region", "anio", "valor"];
+  if (esperada.some((c, i) => cabecera[i] !== c)) {
+    informe.error(REGLAS.filaCsv, s.archivo, `la cabecera debe empezar por "${esperada.join(",")}" (encontrada: "${cabecera.join(",")}")`);
+    return;
+  }
+  const [inicio, fin] = s.cobertura_temporal;
+  let erroresMostrados = 0;
+  for (let i = 1; i < lineas.length; i++) {
+    const celdas = (lineas[i] ?? "").split(",");
+    const fila = { serie: celdas[0], region: celdas[1], anio: celdas[2], valor: celdas[3], nota: celdas[4] };
+    const r = FilaCsv.safeParse(fila);
+    let mensaje: string | undefined;
+    if (!r.success) mensaje = r.error.issues.map((x) => `${x.path.join(".")}: ${x.message}`).join("; ");
+    else if (r.data.serie !== s.id) mensaje = `la fila pertenece a la serie "${r.data.serie}", no a "${s.id}"`;
+    else if (s.granularidad === "regiones" && !contenido.regiones.has(r.data.region)) mensaje = `región desconocida "${r.data.region}"`;
+    else if (s.granularidad === "paises-iso3" && !/^[A-Z]{3}$/.test(r.data.region)) mensaje = `se esperaba un código ISO3, no "${r.data.region}"`;
+    else if (r.data.anio < inicio || r.data.anio > fin) mensaje = `año ${r.data.anio} fuera de la cobertura declarada ${inicio}–${fin}`;
+    if (mensaje !== undefined && erroresMostrados < 5) {
+      informe.error(REGLAS.filaCsv, s.archivo, `línea ${i + 1}: ${mensaje}`);
+      erroresMostrados++;
+    }
+  }
+  if (lineas.length < 2) informe.error(REGLAS.filaCsv, s.archivo, "el CSV no tiene observaciones");
+}
+
 /** Comprueba integridad referencial y reglas que cruzan archivos. */
 export function validarReferencias(contenido: Contenido, informe: Informe): void {
   const { regiones, unidades, escuelas, fuentes, manifiesto, series, nodos, lentes, archivoDe } = contenido;
@@ -267,7 +300,11 @@ export function validarReferencias(contenido: Contenido, informe: Informe): void
       const rutaAbs = join(contenido.raiz, a.ruta);
       const ruta = `datasets.${i}.archivos.${j}`;
       if (!existsSync(rutaAbs)) {
-        informe.error(REGLAS.archivoFaltante, "data/MANIFIESTO.json", `el archivo manifestado "${a.ruta}" no existe`, ruta);
+        if (a.ruta.startsWith("data/raw/")) {
+          informe.info(REGLAS.rawAusente, "data/MANIFIESTO.json", `la descarga cruda "${a.ruta}" no está en este clon (data/raw/ no se versiona); el hash registrado permite verificarla al reingerir`, ruta);
+        } else {
+          informe.error(REGLAS.archivoFaltante, "data/MANIFIESTO.json", `el archivo manifestado "${a.ruta}" no existe`, ruta);
+        }
         return;
       }
       const real = sha256DeArchivo(rutaAbs);
@@ -296,6 +333,8 @@ export function validarReferencias(contenido: Contenido, informe: Informe): void
       informe.error(REGLAS.archivoFaltante, archivo, `el CSV "${s.archivo}" no existe`, "archivo");
     } else if (!archivosManifestados.has(s.archivo)) {
       informe.error(REGLAS.datoSinManifiesto, archivo, `el CSV "${s.archivo}" no figura en los archivos de ningún dataset del manifiesto`, "archivo");
+    } else {
+      validarFilasCsv(contenido, s, informe);
     }
     if (s.cobertura_temporal[0] < UMBRAL_MEDICION && s.nivel_evidencia === "reconstruccion_documentada") {
       informe.advertencia(

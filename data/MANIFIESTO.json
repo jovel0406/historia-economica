@@ -1,3 +1,80 @@
 {
-  "datasets": []
+  "datasets": [
+    {
+      "id": "maddison-2020",
+      "nombre": "Maddison Project Database 2020",
+      "institucion": "Groningen Growth and Development Centre, Rijksuniversiteit Groningen",
+      "url": "https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2020",
+      "version": "2020",
+      "fecha_descarga": "2026-09-14",
+      "licencia": "Creative Commons Attribution 4.0 International (CC BY 4.0), según la página de la versión 2020",
+      "cita_requerida": "Bolt, Jutta and Jan Luiten van Zanden (2020), “Maddison style estimates of the evolution of the world economy. A new 2020 update”, Maddison Project Database, version 2020. Cuando los datos se muestran en forma gráfica o se usan menos de 12 países, deben citarse además los papers originales listados en la hoja «Sources» de la base.",
+      "archivos": [
+        {
+          "ruta": "data/raw/mpd2020.xlsx",
+          "sha256": "d20853c2e0930d6855fb6d8138da11f24fcf313d234e2db9773ea1f551adfec3",
+          "bytes": 1764793
+        },
+        {
+          "ruta": "data/processed/mpd2020-pib-per-capita-paises-pre1820.csv",
+          "sha256": "1a7bc2754c054e98e1a80ebf11ddf7ed7ff7425e26d4abc04bea2731034eb3a3",
+          "bytes": 51130
+        },
+        {
+          "ruta": "data/processed/mpd2020-pib-per-capita-paises.csv",
+          "sha256": "b037e5009134617d69d170bec079a76129c71d731087b2255efc7a44d600dbe2",
+          "bytes": 67007
+        },
+        {
+          "ruta": "data/processed/mpd2020-pib-per-capita-regiones.csv",
+          "sha256": "ac809bfefa1458edb0c8068084a493e8593ca5149c051c29bf042cc86b54d6f5",
+          "bytes": 10364
+        },
+        {
+          "ruta": "data/processed/mpd2020-pib-per-capita-mapa-pre1820.csv",
+          "sha256": "53b12d122c38230e49c91007751ece1b9093cb0ab590f1971d566eb3794876cf",
+          "bytes": 207709
+        },
+        {
+          "ruta": "data/processed/mpd2020-pib-per-capita-mapa.csv",
+          "sha256": "c237ffb8532d37174f25945b54d9a15f0d4f3f91c1c613d6c41aa2edf7e4a336",
+          "bytes": 681689
+        }
+      ],
+      "notas": "Descargado del sitio de Groningen. La versión 2023 (Dataverse, doi:10.34894/INZBF2, archivo mpd2023_web.xlsx, 4 903 804 bytes, SHA-1 1480521f602fbd5df64e108867ac971caa00ed1a según la API de Dataverse) no se pudo descargar automáticamente: el servidor exige una prueba de trabajo anti-bots. Queda como descarga manual."
+    },
+    {
+      "id": "pwt-100",
+      "nombre": "Penn World Table 10.0",
+      "institucion": "Groningen Growth and Development Centre, Rijksuniversiteit Groningen",
+      "url": "https://www.rug.nl/ggdc/productivity/pwt/pwt-releases/pwt100",
+      "version": "10.0",
+      "fecha_descarga": "2026-09-14",
+      "licencia": "Creative Commons Attribution 4.0 International (CC BY 4.0), según la página de la versión 10.0",
+      "cita_requerida": "Feenstra, Robert C., Robert Inklaar and Marcel P. Timmer (2015), “The Next Generation of the Penn World Table”, American Economic Review, 105(10), 3150-3182, available for download at www.ggdc.net/pwt",
+      "archivos": [
+        {
+          "ruta": "data/raw/pwt100.xlsx",
+          "sha256": "1a13ca27ada7bcab29c15430b3fe7f4d6c3cf0d2ee3eef3aed31d0fc0a2085d3",
+          "bytes": 6561820
+        },
+        {
+          "ruta": "data/processed/pwt100-pib-per-capita-paises.csv",
+          "sha256": "440d7c0a9063ce9320996c67b4632a64f0906a1e8527fc9871a40d53c9afe556",
+          "bytes": 34725
+        },
+        {
+          "ruta": "data/processed/pwt100-pib-per-capita-mapa.csv",
+          "sha256": "b4d8f79da5b35ee16254a4b3ab8fec2631cd4ab367680b24cf19a5851acb236a",
+          "bytes": 501573
+        },
+        {
+          "ruta": "data/processed/pwt100-apertura-comercial-paises.csv",
+          "sha256": "fdb77cdf458099b32b8e98580618697af252a6da0003f528e2399b9872b9ea1e",
+          "bytes": 35539
+        }
+      ],
+      "notas": "Descargado del sitio de Groningen. La versión 10.01 (Dataverse, doi:10.34894/QT5BCC, archivo pwt1001.xlsx, 6 551 843 bytes, SHA-1 7461933f7561767ffbd77db3ab984d60cb21e9ef según la API de Dataverse) no se pudo descargar automáticamente: el servidor exige una prueba de trabajo anti-bots. Queda como descarga manual."
+    }
+  ]
 }

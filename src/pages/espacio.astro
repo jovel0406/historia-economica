@@ -1,0 +1,191 @@
+---
+import Base from "../layouts/Base.astro";
+import topologia from "world-atlas/countries-110m.json";
+import { contenido } from "../lib/contenido.ts";
+import { dataset, leerObservaciones } from "../lib/datos.ts";
+import { ADVERTENCIAS_MAPA, tablaPaises } from "../lib/geo.ts";
+import { INDICADORES_CANONICOS } from "../schemas/index.ts";
+
+const paises = tablaPaises();
+const nombresRegion = Object.fromEntries([...contenido().regiones.values()].map((r) => [r.id, r.nombre]));
+
+interface Fuente { id: string; nombre: string; nivel: string; anios: number[]; paises: Record<string, Record<string, number>>; regiones: Record<string, Record<string, number>>; cita: string; url: string }
+function fuente(id: string, nombre: string, serieMapa: string, serieRegiones: string | null, nivel: string): Fuente | null {
+  const sm = contenido().series.get(serieMapa);
+  if (sm === undefined) return null;
+  const ds = dataset(sm.fuente_dataset);
+  const porAnio: Record<string, Record<string, number>> = {};
+  for (const o of leerObservaciones(sm)) (porAnio[String(o.anio)] ??= {})[o.region] = o.valor;
+  const reg: Record<string, Record<string, number>> = {};
+  const sr = serieRegiones ? contenido().series.get(serieRegiones) : undefined;
+  if (sr) for (const o of leerObservaciones(sr)) (reg[String(o.anio)] ??= {})[o.region] = o.valor;
+  const anios = [...new Set([...Object.keys(porAnio), ...Object.keys(reg)].map(Number))].sort((a, b) => a - b);
+  return { id, nombre, nivel, anios, paises: porAnio, regiones: reg, cita: ds?.cita_requerida ?? "", url: ds?.url ?? "" };
+}
+const fuentes = [
+  fuente("mpd2020", "Maddison Project Database 2020", "mpd2020-pib-per-capita-mapa", "mpd2020-pib-per-capita-regiones", "reconstruccion_documentada"),
+  fuente("pwt100", "Penn World Table 10.0", "pwt100-pib-per-capita-mapa", null, "estadistica_oficial"),
+].filter((f): f is Fuente => f !== null);
+const indicadores = INDICADORES_CANONICOS.map((id) => ({ id, nombre: contenido().indicadores.get(id)?.nombre ?? id, disponible: id === "pib_per_capita" && fuentes.length > 0 }));
+const carga = { topologia, paises, nombresRegion, fuentes, umbralAnacronismo: 1900 };
+---
+<Base titulo="Mapa" ancho="completo">
+  <div class="contenedor">
+    <p class="sobretitulo">Vista Espacio</p>
+    <h1 style="margin-bottom:0.3em">Mapa por indicador y año</h1>
+    <p class="entradilla">Coroplético animable sobre el tiempo. Antes de 1900 el mapa no colorea países sino macrorregiones, porque las fronteras modernas no describen ese mundo.</p>
+    <div class="aviso" role="note">
+      <strong>Advertencia de anacronismo (parte del contenido, no un descargo).</strong>
+      <ul>{ADVERTENCIAS_MAPA.map((a) => <li>{a}</li>)}</ul>
+    </div>
+  </div>
+  <div class="espacio" data-espacio>
+    <script is:inline type="application/json" set:html={JSON.stringify(carga)} />
+    <div class="controles">
+      <label>Indicador
+        <select data-indicador>{indicadores.map((i) => <option value={i.id} disabled={!i.disponible}>{i.nombre}{i.disponible ? "" : " (sin datos ingeridos)"}</option>)}</select>
+      </label>
+      <label>Fuente
+        <select data-fuente>{fuentes.map((f) => <option value={f.id}>{f.nombre}</option>)}</select>
+      </label>
+      <label class="anio">Año <output data-anio-salida></output>
+        <input type="range" data-anio min="0" max="0" value="0" />
+      </label>
+      <button type="button" class="boton-sec" data-play>▶ Animar</button>
+      <span class="badge" data-badge></span>
+    </div>
+    <p class="modo aviso" data-modo hidden><strong>Año anterior a 1900:</strong> valores agregados a macrorregión (serie regional de la fuente). Cada país muestra el valor de su macrorregión.</p>
+    <div class="lienzo-mapa">
+      <svg data-svg viewBox="0 0 1200 600" width="100%" role="img" aria-label="Mapa coroplético"></svg>
+      <div class="leyenda" data-leyenda></div>
+      <div class="tooltip" data-tooltip hidden></div>
+    </div>
+    <p class="meta contenedor" data-cita></p>
+  </div>
+</Base>
+
+<style>
+  .espacio { margin-top: 1rem; }
+  .controles { display: flex; flex-wrap: wrap; gap: 0.8rem 1.4rem; align-items: end; font-size: 0.9rem; margin-bottom: 0.6rem; }
+  .controles label { display: flex; flex-direction: column; gap: 0.25rem; color: var(--tinta-2); }
+  .controles select { font: inherit; font-size: 0.9rem; padding: 0.3rem 0.5rem; border: 1px solid var(--linea); border-radius: 6px; background: white; }
+  .controles .anio { min-width: 320px; }
+  .controles input[type=range] { width: 100%; }
+  .boton-sec { font: inherit; font-size: 0.85rem; border: 1px solid var(--tinta-3); border-radius: 999px; padding: 0.35rem 0.9rem; background: white; cursor: pointer; }
+  .modo { margin: 0.4rem 0 0.8rem; }
+  .lienzo-mapa { position: relative; background: white; border: 1px solid var(--linea); border-radius: var(--radio); overflow: hidden; }
+  .leyenda { position: absolute; left: 1rem; bottom: 1rem; background: rgba(255,255,255,0.92); border: 1px solid var(--linea); border-radius: 8px; padding: 0.5rem 0.7rem; font-size: 0.78rem; }
+  .leyenda .barra { height: 10px; width: 220px; border-radius: 3px; margin: 0.3rem 0; }
+  .leyenda .ticks { display: flex; justify-content: space-between; color: var(--tinta-3); }
+  .tooltip { position: absolute; pointer-events: none; background: white; border: 1px solid var(--linea); border-radius: 8px; padding: 0.4rem 0.7rem; font-size: 0.82rem; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+</style>
+
+<script>
+  import * as d3 from "d3";
+  import * as topojson from "topojson-client";
+  import type { Topology, GeometryCollection } from "topojson-specification";
+  import type { Feature, Geometry } from "geojson";
+
+  interface Fuente { id: string; nombre: string; nivel: string; anios: number[]; paises: Record<string, Record<string, number>>; regiones: Record<string, Record<string, number>>; cita: string; url: string }
+  interface Carga { topologia: Topology; paises: { ccn3: string; cca3: string; nombre: string; macrorregion: string | null }[]; nombresRegion: Record<string, string>; fuentes: Fuente[]; umbralAnacronismo: number }
+
+  const raiz = document.querySelector<HTMLElement>("[data-espacio]");
+  if (raiz) {
+    const carga = JSON.parse(raiz.querySelector('script[type="application/json"]')!.textContent!) as Carga;
+    const svg = d3.select(raiz.querySelector<SVGSVGElement>("[data-svg]")!);
+    const selFuente = raiz.querySelector<HTMLSelectElement>("[data-fuente]")!;
+    const rango = raiz.querySelector<HTMLInputElement>("[data-anio]")!;
+    const salida = raiz.querySelector<HTMLOutputElement>("[data-anio-salida]")!;
+    const play = raiz.querySelector<HTMLButtonElement>("[data-play]")!;
+    const badge = raiz.querySelector<HTMLElement>("[data-badge]")!;
+    const modo = raiz.querySelector<HTMLElement>("[data-modo]")!;
+    const leyenda = raiz.querySelector<HTMLElement>("[data-leyenda]")!;
+    const cita = raiz.querySelector<HTMLElement>("[data-cita]")!;
+    const tooltip = raiz.querySelector<HTMLElement>("[data-tooltip]")!;
+
+    const porNumerico = new Map(carga.paises.map((p) => [p.ccn3, p]));
+    const objetos = carga.topologia.objects as Record<string, GeometryCollection>;
+    const paisesGeo = topojson.feature(carga.topologia, objetos["countries"]!) as unknown as { features: Feature<Geometry, { name: string }>[] };
+    const proyeccion = d3.geoNaturalEarth1().fitSize([1200, 600], { type: "Sphere" } as never);
+    const ruta = d3.geoPath(proyeccion);
+
+    svg.append("path").attr("d", ruta({ type: "Sphere" } as never)).attr("fill", "#f3f0ea").attr("stroke", "#d9d0c2");
+    const capa = svg.append("g");
+    const formas = capa.selectAll("path").data(paisesGeo.features).enter().append("path").attr("d", (d) => ruta(d) ?? "").attr("stroke", "white").attr("stroke-width", 0.5);
+
+    let fuente = carga.fuentes[0]!;
+    let temporizador: number | null = null;
+
+    function escalaColor(f: Fuente): d3.ScaleSequential<string> {
+      const valores = [...Object.values(f.paises).flatMap((v) => Object.values(v)), ...Object.values(f.regiones).flatMap((v) => Object.values(v))].filter((v) => v > 0);
+      const [lo, hi] = [d3.quantile(valores, 0.02) ?? 1, d3.quantile(valores, 0.98) ?? 10];
+      return d3.scaleSequentialLog(d3.interpolateYlGnBu).domain([lo, hi]).clamp(true);
+    }
+    let color = escalaColor(fuente);
+
+    function idNumerico(d: Feature): string {
+      return String(d.id ?? "").padStart(3, "0");
+    }
+
+    function pintar(): void {
+      const anio = fuente.anios[Number(rango.value)] ?? fuente.anios[0]!;
+      salida.value = String(anio);
+      const agregado = anio < carga.umbralAnacronismo;
+      modo.hidden = !agregado;
+      const regional = fuente.regiones[String(anio)] ?? {};
+      const nacional = fuente.paises[String(anio)] ?? {};
+      const valorDe = (d: Feature): number | null => {
+        const p = porNumerico.get(idNumerico(d));
+        if (!p) return null;
+        if (agregado) return p.macrorregion ? regional[p.macrorregion] ?? null : null;
+        return nacional[p.cca3] ?? null;
+      };
+      formas.attr("fill", (d) => { const v = valorDe(d); return v === null ? "#e6e1d8" : color(v); });
+      formas.on("mousemove", (ev: MouseEvent, d) => {
+        const p = porNumerico.get(idNumerico(d));
+        const v = valorDe(d);
+        const nivel = anio < 1820 ? "estimación conjetural" : fuente.nivel === "estadistica_oficial" ? "estadística oficial" : "reconstrucción documentada";
+        const region = p?.macrorregion ? carga.nombresRegion[p.macrorregion] ?? p.macrorregion : "sin macrorregión";
+        tooltip.innerHTML = `<strong>${p?.nombre ?? d.properties?.name ?? "?"}</strong> · ${anio}<br>${v === null ? "sin dato" : `${v.toLocaleString("es", { maximumFractionDigits: 0 })} (${nivel})`}${agregado ? `<br><span style="color:var(--tinta-3)">agregado de ${region}</span>` : ""}`;
+        tooltip.hidden = false;
+        const r = raiz!.querySelector(".lienzo-mapa")!.getBoundingClientRect();
+        tooltip.style.left = `${Math.min(ev.clientX - r.left + 12, r.width - 260)}px`;
+        tooltip.style.top = `${ev.clientY - r.top + 12}px`;
+      }).on("mouseleave", () => { tooltip.hidden = true; });
+      badge.textContent = anio < 1820 ? "estimación conjetural" : fuente.nivel === "estadistica_oficial" ? "estadística oficial" : "reconstrucción documentada";
+      badge.className = `badge ${anio < 1820 ? "badge-conjetural" : fuente.nivel === "estadistica_oficial" ? "badge-alto" : "badge-medio"}`;
+    }
+
+    function pintarLeyenda(): void {
+      const [lo, hi] = color.domain();
+      const pasos = 12;
+      const gradiente = d3.range(pasos + 1).map((i) => color(lo * Math.pow(hi / lo, i / pasos))).join(", ");
+      leyenda.innerHTML = `<div>PIB per cápita (escala logarítmica)</div><div class="barra" style="background: linear-gradient(90deg, ${gradiente})"></div><div class="ticks"><span>${Math.round(lo).toLocaleString("es")}</span><span>${Math.round(Math.sqrt(lo * hi)).toLocaleString("es")}</span><span>${Math.round(hi).toLocaleString("es")}</span></div><div style="margin-top:.3rem"><span style="display:inline-block;width:12px;height:12px;background:#e6e1d8;vertical-align:middle"></span> sin dato</div>`;
+    }
+
+    function cambiarFuente(): void {
+      fuente = carga.fuentes.find((f) => f.id === selFuente.value) ?? carga.fuentes[0]!;
+      color = escalaColor(fuente);
+      rango.max = String(fuente.anios.length - 1);
+      rango.value = String(Math.max(0, fuente.anios.length - 1));
+      cita.innerHTML = `Fuente: <a href="${fuente.url}">${fuente.nombre}</a>. Cita requerida: ${fuente.cita}`;
+      pintarLeyenda();
+      pintar();
+    }
+
+    rango.addEventListener("input", pintar);
+    selFuente.addEventListener("change", cambiarFuente);
+    play.addEventListener("click", () => {
+      if (temporizador !== null) { window.clearInterval(temporizador); temporizador = null; play.textContent = "▶ Animar"; return; }
+      if (Number(rango.value) >= fuente.anios.length - 1) rango.value = "0";
+      play.textContent = "⏸ Pausar";
+      temporizador = window.setInterval(() => {
+        const i = Number(rango.value) + 1;
+        if (i >= fuente.anios.length) { window.clearInterval(temporizador!); temporizador = null; play.textContent = "▶ Animar"; return; }
+        rango.value = String(i);
+        pintar();
+      }, 450);
+    });
+    cambiarFuente();
+  }
+</script>

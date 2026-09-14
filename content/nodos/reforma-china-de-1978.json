@@ -76,7 +76,20 @@
       "peso_academico": "sustancial"
     }
   ],
-  "series": [],
+  "series": [
+    {
+      "serie": "pwt100-pib-per-capita-paises",
+      "nota": "PIB per cápita de China desde 1950: el quiebre de 1978."
+    },
+    {
+      "serie": "pwt100-apertura-comercial-paises",
+      "nota": "La integración comercial de China tras la reforma y el ingreso a la OMC."
+    },
+    {
+      "serie": "mpd2020-pib-per-capita-paises",
+      "nota": "Perspectiva de largo plazo de China frente a Japón y Reino Unido."
+    }
+  ],
   "aristas": [
     {
       "desde": "reforma-china-de-1978",

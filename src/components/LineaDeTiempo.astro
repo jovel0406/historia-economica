@@ -47,6 +47,7 @@ interface Item {
   resumen: string;
   unidades: number[];
   disputada: boolean;
+  escuelas: string[];
 }
 const items: Item[] = nodos.map((n) => {
   const x0 = x(n.periodo.inicio);
@@ -67,6 +68,7 @@ const items: Item[] = nodos.map((n) => {
     resumen: n.resumen,
     unidades: us.map((u) => u.numero),
     disputada: n.periodo.precision === "disputada",
+    escuelas: n.interpretaciones.map((i) => i.escuela),
   };
 });
 const carriles = asignarCarriles(
@@ -101,6 +103,7 @@ const titulosUnidad = new Map(unidades.map((u) => [u.id, u.titulo]));
       <li><span class="muestra rombo"></span> evento (marcador puntual)</li>
       <li><span class="muestra difuminada"></span> bordes difuminados: periodización disputada</li>
       <li><span class="muestra esqueleto"></span> contorno discontinuo: nodo esqueleto, sin interpretaciones aún</li>
+      <li><span class="muestra" style="opacity:.2"></span> atenuado: la escuela activa no interpreta ese nodo</li>
     </ul>
   </div>
 
@@ -146,7 +149,7 @@ const titulosUnidad = new Map(unidades.map((u) => [u.id, u.titulo]));
         const y = yDe(it.id);
         const relleno = it.disputada ? `url(#grad-${it.id})` : it.color;
         return (
-          <a href={`/nodos/${it.id}`} class={`nodo nodo-${it.tipo} estado-${it.estado}`} data-unidades={it.unidades.join(" ")} data-titulo={it.titulo} data-periodo={it.periodo} data-resumen={it.resumen} data-estado={ETIQUETA_ESTADO[it.estado as keyof typeof ETIQUETA_ESTADO]} data-precision={ETIQUETA_PRECISION[it.precision as keyof typeof ETIQUETA_PRECISION]} data-color={it.color}>
+          <a href={`/nodos/${it.id}`} class={`nodo nodo-${it.tipo} estado-${it.estado}`} data-unidades={it.unidades.join(" ")} data-escuelas={it.escuelas.join(" ")} data-titulo={it.titulo} data-periodo={it.periodo} data-resumen={it.resumen} data-estado={ETIQUETA_ESTADO[it.estado as keyof typeof ETIQUETA_ESTADO]} data-precision={ETIQUETA_PRECISION[it.precision as keyof typeof ETIQUETA_PRECISION]} data-color={it.color}>
             {it.tipo === "proceso" ? (
               <rect x={it.x0} y={y} width={Math.max(4, it.x1 - it.x0)} height={ALTO_BANDA} rx="6" fill={relleno} stroke={it.color} />
             ) : (

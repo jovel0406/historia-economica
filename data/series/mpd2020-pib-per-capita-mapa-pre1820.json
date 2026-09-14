@@ -1,0 +1,22 @@
+{
+  "id": "mpd2020-pib-per-capita-mapa-pre1820",
+  "indicador": "pib_per_capita",
+  "fuente_dataset": "maddison-2020",
+  "cobertura_temporal": [
+    1,
+    1819
+  ],
+  "cobertura_geografica": [
+    "mundo"
+  ],
+  "unidad": "dólares internacionales de 2011 (PPA) por persona y año",
+  "nivel_evidencia": "estimacion_conjetural",
+  "nota_metodologica": "PIB per cápita en dólares internacionales de 2011 (paridad de poder adquisitivo), según la hoja «GDP pc 2011 prices» de la MPD 2020. Las cifras combinan estadísticas nacionales recientes con reconstrucciones de historiadores económicos a partir de salarios, precios, producción agraria y población; la MPD 2020 volvió parcialmente al método original de Maddison para los niveles históricos (Bolt y van Zanden, 2020). No es una observación: es una estimación con márgenes amplios, mayores cuanto más atrás.",
+  "advertencias": [
+    "Antes de 1820 toda cifra es una estimación conjetural (SPEC §1.4).",
+    "Fronteras modernas aplicadas a todo el período.",
+    "Solo se usa para el mapa; para años anteriores a 1900 la Vista Espacio agrega a macrorregión."
+  ],
+  "granularidad": "paises-iso3",
+  "archivo": "data/processed/mpd2020-pib-per-capita-mapa-pre1820.csv"
+}
