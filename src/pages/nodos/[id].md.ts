@@ -52,6 +52,6 @@ export const GET: APIRoute = ({ params }) => {
     }
     L.push("");
   }
-  L.push("---", "", "Exportado de la plataforma «Historia económica mundial». Las citas `[@id]` remiten a la lista de fuentes. Ninguna cifra de este texto carece de fuente; ninguna fuente marcada «sin verificar» ha sido comprobada por el autor.", "");
+  L.push("---", "", "Exportado de la plataforma «Historia económica mundial». Las citas `[@id]` remiten a la lista de fuentes. Ninguna cifra de este texto carece de fuente; ninguna fuente marcada «sin verificar» ha sido comprobada todavía.", "");
   return new Response(L.join("\n"), { headers: { "Content-Type": "text/markdown; charset=utf-8" } });
 };

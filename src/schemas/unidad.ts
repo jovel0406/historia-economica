@@ -2,7 +2,7 @@ import { z } from "zod";
 import { Anio, Slug, TextoNoVacio } from "./comunes.ts";
 
 /**
- * Unidades de referencia para la Vista Tiempo (ver docs/DECISIONES.md).
+ * Unidades de referencia para la Vista Tiempo (ver docs/DECISIONES.md, D11).
  * Son las ocho unidades oficiales del curso: organizan la línea de tiempo como capa de lectura,
  * no como periodización histórica. Un nodo puede pertenecer a varias unidades.
  */

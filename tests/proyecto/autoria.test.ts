@@ -132,10 +132,10 @@ describe("artefactos de autoría", () => {
 describe("quitarCoautor", () => {
   it("borra solo los coautores que coinciden con el prefijo y respeta a los demás", async () => {
     const { quitarCoautor } = await import("../../scripts/autoria.ts");
-    const mensaje = "Título\n\nCuerpo del commit.\n\nCo-Authored-By: Herramienta Automatica <bot@ejemplo.org>\nCo-Authored-By: Otra Persona <otra@ejemplo.org>\n";
+    const mensaje = "Título\n\nCuerpo del commit.\n\nCo-Authored-By: Herramienta Automática <bot@ejemplo.org>\nCo-Authored-By: Otra Persona <otra@ejemplo.org>\n";
     const limpio = quitarCoautor(mensaje, "Herramienta");
     expect(limpio).toContain("Co-Authored-By: Otra Persona <otra@ejemplo.org>");
-    expect(limpio).not.toContain("Herramienta Automatica");
+    expect(limpio).not.toContain("Herramienta Automática");
     expect(limpio.endsWith("\n")).toBe(true);
     expect(limpio).not.toMatch(/\n\n\n/);
   });

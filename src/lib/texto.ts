@@ -82,7 +82,7 @@ export const ETIQUETA_ESTADO: Record<EstadoEditorial, string> = {
 export const DESCRIPCION_ESTADO: Record<EstadoEditorial, string> = {
   esqueleto: "Solo título, período y resumen. Sin interpretaciones todavía.",
   borrador: "Contenido completo, pendiente de revisión editorial y de verificación de fuentes.",
-  revisado: "Revisado por el autor.",
+  revisado: "Revisado y dado por bueno.",
 };
 
 export const ETIQUETA_CONSENSO: Record<Consenso, string> = {

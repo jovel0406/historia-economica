@@ -93,7 +93,7 @@ No se instaló ninguna isla de React o Svelte: toda la interactividad cabe en sc
 ## Estructura
 
 ```
-docs/SPEC.md                 especificación completa
+docs/SPEC.md                 especificación del proyecto
 docs/DECISIONES.md           registro de decisiones de arquitectura
 docs/MODELO-DATOS.md         entidades, dónde vive cada una y cómo se unen
 content/nodos/*.json         un archivo por nodo (id = nombre del archivo)

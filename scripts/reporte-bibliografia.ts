@@ -1,6 +1,6 @@
 /**
  * `pnpm run bibliografia:reporte` (SPEC §4.5): lista las fuentes pendientes de verificación o dudosas
- * y qué contenido depende de cada una. Solo el autor marca una fuente como verificada, a mano.
+ * y qué contenido depende de cada una. Una fuente solo se marca como verificada a mano, tras comprobarla.
  *
  *   --raiz                 raíz del repositorio
  *   --json                 salida en JSON

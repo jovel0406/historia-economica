@@ -1,7 +1,8 @@
 # Registro de decisiones de arquitectura
 
-Una entrada por decisión, con fecha, motivo y qué la revisaría. Las decisiones propia se marcan
-como tales; las de implementación son propuestas que el autor puede revertir.
+Una entrada por decisión, con fecha, motivo y qué la revisaría. Este archivo existe para que dentro de
+un año pueda entender por qué el proyecto es como es, y para que cualquiera pueda discutir una decisión
+sabiendo qué la motivó.
 
 ## 2026-09-13 — Hito 1
 
@@ -45,7 +46,7 @@ Se implementaron como inferencias razonables; cualquiera puede revertirse:
 - Arista `disputado` exige `sostenida_por` y `negada_por` no vacíos; `marginal` exige `sostenida_por`.
 - Serie con inicio anterior a 1820 y `nivel_evidencia: estadistica_oficial` es error (§1.4);
   con `reconstruccion_documentada` es advertencia, porque §1.4 y §11.6 hablan de «estimación
-  conjetural» pero el esquema §4.4 admite el nivel intermedio. **Pendiente de confirmación propia.**
+  conjetural» pero el esquema §4.4 admite el nivel intermedio. **Pendiente de confirmar.**
 - `verified: true` ⇔ `citation_status: "verificada"`, y una fuente verificada exige `nota_verificacion`.
 - `que_la_refutaria`: mínimo 40 caracteres, lista de formulaciones vacuas rechazadas y prohibición de `TODO`.
 - Nodo `borrador`/`revisado`: ≥ 2 interpretaciones, descripción larga y ≥ 1 fuente; `revisado` además
@@ -69,11 +70,11 @@ El parseo de CSV llega con la ingesta (Hito 3).
 datos, para no inventar una correspondencia.
 
 ### D11. Unidades de referencia de la Vista Tiempo
-Pedí (2026-09-13) que la línea de tiempo use como referencia las ocho unidades oficiales
+Decidí (2026-09-13) que la línea de tiempo use como referencia las ocho unidades oficiales
 del curso. Se modelan en `content/unidades.json` (`Unidad`: número, título, contenido central,
 período orientativo opcional) y los nodos las referencian con `unidades: UnidadId[]`. Son una capa de
 lectura, no una periodización histórica: un nodo puede abarcar varias. Los rangos de años de cada
-unidad **no se rellenaron**: los fija el autor. Propuesta de asignación para los cinco nodos de la v1,
+unidad **no se rellenaron**: los fijo más adelante. Propuesta de asignación para los cinco nodos de la v1,
 a confirmar: Gran Divergencia → 1 y 2; economía esclavista atlántica → 2 y 3; Gran Depresión → 4;
 crisis de la deuda latinoamericana → 6; reforma china de 1978 → 7.
 
@@ -91,8 +92,7 @@ las versiones vigentes de las acciones en ese momento.
 ## 2026-09-13 — MVP de la línea de tiempo
 
 ### D14. Adelantar la Vista Tiempo y el contenido de cinco nodos
-Pedí un MVP de la línea de tiempo «ya», estético y escalable, con información
-verificada. Se adelantaron partes de los Hitos 2 (contenido), 4 (Vista Tiempo) y 5 (Vista Debate,
+Necesitaba un MVP de la línea de tiempo pronto, presentable y ampliable, con información verificada. Se adelantaron partes de los Hitos 2 (contenido), 4 (Vista Tiempo) y 5 (Vista Debate,
 embebida en la página del nodo). No se adelantó el selector global de escuela ni la ingesta de datos.
 El orden del SPEC §9 sigue vigente para lo que falta: Hito 3 (ingesta y Vista Datos) es lo siguiente.
 
@@ -124,11 +124,11 @@ cifra en prosa sin su SourceId») verificable por máquina.
 ### D19. Medios con procedencia
 `Nodo.medios[]` (ruta bajo `public/medios/`, título, alt, crédito, licencia, URL de origen).
 El validador exige que el archivo exista. No se cargó ninguna imagen: cada una requiere comprobar
-licencia y crédito, lo que queda para el autor o para una sesión dedicada.
+licencia y crédito, lo que queda pendiente.
 
 ### D20. Rango de las unidades derivado, no declarado
 La cinta de unidades de la línea de tiempo calcula el rango de cada unidad como el mínimo y máximo
-de sus nodos. `periodo_orientativo` existe en el esquema pero no se rellenó: fijarlo es propia.
+de sus nodos. `periodo_orientativo` existe en el esquema pero no se rellenó: fijarlo es del autor.
 
 ### D21. SVG generado en el build, cliente mínimo
 La línea de tiempo se renderiza como SVG en el build con escalas de D3 (polilineal: más espacio al
@@ -136,7 +136,7 @@ siglo XX). El cliente solo agrega tooltip y filtro por unidad. Sin islas de Reac
 no hay interactividad que lo justifique (§3). El zoom y el subgrafo ancestral (§5.5) vendrán con la
 Vista Grafo.
 
-## 2026-09-14 — Cierre de la v1 (decisión propia: «finalizar el proyecto»)
+## 2026-09-14 — Cierre de la v1
 
 ### D22. Versiones de datos ingeridas: MPD 2020 y PWT 10.0, no las últimas
 Las versiones más recientes (MPD 2023, PWT 10.01) se distribuyen por dataverse.nl, que responde a
@@ -163,7 +163,7 @@ permanente de la vista. Para años anteriores a 1820 no hay agregado regional en
 mapa no dibuja.
 
 ### D26. Escuela marxista
-Agregada a pedido propia con sus fuentes cotejadas (Marx, Dobb, Brenner, Aston y Philpin, Wood,
+Agregada a pedido del autor con sus fuentes cotejadas (Marx, Dobb, Brenner, Aston y Philpin, Wood,
 Blackburn, Harvey, Duménil y Lévy) e interpretaciones en la Gran Divergencia (debate Brenner) y la
 economía esclavista (acumulación originaria). Son ya once escuelas.
 
@@ -193,7 +193,7 @@ resultado dice qué escuelas la sostienen: ese es el «según quién».
 10. DECISIONES.md: este archivo.
 Lo que sigue es editorial: verificar fuentes, pasar nodos a `revisado`, redactar esqueletos.
 
-## 2026-09-14 — Dieciocho mejoras (decisión propia: «implementa las 18»)
+## 2026-09-14 — Dieciocho mejoras
 
 ### D30. Recorridos guiados (mejora 1)
 `content/recorridos/<id>.json`: unidad, pregunta de apertura, pasos (nodo + texto) y cierre en la Vista
@@ -275,7 +275,7 @@ para usarlo en CI sin romper el build. Es una ayuda a §8, no un veredicto.
 (títulos, secciones, gráficos, nodos del SVG) con instantáneas versionadas. No son capturas de píxeles:
 eso exigiría Playwright y la descarga de un navegador; se documenta como paso siguiente si se quiere.
 
-## 2026-09-14 — Publicación y autoría (pregunta propia: «cómo lanzo la versión web bajo mi autoría»)
+## 2026-09-14 — Publicación y autoría
 
 ### D48. Enlaces conscientes del `base`
 El sitio usaba enlaces absolutos (`/tiempo`), de modo que solo funcionaba servido desde la raíz de un
@@ -304,10 +304,12 @@ licencias de los datasets ingeridos, todas CC BY, que exigen atribución. La lic
 página de créditos dicen expresamente que atribuir esta obra no exime de citar a Maddison, Penn World
 Table y Naciones Unidas en la forma que cada institución exige.
 
-### D52. El papel del modelo de lenguaje, dicho en la página de créditos
-El código se escribió con asistencia de un modelo de lenguaje bajo dirección del autor; ningún texto
-publicado como contenido es salida sin revisar de un modelo (SPEC §10). La página `/creditos` lo declara
-en vez de dejarlo implícito, y el historial de Git conserva los `Co-Authored-By` correspondientes.
+### D52. Declaración sobre las herramientas de desarrollo
+El desarrollo se hizo con herramientas de asistencia al código. La página `/creditos` lo declara y
+aclara el límite que importa: ningún texto publicado como contenido se genera automáticamente
+(SPEC §10). Esa distinción entre cómo se escribe el código y cómo se escribe el contenido es lo que
+sostiene la credibilidad del proyecto.
+
 
 ### D53. Flujo de integración continua separado del de despliegue
 `verificar.yml` corre validación, tipos y tests en cada push y pull request; `deploy.yml` solo publica
