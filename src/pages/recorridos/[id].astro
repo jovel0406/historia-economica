@@ -2,7 +2,7 @@
 import { enlace } from "../../lib/rutas.ts";
 import Base from "../../layouts/Base.astro";
 import { colorUnidad, contenido, recorridosOrdenados } from "../../lib/contenido.ts";
-import { ETIQUETA_ESTADO, periodoTexto, renderMarkdown } from "../../lib/texto.ts";
+import { periodoTexto, renderMarkdown } from "../../lib/texto.ts";
 export function getStaticPaths() {
   return recorridosOrdenados().map((r) => ({ params: { id: r.id } }));
 }
@@ -21,7 +21,7 @@ const nodo = (id: string) => contenido().nodos.get(id);
         <li class="paso" style={`--c: ${colorUnidad(u?.numero)}`}>
           <div class="num">{i + 1}</div>
           <div>
-            <h2><a href={enlace(`/nodos/${p.nodo}`)}>{n?.titulo}</a> <span class={`badge badge-${n?.estado_editorial}`}>{n && ETIQUETA_ESTADO[n.estado_editorial]}</span></h2>
+            <h2><a href={enlace(`/nodos/${p.nodo}`)}>{n?.titulo}</a></h2>
             <p class="meta">{n && periodoTexto(n.periodo)}</p>
             <div class="prosa" set:html={renderMarkdown(p.texto)} />
           </div>

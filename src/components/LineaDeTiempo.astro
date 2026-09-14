@@ -7,7 +7,7 @@ import { enlace } from "../lib/rutas.ts";
  */
 import * as d3 from "d3";
 import { ANIO_ACTUAL, colorUnidad, nodosOrdenados, unidadesDe, unidadesOrdenadas } from "../lib/contenido.ts";
-import { ETIQUETA_ESTADO, ETIQUETA_PRECISION, periodoTexto } from "../lib/texto.ts";
+import { ETIQUETA_PRECISION, periodoTexto } from "../lib/texto.ts";
 import { anchoEtiqueta, asignarCarriles, rangosUnidades } from "../vistas/tiempo/layout.ts";
 
 interface Props {
@@ -120,7 +120,7 @@ const titulosUnidad = new Map(unidades.map((u) => [u.id, u.titulo]));
       <li><span class="muestra banda"></span> proceso (banda con duración)</li>
       <li><span class="muestra rombo"></span> evento (marcador puntual)</li>
       <li><span class="muestra difuminada"></span> bordes difuminados: periodización disputada</li>
-      <li><span class="muestra esqueleto"></span> contorno discontinuo: nodo esqueleto, sin interpretaciones aún</li>
+      <li><span class="muestra esqueleto"></span> contorno discontinuo: sección en preparación</li>
       <li><span class="muestra" style="opacity:.2"></span> atenuado: la escuela activa no interpreta ese nodo</li>
     </ul>
   </div>
@@ -167,7 +167,7 @@ const titulosUnidad = new Map(unidades.map((u) => [u.id, u.titulo]));
         const y = yDe(it.id);
         const relleno = it.disputada ? `url(#grad-${idVista}-${it.id})` : it.color;
         return (
-          <a href={enlace(`/nodos/${it.id}`)} class={`nodo nodo-${it.tipo} estado-${it.estado}`} data-unidades={it.unidades.join(" ")} data-escuelas={it.escuelas.join(" ")} data-titulo={it.titulo} data-inicio={String(nodos.find((n) => n.id === it.id)?.periodo.inicio ?? "")} data-periodo={it.periodo} data-resumen={it.resumen} data-estado={ETIQUETA_ESTADO[it.estado as keyof typeof ETIQUETA_ESTADO]} data-precision={ETIQUETA_PRECISION[it.precision as keyof typeof ETIQUETA_PRECISION]} data-color={it.color}>
+          <a href={enlace(`/nodos/${it.id}`)} class={`nodo nodo-${it.tipo} estado-${it.estado}`} data-unidades={it.unidades.join(" ")} data-escuelas={it.escuelas.join(" ")} data-titulo={it.titulo} data-inicio={String(nodos.find((n) => n.id === it.id)?.periodo.inicio ?? "")} data-periodo={it.periodo} data-resumen={it.resumen} data-precision={ETIQUETA_PRECISION[it.precision as keyof typeof ETIQUETA_PRECISION]} data-color={it.color}>
             {it.tipo === "proceso" ? (
               <rect x={it.x0} y={y} width={Math.max(4, it.x1 - it.x0)} height={ALTO_BANDA} rx="6" fill={relleno} stroke={it.color} />
             ) : (
@@ -188,7 +188,7 @@ const titulosUnidad = new Map(unidades.map((u) => [u.id, u.titulo]));
   </div>
   <div class="tiempo-tooltip" hidden data-tooltip>
     <div class="tt-cabecera"><span class="tt-punto"></span><strong data-tt="titulo"></strong></div>
-    <div class="tt-meta"><span data-tt="periodo"></span> · <span data-tt="precision"></span> · <span data-tt="estado"></span></div>
+    <div class="tt-meta"><span data-tt="periodo"></span> · <span data-tt="precision"></span></div>
     <p data-tt="resumen"></p>
     <div class="tt-pie">Clic para abrir el nodo · <span data-tt-mapa></span></div>
   </div>
@@ -245,7 +245,6 @@ const titulosUnidad = new Map(unidades.map((u) => [u.id, u.titulo]));
         campo("titulo").textContent = el.dataset.titulo ?? "";
         campo("periodo").textContent = el.dataset.periodo ?? "";
         campo("precision").textContent = el.dataset.precision ?? "";
-        campo("estado").textContent = el.dataset.estado ?? "";
         campo("resumen").textContent = el.dataset.resumen ?? "";
         const mapa = tooltip.querySelector<HTMLElement>("[data-tt-mapa]");
         if (mapa) mapa.textContent = `mapa en ${el.dataset.inicio ?? ""} desde la página del nodo`;

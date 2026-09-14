@@ -8,7 +8,7 @@ const fuentes = [...contenido().fuentes.values()].sort((a, b) => a.id.localeComp
 const pendientes = fuentes.filter((f) => !f.verified);
 const deps = dependenciasPorFuente(contenido());
 ---
-<Base titulo="Verificación de fuentes">
+<Base titulo="Verificación de fuentes" descripcion="Página de trabajo editorial, no forma parte del recorrido público.">
   <p class="sobretitulo">Flujo editorial</p>
   <h1>Verificar fuentes</h1>
   <p class="entradilla">{pendientes.length} de {fuentes.length} fuentes esperan verificación manual. Para cada una, abrí el DOI o la URL, comprobá autores, título, año y editorial, y generá el fragmento o el comando que registra la verificación. Nada cambia en el sitio hasta que ese cambio se versiona en Git.</p>

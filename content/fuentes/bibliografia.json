@@ -2065,5 +2065,456 @@
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
     "nota_verificacion": "Crossref lista solo a Blanchard como autor del capítulo; la autoría conjunta debe comprobarse."
+  },
+  {
+    "id": "lardy-2014",
+    "tipo": "libro",
+    "autores": [
+      "Lardy, Nicholas R."
+    ],
+    "titulo": "Markets over Mao: The Rise of Private Business in China",
+    "anio": 2014,
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": false
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref devuelve otros trabajos de Lardy pero no un DOI para esta obra. Editorial (Peterson Institute for International Economics) no cotejada."
+  },
+  {
+    "id": "lardy-2019",
+    "tipo": "libro",
+    "autores": [
+      "Lardy, Nicholas R."
+    ],
+    "titulo": "The State Strikes Back: The End of Economic Reform in China?",
+    "anio": 2019,
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": false
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref no devuelve DOI para esta obra. Editorial (Peterson Institute for International Economics) no cotejada."
+  },
+  {
+    "id": "autor-dorn-hanson-2013",
+    "tipo": "articulo",
+    "autores": [
+      "Autor, David H.",
+      "Dorn, David",
+      "Hanson, Gordon H."
+    ],
+    "titulo": "The China Syndrome: Local Labor Market Effects of Import Competition in the United States",
+    "anio": 2013,
+    "publicacion": "NBER Working Paper 18054",
+    "doi": "10.3386/w18054",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Se cita la versión de trabajo del NBER (2012). La publicada en American Economic Review (2013) no fue cotejada."
+  },
+  {
+    "id": "hsieh-klenow-2009",
+    "tipo": "articulo",
+    "autores": [
+      "Hsieh, Chang-Tai",
+      "Klenow, Peter J."
+    ],
+    "titulo": "Misallocation and Manufacturing TFP in China and India",
+    "anio": 2009,
+    "publicacion": "The Quarterly Journal of Economics",
+    "doi": "10.2139/ssrn.1442871",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "El DOI cotejado corresponde al depósito en SSRN; el de la versión en Quarterly Journal of Economics no fue devuelto por Crossref."
+  },
+  {
+    "id": "song-storesletten-zilibotti-2011",
+    "tipo": "articulo",
+    "autores": [
+      "Song, Zheng",
+      "Storesletten, Kjetil",
+      "Zilibotti, Fabrizio"
+    ],
+    "titulo": "Growing Like China",
+    "anio": 2011,
+    "publicacion": "American Economic Review",
+    "doi": "10.1257/aer.101.1.196",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion"
+  },
+  {
+    "id": "milanovic-2019",
+    "tipo": "libro",
+    "autores": [
+      "Milanovic, Branko"
+    ],
+    "titulo": "Capitalism, Alone: The Future of the System That Rules the World",
+    "anio": 2019,
+    "editorial": "Harvard University Press",
+    "doi": "10.4159/9780674242852",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref registra solo el título principal."
+  },
+  {
+    "id": "klein-pettis-2020",
+    "tipo": "libro",
+    "autores": [
+      "Klein, Matthew C.",
+      "Pettis, Michael"
+    ],
+    "titulo": "Trade Wars Are Class Wars: How Rising Inequality Distorts the Global Economy and Threatens International Peace",
+    "anio": 2020,
+    "editorial": "Yale University Press",
+    "doi": "10.12987/9780300252750",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref registra solo el título principal."
+  },
+  {
+    "id": "naughton-2015",
+    "tipo": "capitulo",
+    "autores": [
+      "Naughton, Barry"
+    ],
+    "titulo": "The Transformation of the State Sector: SASAC, the Market Economy, and the New National Champions",
+    "anio": 2015,
+    "publicacion": "State Capitalism, Institutional Adaptation, and the Chinese Miracle",
+    "editorial": "Cambridge University Press",
+    "doi": "10.1017/cbo9781139962858.003",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion"
+  },
+  {
+    "id": "kalecki-1943",
+    "tipo": "articulo",
+    "autores": [
+      "Kalecki, Michał"
+    ],
+    "titulo": "Political Aspects of Full Employment",
+    "anio": 1943,
+    "publicacion": "The Political Quarterly",
+    "doi": "10.1111/j.1467-923x.1943.tb01016.x",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion"
+  },
+  {
+    "id": "robinson-1962",
+    "tipo": "libro",
+    "autores": [
+      "Robinson, Joan"
+    ],
+    "titulo": "Essays in the Theory of Economic Growth",
+    "anio": 1962,
+    "editorial": "Macmillan",
+    "doi": "10.1007/978-1-349-00626-7",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion"
+  },
+  {
+    "id": "kaldor-1996",
+    "tipo": "libro",
+    "autores": [
+      "Kaldor, Nicholas"
+    ],
+    "titulo": "Causes of Growth and Stagnation in the World Economy",
+    "anio": 1996,
+    "editorial": "Cambridge University Press",
+    "doi": "10.1017/cbo9780511559709",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion"
+  },
+  {
+    "id": "summers-2014",
+    "tipo": "articulo",
+    "autores": [
+      "Summers, Lawrence H."
+    ],
+    "titulo": "U.S. Economic Prospects: Secular Stagnation, Hysteresis, and the Zero Lower Bound",
+    "anio": 2014,
+    "publicacion": "Business Economics",
+    "doi": "10.1057/be.2014.13",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion"
+  },
+  {
+    "id": "stiglitz-2002",
+    "tipo": "libro",
+    "autores": [
+      "Stiglitz, Joseph E."
+    ],
+    "titulo": "Globalization and Its Discontents",
+    "anio": 2002,
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": false
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref solo devuelve capítulos y reseñas posteriores. Editorial (W. W. Norton) y año de la primera edición no cotejados."
+  },
+  {
+    "id": "cagan-1956",
+    "tipo": "capitulo",
+    "autores": [
+      "Cagan, Phillip"
+    ],
+    "titulo": "The Monetary Dynamics of Hyperinflation",
+    "anio": 1956,
+    "publicacion": "Studies in the Quantity Theory of Money",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": false
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref solo devuelve entradas de enciclopedia posteriores de Cagan sobre hiperinflación. Editorial (University of Chicago Press) no cotejada."
+  },
+  {
+    "id": "brunner-1968",
+    "tipo": "articulo",
+    "autores": [
+      "Brunner, Karl"
+    ],
+    "titulo": "The Role of Money and Monetary Policy",
+    "anio": 1968,
+    "publicacion": "Federal Reserve Bank of St. Louis Review",
+    "doi": "10.20955/r.50.9-24.lcj",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion"
+  },
+  {
+    "id": "taylor-1993",
+    "tipo": "articulo",
+    "autores": [
+      "Taylor, John B."
+    ],
+    "titulo": "Discretion versus policy rules in practice",
+    "anio": 1993,
+    "publicacion": "Carnegie-Rochester Conference Series on Public Policy",
+    "doi": "10.1016/0167-2231(93)90009-l",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion"
+  },
+  {
+    "id": "luxemburg-1913",
+    "tipo": "libro",
+    "autores": [
+      "Luxemburg, Rosa"
+    ],
+    "titulo": "La acumulación de capital",
+    "anio": 1913,
+    "doi": "10.4324/9780203361863",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref registra la reedición de Routledge (2015). Editorial y año de la primera edición alemana (1913) no cotejados."
+  },
+  {
+    "id": "lenin-1917",
+    "tipo": "libro",
+    "autores": [
+      "Lenin, Vladímir I."
+    ],
+    "titulo": "El imperialismo, fase superior del capitalismo",
+    "anio": 1917,
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": false
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref solo devuelve extractos en antologías recientes. Editorial y año de la primera edición no cotejados."
+  },
+  {
+    "id": "baran-sweezy-1966",
+    "tipo": "libro",
+    "autores": [
+      "Baran, Paul A.",
+      "Sweezy, Paul M."
+    ],
+    "titulo": "Monopoly Capital: An Essay on the American Economic and Social Order",
+    "anio": 1966,
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": false
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref confirma la obra a través de reseñas de 1967 y 1969. Editorial (Monthly Review Press) no cotejada."
+  },
+  {
+    "id": "mandel-1975",
+    "tipo": "libro",
+    "autores": [
+      "Mandel, Ernest"
+    ],
+    "titulo": "Late Capitalism",
+    "anio": 1975,
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": false
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref confirma la obra a través de una reseña de 1977 y de un artículo del propio Mandel de 1975 en New Left Review. Editorial no cotejada."
+  },
+  {
+    "id": "amin-1976",
+    "tipo": "libro",
+    "autores": [
+      "Amin, Samir"
+    ],
+    "titulo": "Unequal Development: An Essay on the Social Formations of Peripheral Capitalism",
+    "anio": 1976,
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": false
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref confirma la obra a través de una reseña de 1978. Editorial (Monthly Review Press) no cotejada."
+  },
+  {
+    "id": "arrighi-1994",
+    "tipo": "libro",
+    "autores": [
+      "Arrighi, Giovanni"
+    ],
+    "titulo": "The Long Twentieth Century: Money, Power, and the Origins of Our Times",
+    "anio": 1994,
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": false
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref confirma la obra a través de una reseña de 1996. Editorial (Verso) no cotejada."
+  },
+  {
+    "id": "arrighi-2007",
+    "tipo": "libro",
+    "autores": [
+      "Arrighi, Giovanni"
+    ],
+    "titulo": "Adam Smith in Beijing: Lineages of the Twenty-First Century",
+    "anio": 2007,
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": false
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref devuelve un artículo relacionado de Arrighi (2002) pero no un DOI para el libro. Editorial (Verso) no cotejada."
+  },
+  {
+    "id": "federici-2004",
+    "tipo": "libro",
+    "autores": [
+      "Federici, Silvia"
+    ],
+    "titulo": "Caliban and the Witch: Women, the Body and Primitive Accumulation",
+    "anio": 2004,
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": false
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref solo devuelve reimpresiones de capítulos. Editorial (Autonomedia) y año no cotejados."
+  },
+  {
+    "id": "thompson-1963",
+    "tipo": "libro",
+    "autores": [
+      "Thompson, E. P."
+    ],
+    "titulo": "The Making of the English Working Class",
+    "anio": 1963,
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": false
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref confirma la obra a través de reseñas de 1965 y 1968. Editorial (Victor Gollancz) no cotejada."
   }
 ]

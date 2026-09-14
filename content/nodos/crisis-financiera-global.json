@@ -5,7 +5,8 @@
   "periodo": {
     "inicio": 2007,
     "fin": 2009,
-    "precision": "exacta"
+    "precision": "disputada",
+    "nota_periodizacion": "El inicio se fecha en agosto de 2007, cuando se congela el mercado interbancario, o en septiembre de 2008 con la quiebra de Lehman Brothers. El cierre es más discutido todavía: 2009 marca el fin de la contracción, pero la crisis del euro y el estancamiento posterior llevan a muchos autores a extender el episodio hasta 2012 o más [@blanchard-dellariccia-mauro-2010]."
   },
   "regiones": [
     "estados-unidos",
@@ -15,11 +16,167 @@
   "unidades": [
     "crisis-de-2008-y-tendencias-mundiales"
   ],
-  "resumen": "Colapso del crédito hipotecario y del sistema financiero estadounidense y europeo, seguido de la mayor contracción desde los años treinta. Reabrió los debates de la Gran Depresión sobre regulación, dinero y demanda.",
-  "descripcion_larga": "",
-  "interpretaciones": [],
-  "series": [],
-  "aristas": [],
-  "fuentes": [],
-  "estado_editorial": "esqueleto"
+  "resumen": "El colapso del crédito hipotecario estadounidense se propagó al sistema financiero mundial y provocó la contracción más profunda desde los años treinta. Los gobiernos rescataron bancos y aplicaron estímulos de una escala sin precedentes desde la posguerra. Si la causa fue la política monetaria, la desregulación, los desequilibrios globales o la dinámica normal del crédito sigue en disputa.",
+  "descripcion_larga": "## Qué pasó\n\nDurante más de una década, el crédito hipotecario estadounidense creció apoyado en la expectativa de que los precios de la vivienda no caerían a escala nacional. Los préstamos se empaquetaron en títulos que se vendieron a bancos de todo el mundo, con calificaciones que resultaron equivocadas. Cuando los precios cayeron, nadie sabía quién tenía qué, el mercado interbancario se congeló y la quiebra de un banco de inversión en septiembre de 2008 convirtió una crisis de crédito en un pánico global.\n\nLa respuesta rompió con la ortodoxia previa. Los bancos centrales bajaron las tasas a cero, compraron activos a gran escala y actuaron como prestamistas de última instancia mucho más allá del sistema bancario tradicional. Los gobiernos aplicaron estímulos fiscales y rescataron entidades. La contracción se detuvo en 2009, pero el empleo tardó años en recuperarse y varias economías avanzadas entraron en un estancamiento prolongado.\n\n## Qué se disputa\n\nEs la Gran Depresión del siglo XXI en un sentido literal: cada escuela leyó la crisis con las herramientas que había construido para explicar 1929, y las recetas que aplicó dependieron de esa lectura. Bernanke, que había estudiado el canal del crédito en los años treinta [@bernanke-1983], presidía la Reserva Federal. Los debates de este nodo y los de la Gran Depresión son, en buena medida, el mismo debate.\n\n## Qué se mide\n\nLas series de producto y empleo son estadística oficial de buena calidad. Lo difícil de medir es el tamaño real de las exposiciones fuera de balance antes de 2007, que es justamente lo que nadie sabía en su momento.",
+  "interpretaciones": [
+    {
+      "escuela": "keynesiana",
+      "mecanismo": "Un auge de crédito que volvió frágil la estructura financiera, seguido del colapso previsible: inestabilidad endógena, no un accidente externo.",
+      "desarrollo": "Minsky había descrito el mecanismo veinte años antes: en los períodos de calma, empresas y bancos aceptan estructuras de deuda cada vez más frágiles, hasta que un cambio pequeño obliga a vender activos y el precio se derrumba [@minsky-1986]. Eggertsson y Krugman modelaron lo que ocurre después, cuando muchos deudores intentan desapalancarse a la vez y la economía queda atrapada con la tasa de interés en cero [@eggertsson-krugman-2012]. Akerlof y Shiller insistieron en que la confianza y las narrativas no son ruido sino parte del mecanismo [@akerlof-shiller-2009]. Summers propuso que el problema de fondo es un estancamiento secular anterior a la crisis [@summers-2014].",
+      "autores_principales": [
+        "minsky-1986",
+        "eggertsson-krugman-2012",
+        "akerlof-shiller-2009",
+        "summers-2014"
+      ],
+      "evidencia_a_favor": [
+        "La secuencia de euforia, apalancamiento creciente y venta forzada coincide con el patrón descrito por Minsky antes de que ocurriera [@minsky-1986].",
+        "La persistencia del desempleo pese a tasas en cero, que es lo que predice una trampa de liquidez [@krugman-1998]."
+      ],
+      "evidencia_en_contra": [
+        "El modelo de Minsky describe el proceso pero no predice cuándo se rompe, lo que limita su valor operativo.",
+        "Otros países con auges inmobiliarios comparables no tuvieron crisis bancarias de la misma magnitud, lo que apunta a la regulación y no solo a la dinámica del crédito."
+      ],
+      "que_la_refutaria": "Que el apalancamiento del sistema financiero no hubiera crecido durante los años de calma previos, o que la recuperación del empleo hubiera seguido el ritmo de la recuperación del producto una vez restablecido el crédito.",
+      "contrastable_con": [],
+      "peso_academico": "dominante"
+    },
+    {
+      "escuela": "monetarista",
+      "mecanismo": "La política monetaria demasiado laxa entre 2002 y 2005 infló la burbuja, y después la Reserva Federal tardó en responder al colapso del dinero.",
+      "desarrollo": "Taylor sostiene que las tasas de interés estadounidenses se mantuvieron por debajo de lo que indicaba la regla de política que él mismo había formulado, y que ese desvío explica buena parte del auge inmobiliario [@taylor-1993]. En clave friedmaniana, la lección de los años treinta es que lo decisivo es impedir la contracción del dinero y del crédito [@friedman-schwartz-1963], y ahí la respuesta de 2008 fue mucho mejor que la de 1930, razón por la cual la crisis no se convirtió en depresión.",
+      "autores_principales": [
+        "taylor-1993",
+        "friedman-schwartz-1963",
+        "brunner-1968"
+      ],
+      "evidencia_a_favor": [
+        "El desvío documentado entre las tasas efectivas y las que indicaba la regla de Taylor en los años del auge [@taylor-1993].",
+        "El contraste con 1930: la expansión monetaria agresiva de 2008 evitó la deflación que sí hubo entonces [@friedman-schwartz-1963]."
+      ],
+      "evidencia_en_contra": [
+        "Países con políticas monetarias distintas tuvieron burbujas inmobiliarias comparables, lo que debilita la atribución a las tasas estadounidenses.",
+        "La regla de Taylor es una referencia normativa discutida, no un patrón objetivo contra el cual medir desvíos."
+      ],
+      "que_la_refutaria": "Que los países cuyas tasas siguieron la regla de Taylor durante 2002-2005 hubieran tenido auges inmobiliarios de la misma magnitud que los que se desviaron de ella.",
+      "contrastable_con": [],
+      "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "institucionalista",
+      "mecanismo": "El fallo fue regulatorio: un sistema financiero paralelo creció fuera del perímetro de supervisión, con incentivos que premiaban originar riesgo y transferirlo.",
+      "desarrollo": "La desregulación progresiva desde los años ochenta permitió que una parte creciente de la intermediación ocurriera en entidades sin las obligaciones de capital de la banca comercial. Stiglitz había advertido sobre los efectos de la liberalización financiera rápida en otros contextos [@stiglitz-2002]. Después de la crisis, el propio Fondo Monetario Internacional reconoció que el consenso previo sobre política macroeconómica y regulación había quedado en cuestión [@blanchard-dellariccia-mauro-2010]. El paralelo con el Cono Sur de finales de los setenta es directo [@diaz-alejandro-1985].",
+      "autores_principales": [
+        "stiglitz-2002",
+        "blanchard-dellariccia-mauro-2010",
+        "diaz-alejandro-1985"
+      ],
+      "evidencia_a_favor": [
+        "El crecimiento de la intermediación fuera del perímetro regulatorio en la década previa.",
+        "El paralelo con episodios anteriores de liberalización financiera seguida de colapso [@diaz-alejandro-1985]."
+      ],
+      "evidencia_en_contra": [
+        "Algunos de los bancos que más problemas tuvieron estaban plenamente regulados, lo que sugiere que el problema no era solo el perímetro.",
+        "Explica la fragilidad pero no el momento del estallido."
+      ],
+      "que_la_refutaria": "Que las entidades sujetas a supervisión plena hubieran quebrado en la misma proporción que las del sistema paralelo, o que países con regulación más estricta hubieran sufrido crisis bancarias equivalentes.",
+      "contrastable_con": [],
+      "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "marxista",
+      "mecanismo": "Una crisis de sobreacumulación resuelta por la vía financiera: con la rentabilidad productiva estancada desde los setenta, el excedente buscó salida en activos y vivienda.",
+      "desarrollo": "Brenner situó el origen en un largo declive de la rentabilidad industrial de las economías avanzadas que ninguna política logró revertir [@brenner-1998]. Harvey describe la construcción inmobiliaria como el mecanismo clásico de absorción de excedente de capital, y la crisis como el momento en que ese mecanismo falla [@harvey-2005] [@harvey-2003]. Duménil y Lévy leen el episodio como la crisis del propio orden neoliberal, no como un accidente dentro de él [@dumenil-levy-2011].",
+      "autores_principales": [
+        "brenner-1998",
+        "harvey-2005",
+        "harvey-2003",
+        "dumenil-levy-2011"
+      ],
+      "evidencia_a_favor": [
+        "El estancamiento de la rentabilidad industrial en las economías avanzadas desde los años setenta [@brenner-1998].",
+        "El peso creciente del sector financiero e inmobiliario en la ganancia total antes de la crisis [@dumenil-levy-2011]."
+      ],
+      "evidencia_en_contra": [
+        "Medir la tasa de ganancia depende de decisiones metodológicas que cambian el resultado, como ocurre con toda la literatura sobre el tema [@shaikh-2016].",
+        "El crecimiento de la productividad y de la ganancia en el sector tecnológico durante el mismo período complica la tesis del estancamiento general."
+      ],
+      "que_la_refutaria": "Que la tasa de ganancia industrial de las economías avanzadas se hubiera recuperado de forma sostenida entre 1980 y 2007 bajo cualquier medición razonable.",
+      "contrastable_con": [],
+      "peso_academico": "minoritaria"
+    }
+  ],
+  "series": [
+    {
+      "serie": "pwt100-pib-per-capita-paises",
+      "nota": "La caída de 2008-2009 y la lentitud de la recuperación posterior en Estados Unidos y Reino Unido."
+    }
+  ],
+  "aristas": [
+    {
+      "desde": "gran-depresion",
+      "hacia": "crisis-financiera-global",
+      "tipo": "precondicion_de",
+      "consenso": "medio",
+      "sostenida_por": [
+        "monetarista",
+        "keynesiana"
+      ],
+      "nota": "La respuesta de 2008 se diseñó explícitamente para no repetir los errores de 1930: los estudios de Bernanke sobre el canal del crédito son parte del argumento que justificó la intervención [@bernanke-1983] [@friedman-schwartz-1963].",
+      "fuentes": [
+        "bernanke-1983",
+        "friedman-schwartz-1963"
+      ]
+    },
+    {
+      "desde": "giro-neoliberal",
+      "hacia": "crisis-financiera-global",
+      "tipo": "precondicion_de",
+      "consenso": "disputado",
+      "sostenida_por": [
+        "marxista",
+        "sistema-mundo-dependencia",
+        "keynesiana"
+      ],
+      "negada_por": [
+        "monetarista",
+        "neoclasica-cliometrica"
+      ],
+      "nota": "¿Fue la desregulación financiera de las décadas previas la que hizo posible la crisis, o la causa fue la política monetaria de los años inmediatamente anteriores? [@dumenil-levy-2011] [@taylor-1993].",
+      "fuentes": [
+        "dumenil-levy-2011",
+        "taylor-1993"
+      ]
+    },
+    {
+      "desde": "crisis-financiera-global",
+      "hacia": "crisis-del-euro",
+      "tipo": "causa_directa_de",
+      "consenso": "alto",
+      "nota": "El rescate bancario trasladó deuda privada a los balances públicos y desató la crisis de deuda soberana europea [@blanchard-dellariccia-mauro-2010].",
+      "fuentes": [
+        "blanchard-dellariccia-mauro-2010"
+      ]
+    }
+  ],
+  "fuentes": [
+    "minsky-1986",
+    "eggertsson-krugman-2012",
+    "akerlof-shiller-2009",
+    "summers-2014",
+    "krugman-1998",
+    "taylor-1993",
+    "friedman-schwartz-1963",
+    "brunner-1968",
+    "stiglitz-2002",
+    "blanchard-dellariccia-mauro-2010",
+    "diaz-alejandro-1985",
+    "brenner-1998",
+    "harvey-2005",
+    "harvey-2003",
+    "dumenil-levy-2011",
+    "shaikh-2016",
+    "bernanke-1983"
+  ],
+  "estado_editorial": "revisado"
 }

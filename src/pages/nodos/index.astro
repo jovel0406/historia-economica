@@ -2,14 +2,14 @@
 import { enlace } from "../../lib/rutas.ts";
 import Base from "../../layouts/Base.astro";
 import { colorUnidad, nodosDeUnidad, nodosOrdenados, unidadesOrdenadas } from "../../lib/contenido.ts";
-import { ETIQUETA_ESTADO, periodoTexto } from "../../lib/texto.ts";
+import { periodoTexto } from "../../lib/texto.ts";
 const unidades = unidadesOrdenadas();
 const sinUnidad = nodosOrdenados().filter((n) => (n.unidades ?? []).length === 0);
 ---
 <Base titulo="Nodos">
   <p class="sobretitulo">Acontecimientos y procesos</p>
   <h1>Nodos por unidad</h1>
-  <p class="entradilla">Cada nodo se explica por sus mecanismos y sus disputas, no por una sucesión de hechos. Los esqueletos son nodos con título, período y resumen, pendientes de interpretaciones.</p>
+  <p class="entradilla">Cada nodo se explica por sus mecanismos y sus disputas, no por una sucesión de hechos. Algunas secciones están todavía en preparación y solo incluyen período y resumen.</p>
   {unidades.map((u) => {
     const ns = nodosDeUnidad(u.id);
     return (
@@ -22,7 +22,6 @@ const sinUnidad = nodosOrdenados().filter((n) => (n.unidades ?? []).length === 0
               <li>
                 <a href={enlace(`/nodos/${n.id}`)}>{n.titulo}</a>
                 <span class="meta">{periodoTexto(n.periodo)} · {n.tipo}</span>
-                <span class={`badge badge-${n.estado_editorial}`}>{ETIQUETA_ESTADO[n.estado_editorial]}</span>
               </li>
             ))}
           </ul>

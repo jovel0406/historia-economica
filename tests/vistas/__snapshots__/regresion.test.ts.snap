@@ -11,7 +11,7 @@ exports[`regresión estructural de las vistas > aristas/index.html conserva su e
   "h2": [],
   "interpretaciones": 0,
   "nodosTiempo": 0,
-  "svgs": 0,
+  "svgs": 1,
   "titulo": "Aristas · Historia económica mundial",
 }
 `;
@@ -36,7 +36,7 @@ exports[`regresión estructural de las vistas > datos/index.html conserva su est
   ],
   "interpretaciones": 0,
   "nodosTiempo": 0,
-  "svgs": 0,
+  "svgs": 1,
   "titulo": "Datos · Historia económica mundial",
 }
 `;
@@ -54,7 +54,7 @@ exports[`regresión estructural de las vistas > espacio/index.html conserva su e
   ],
   "interpretaciones": 0,
   "nodosTiempo": 0,
-  "svgs": 1,
+  "svgs": 2,
   "titulo": "Mapa · Historia económica mundial",
 }
 `;
@@ -70,7 +70,7 @@ exports[`regresión estructural de las vistas > glosario/index.html conserva su 
   "h2": [],
   "interpretaciones": 0,
   "nodosTiempo": 0,
-  "svgs": 0,
+  "svgs": 1,
   "titulo": "Glosario · Historia económica mundial",
 }
 `;
@@ -86,7 +86,7 @@ exports[`regresión estructural de las vistas > grafo/index.html conserva su est
   "h2": [],
   "interpretaciones": 0,
   "nodosTiempo": 0,
-  "svgs": 5,
+  "svgs": 6,
   "titulo": "Grafo causal · Historia económica mundial",
 }
 `;
@@ -105,14 +105,14 @@ exports[`regresión estructural de las vistas > index.html conserva su estructur
   ],
   "interpretaciones": 0,
   "nodosTiempo": 0,
-  "svgs": 0,
+  "svgs": 1,
   "titulo": "Inicio · Historia económica mundial",
 }
 `;
 
 exports[`regresión estructural de las vistas > nodos/gran-divergencia/index.html conserva su estructura 1`] = `
 {
-  "avisos": 1,
+  "avisos": 0,
   "enlacesGlosario": 10,
   "figuras": 0,
   "h1": [
@@ -127,12 +127,11 @@ exports[`regresión estructural de las vistas > nodos/gran-divergencia/index.htm
     "Relaciones con otros nodos",
     "Series asociadas",
     "¿Qué pasaba acá?",
-    "Historial de cambios",
     "Fuentes citadas",
   ],
   "interpretaciones": 6,
   "nodosTiempo": 0,
-  "svgs": 0,
+  "svgs": 1,
   "titulo": "Gran Divergencia · Historia económica mundial",
 }
 `;
@@ -148,7 +147,7 @@ exports[`regresión estructural de las vistas > recorridos/index.html conserva s
   "h2": [],
   "interpretaciones": 0,
   "nodosTiempo": 0,
-  "svgs": 0,
+  "svgs": 1,
   "titulo": "Recorridos · Historia económica mundial",
 }
 `;
@@ -163,8 +162,8 @@ exports[`regresión estructural de las vistas > tiempo/index.html conserva su es
   ],
   "h2": [],
   "interpretaciones": 0,
-  "nodosTiempo": 74,
-  "svgs": 3,
+  "nodosTiempo": 80,
+  "svgs": 4,
   "titulo": "Línea de tiempo · Historia económica mundial",
 }
 `;
@@ -180,7 +179,7 @@ exports[`regresión estructural de las vistas > verificacion/index.html conserva
   "h2": [],
   "interpretaciones": 0,
   "nodosTiempo": 0,
-  "svgs": 0,
+  "svgs": 1,
   "titulo": "Verificación de fuentes · Historia económica mundial",
 }
 `;

@@ -1,0 +1,24 @@
+{
+  "id": "crisis-del-euro",
+  "titulo": "Crisis del euro",
+  "tipo": "evento",
+  "periodo": {
+    "inicio": 2010,
+    "fin": 2015,
+    "precision": "aproximada"
+  },
+  "regiones": [
+    "europa-occidental",
+    "europa-oriental"
+  ],
+  "unidades": [
+    "crisis-de-2008-y-tendencias-mundiales"
+  ],
+  "resumen": "Crisis de deuda soberana en la periferia de la zona euro tras el traslado de deuda privada a los balances públicos. Una unión monetaria sin unión fiscal ni prestamista de última instancia claro obligó a ajustes internos severos en los países deudores.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

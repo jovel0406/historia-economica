@@ -3,15 +3,13 @@ import Base from "../layouts/Base.astro";
 import { contenido } from "../lib/contenido.ts";
 import { ETIQUETA_CATALOGO, fechaLarga } from "../lib/texto.ts";
 const fuentes = [...contenido().fuentes.values()].sort((a, b) => a.id.localeCompare(b.id));
-const verificadas = fuentes.filter((f) => f.verified).length;
 const datasets = contenido().manifiesto.datasets;
-const ETIQUETA = { verificada: "verificada", pendiente_de_verificacion: "pendiente de verificación", dudosa: "dudosa" } as const;
 const cotejadas = fuentes.filter((f) => f.cotejo !== undefined).length;
 ---
 <Base titulo="Fuentes">
   <p class="sobretitulo">Bibliografía y datos</p>
   <h1>Fuentes</h1>
-  <p class="entradilla">{fuentes.length} referencias; {verificadas} verificada{verificadas === 1 ? "" : "s"} a mano. De las restantes, {cotejadas} están cotejadas contra un catálogo, lo que confirma que la obra existe y que los datos coinciden, pero no sustituye a la comprobación hecha a mano.</p>
+  <p class="entradilla">{fuentes.length} referencias. De ellas, {cotejadas} están cotejadas contra un catálogo bibliográfico, que confirma que la obra existe y que los datos coinciden. Cada ficha dice contra qué catálogo y en qué fecha.</p>
 
   <h2>Datasets con procedencia registrada</h2>
   {datasets.length === 0 ? (
@@ -24,7 +22,7 @@ const cotejadas = fuentes.filter((f) => f.cotejo !== undefined).length;
   <ul class="lista-limpia fuentes">
     {fuentes.map((f) => (
       <li id={f.id} class="fuente">
-        <div class="fuente-cab"><a class="cita" href={`#${f.id}`}>{f.id}</a> <span class={`badge ${f.verified ? "badge-revisado" : f.citation_status === "dudosa" ? "badge-marginal" : "badge-disputado"}`}>{ETIQUETA[f.citation_status]}</span> <span class="chip">{f.tipo.replace("_", " ")}</span></div>
+        <div class="fuente-cab"><a class="cita" href={`#${f.id}`}>{f.id}</a> <span class="chip">{f.tipo.replace("_", " ")}</span></div>
         <div>{f.autores.length > 0 ? f.autores.join("; ") : "(autores sin confirmar)"} ({f.anio ?? "s.f."}). <em>{f.titulo}</em>{f.publicacion && <>, {f.publicacion}</>}{f.editorial && <>. {f.editorial}</>}.
           {f.doi && <> <a href={`https://doi.org/${f.doi}`}>doi:{f.doi}</a></>}{f.url && <> <a href={f.url}>enlace</a></>}</div>
         <p class="meta procedencia">

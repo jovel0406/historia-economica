@@ -1,0 +1,18 @@
+[
+  {
+    "nodo": "china-contemporanea",
+    "region": "costa-rica",
+    "texto": "Costa Rica estableció relaciones diplomáticas con la República Popular China en 2007, la primera de Centroamérica en hacerlo, y su tratado de libre comercio entró en vigor el 1 de agosto de 2011 [@comex-tlc-china]. El balance es discutido en el país: la apertura coincidió con el cierre de la planta de Intel en 2014 y con un déficit comercial persistente frente a China, aunque atribuir ambos hechos al tratado exige un contrafactual que nadie ha construido.",
+    "fuentes": [
+      "comex-tlc-china"
+    ]
+  },
+  {
+    "nodo": "china-contemporanea",
+    "region": "america-latina",
+    "texto": "China pasó a ser el primer o segundo socio comercial de la mayoría de los países sudamericanos, comprando soja, cobre, hierro y petróleo. El auge de precios financió una década de crecimiento y de reducción de la pobreza, y a la vez reprimarizó las exportaciones de la región, revirtiendo parte de la diversificación lograda durante la industrialización dirigida por el Estado [@bertola-ocampo-2012].",
+    "fuentes": [
+      "bertola-ocampo-2012"
+    ]
+  }
+]

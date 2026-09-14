@@ -62,7 +62,7 @@ const fuentes = a.fuentes.map((id) => fuente(id)).filter((f) => f !== undefined)
   {fuentes.length > 0 && (
     <section>
       <h2>Fuentes de la arista</h2>
-      <ul class="lista-limpia">{fuentes.map((f) => <li><a class="cita" href={enlace(`/fuentes#${f.id}`)}>{f.id}</a> {f.autores.join("; ")} ({f.anio ?? "s.f."}). <em>{f.titulo}</em>. {!f.verified && <span class="badge badge-disputado">sin verificar</span>}</li>)}</ul>
+      <ul class="lista-limpia">{fuentes.map((f) => <li><a class="cita" href={enlace(`/fuentes#${f.id}`)}>{f.id}</a> {f.autores.join("; ")} ({f.anio ?? "s.f."}). <em>{f.titulo}</em>.</li>)}</ul>
     </section>
   )}
   <p><a href={enlace("/aristas")}>← Todas las aristas</a> · <a href={enlace("/grafo")}>Ver en el grafo</a></p>

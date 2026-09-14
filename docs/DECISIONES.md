@@ -339,3 +339,39 @@ el autor puede hablar de su proyecto, no de la historia.
 Se comprobó que ni el repositorio ni su historial completo contienen correos personales, claves SSH ni
 rutas locales. Lo único personal publicado, y a propósito, es el nombre del autor y su seudónimo. Los
 commits usan la dirección `@users.noreply.github.com`, que vincula a la cuenta sin exponer un correo.
+
+## 2026-09-14 — El sitio se prepara para el público
+
+### D58. La interfaz deja de exponer el flujo editorial
+`esqueleto`, `borrador` y `revisado` son estados de producción, útiles para trabajar y sin interés
+para quien lee. Desaparecen de la interfaz: no hay badges de estado, ni historial de cambios derivado
+de Git, ni aviso de fuentes pendientes por nodo. Los campos siguen existiendo en el contenido y el
+validador los sigue exigiendo, así que las reglas de §8 y §11 no se relajaron. Un nodo sin redactar
+muestra ahora un texto dirigido al lector, «sección en preparación», en vez del vocabulario interno.
+
+### D59. Cotejo en lugar de estado de verificación
+La página de fuentes ya no marca cada ficha como pendiente o verificada. Muestra en cambio contra qué
+catálogo se cotejó y en qué fecha, que es un hecho comprobable y más informativo que una etiqueta de
+proceso. `/verificacion` sigue existiendo como página de trabajo, fuera de la navegación.
+
+**Tensión reconocida.** El SPEC §11.4 pide que las fuentes no verificadas aparezcan marcadas. La
+decisión de retirar esa marca es del autor, que asume la revisión. Lo que se conserva, y es lo que
+sostiene la promesa del proyecto, es que ninguna afirmación aparece sin su fuente y que cada ficha
+declara su procedencia. Si la revisión manual se demora, conviene reponer alguna señal.
+
+### D60. Encabezado en dos niveles
+Once destinos en una sola fila eran ilegibles. Quedan seis principales (las cinco vistas más el índice
+de nodos), un desplegable «Más» con los cinco secundarios, la búsqueda como icono y el selector de
+escuela compacto. En pantallas estrechas la navegación baja a su propia fila.
+
+### D61. China contemporánea como nodo propio
+No se puede mirar la economía actual sin el ascenso chino, y el nodo de 1978 termina en 2001. El nuevo
+nodo cubre de 2001 en adelante con cinco interpretaciones y cinco aristas, una de ellas disputada hacia
+la crisis de 2008 (la tesis del exceso de ahorro global) y otra hacia la Gran Divergencia, que plantea
+si el ascenso chino la cierra o solo desplaza su centro.
+
+### D62. Veinticinco fuentes más y tres escuelas ampliadas
+Marxista, keynesiana y monetarista incorporan a Luxemburgo, Lenin, Baran y Sweezy, Mandel, Amin,
+Arrighi, Thompson y Federici; a Kalecki, Robinson, Kaldor, Stiglitz y Summers; y a Cagan, Brunner y
+Taylor. Cada incorporación añade además un debate interno, porque el objetivo no es alargar listas de
+nombres sino mostrar que dentro de cada escuela también se discute.

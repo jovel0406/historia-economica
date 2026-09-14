@@ -1,0 +1,16 @@
+[
+  {
+    "nodo": "crisis-financiera-global",
+    "region": "america-latina",
+    "texto": "América Latina llegó a 2008 en una posición inusualmente sólida: reservas acumuladas durante el auge de materias primas, menos deuda en moneda extranjera y sistemas bancarios menos expuestos a los activos tóxicos. La contracción fue corta y la recuperación rápida, sostenida por la demanda china [@bertola-ocampo-2012]. Fue la primera crisis global del siglo en la que la región no fue el epicentro, lo que invirtió el patrón de los años treinta y de los ochenta.",
+    "fuentes": [
+      "bertola-ocampo-2012"
+    ]
+  },
+  {
+    "nodo": "crisis-financiera-global",
+    "region": "costa-rica",
+    "texto": "Costa Rica sintió la crisis sobre todo por el canal externo: caída del turismo, de las remesas y de la demanda de sus exportaciones, más que por contagio financiero directo. El gobierno respondió con un plan de estímulo y el déficit fiscal se amplió de forma que resultó persistente, un problema que marcaría la política económica de la década siguiente. La reconstrucción detallada del episodio queda pendiente de fuentes específicas.",
+    "fuentes": []
+  }
+]

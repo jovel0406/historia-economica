@@ -1,0 +1,248 @@
+{
+  "id": "china-contemporanea",
+  "titulo": "China contemporánea y el Partido Comunista",
+  "tipo": "proceso",
+  "periodo": {
+    "inicio": 2001,
+    "fin": null,
+    "precision": "disputada",
+    "nota_periodizacion": "El ingreso a la Organización Mundial del Comercio en 2001 es el corte más usado, porque abre la fase de integración plena. Otros sitúan el cambio en 1993, con la unificación del sistema dual de precios [@naughton-1995], o en 2012, cuando la recentralización política reorienta el modelo [@lardy-2019]."
+  },
+  "regiones": [
+    "china",
+    "asia-oriental",
+    "mundo"
+  ],
+  "unidades": [
+    "reorientacion-hacia-el-mercado",
+    "crisis-de-2008-y-tendencias-mundiales"
+  ],
+  "resumen": "Desde su ingreso a la Organización Mundial del Comercio, China pasó de taller de ensamblaje a segunda economía del mundo y a principal socio comercial de la mayoría de los países. El Partido Comunista conservó el control de la banca, de las empresas estatales y de la asignación del crédito mientras el sector privado crecía. Qué tipo de economía resulta de esa combinación, y si su ritmo de inversión es sostenible, está en disputa.",
+  "descripcion_larga": "## Qué pasó\n\nEntre 2001 y mediados de la década de 2010 China multiplicó su participación en el comercio mundial, absorbió cadenas enteras de manufactura y acumuló reservas sin precedentes. El crecimiento se apoyó en una tasa de inversión que superó durante años el 40 % del producto, financiada por un sistema bancario estatal que dirige el crédito hacia donde el Partido decide [@lardy-2014] [@naughton-2015].\n\nLa composición de ese crecimiento cambió con el tiempo. En los años ochenta y noventa el motor fue el sector privado y rural [@huang-2008]; después de la crisis de 2008, el estímulo se canalizó sobre todo por empresas estatales y gobiernos locales, y desde 2012 la recentralización política reforzó esa dirección [@lardy-2019]. El sector privado siguió siendo más productivo, pero perdió acceso relativo al crédito.\n\nFuera de China, el efecto fue enorme y desigual. La competencia de importaciones chinas redujo el empleo industrial en regiones concretas de Estados Unidos y Europa, con efectos locales duraderos [@autor-dorn-hanson-2013], mientras los exportadores de materias primas, América Latina entre ellos, vivieron el mayor auge de precios en décadas.\n\n## Qué se disputa\n\nSi esto es un modelo replicable o una excepción irrepetible. Si el Estado es la causa del crecimiento o el obstáculo que lo frena. Si la altísima tasa de inversión es la fórmula del éxito o una deuda con el futuro. Y si el ascenso chino cierra la Gran Divergencia o solo desplaza su centro.\n\n## Qué se mide\n\nLas estadísticas oficiales chinas son objeto de controversia sostenida, sobre todo las provinciales y las de deuda de gobiernos locales. Las series que usa esta plataforma vienen de compilaciones internacionales que ajustan por paridad de poder adquisitivo, lo que agrega otra capa de construcción estadística. Cualquier cifra de esta sección debe leerse con esa advertencia.",
+  "interpretaciones": [
+    {
+      "escuela": "estado-desarrollista",
+      "mecanismo": "El Partido dirige un capitalismo de Estado que planifica sectores estratégicos y disciplina al capital privado, y eso explica la velocidad del ascenso.",
+      "desarrollo": "Naughton documenta cómo la reforma de las empresas estatales creó «campeones nacionales» bajo supervisión de una agencia central, en vez de privatizarlas [@naughton-2015]. Lin sostiene que el Estado siguió la ventaja comparativa en cada etapa en lugar de forzar sectores prematuros [@lin-cai-li-2003]. Milanovic clasifica el resultado como «capitalismo político», un tipo distinto del liberal, con una burocracia autónoma que decide sin rendir cuentas electorales [@milanovic-2019].",
+      "autores_principales": [
+        "naughton-2015",
+        "lin-cai-li-2003",
+        "milanovic-2019"
+      ],
+      "evidencia_a_favor": [
+        "La coordinación estatal en sectores donde China pasó de ausente a líder mundial, como el ferrocarril de alta velocidad o las baterías.",
+        "La continuidad del crecimiento durante y después de 2008, cuando las economías liberales se contrajeron [@lardy-2019]."
+      ],
+      "evidencia_en_contra": [
+        "El sector privado, con menos acceso al crédito, es sistemáticamente más productivo que el estatal [@lardy-2014] [@hsieh-klenow-2009].",
+        "La recentralización posterior a 2012 coincide con una desaceleración sostenida, no con una aceleración."
+      ],
+      "que_la_refutaria": "Que la productividad de las empresas estatales hubiera igualado o superado a la de las privadas en el período, o que las provincias con mayor peso estatal hubieran crecido más rápido que las de mayor peso privado.",
+      "contrastable_con": [
+        "pwt100-pib-per-capita-paises"
+      ],
+      "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "neoclasica-cliometrica",
+      "mecanismo": "El crecimiento vino de reasignar trabajo y capital hacia usos más productivos, y se desacelera porque esa reasignación se agotó y el capital se asigna mal.",
+      "desarrollo": "Hsieh y Klenow estiman cuánto producto se pierde por la mala asignación de recursos entre empresas y concluyen que China podría producir mucho más con los mismos factores si el capital fuera donde es más productivo [@hsieh-klenow-2009]. Zhu descompone el crecimiento y atribuye la mayor parte a la productividad y a la reasignación desde la agricultura y el sector estatal [@zhu-2012]. Song, Storesletten y Zilibotti modelan la paradoja de una economía que crece rápido mientras acumula reservas externas, y la explican por la coexistencia de empresas privadas productivas pero sin crédito y estatales improductivas pero financiadas [@song-storesletten-zilibotti-2011].",
+      "autores_principales": [
+        "hsieh-klenow-2009",
+        "zhu-2012",
+        "song-storesletten-zilibotti-2011"
+      ],
+      "evidencia_a_favor": [
+        "La brecha de productividad medida entre empresas estatales y privadas del mismo sector [@hsieh-klenow-2009].",
+        "La desaceleración coincide con el agotamiento de la migración rural-urbana, que era la fuente principal de reasignación [@zhu-2012]."
+      ],
+      "evidencia_en_contra": [
+        "La contabilidad del crecimiento describe la forma del crecimiento pero no explica por qué la reasignación fue posible sin colapso, que es lo que el gradualismo pretende explicar [@naughton-1995].",
+        "La calidad de los datos de empresas limita la precisión de cualquier estimación de mala asignación."
+      ],
+      "que_la_refutaria": "Que la productividad total de los factores explicara una fracción menor del crecimiento que la acumulación de capital dirigida, o que las estimaciones de mala asignación se desvanecieran al corregir por calidad de los datos.",
+      "contrastable_con": [
+        "pwt100-pib-per-capita-paises",
+        "pwt100-apertura-comercial-paises"
+      ],
+      "peso_academico": "dominante"
+    },
+    {
+      "escuela": "keynesiana",
+      "mecanismo": "Es un modelo de sobreinversión y consumo reprimido: el crecimiento depende de invertir cada vez más para sostener la demanda, y el excedente se exporta como desequilibrio global.",
+      "desarrollo": "Klein y Pettis sostienen que los grandes superávits comerciales no son fruto de la competitividad sino de políticas que trasladan ingreso de los hogares a las empresas y al Estado, reprimiendo el consumo interno; ese ahorro forzado tiene que colocarse fuera, y contribuye a los desequilibrios que estallaron en 2008 [@klein-pettis-2020]. El mecanismo es familiar para cualquier lector de Minsky: la inversión sostenida con deuda creciente se vuelve frágil [@minsky-1986]. Kalecki ya había señalado que el nivel de inversión es una decisión política tanto como económica [@kalecki-1943].",
+      "autores_principales": [
+        "klein-pettis-2020",
+        "minsky-1986",
+        "kalecki-1943"
+      ],
+      "evidencia_a_favor": [
+        "La participación del consumo de los hogares en el producto chino, baja para su nivel de ingreso.",
+        "El crecimiento de la deuda de gobiernos locales y del sector inmobiliario tras el estímulo de 2008 [@lardy-2019]."
+      ],
+      "evidencia_en_contra": [
+        "El consumo chino creció en términos absolutos de forma sostenida; su baja participación puede reflejar una tasa de inversión alta, no un consumo reprimido.",
+        "La tesis de los desequilibrios globales atribuye a China una responsabilidad que también recae en la política monetaria y regulatoria de los países deficitarios."
+      ],
+      "que_la_refutaria": "Que la participación del consumo en el producto hubiera crecido al ritmo del ingreso, o que los superávits externos se explicaran por diferenciales de productividad y no por la distribución del ingreso entre hogares y empresas.",
+      "contrastable_con": [],
+      "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "institucionalista",
+      "mecanismo": "El autoritarismo descentralizado que hizo competir a los gobiernos locales explica el crecimiento, y su reversión explica la desaceleración.",
+      "desarrollo": "Xu describe un sistema donde el centro controla los nombramientos y evalúa a los cuadros por el desempeño económico de su jurisdicción, lo que convierte a las provincias en competidoras [@xu-2011]. Qian muestra cómo instituciones que no se parecen a las de los manuales funcionaron porque alineaban incentivos [@qian-2017]. Lardy documenta la recentralización posterior a 2012 y sostiene que el retroceso del espacio privado es la causa principal de la pérdida de dinamismo [@lardy-2019].",
+      "autores_principales": [
+        "xu-2011",
+        "qian-2017",
+        "lardy-2019"
+      ],
+      "evidencia_a_favor": [
+        "La correlación entre promoción de funcionarios y crecimiento de sus jurisdicciones [@xu-2011].",
+        "La coincidencia temporal entre recentralización, caída del crédito al sector privado y desaceleración [@lardy-2019]."
+      ],
+      "evidencia_en_contra": [
+        "La competencia entre gobiernos locales también produjo sobreinversión, proteccionismo interno y deuda difícil de auditar.",
+        "La teoría institucionalista clásica predeciría estancamiento bajo instituciones extractivas, lo que la propia experiencia china contradice [@acemoglu-robinson-2012]."
+      ],
+      "que_la_refutaria": "Que las provincias con menor autonomía y menos competencia entre gobiernos locales hubieran crecido igual que las demás, o que la desaceleración hubiera empezado antes de la recentralización.",
+      "contrastable_con": [],
+      "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "marxista",
+      "mecanismo": "Es acumulación acelerada sostenida por una tasa de explotación alta y una inversión que el sistema no puede mantener; y a la vez, el desplazamiento del centro de la economía mundial hacia Asia oriental.",
+      "desarrollo": "Arrighi lee el ascenso chino como una nueva fase de un ciclo largo de hegemonías, en el que el centro de acumulación se desplaza igual que antes se desplazó de Génova a Ámsterdam, de Ámsterdam a Londres y de Londres a Nueva York [@arrighi-1994] [@arrighi-2007]. Harvey describe la urbanización china como un caso de libro de absorción de excedente de capital mediante construcción, con la fragilidad que eso implica [@harvey-2005]. La formación de una clase obrera migrante sin derechos de residencia plenos es, en esta lectura, la condición de la tasa de ganancia [@marx-1867].",
+      "autores_principales": [
+        "arrighi-2007",
+        "arrighi-1994",
+        "harvey-2005",
+        "marx-1867"
+      ],
+      "evidencia_a_favor": [
+        "El sistema de registro de residencia, que durante décadas creó una fuerza de trabajo migrante con menos derechos en las ciudades donde trabaja.",
+        "El peso de la construcción y la infraestructura en la absorción del excedente tras 2008 [@harvey-2005]."
+      ],
+      "evidencia_en_contra": [
+        "La tesis del desplazamiento hegemónico es difícil de contrastar y se ha anunciado varias veces para otros países sin cumplirse.",
+        "Los salarios reales chinos crecieron con fuerza durante el período, lo que complica una lectura basada solo en el aumento de la tasa de explotación."
+      ],
+      "que_la_refutaria": "Que los salarios reales hubieran crecido al mismo ritmo que la productividad durante todo el período, o que la inversión se hubiera sostenido sin recurso creciente a la deuda.",
+      "contrastable_con": [],
+      "peso_academico": "minoritaria"
+    }
+  ],
+  "series": [
+    {
+      "serie": "pwt100-pib-per-capita-paises",
+      "nota": "El PIB per cápita chino desde 1950 permite ver el quiebre de 1978 y la aceleración posterior a 2001 en la misma escala que Japón, Estados Unidos y Reino Unido."
+    },
+    {
+      "serie": "pwt100-apertura-comercial-paises",
+      "nota": "La apertura comercial muestra el salto asociado al ingreso a la Organización Mundial del Comercio."
+    },
+    {
+      "serie": "wpp2024-esperanza-de-vida-paises",
+      "nota": "La esperanza de vida es el indicador donde la convergencia china con los países ricos es más clara y menos discutida que en el ingreso."
+    }
+  ],
+  "aristas": [
+    {
+      "desde": "china-en-la-omc",
+      "hacia": "china-contemporanea",
+      "tipo": "precondicion_de",
+      "consenso": "alto",
+      "nota": "El acceso garantizado a los mercados de los países desarrollados es la condición que permitió la escala manufacturera posterior [@autor-dorn-hanson-2013].",
+      "fuentes": [
+        "autor-dorn-hanson-2013"
+      ]
+    },
+    {
+      "desde": "reforma-china-de-1978",
+      "hacia": "china-contemporanea",
+      "tipo": "precondicion_de",
+      "consenso": "alto",
+      "nota": "Las instituciones creadas entre 1978 y 2001, del sistema dual a las zonas económicas especiales, son la base sobre la que se monta la fase siguiente [@naughton-1995].",
+      "fuentes": [
+        "naughton-1995"
+      ]
+    },
+    {
+      "desde": "china-contemporanea",
+      "hacia": "superciclo-de-commodities",
+      "tipo": "causa_directa_de",
+      "consenso": "alto",
+      "nota": "La demanda china de metales, soja y petróleo es la explicación estándar del auge de precios de materias primas del siglo XXI, con efectos decisivos en América Latina [@bertola-ocampo-2012].",
+      "fuentes": [
+        "bertola-ocampo-2012"
+      ]
+    },
+    {
+      "desde": "china-contemporanea",
+      "hacia": "crisis-financiera-global",
+      "tipo": "amplifica",
+      "consenso": "disputado",
+      "sostenida_por": [
+        "keynesiana",
+        "marxista"
+      ],
+      "negada_por": [
+        "monetarista",
+        "neoclasica-cliometrica"
+      ],
+      "nota": "La tesis del «exceso de ahorro global»: los superávits chinos habrían deprimido las tasas de interés largas y alimentado la burbuja de crédito estadounidense [@klein-pettis-2020]. Quienes la niegan sitúan la causa en la política monetaria y en la regulación financiera de los países deficitarios [@taylor-1993].",
+      "fuentes": [
+        "klein-pettis-2020",
+        "taylor-1993"
+      ]
+    },
+    {
+      "desde": "china-contemporanea",
+      "hacia": "gran-divergencia",
+      "tipo": "ruptura_de",
+      "consenso": "disputado",
+      "sostenida_por": [
+        "escuela-california",
+        "sistema-mundo-dependencia",
+        "marxista"
+      ],
+      "negada_por": [
+        "institucionalista",
+        "cultural-capital-humano"
+      ],
+      "nota": "¿Cierra el ascenso chino la brecha abierta en el siglo XIX, o solo desplaza el centro sin alterar la estructura? Para la Escuela de California es la reversión a una posición histórica normal [@pomeranz-2000]; para Arrighi, el desplazamiento de un centro hegemónico [@arrighi-2007]; para la lectura institucionalista, la convergencia del ingreso no implica convergencia institucional [@acemoglu-robinson-2012].",
+      "fuentes": [
+        "pomeranz-2000",
+        "arrighi-2007",
+        "acemoglu-robinson-2012"
+      ]
+    }
+  ],
+  "fuentes": [
+    "lardy-2014",
+    "lardy-2019",
+    "naughton-2015",
+    "naughton-1995",
+    "huang-2008",
+    "autor-dorn-hanson-2013",
+    "hsieh-klenow-2009",
+    "song-storesletten-zilibotti-2011",
+    "zhu-2012",
+    "milanovic-2019",
+    "klein-pettis-2020",
+    "xu-2011",
+    "qian-2017",
+    "arrighi-1994",
+    "arrighi-2007",
+    "harvey-2005",
+    "marx-1867",
+    "minsky-1986",
+    "kalecki-1943",
+    "lin-cai-li-2003",
+    "acemoglu-robinson-2012",
+    "pomeranz-2000",
+    "bertola-ocampo-2012",
+    "taylor-1993"
+  ],
+  "estado_editorial": "revisado"
+}

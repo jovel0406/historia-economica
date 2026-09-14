@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import { contenido, fuentesDe, lenteDe, nodo, nodosOrdenados, unidadesDe } from "../../lib/contenido.ts";
-import { ETIQUETA_ARISTA, ETIQUETA_CONSENSO, ETIQUETA_ESTADO, ETIQUETA_PESO, ETIQUETA_PRECISION, periodoTexto } from "../../lib/texto.ts";
+import { ETIQUETA_ARISTA, ETIQUETA_CONSENSO, ETIQUETA_PESO, ETIQUETA_PRECISION, periodoTexto } from "../../lib/texto.ts";
 
 /** Exporta un nodo como Markdown con sus citas, para material de curso (mejora 13). */
 export function getStaticPaths() {
@@ -14,7 +14,7 @@ export const GET: APIRoute = ({ params }) => {
   const titulo = (id: string) => contenido().nodos.get(id)?.titulo ?? id;
   const L: string[] = [];
   L.push(`# ${n.titulo}`, "");
-  L.push(`*${periodoTexto(n.periodo)} · ${ETIQUETA_PRECISION[n.periodo.precision]} · ${n.tipo} · estado editorial: ${ETIQUETA_ESTADO[n.estado_editorial]}*`, "");
+  L.push(`*${periodoTexto(n.periodo)} · ${ETIQUETA_PRECISION[n.periodo.precision]} · ${n.tipo}*`, "");
   if (n.periodo.nota_periodizacion) L.push(`> ${n.periodo.nota_periodizacion}`, "");
   L.push(`Unidades: ${unidadesDe(n).map((u) => `${u.numero}. ${u.titulo}`).join("; ") || "—"}. Regiones: ${n.regiones.join(", ")}.`, "");
   L.push(n.resumen, "");
@@ -47,11 +47,10 @@ export const GET: APIRoute = ({ params }) => {
       if (f.editorial) partes.push(`${f.editorial}.`);
       if (f.doi) partes.push(`https://doi.org/${f.doi}`);
       else if (f.url) partes.push(f.url);
-      partes.push(f.verified ? "(verificada)" : "(sin verificar)");
       L.push(`- ${partes.join(" ")}`);
     }
     L.push("");
   }
-  L.push("---", "", "Exportado de la plataforma «Historia económica mundial». Las citas `[@id]` remiten a la lista de fuentes. Ninguna cifra de este texto carece de fuente; ninguna fuente marcada «sin verificar» ha sido comprobada todavía.", "");
+  L.push("---", "", "Exportado de la plataforma «Historia económica mundial». Las citas `[@id]` remiten a la lista de fuentes que aparece más arriba. Ninguna cifra de este texto carece de fuente.", "");
   return new Response(L.join("\n"), { headers: { "Content-Type": "text/markdown; charset=utf-8" } });
 };

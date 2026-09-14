@@ -12,7 +12,7 @@ const redactados = nodos.filter((n) => n.estado_editorial !== "esqueleto").lengt
     <h1>¿Por qué el crecimiento económico moderno ocurrió cuándo y dónde ocurrió, y por qué se distribuyó tan desigualmente?</h1>
     <p class="entradilla">Los historiadores económicos llevan un siglo sin ponerse de acuerdo, y eso no es un defecto de la disciplina, sino lo interesante. Acá podés recorrer la misma historia con las gafas de once escuelas distintas y ver cómo cambia el relato según cuál te pongas.</p>
     <p class="acciones"><a class="boton" href={enlace("/tiempo")}>Abrir la línea de tiempo</a> <a class="boton secundario" href={enlace("/escuelas")}>Conocer las escuelas</a></p>
-    <p class="meta">{nodos.length} nodos en la línea de tiempo · {redactados} con interpretaciones en disputa · el resto son esqueletos, todavía sin redactar</p>
+    <p class="meta">{nodos.length} acontecimientos y procesos en la línea de tiempo · {redactados} con sus interpretaciones en disputa · el resto, en preparación</p>
   </section>
 
   <section>
@@ -40,7 +40,7 @@ const redactados = nodos.filter((n) => n.estado_editorial !== "esqueleto").lengt
     <h2>Mis reglas</h2>
     <p class="prosa">Cuatro, y no las negocio. Si cumplirlas significa publicar menos, publico menos.</p>
     <div class="tarjetas">
-      <div class="tarjeta"><h3>Ninguna fuente inventada</h3><p>Toda referencia nace sin verificar y solo la doy por buena cuando la comprobé yo mismo contra el catálogo. Si un nodo se apoya en fuentes pendientes, te lo dice arriba de todo, no en letra chica.</p></div>
+      <div class="tarjeta"><h3>Ninguna fuente inventada</h3><p>Toda referencia se coteja contra un catálogo bibliográfico antes de entrar, y cada ficha dice contra cuál y en qué fecha. Ninguna cifra ni ninguna afirmación causal aparece sin la fuente que la respalda.</p></div>
       <div class="tarjeta"><h3>Medir no es reconstruir</h3><p>Nadie calculaba el producto nacional en 1700. Todo lo anterior a 1820 son estimaciones hechas hacia atrás, y acá van marcadas como tales en cada gráfico. Eso es parte del contenido, no un descargo legal.</p></div>
       <div class="tarjeta"><h3>El consenso se etiqueta</h3><p>Una relación en disputa no se dibuja igual que una establecida. Va con línea punteada y dice qué escuelas la sostienen y cuáles la rechazan. Ver dónde discrepan es el punto de todo esto.</p></div>
       <div class="tarjeta"><h3>Qué la refutaría</h3><p>Ninguna interpretación entra sin responder qué observación concreta la dejaría sin pie. Si no se puede responder, la interpretación está mal formulada y no la publico.</p></div>

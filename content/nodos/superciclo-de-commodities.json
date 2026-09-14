@@ -1,0 +1,27 @@
+{
+  "id": "superciclo-de-commodities",
+  "titulo": "Superciclo de las materias primas",
+  "tipo": "proceso",
+  "periodo": {
+    "inicio": 2003,
+    "fin": 2014,
+    "precision": "aproximada"
+  },
+  "regiones": [
+    "america-latina",
+    "africa-subsahariana",
+    "mundo",
+    "brasil",
+    "argentina"
+  ],
+  "unidades": [
+    "crisis-de-2008-y-tendencias-mundiales"
+  ],
+  "resumen": "Auge prolongado de los precios de metales, alimentos y energía impulsado por la demanda china, que financió una década de crecimiento en los países exportadores de materias primas y a la vez reforzó su especialización primaria.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

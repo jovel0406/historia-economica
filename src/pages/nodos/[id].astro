@@ -1,10 +1,8 @@
 ---
 import { enlace } from "../../lib/rutas.ts";
 import Base from "../../layouts/Base.astro";
-import AvisoFuentes from "../../components/AvisoFuentes.astro";
 import { aristasHacia, colorUnidad, contenido, escuela, fuentesDe, idArista, lenteDe, nodo, nodosOrdenados, unidadesDe } from "../../lib/contenido.ts";
-import { historialDe } from "../../lib/historial.ts";
-import { DESCRIPCION_ESTADO, ETIQUETA_ARISTA, ETIQUETA_CONSENSO, ETIQUETA_ESTADO, ETIQUETA_EVIDENCIA, ETIQUETA_PESO, ETIQUETA_PRECISION, periodoTexto, renderInline, renderMarkdown } from "../../lib/texto.ts";
+import { ETIQUETA_ARISTA, ETIQUETA_CONSENSO, ETIQUETA_EVIDENCIA, ETIQUETA_PESO, ETIQUETA_PRECISION, periodoTexto, renderInline, renderMarkdown } from "../../lib/texto.ts";
 const serie = (id: string) => contenido().series.get(id);
 
 export function getStaticPaths() {
@@ -23,7 +21,6 @@ const aristas = [
   ...aristasHacia(n).map(({ arista }) => ({ a: arista, origen: "externa" as const })),
 ];
 const REGION_LENTE = { "costa-rica": "Costa Rica", "america-latina": "América Latina" } as const;
-const historial = historialDe(`content/nodos/${n.id}.json`);
 const contrastable = (ids: string[]) => ids.map((id) => ({ id, serie: contenido().series.get(id) }));
 ---
 <Base titulo={n.titulo} descripcion={n.resumen}>
@@ -32,7 +29,6 @@ const contrastable = (ids: string[]) => ids.map((id) => ({ id, serie: contenido(
       <div class="chips">
         {unidades.map((u) => <a class="chip chip-unidad" href={enlace(`/nodos#unidad-${u.numero}`)} style={`--c: ${colorUnidad(u.numero)}`}><span class="punto"></span>Unidad {u.numero} · {u.titulo}</a>)}
         <span class="chip">{n.tipo}</span>
-        <span class={`badge badge-${n.estado_editorial}`} title={DESCRIPCION_ESTADO[n.estado_editorial]}>{ETIQUETA_ESTADO[n.estado_editorial]}</span>
       </div>
       <h1>{n.titulo}</h1>
       <p class="periodo"><strong>{periodoTexto(n.periodo)}</strong> <span class="meta">· {ETIQUETA_PRECISION[n.periodo.precision]}</span></p>
@@ -41,10 +37,8 @@ const contrastable = (ids: string[]) => ids.map((id) => ({ id, serie: contenido(
       <p class="meta">Regiones: {n.regiones.join(", ")} · <a href={enlace(`/nodos/${n.id}.md`)}>Exportar como Markdown</a> · <a href="#" onclick="window.print(); return false;">Imprimir</a> · <a href={enlace(`/espacio?anio=${n.periodo.inicio}`)}>Ver el mapa en {n.periodo.inicio}</a></p>
     </header>
 
-    <AvisoFuentes nodo={n} />
-
     {n.estado_editorial === "esqueleto" && (
-      <div class="aviso"><strong>Nodo esqueleto.</strong> {DESCRIPCION_ESTADO.esqueleto} Está en la línea de tiempo para situar a los demás; sus interpretaciones se redactarán más adelante.</div>
+      <div class="aviso"><strong>Sección en preparación.</strong> Por ahora incluye el período, las regiones y un resumen. Está en la línea de tiempo para situar a los demás acontecimientos; sus interpretaciones se publicarán más adelante.</div>
     )}
 
     {n.descripcion_larga.trim().length > 0 && (
@@ -163,13 +157,6 @@ const contrastable = (ids: string[]) => ids.map((id) => ({ id, serie: contenido(
       </section>
     )}
 
-    {historial.length > 0 && (
-      <section class="historial">
-        <h2>Historial de cambios</h2>
-        <p class="meta">Derivado del registro de Git de <code>content/nodos/{n.id}.json</code>: cada entrada es un commit que tocó este archivo.</p>
-        <ul class="lista-limpia">{historial.map((c) => <li><span class="meta">{c.fecha}</span> · <code>{c.hash}</code> · {c.asunto}</li>)}</ul>
-      </section>
-    )}
 
     {fuentes.length > 0 && (
       <section>
@@ -179,8 +166,7 @@ const contrastable = (ids: string[]) => ids.map((id) => ({ id, serie: contenido(
             <li id={f.id}>
               <a class="cita" href={enlace(`/fuentes#${f.id}`)}>{f.id}</a> {f.autores.length > 0 ? f.autores.join("; ") : "(autores sin confirmar)"} ({f.anio ?? "s.f."}). <em>{f.titulo}</em>{f.publicacion && <>, {f.publicacion}</>}{f.editorial && <>. {f.editorial}</>}.
               {f.doi && <> <a href={`https://doi.org/${f.doi}`}>doi:{f.doi}</a></>}{f.url && !f.doi && <> <a href={f.url}>enlace</a></>}
-              {!f.verified && <span class="badge badge-disputado" title={f.nota_verificacion}>sin verificar</span>}
-            </li>
+                          </li>
           ))}
         </ul>
       </section>
@@ -207,7 +193,6 @@ const contrastable = (ids: string[]) => ids.map((id) => ({ id, serie: contenido(
   .contraste { margin-top: 0.5rem; }
   .enlace-arista { text-decoration: none; font-size: 1rem; color: var(--tinta-3); }
   .enlace-arista:hover { color: var(--acento); }
-  .historial li { padding: 0.3rem 0; border-bottom: 1px solid var(--linea); font-size: 0.9rem; }
   figure { margin: 0; }
   figure img { width: 100%; border-radius: 6px; }
 </style>
