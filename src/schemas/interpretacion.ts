@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Markdown, SchoolId, SourceId, TextoNoVacio } from "./comunes.ts";
+import { Markdown, SchoolId, SeriesId, SourceId, TextoNoVacio } from "./comunes.ts";
 
 /**
  * Interpretación: entidad de primera clase, no nota al pie (SPEC §4.2).
@@ -53,6 +53,8 @@ export const Interpretacion = z.strictObject({
   evidencia_a_favor: z.array(TextoNoVacio),
   evidencia_en_contra: z.array(TextoNoVacio),
   que_la_refutaria: QueLaRefutaria,
+  /** Series ingeridas con las que la condición de refutación podría contrastarse (mejora 3). Vacío = no contrastable todavía. */
+  contrastable_con: z.array(SeriesId).default([]),
   peso_academico: PesoAcademico,
 });
 export type Interpretacion = z.infer<typeof Interpretacion>;

@@ -1,0 +1,186 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`regresión estructural de las vistas > aristas/index.html conserva su estructura 1`] = `
+{
+  "avisos": 0,
+  "enlacesGlosario": 0,
+  "figuras": 0,
+  "h1": [
+    "Relaciones causales, las disputadas primero",
+  ],
+  "h2": [],
+  "interpretaciones": 0,
+  "nodosTiempo": 0,
+  "svgs": 0,
+  "titulo": "Aristas · Historia económica mundial",
+}
+`;
+
+exports[`regresión estructural de las vistas > datos/index.html conserva su estructura 1`] = `
+{
+  "avisos": 4,
+  "enlacesGlosario": 0,
+  "figuras": 8,
+  "h1": [
+    "Siete indicadores canónicos",
+  ],
+  "h2": [
+    "Misma cifra, distintas fuentes",
+    "PIB per cápita",
+    "Esperanza de vida al nacer",
+    "Tasa de urbanización",
+    "Apertura comercial",
+    "Desigualdad de ingreso",
+    "Consumo de energía per cápita",
+    "Salario real",
+  ],
+  "interpretaciones": 0,
+  "nodosTiempo": 0,
+  "svgs": 0,
+  "titulo": "Datos · Historia económica mundial",
+}
+`;
+
+exports[`regresión estructural de las vistas > espacio/index.html conserva su estructura 1`] = `
+{
+  "avisos": 1,
+  "enlacesGlosario": 0,
+  "figuras": 0,
+  "h1": [
+    "Mapa por indicador y año",
+  ],
+  "h2": [
+    "Nodos activos en",
+  ],
+  "interpretaciones": 0,
+  "nodosTiempo": 0,
+  "svgs": 1,
+  "titulo": "Mapa · Historia económica mundial",
+}
+`;
+
+exports[`regresión estructural de las vistas > glosario/index.html conserva su estructura 1`] = `
+{
+  "avisos": 0,
+  "enlacesGlosario": 2,
+  "figuras": 0,
+  "h1": [
+    "Glosario",
+  ],
+  "h2": [],
+  "interpretaciones": 0,
+  "nodosTiempo": 0,
+  "svgs": 0,
+  "titulo": "Glosario · Historia económica mundial",
+}
+`;
+
+exports[`regresión estructural de las vistas > grafo/index.html conserva su estructura 1`] = `
+{
+  "avisos": 0,
+  "enlacesGlosario": 0,
+  "figuras": 0,
+  "h1": [
+    "Grafo causal",
+  ],
+  "h2": [],
+  "interpretaciones": 0,
+  "nodosTiempo": 0,
+  "svgs": 5,
+  "titulo": "Grafo causal · Historia económica mundial",
+}
+`;
+
+exports[`regresión estructural de las vistas > index.html conserva su estructura 1`] = `
+{
+  "avisos": 0,
+  "enlacesGlosario": 0,
+  "figuras": 0,
+  "h1": [
+    "¿Por qué el crecimiento económico moderno ocurrió cuándo y dónde ocurrió, y por qué se distribuyó tan desigualmente?",
+  ],
+  "h2": [
+    "Ocho unidades, un solo grafo",
+    "Reglas de la casa",
+  ],
+  "interpretaciones": 0,
+  "nodosTiempo": 0,
+  "svgs": 0,
+  "titulo": "Inicio · Historia económica mundial",
+}
+`;
+
+exports[`regresión estructural de las vistas > nodos/gran-divergencia/index.html conserva su estructura 1`] = `
+{
+  "avisos": 1,
+  "enlacesGlosario": 10,
+  "figuras": 0,
+  "h1": [
+    "Gran Divergencia",
+  ],
+  "h2": [
+    "Qué se disputa",
+    "Qué se mide realmente",
+    "La pequeña y la gran divergencia",
+    "Por qué importa hoy",
+    "Interpretaciones en disputa",
+    "Relaciones con otros nodos",
+    "Series asociadas",
+    "¿Qué pasaba acá?",
+    "Historial de cambios",
+    "Fuentes citadas",
+  ],
+  "interpretaciones": 6,
+  "nodosTiempo": 0,
+  "svgs": 0,
+  "titulo": "Gran Divergencia · Historia económica mundial",
+}
+`;
+
+exports[`regresión estructural de las vistas > recorridos/index.html conserva su estructura 1`] = `
+{
+  "avisos": 0,
+  "enlacesGlosario": 0,
+  "figuras": 0,
+  "h1": [
+    "Ocho recorridos, uno por unidad",
+  ],
+  "h2": [],
+  "interpretaciones": 0,
+  "nodosTiempo": 0,
+  "svgs": 0,
+  "titulo": "Recorridos · Historia económica mundial",
+}
+`;
+
+exports[`regresión estructural de las vistas > tiempo/index.html conserva su estructura 1`] = `
+{
+  "avisos": 0,
+  "enlacesGlosario": 0,
+  "figuras": 0,
+  "h1": [
+    "Línea de tiempo",
+  ],
+  "h2": [],
+  "interpretaciones": 0,
+  "nodosTiempo": 74,
+  "svgs": 3,
+  "titulo": "Línea de tiempo · Historia económica mundial",
+}
+`;
+
+exports[`regresión estructural de las vistas > verificacion/index.html conserva su estructura 1`] = `
+{
+  "avisos": 1,
+  "enlacesGlosario": 0,
+  "figuras": 0,
+  "h1": [
+    "Verificar fuentes",
+  ],
+  "h2": [],
+  "interpretaciones": 0,
+  "nodosTiempo": 0,
+  "svgs": 0,
+  "titulo": "Verificación de fuentes · Historia económica mundial",
+}
+`;

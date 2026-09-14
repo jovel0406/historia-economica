@@ -17,5 +17,6 @@
     "Fronteras actuales."
   ],
   "granularidad": "paises-iso3",
+  "margen_publicado": false,
   "archivo": "data/processed/pwt100-pib-per-capita-mapa.csv"
 }

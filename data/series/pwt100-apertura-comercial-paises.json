@@ -25,5 +25,6 @@
     "Participaciones a PPA, no a tipo de cambio de mercado."
   ],
   "granularidad": "regiones",
+  "margen_publicado": false,
   "archivo": "data/processed/pwt100-apertura-comercial-paises.csv"
 }

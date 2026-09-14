@@ -34,6 +34,12 @@ export const Serie = z
      * "paises-iso3": usa códigos ISO 3166-1 alfa-3 (para el mapa); `cobertura_geografica` sigue siendo macro.
      */
     granularidad: z.enum(["regiones", "paises-iso3"]).default("regiones"),
+    /**
+     * ¿La fuente publica márgenes de error o intervalos para esta serie? (mejora 7). Si es true, el CSV lleva
+     * columnas `valor_inf` y `valor_sup` y el gráfico dibuja la banda; si es false, el gráfico lo dice en vez de inventar un ancho.
+     */
+    margen_publicado: z.boolean().default(false),
+    nota_margen: TextoNoVacio.optional(),
     /** Ruta del CSV relativa a la raíz del repositorio, dentro de data/processed/. */
     archivo: z.string().regex(/^data\/processed\/[a-z0-9_\-/]+\.csv$/, "debe ser un CSV bajo data/processed/"),
   })
@@ -58,6 +64,8 @@ export const Observacion = z.strictObject({
   region: z.string().regex(/^(?:[a-z0-9]+(?:-[a-z0-9]+)*|[A-Z]{3})$/),
   anio: Anio,
   valor: z.number(),
+  valor_inf: z.number().optional(),
+  valor_sup: z.number().optional(),
   nota: TextoNoVacio.optional(),
 });
 export type Observacion = z.infer<typeof Observacion>;
@@ -70,10 +78,14 @@ export const FilaCsv = z
     region: z.string().regex(/^(?:[a-z0-9]+(?:-[a-z0-9]+)*|[A-Z]{3})$/, "region debe ser un slug o un código ISO3"),
     anio: z.coerce.number().pipe(Anio),
     valor: z.coerce.number(),
+    valor_inf: z.union([z.literal(""), z.coerce.number()]).optional(),
+    valor_sup: z.union([z.literal(""), z.coerce.number()]).optional(),
     nota: z.string().optional(),
   })
   .transform((f) => {
     const obs: Observacion = { serie: f.serie, region: f.region, anio: f.anio, valor: f.valor };
+    if (typeof f.valor_inf === "number") obs.valor_inf = f.valor_inf;
+    if (typeof f.valor_sup === "number") obs.valor_sup = f.valor_sup;
     if (f.nota !== undefined && f.nota.trim().length > 0) obs.nota = f.nota.trim();
     return obs;
   });

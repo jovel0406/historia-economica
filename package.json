@@ -21,7 +21,11 @@
     "test:cobertura": "vitest run --coverage",
     "ingesta": "tsx scripts/fetch/todos.ts",
     "ingesta:maddison": "tsx scripts/fetch/maddison.ts",
-    "ingesta:pwt": "tsx scripts/fetch/pwt.ts"
+    "ingesta:pwt": "tsx scripts/fetch/pwt.ts",
+    "bibliografia:verificar": "tsx scripts/verificar-fuente.ts",
+    "sesgo": "tsx scripts/sesgo.ts",
+    "ingesta:wpp": "tsx scripts/fetch/wpp.ts",
+    "test:regresion": "vitest run tests/vistas/regresion.test.ts"
   },
   "dependencies": {
     "@observablehq/plot": "0.6.17",

@@ -9,7 +9,16 @@
       "fecha_descarga": "2026-01-01",
       "licencia": "Fixture",
       "cita_requerida": "Fixture: cita de prueba.",
-      "archivos": [{ "ruta": "data/processed/serie-fixture.csv", "sha256": "1109b38aea28e85035a9d83438403391e4b38636e79a81e787258ef1ff64e7c8" }]
+      "archivos": [
+        {
+          "ruta": "data/processed/serie-fixture.csv",
+          "sha256": "1109b38aea28e85035a9d83438403391e4b38636e79a81e787258ef1ff64e7c8"
+        },
+        {
+          "ruta": "data/processed/serie-margen.csv",
+          "sha256": "11af8405b14456edb2a83436c278f52e163066e554cabe5e0831967fc3e3a6a0"
+        }
+      ]
     }
   ]
 }

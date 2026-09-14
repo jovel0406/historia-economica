@@ -5,7 +5,8 @@
   "periodo": {
     "inicio": 1944,
     "fin": 1944,
-    "precision": "exacta"
+    "precision": "exacta",
+    "nota_periodizacion": "La conferencia se celebró en julio de 1944; el sistema que diseñó funcionó plenamente solo desde la convertibilidad europea de 1958 hasta 1971 [@bordo-eichengreen-1993]."
   },
   "regiones": [
     "mundo",
@@ -14,11 +15,82 @@
   "unidades": [
     "bretton-woods-y-segunda-posguerra"
   ],
-  "resumen": "Conferencia que diseñó el orden monetario de posguerra: tipos de cambio fijos pero ajustables, dólar convertible en oro, FMI y Banco Mundial. Buscaba evitar la deflación competitiva de los años treinta.",
-  "descripcion_larga": "",
-  "interpretaciones": [],
+  "resumen": "En julio de 1944, delegaciones de 44 países acordaron en Bretton Woods un orden monetario de tipos de cambio fijos pero ajustables, con el dólar convertible en oro, y crearon el FMI y el Banco Mundial. Fue una respuesta explícita al caos de entreguerras. Si el sistema funcionó por su diseño, por la hegemonía estadounidense o pese a ambos, se discute.",
+  "descripcion_larga": "## Qué se disputa\n\nTres lecturas. La institucional ve un diseño que aprendió de los años treinta: paridades ajustables y controles de capital para reconciliar estabilidad cambiaria con pleno empleo [@bordo-eichengreen-1993] [@eichengreen-2008]. La de economía política ve el resultado de una negociación asimétrica entre Keynes y White en la que se impuso la posición estadounidense [@steil-2013]. La keynesiana subraya que el sistema funcionó porque los controles de capital dieron autonomía a la política de demanda, y cayó cuando la movilidad de capitales la erosionó [@james-1996].\n\n## Qué se mide\n\nLas paridades, las reservas y los desequilibrios están bien documentados; el debate es interpretativo, no de datos.",
+  "interpretaciones": [
+    {
+      "escuela": "institucionalista",
+      "mecanismo": "Un diseño institucional que aprendió de entreguerras: paridades ajustables, controles de capital y un fondo de emergencia reconciliaron estabilidad cambiaria con autonomía interna.",
+      "desarrollo": "Bordo y Eichengreen reúnen la evaluación retrospectiva del sistema: fue el período de mayor estabilidad macroeconómica del siglo, aunque funcionó plenamente poco más de una década y con defectos de diseño —la dependencia del dólar— que lo condenaron [@bordo-eichengreen-1993]. Eichengreen lo enmarca en la historia del sistema monetario internacional [@eichengreen-2008].",
+      "autores_principales": [
+        "bordo-eichengreen-1993",
+        "eichengreen-2008"
+      ],
+      "evidencia_a_favor": [
+        "Estabilidad de precios y crecimiento comparativamente altos entre 1958 y 1971 [@bordo-eichengreen-1993].",
+        "Escasez de crisis cambiarias en el centro mientras rigieron los controles de capital."
+      ],
+      "evidencia_en_contra": [
+        "El sistema funcionó plenamente solo 13 años, lo que debilita la atribución de la edad de oro a su diseño.",
+        "La estabilidad pudo deberse a la reconstrucción y a la hegemonía estadounidense, no a las reglas."
+      ],
+      "que_la_refutaria": "Que la estabilidad de 1958–1971 hubiera persistido sin controles de capital ni paridades ajustables, o que economías fuera del sistema hubieran tenido igual estabilidad.",
+      "contrastable_con": [],
+      "peso_academico": "dominante"
+    },
+    {
+      "escuela": "sistema-mundo-dependencia",
+      "mecanismo": "Bretton Woods institucionalizó la hegemonía estadounidense: el dólar como moneda de reserva y unas instituciones diseñadas según los intereses del acreedor, no del deudor.",
+      "desarrollo": "Steil reconstruye la negociación entre Keynes y White y muestra cómo el plan estadounidense se impuso sobre la propuesta británica de una unión de compensación con obligaciones simétricas para acreedores y deudores [@steil-2013]. James sigue la evolución de la cooperación monetaria desde entonces y el papel central de Estados Unidos [@james-1996].",
+      "autores_principales": [
+        "steil-2013",
+        "james-1996"
+      ],
+      "evidencia_a_favor": [
+        "El rechazo del plan Keynes de sanciones a los países superavitarios [@steil-2013].",
+        "El privilegio del dólar como única moneda convertible en oro."
+      ],
+      "evidencia_en_contra": [
+        "La lectura hegemónica explica el diseño pero no por qué el sistema benefició también a Europa y Japón durante la edad de oro.",
+        "Las instituciones evolucionaron lejos del diseño original."
+      ],
+      "que_la_refutaria": "Que el diseño final hubiera incorporado obligaciones simétricas para países superavitarios, o que Estados Unidos no hubiera obtenido ventajas sistemáticas del papel del dólar.",
+      "contrastable_con": [],
+      "peso_academico": "sustancial"
+    }
+  ],
   "series": [],
-  "aristas": [],
-  "fuentes": [],
-  "estado_editorial": "esqueleto"
+  "aristas": [
+    {
+      "desde": "bretton-woods",
+      "hacia": "edad-de-oro-del-capitalismo",
+      "tipo": "precondicion_de",
+      "consenso": "medio",
+      "nota": "El marco monetario estable es una de las explicaciones de la edad de oro; otras la atribuyen a la reconstrucción y al catch-up tecnológico [@bordo-eichengreen-1993].",
+      "fuentes": [
+        "bordo-eichengreen-1993"
+      ],
+      "sostenida_por": [
+        "institucionalista",
+        "keynesiana"
+      ]
+    },
+    {
+      "desde": "bretton-woods",
+      "hacia": "fin-de-bretton-woods",
+      "tipo": "precondicion_de",
+      "consenso": "alto",
+      "nota": "La dependencia del dólar convertible llevaba en germen el dilema que estalló en 1971 [@eichengreen-2008].",
+      "fuentes": [
+        "eichengreen-2008"
+      ]
+    }
+  ],
+  "fuentes": [
+    "bordo-eichengreen-1993",
+    "eichengreen-2008",
+    "steil-2013",
+    "james-1996"
+  ],
+  "estado_editorial": "borrador"
 }

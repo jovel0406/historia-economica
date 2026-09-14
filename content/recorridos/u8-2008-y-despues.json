@@ -1,0 +1,24 @@
+{
+  "id": "u8-2008-y-despues",
+  "unidad": "crisis-de-2008-y-tendencias-mundiales",
+  "titulo": "La crisis de 2008 y las tendencias mundiales",
+  "pregunta_de_apertura": "¿Qué aprendió —y qué no— la política económica de los años treinta?",
+  "pasos": [
+    {
+      "nodo": "crisis-financiera-global",
+      "texto": "Esqueleto. Releé el nodo de la Gran Depresión con el selector en cada escuela: las recetas de 2008 salen de ahí."
+    },
+    {
+      "nodo": "china-en-la-omc",
+      "texto": "La integración china reconfiguró comercio y empleo industrial en el resto del mundo."
+    },
+    {
+      "nodo": "shock-inflacionario-y-energetico",
+      "texto": "El debate oferta-demanda reabierto."
+    }
+  ],
+  "cierre": {
+    "nodo": "gran-depresion",
+    "texto": "Usá el grafo: aislá los antecedentes de la Gran Depresión y preguntate cuáles se repitieron en 2008."
+  }
+}

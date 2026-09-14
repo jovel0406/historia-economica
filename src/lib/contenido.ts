@@ -111,3 +111,36 @@ export function colorDeNodo(n: Nodo): string {
   const [primera] = unidadesDe(n);
   return colorUnidad(primera?.numero);
 }
+
+export function recorridosOrdenados() {
+  const u = contenido().unidades;
+  return [...contenido().recorridos.values()].sort((a, b) => (u.get(a.unidad)?.numero ?? 0) - (u.get(b.unidad)?.numero ?? 0));
+}
+
+export function glosarioOrdenado() {
+  return [...contenido().glosario.values()].sort((a, b) => a.termino.localeCompare(b.termino, "es"));
+}
+
+export interface AristaConOrigen {
+  id: string;
+  arista: Nodo["aristas"][number];
+  declaradaEn: string;
+}
+
+/** Id estable de una arista para su página propia (mejora 2). */
+export function idArista(a: { desde: string; tipo: string; hacia: string }): string {
+  return `${a.desde}--${a.tipo.replace(/_/g, "-")}--${a.hacia}`;
+}
+
+/** Todas las aristas del grafo, sin duplicados, con el nodo que las declara. */
+export function aristasTodas(): AristaConOrigen[] {
+  const vistas = new Map<string, AristaConOrigen>();
+  for (const n of nodosOrdenados()) {
+    for (const a of n.aristas) {
+      const id = idArista(a);
+      if (!vistas.has(id)) vistas.set(id, { id, arista: a, declaradaEn: n.id });
+    }
+  }
+  const orden = { disputado: 0, marginal: 1, medio: 2, alto: 3 } as const;
+  return [...vistas.values()].sort((x, y) => orden[x.arista.consenso] - orden[y.arista.consenso] || x.id.localeCompare(y.id));
+}

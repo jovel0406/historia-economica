@@ -90,3 +90,15 @@ main { flex: 1; padding: 2.5rem 0 4rem; }
 .comparar { display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; align-items: center; margin: 0.5rem 0 1rem; font-size: 0.9rem; }
 .comparar select { font: inherit; font-size: 0.9rem; padding: 0.3rem 0.5rem; border: 1px solid var(--linea); border-radius: 6px; background: white; }
 @media (max-width: 1000px) { .cabecera .fila { flex-wrap: wrap; } }
+
+/* impresión (mejora 13) */
+@media print {
+  .cabecera, .pie, .banda-escuela, .selector-escuela, .comparar, .tiempo-controles, .controles, .aviso a[href="#"], nav { display: none !important; }
+  html { font-size: 11pt; background: white; }
+  main { padding: 0; }
+  .tarjeta { break-inside: avoid; border: 1px solid #999; box-shadow: none; }
+  a { color: inherit; text-decoration: none; }
+  a.cita::after { content: ""; }
+  .interpretaciones { grid-template-columns: 1fr 1fr; }
+  .interpretacion.escuela-inactiva { opacity: 1; }
+}

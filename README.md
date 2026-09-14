@@ -11,7 +11,10 @@ integridad epistémica (§1) mandan sobre todo lo demás: ninguna fuente, cifra 
 
 ## Estado
 
-**v1 completa** (2026-09-14): los siete hitos del SPEC §9 están implementados.
+**v1 completa y ampliada** (2026-09-14): los siete hitos del SPEC §9 más dieciocho mejoras
+(recorridos, páginas de arista, contrafactuales contrastables, glosario, búsqueda, comparador de
+fuentes, exportación, verificación de fuentes, historial, sesgo léxico, regresión estructural;
+D30–D47 en `docs/DECISIONES.md`).
 
 - Fundamentos: esquemas Zod, validador con integridad referencial, citas `[@id]`, hashes del
   manifiesto y filas de CSV; 94 tests.
@@ -19,8 +22,8 @@ integridad epistémica (§1) mandan sobre todo lo demás: ninguna fuente, cifra 
   escuelas (las nueve mínimas, neoclásica-cliométrica y marxista), 5 lentes Costa Rica / América
   Latina y 77 fuentes cotejadas contra catálogos, todas `verified: false` hasta que el autor las
   verifique a mano.
-- Datos: ingesta de la Maddison Project Database 2020 y de la Penn World Table 10.0 con
-  procedencia y hashes en `data/MANIFIESTO.json`; 8 series con nivel de evidencia.
+- Datos: ingesta de la Maddison Project Database 2020, la Penn World Table 10.0 y la World Population
+  Prospects 2024 con procedencia y hashes en `data/MANIFIESTO.json`; 11 series con nivel de evidencia.
 - Vistas: Tiempo (D3), Espacio (mapa coroplético con advertencia de anacronismo y agregación a
   macrorregión antes de 1900), Datos (Observable Plot, badges, notas, descarga de CSV), Debate
   (en cada nodo, con comparación de dos escuelas), Grafo (D3, subgrafo ancestral «según quién»)
@@ -45,6 +48,9 @@ Queda como trabajo editorial, no técnico: verificar fuentes, pasar nodos de `bo
 | `pnpm test` / `pnpm run test:cobertura` | tests con Vitest; la cobertura exige ≥ 90 % en esquemas, validador e ingesta |
 | `pnpm run check` | `astro check` + `tsc --noEmit` |
 | `pnpm run build` | `validar:estricto && astro build`: si el contenido no pasa, no hay sitio |
+| `pnpm run bibliografia:verificar -- <id> --estado verificada\|dudosa --nota "…"` | registra una verificación manual de fuente |
+| `pnpm run sesgo` | lista resúmenes con vocabulario de una sola escuela; termina con 1 si hay alguno |
+| `pnpm run test:regresion` | construye el sitio y compara la estructura de diez páginas con las instantáneas |
 | `pnpm run ingesta` | corre todos los adaptadores (`ingesta:maddison`, `ingesta:pwt`): descarga, hash, normaliza, escribe `data/processed/` y el manifiesto. `-- --reutilizar` evita volver a descargar |
 | `pnpm run dev` | servidor de desarrollo de Astro |
 
@@ -110,7 +116,9 @@ src/lib/                     acceso al contenido validado y utilidades de texto 
 src/layouts/, src/styles/    diseño base
 src/components/              LineaDeTiempo.astro (SVG), AvisoFuentes.astro
 src/vistas/tiempo/layout.ts  geometría de la línea de tiempo (carriles, rangos de unidad), testeada
-src/pages/                   index, tiempo, espacio, datos (+ datos/[serie].csv), grafo, nodos/, escuelas, fuentes
+src/pages/                   index, tiempo, espacio, datos (+ csv), grafo, nodos/ (+ .md), aristas/, recorridos/, escuelas, fuentes, glosario, buscar (+ json), verificacion
+content/recorridos/          recorridos guiados, uno por unidad
+content/glosario.json        términos con definición citada
 public/medios/               imágenes de los nodos (cada una con crédito y licencia en el nodo)
 tests/                       Vitest; fixtures válidos e inválidos en tests/fixtures/
 ```

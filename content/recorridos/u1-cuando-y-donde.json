@@ -1,0 +1,24 @@
+{
+  "id": "u1-cuando-y-donde",
+  "unidad": "problematizacion-del-crecimiento",
+  "titulo": "¿Cuándo y dónde empezó el crecimiento moderno?",
+  "pregunta_de_apertura": "Si las cifras anteriores a 1820 son conjeturas, ¿qué podemos afirmar con seguridad sobre cuándo se separaron Europa y Asia?",
+  "pasos": [
+    {
+      "nodo": "gran-divergencia",
+      "texto": "Empezá por la nota de periodización: tres escuelas dan tres fechas distintas para la misma brecha. Fijate en las series conjeturales y en sus márgenes."
+    },
+    {
+      "nodo": "primera-revolucion-industrial",
+      "texto": "La Gran Divergencia contiene este episodio. Compará la lectura de precios relativos con la cliométrica: ¿fue una revolución o un siglo de crecimiento lento?"
+    },
+    {
+      "nodo": "economia-esclavista-atlantica",
+      "texto": "Una arista disputada une este nodo con la Revolución Industrial. Leé quién la sostiene y quién la niega antes de decidir."
+    }
+  ],
+  "cierre": {
+    "nodo": "gran-divergencia",
+    "texto": "Elegí dos escuelas en el comparador y respondé: ¿qué observación concreta haría cambiar de opinión a cada una?"
+  }
+}

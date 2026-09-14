@@ -58,7 +58,10 @@
         "La recuperación de 1933 fue monetaria, no fiscal [@romer-1992]."
       ],
       "que_la_refutaria": "Que las series mensuales de 1929–1930 mostraran la contracción del dinero y del crédito claramente antes que la del consumo y la inversión, y que la recuperación se explicara por política fiscal y no por expansión monetaria.",
-      "peso_academico": "sustancial"
+      "peso_academico": "sustancial",
+      "contrastable_con": [
+        "mpd2020-pib-per-capita-paises"
+      ]
     },
     {
       "escuela": "institucionalista",
@@ -78,7 +81,10 @@
         "Explica la transmisión internacional mejor que el origen de la contracción."
       ],
       "que_la_refutaria": "Que países que permanecieron en el patrón oro se hubieran recuperado tan rápido como los que lo abandonaron, o que la fecha de salida del oro no predijera la trayectoria de la producción industrial.",
-      "peso_academico": "dominante"
+      "peso_academico": "dominante",
+      "contrastable_con": [
+        "mpd2020-pib-per-capita-paises"
+      ]
     },
     {
       "escuela": "neoclasica-cliometrica",

@@ -1,0 +1,24 @@
+{
+  "id": "u5-posguerra",
+  "unidad": "bretton-woods-y-segunda-posguerra",
+  "titulo": "Bretton Woods y la segunda posguerra",
+  "pregunta_de_apertura": "¿La edad de oro fue obra de un diseño institucional, de la reconstrucción o de la hegemonía de Estados Unidos?",
+  "pasos": [
+    {
+      "nodo": "bretton-woods",
+      "texto": "Dos lecturas: diseño que aprendió de entreguerras frente a hegemonía institucionalizada."
+    },
+    {
+      "nodo": "edad-de-oro-del-capitalismo",
+      "texto": "Esqueleto. Buscá en la Vista Datos el PIB per cápita de 1950–1973 en Penn World Table."
+    },
+    {
+      "nodo": "isi-y-estructuralismo-cepalino",
+      "texto": "La versión latinoamericana de la posguerra: crecimiento alto con vulnerabilidad externa."
+    }
+  ],
+  "cierre": {
+    "nodo": "isi-y-estructuralismo-cepalino",
+    "texto": "Tres escuelas sobre el mismo período. ¿Qué comparación internacional zanjaría la disputa entre la cepalina y la ortodoxa?"
+  }
+}

@@ -11,3 +11,5 @@ export * from "./region.ts";
 export * from "./serie.ts";
 export * from "./manifiesto.ts";
 export * from "./unidad.ts";
+export * from "./recorrido.ts";
+export * from "./glosario.ts";

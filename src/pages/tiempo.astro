@@ -8,9 +8,30 @@ import LineaDeTiempo from "../components/LineaDeTiempo.astro";
     <h1 style="margin-bottom:0.3em">Línea de tiempo</h1>
     <p class="entradilla">Bandas para los procesos, marcadores para los eventos. Cuando las fechas están en disputa, los bordes se difuminan: nunca se dibuja un límite nítido sobre una fecha discutida. Las ocho unidades del curso aparecen como cinta de referencia; su rango se deriva de los nodos que contienen.</p>
   </div>
-  <div style="margin-top:1.5rem">
-    <LineaDeTiempo />
+  <div class="contenedor escalas" role="tablist" aria-label="Escala de la línea de tiempo">
+    <span class="meta">Escala:</span>
+    <button class="chip activo" data-escala="completa" role="tab" aria-selected="true">Completa (1500–hoy)</button>
+    <button class="chip" data-escala="moderna" role="tab" aria-selected="false">1750–1950</button>
+    <button class="chip" data-escala="contemporanea" role="tab" aria-selected="false">1900–hoy</button>
   </div>
+  <div style="margin-top:1rem">
+    <div data-escala-panel="completa"><LineaDeTiempo idVista="completa" /></div>
+    <div data-escala-panel="moderna" hidden><LineaDeTiempo idVista="moderna" dominio={[1745, 1800, 1900, 1955]} proporciones={[0.25, 0.65]} ticks={[1750, 1760, 1770, 1780, 1790, 1800, 1810, 1820, 1830, 1840, 1850, 1860, 1870, 1880, 1890, 1900, 1910, 1920, 1930, 1940, 1950]} soloVisibles /></div>
+    <div data-escala-panel="contemporanea" hidden><LineaDeTiempo idVista="contemporanea" dominio={[1895, 1950, 1990, 2030]} proporciones={[0.4, 0.75]} ticks={[1900, 1905, 1910, 1915, 1920, 1925, 1930, 1935, 1940, 1945, 1950, 1955, 1960, 1965, 1970, 1975, 1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020, 2025]} soloVisibles /></div>
+  </div>
+  <script>
+    const botones = document.querySelectorAll<HTMLButtonElement>("[data-escala]");
+    const paneles = document.querySelectorAll<HTMLElement>("[data-escala-panel]");
+    botones.forEach((b) => b.addEventListener("click", () => {
+      botones.forEach((o) => { o.classList.toggle("activo", o === b); o.setAttribute("aria-selected", String(o === b)); });
+      paneles.forEach((p) => { p.hidden = p.dataset.escalaPanel !== b.dataset.escala; });
+    }));
+  </script>
+  <style>
+    .escalas { display: flex; gap: 0.5rem; align-items: center; margin-top: 1.2rem; }
+    .escalas .chip { cursor: pointer; font: inherit; font-size: 0.8rem; }
+    .escalas .chip.activo { background: var(--tinta); color: var(--papel); border-color: var(--tinta); }
+  </style>
   <div class="contenedor" style="margin-top:2rem">
     <p class="meta">Escala no uniforme: los siglos XVI–XVIII ocupan menos espacio que el siglo XX, donde se concentran los nodos. Desplazá horizontalmente para recorrerla.</p>
   </div>

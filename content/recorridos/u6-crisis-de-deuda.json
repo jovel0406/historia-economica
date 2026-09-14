@@ -1,0 +1,24 @@
+{
+  "id": "u6-crisis-de-deuda",
+  "unidad": "de-la-prosperidad-a-la-crisis-de-deuda",
+  "titulo": "De la prosperidad a la crisis de deuda",
+  "pregunta_de_apertura": "¿Shocks externos o políticas internas?",
+  "pasos": [
+    {
+      "nodo": "fin-de-bretton-woods",
+      "texto": "El cambio de régimen que abrió la era de los flujos de capital."
+    },
+    {
+      "nodo": "crisis-del-petroleo",
+      "texto": "Los excedentes petroleros reciclados como préstamos a la periferia."
+    },
+    {
+      "nodo": "crisis-de-la-deuda-latinoamericana",
+      "texto": "Cuatro interpretaciones y una lente costarricense: Costa Rica dejó de pagar antes que México."
+    }
+  ],
+  "cierre": {
+    "nodo": "crisis-de-la-deuda-latinoamericana",
+    "texto": "Contrastá la escuela cepalina y la monetarista con las series de PWT para Costa Rica, México, Brasil y Argentina."
+  }
+}

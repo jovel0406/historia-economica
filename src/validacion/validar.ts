@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { basename, join, relative } from "node:path";
 import type { z } from "zod";
 import {
+  ArchivoGlosario,
   ArchivoIndicadores,
   ArchivoLentes,
   ArchivoRegiones,
@@ -12,6 +13,7 @@ import {
   Escuela,
   Manifiesto,
   Nodo,
+  Recorrido,
   Serie,
   UMBRAL_MEDICION,
   claveArista,
@@ -20,6 +22,7 @@ import {
   type Indicador,
   type LensEntry,
   type Region,
+  type Termino,
   type Unidad,
 } from "../schemas/index.ts";
 import { encontrarPlaceholders, leerJson, listarJson, sha256DeArchivo } from "./cargar.ts";
@@ -44,6 +47,8 @@ export interface Contenido {
   nodos: Map<string, Nodo>;
   /** Entradas de lente por id de nodo. */
   lentes: Map<string, LensEntry[]>;
+  recorridos: Map<string, Recorrido>;
+  glosario: Map<string, Termino>;
   /** Archivo (relativo a la raíz) del que salió cada nodo, serie, escuela o lente, por id. */
   archivoDe: Map<string, string>;
 }
@@ -69,6 +74,8 @@ export const REGLAS = {
   referenciaCita: "referencia-cita",
   medioFaltante: "medio-faltante",
   filaCsv: "fila-csv",
+  referenciaSerieContraste: "referencia-serie-contraste",
+  sesgoLexico: "sesgo-lexico",
   rawAusente: "raw-ausente",
   datoSinManifiesto: "dato-sin-manifiesto",
   hash: "hash",
@@ -237,8 +244,21 @@ export function cargarProyecto(opciones: Opciones, informe = new Informe()): { c
     archivoDe.set(`lente:${esperado}`, archivo);
   }
 
+  const recorridos = new Map<string, Recorrido>();
+  cargarDirectorio(ctx, join(content, "recorridos"), Recorrido, recorridos, archivoDe);
+
+  const glosario = new Map<string, Termino>();
+  {
+    const rutaAbs = join(content, "glosario.json");
+    if (existsSync(rutaAbs)) {
+      const datos = cargarJson(ctx, rutaAbs, false);
+      const lista = datos === undefined ? undefined : parsear(ctx, ArchivoGlosario, datos, rel(ctx, rutaAbs));
+      for (const t of lista ?? []) glosario.set(t.id, t);
+    }
+  }
+
   return {
-    contenido: { raiz: opciones.raiz, regiones, indicadores, unidades, escuelas, fuentes, manifiesto, series, nodos, lentes, archivoDe },
+    contenido: { raiz: opciones.raiz, regiones, indicadores, unidades, escuelas, fuentes, manifiesto, series, nodos, lentes, recorridos, glosario, archivoDe },
     informe,
   };
 }
@@ -257,7 +277,10 @@ function validarFilasCsv(contenido: Contenido, s: Serie, informe: Informe): void
   let erroresMostrados = 0;
   for (let i = 1; i < lineas.length; i++) {
     const celdas = (lineas[i] ?? "").split(",");
-    const fila = { serie: celdas[0], region: celdas[1], anio: celdas[2], valor: celdas[3], nota: celdas[4] };
+    const conMargen = cabecera[4] === "valor_inf";
+    const fila = conMargen
+      ? { serie: celdas[0], region: celdas[1], anio: celdas[2], valor: celdas[3], valor_inf: celdas[4], valor_sup: celdas[5], nota: celdas[6] }
+      : { serie: celdas[0], region: celdas[1], anio: celdas[2], valor: celdas[3], nota: celdas[4] };
     const r = FilaCsv.safeParse(fila);
     let mensaje: string | undefined;
     if (!r.success) mensaje = r.error.issues.map((x) => `${x.path.join(".")}: ${x.message}`).join("; ");
@@ -271,11 +294,12 @@ function validarFilasCsv(contenido: Contenido, s: Serie, informe: Informe): void
     }
   }
   if (lineas.length < 2) informe.error(REGLAS.filaCsv, s.archivo, "el CSV no tiene observaciones");
+  if (s.margen_publicado && cabecera[4] !== "valor_inf") informe.error(REGLAS.filaCsv, s.archivo, "la serie declara margen_publicado pero el CSV no tiene columnas valor_inf,valor_sup");
 }
 
 /** Comprueba integridad referencial y reglas que cruzan archivos. */
 export function validarReferencias(contenido: Contenido, informe: Informe): void {
-  const { regiones, unidades, escuelas, fuentes, manifiesto, series, nodos, lentes, archivoDe } = contenido;
+  const { regiones, unidades, escuelas, fuentes, manifiesto, series, nodos, lentes, recorridos, glosario, archivoDe } = contenido;
   const datasets = new Map(manifiesto.datasets.map((d) => [d.id, d]));
   const archivosManifestados = new Set(manifiesto.datasets.flatMap((d) => d.archivos.map((a) => a.ruta)));
 
@@ -362,6 +386,9 @@ export function validarReferencias(contenido: Contenido, informe: Informe): void
       exigirEscuela(archivo, it.escuela, `interpretaciones.${i}.escuela`);
       it.autores_principales.forEach((f, j) => exigirFuente(archivo, f, `interpretaciones.${i}.autores_principales.${j}`));
       const ruta = `interpretaciones.${i}`;
+      it.contrastable_con.forEach((sid, j) => {
+        if (!series.has(sid)) informe.error(REGLAS.referenciaSerieContraste, archivo, `la serie "${sid}" con la que se dice contrastable no existe en data/series/`, `${ruta}.contrastable_con.${j}`);
+      });
       exigirCitas(archivo, it.mecanismo, `${ruta}.mecanismo`);
       exigirCitas(archivo, it.desarrollo, `${ruta}.desarrollo`);
       exigirCitas(archivo, it.que_la_refutaria, `${ruta}.que_la_refutaria`);
@@ -399,6 +426,15 @@ export function validarReferencias(contenido: Contenido, informe: Informe): void
       aristasVistas.set(clave, previas);
     });
 
+    // Sesgo léxico (mejora 17): un resumen debe leerse sin adherir a ninguna escuela (SPEC §8).
+    const normalizado = n.resumen.toLowerCase();
+    const escuelasDetectadas = [...escuelas.values()].filter((e) => e.vocabulario_propio.some((v) => normalizado.includes(v.toLowerCase())));
+    if (escuelasDetectadas.length === 1) {
+      const e = escuelasDetectadas[0]!;
+      const terminos = e.vocabulario_propio.filter((v) => normalizado.includes(v.toLowerCase()));
+      informe.info(REGLAS.sesgoLexico, archivo, `el resumen usa vocabulario propio de la escuela "${e.nombre}" (${terminos.join(", ")}) y de ninguna otra: revisá si un partidario de las demás lo consideraría tendencioso (SPEC §8)`, "resumen");
+    }
+
     if (n.resumen.length > LIMITE_RESUMEN) {
       informe.advertencia(REGLAS.resumenLargo, archivo, `el resumen tiene ${n.resumen.length} caracteres; debería ser de 2–3 frases (orientativo: ≤ ${LIMITE_RESUMEN})`, "resumen");
     }
@@ -424,6 +460,24 @@ export function validarReferencias(contenido: Contenido, informe: Informe): void
         informe.advertencia(REGLAS.aristaDuplicada, archivo, `la arista ${clave} está declarada en más de un archivo (${archivos.join(", ")}); dejala en uno solo`);
       }
     }
+  }
+
+  // Recorridos → unidad, nodos, citas.
+  for (const r of recorridos.values()) {
+    const archivo = archivoDe.get(r.id) ?? `content/recorridos/${r.id}.json`;
+    if (!unidades.has(r.unidad)) informe.error(REGLAS.referenciaUnidad, archivo, `la unidad "${r.unidad}" no existe`, "unidad");
+    r.pasos.forEach((p, i) => {
+      if (!nodos.has(p.nodo)) informe.error(REGLAS.referenciaNodo, archivo, `el nodo "${p.nodo}" del paso ${i + 1} no existe`, `pasos.${i}.nodo`);
+      exigirCitas(archivo, p.texto, `pasos.${i}.texto`);
+    });
+    if (!nodos.has(r.cierre.nodo)) informe.error(REGLAS.referenciaNodo, archivo, `el nodo de cierre "${r.cierre.nodo}" no existe`, "cierre.nodo");
+    exigirCitas(archivo, r.cierre.texto, "cierre.texto");
+  }
+
+  // Glosario → fuentes, citas.
+  for (const t of glosario.values()) {
+    t.fuentes.forEach((f, i) => exigirFuente("content/glosario.json", f, `${t.id}.fuentes.${i}`));
+    exigirCitas("content/glosario.json", t.definicion, `${t.id}.definicion`);
   }
 
   // Lentes → nodos, fuentes; una entrada por región.

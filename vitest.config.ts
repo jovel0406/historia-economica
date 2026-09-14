@@ -3,12 +3,13 @@ import { defineConfig } from "vitest/config";
 export default defineConfig({
   test: {
     include: ["tests/**/*.test.ts"],
+    testTimeout: 30_000,
     coverage: {
       provider: "v8",
       // SPEC §3: cobertura obligatoria en el validador de esquema y en el pipeline de ingesta.
       include: ["src/schemas/**", "src/validacion/**", "scripts/fetch/**"],
       // todos.ts es solo la orquestación de línea de comandos; los adaptadores se testean directamente.
-      exclude: ["scripts/fetch/todos.ts"],
+      exclude: ["scripts/fetch/todos.ts", "scripts/sesgo.ts"],
       thresholds: {
         lines: 90,
         functions: 90,

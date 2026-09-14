@@ -1,0 +1,24 @@
+{
+  "id": "u4-anos-treinta",
+  "unidad": "crisis-de-los-anos-30",
+  "titulo": "La crisis de los años treinta",
+  "pregunta_de_apertura": "¿Fue el dinero, la demanda, el crédito o el patrón oro?",
+  "pasos": [
+    {
+      "nodo": "patron-oro-de-entreguerras",
+      "texto": "El sistema restaurado sin las condiciones de antes de 1914."
+    },
+    {
+      "nodo": "gran-depresion",
+      "texto": "Cuatro interpretaciones. Usá el selector global para leer el nodo según cada una y ver qué aristas se atenúan."
+    },
+    {
+      "nodo": "new-deal",
+      "texto": "Su efecto sobre la recuperación es lo disputado, no su origen."
+    }
+  ],
+  "cierre": {
+    "nodo": "gran-depresion",
+    "texto": "Compará monetarista y keynesiana: ambas citan la serie de 1929–1933 y llegan a conclusiones opuestas. ¿Qué dato mensual las separaría?"
+  }
+}

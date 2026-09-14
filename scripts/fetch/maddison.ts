@@ -112,6 +112,8 @@ function serieBase(id: string, nivel: Serie["nivel_evidencia"], filas: Observaci
     nota_metodologica: NOTA,
     advertencias: extra.advertencias ?? ["Fronteras modernas aplicadas a todo el período."],
     granularidad: extra.granularidad ?? "regiones",
+    margen_publicado: false,
+    nota_margen: "La MPD no publica márgenes de error por observación; la documentación describe la incertidumbre cualitativamente.",
     archivo,
   };
 }

@@ -27,7 +27,9 @@ const fuentes = [
   fuente("pwt100", "Penn World Table 10.0", "pwt100-pib-per-capita-mapa", null, "estadistica_oficial"),
 ].filter((f): f is Fuente => f !== null);
 const indicadores = INDICADORES_CANONICOS.map((id) => ({ id, nombre: contenido().indicadores.get(id)?.nombre ?? id, disponible: id === "pib_per_capita" && fuentes.length > 0 }));
-const carga = { topologia, paises, nombresRegion, fuentes, umbralAnacronismo: 1900 };
+import { nodosOrdenados } from "../lib/contenido.ts";
+const nodosPeriodo = nodosOrdenados().map((n) => ({ id: n.id, titulo: n.titulo, inicio: n.periodo.inicio, fin: n.periodo.fin, estado: n.estado_editorial }));
+const carga = { topologia, paises, nombresRegion, fuentes, umbralAnacronismo: 1900, nodos: nodosPeriodo };
 ---
 <Base titulo="Mapa" ancho="completo">
   <div class="contenedor">
@@ -52,6 +54,7 @@ const carga = { topologia, paises, nombresRegion, fuentes, umbralAnacronismo: 19
         <input type="range" data-anio min="0" max="0" value="0" />
       </label>
       <button type="button" class="boton-sec" data-play>▶ Animar</button>
+      <button type="button" class="boton-sec" data-tabla-toggle>Ver como tabla</button>
       <span class="badge" data-badge></span>
     </div>
     <p class="modo aviso" data-modo hidden><strong>Año anterior a 1900:</strong> valores agregados a macrorregión (serie regional de la fuente). Cada país muestra el valor de su macrorregión.</p>
@@ -61,6 +64,12 @@ const carga = { topologia, paises, nombresRegion, fuentes, umbralAnacronismo: 19
       <div class="tooltip" data-tooltip hidden></div>
     </div>
     <p class="meta contenedor" data-cita></p>
+    <div class="contenedor tabla-mapa" data-tabla hidden></div>
+    <div class="contenedor nodos-activos">
+      <h2>Nodos activos en <span data-anio-nodos></span></h2>
+      <p class="meta">Sincronía con la línea de tiempo: procesos y eventos cuyo período incluye el año elegido.</p>
+      <ul class="chips" data-nodos-activos></ul>
+    </div>
   </div>
 </Base>
 
@@ -77,6 +86,12 @@ const carga = { topologia, paises, nombresRegion, fuentes, umbralAnacronismo: 19
   .leyenda { position: absolute; left: 1rem; bottom: 1rem; background: rgba(255,255,255,0.92); border: 1px solid var(--linea); border-radius: 8px; padding: 0.5rem 0.7rem; font-size: 0.78rem; }
   .leyenda .barra { height: 10px; width: 220px; border-radius: 3px; margin: 0.3rem 0; }
   .leyenda .ticks { display: flex; justify-content: space-between; color: var(--tinta-3); }
+  .tabla-mapa { margin-top: 1rem; max-height: 26rem; overflow: auto; font-size: 0.85rem; }
+  .tabla-mapa table { border-collapse: collapse; width: 100%; }
+  .tabla-mapa th, .tabla-mapa td { text-align: left; padding: 0.2rem 0.5rem; border-bottom: 1px solid var(--linea); }
+  .nodos-activos { margin-top: 1.5rem; }
+  .nodos-activos h2 { font-size: 1.3rem; margin-top: 0; }
+  .nodos-activos li { list-style: none; }
   .tooltip { position: absolute; pointer-events: none; background: white; border: 1px solid var(--linea); border-radius: 8px; padding: 0.4rem 0.7rem; font-size: 0.82rem; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
 </style>
 
@@ -87,7 +102,7 @@ const carga = { topologia, paises, nombresRegion, fuentes, umbralAnacronismo: 19
   import type { Feature, Geometry } from "geojson";
 
   interface Fuente { id: string; nombre: string; nivel: string; anios: number[]; paises: Record<string, Record<string, number>>; regiones: Record<string, Record<string, number>>; cita: string; url: string }
-  interface Carga { topologia: Topology; paises: { ccn3: string; cca3: string; nombre: string; macrorregion: string | null }[]; nombresRegion: Record<string, string>; fuentes: Fuente[]; umbralAnacronismo: number }
+  interface Carga { topologia: Topology; paises: { ccn3: string; cca3: string; nombre: string; macrorregion: string | null }[]; nombresRegion: Record<string, string>; fuentes: Fuente[]; umbralAnacronismo: number; nodos: { id: string; titulo: string; inicio: number; fin: number | null; estado: string }[] }
 
   const raiz = document.querySelector<HTMLElement>("[data-espacio]");
   if (raiz) {
@@ -102,6 +117,12 @@ const carga = { topologia, paises, nombresRegion, fuentes, umbralAnacronismo: 19
     const leyenda = raiz.querySelector<HTMLElement>("[data-leyenda]")!;
     const cita = raiz.querySelector<HTMLElement>("[data-cita]")!;
     const tooltip = raiz.querySelector<HTMLElement>("[data-tooltip]")!;
+    const tabla = raiz.querySelector<HTMLElement>("[data-tabla]")!;
+    const tablaToggle = raiz.querySelector<HTMLButtonElement>("[data-tabla-toggle]")!;
+    const listaNodos = raiz.querySelector<HTMLElement>("[data-nodos-activos]")!;
+    const anioNodos = raiz.querySelector<HTMLElement>("[data-anio-nodos]")!;
+    const AHORA = 2026;
+    let ultimosValores: { nombre: string; valor: number | null; region: string }[] = [];
 
     const porNumerico = new Map(carga.paises.map((p) => [p.ccn3, p]));
     const objetos = carga.topologia.objects as Record<string, GeometryCollection>;
@@ -152,9 +173,19 @@ const carga = { topologia, paises, nombresRegion, fuentes, umbralAnacronismo: 19
         tooltip.style.left = `${Math.min(ev.clientX - r.left + 12, r.width - 260)}px`;
         tooltip.style.top = `${ev.clientY - r.top + 12}px`;
       }).on("mouseleave", () => { tooltip.hidden = true; });
+      ultimosValores = paisesGeo.features.map((d) => { const p = porNumerico.get(idNumerico(d)); return { nombre: p?.nombre ?? String(d.properties?.name ?? "?"), valor: valorDe(d), region: p?.macrorregion ? carga.nombresRegion[p.macrorregion] ?? p.macrorregion : "—" }; }).sort((a, b) => a.nombre.localeCompare(b.nombre, "es"));
+      if (!tabla.hidden) pintarTabla(anio);
+      anioNodos.textContent = String(anio);
+      const activos = carga.nodos.filter((n) => n.inicio <= anio && (n.fin ?? AHORA) >= anio);
+      listaNodos.innerHTML = activos.length === 0 ? "<li class=\"meta\">ningún nodo cubre este año</li>" : activos.map((n) => `<li><a class="chip" href="/nodos/${n.id}" style="${n.estado === "esqueleto" ? "border-style:dashed" : ""}">${n.titulo}</a></li>`).join("");
       badge.textContent = anio < 1820 ? "estimación conjetural" : fuente.nivel === "estadistica_oficial" ? "estadística oficial" : "reconstrucción documentada";
       badge.className = `badge ${anio < 1820 ? "badge-conjetural" : fuente.nivel === "estadistica_oficial" ? "badge-alto" : "badge-medio"}`;
     }
+
+    function pintarTabla(anio: number): void {
+      tabla.innerHTML = `<table><caption>${fuente.nombre}, ${anio}: valor por país (${ultimosValores.filter((v) => v.valor !== null).length} con dato)</caption><thead><tr><th scope="col">País</th><th scope="col">Macrorregión</th><th scope="col">Valor</th></tr></thead><tbody>${ultimosValores.map((v) => `<tr><td>${v.nombre}</td><td>${v.region}</td><td>${v.valor === null ? "sin dato" : v.valor.toLocaleString("es", { maximumFractionDigits: 0 })}</td></tr>`).join("")}</tbody></table>`;
+    }
+    tablaToggle.addEventListener("click", () => { tabla.hidden = !tabla.hidden; tablaToggle.textContent = tabla.hidden ? "Ver como tabla" : "Ocultar tabla"; if (!tabla.hidden) pintarTabla(fuente.anios[Number(rango.value)] ?? 0); });
 
     function pintarLeyenda(): void {
       const [lo, hi] = color.domain();
@@ -167,7 +198,15 @@ const carga = { topologia, paises, nombresRegion, fuentes, umbralAnacronismo: 19
       fuente = carga.fuentes.find((f) => f.id === selFuente.value) ?? carga.fuentes[0]!;
       color = escalaColor(fuente);
       rango.max = String(fuente.anios.length - 1);
-      rango.value = String(Math.max(0, fuente.anios.length - 1));
+      const pedido = Number(new URLSearchParams(location.search).get("anio"));
+      let indice = Math.max(0, fuente.anios.length - 1);
+      if (Number.isFinite(pedido) && pedido > 0) {
+        // Año más cercano disponible en la fuente (sincronía con la línea de tiempo, mejora 11).
+        let mejor = 0;
+        fuente.anios.forEach((a, i) => { if (Math.abs(a - pedido) < Math.abs((fuente.anios[mejor] ?? 0) - pedido)) mejor = i; });
+        indice = mejor;
+      }
+      rango.value = String(indice);
       cita.innerHTML = `Fuente: <a href="${fuente.url}">${fuente.nombre}</a>. Cita requerida: ${fuente.cita}`;
       pintarLeyenda();
       pintar();

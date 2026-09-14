@@ -25,6 +25,7 @@ export function interpretacionValida(extra: Partial<Interpretacion> = {}): Inter
     evidencia_a_favor: ["Evidencia a favor."],
     evidencia_en_contra: ["Evidencia en contra."],
     que_la_refutaria: "Quedaría refutada si la serie de salarios reales mostrara el patrón inverso durante todo el período.",
+    contrastable_con: [],
     peso_academico: "sustancial",
     ...extra,
   };
@@ -64,6 +65,7 @@ export function serieValida(extra: Partial<Serie> = {}): Serie {
     nota_metodologica: "Nota metodológica de prueba.",
     advertencias: [],
     granularidad: "regiones",
+    margen_publicado: false,
     archivo: "data/processed/serie-prueba.csv",
     ...extra,
   };

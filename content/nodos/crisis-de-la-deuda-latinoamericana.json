@@ -38,7 +38,11 @@
         "La abundancia de crédito no obligaba a endeudarse a tasa variable ni a sostener tipos de cambio sobrevaluados."
       ],
       "que_la_refutaria": "Que los países con políticas fiscales y cambiarias prudentes hubieran sufrido la crisis con la misma intensidad que los demás, o que el retiro del crédito internacional no precediera al deterioro de las cuentas internas.",
-      "peso_academico": "sustancial"
+      "peso_academico": "sustancial",
+      "contrastable_con": [
+        "pwt100-pib-per-capita-paises",
+        "pwt100-apertura-comercial-paises"
+      ]
     },
     {
       "escuela": "monetarista",
@@ -57,7 +61,10 @@
         "Chile, que había liberalizado y tenía superávit fiscal, sufrió una de las contracciones más profundas [@diaz-alejandro-1985]."
       ],
       "que_la_refutaria": "Que países con equilibrio fiscal, tipo de cambio competitivo y apertura comercial hubieran sufrido la crisis con la misma intensidad, o que la fuga de capitales no estuviera asociada a la sobrevaluación.",
-      "peso_academico": "sustancial"
+      "peso_academico": "sustancial",
+      "contrastable_con": [
+        "pwt100-apertura-comercial-paises"
+      ]
     },
     {
       "escuela": "sistema-mundo-dependencia",

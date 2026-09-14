@@ -8,5 +8,9 @@
     "ocampo-2014",
     "thorp-1998"
   ],
-  "critica_principal": "La industrialización sustitutiva generó sesgo antiexportador, ineficiencias y presiones fiscales que contribuyeron a la crisis de la deuda [@edwards-1995], y la tesis del deterioro secular de los términos de intercambio es empíricamente discutida."
+  "critica_principal": "La industrialización sustitutiva generó sesgo antiexportador, ineficiencias y presiones fiscales que contribuyeron a la crisis de la deuda [@edwards-1995], y la tesis del deterioro secular de los términos de intercambio es empíricamente discutida.",
+  "vocabulario_propio": [
+    "deterioro de los términos de intercambio",
+    "heterogeneidad estructural"
+  ]
 }

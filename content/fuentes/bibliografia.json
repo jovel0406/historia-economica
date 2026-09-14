@@ -1085,5 +1085,191 @@
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
     "nota_verificacion": "URL comprobada (HTTP 200) el 2026-09-14. Licencia CC BY 4.0 según la página. El año de publicación (2021) no aparece en la página consultada: verificar. Procedencia y hash en data/MANIFIESTO.json."
+  },
+  {
+    "id": "bordo-eichengreen-1993",
+    "tipo": "libro",
+    "autores": [
+      "Bordo, Michael D. (ed.)",
+      "Eichengreen, Barry (ed.)"
+    ],
+    "titulo": "A Retrospective on the Bretton Woods System: Lessons for International Monetary Reform",
+    "anio": 1993,
+    "editorial": "University of Chicago Press",
+    "doi": "10.7208/chicago/9780226066905.001.0001",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "hirschman-1968",
+    "tipo": "articulo",
+    "autores": [
+      "Hirschman, Albert O."
+    ],
+    "titulo": "The Political Economy of Import-Substituting Industrialization in Latin America",
+    "anio": 1968,
+    "publicacion": "The Quarterly Journal of Economics",
+    "doi": "10.2307/1882243",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "crafts-1985",
+    "tipo": "libro",
+    "autores": [
+      "Crafts, N. F. R."
+    ],
+    "titulo": "British Economic Growth during the Industrial Revolution",
+    "anio": 1985,
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref confirma la obra a través de reseñas de 1986–1987. Editorial no cotejada. Pendiente de verificación manual."
+  },
+  {
+    "id": "crafts-harley-1992",
+    "tipo": "articulo",
+    "autores": [
+      "Crafts, N. F. R.",
+      "Harley, C. K."
+    ],
+    "titulo": "Output Growth and the British Industrial Revolution: A Restatement of the Crafts-Harley View",
+    "anio": 1992,
+    "publicacion": "The Economic History Review",
+    "doi": "10.2307/2597415",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "bordo-kydland-1995",
+    "tipo": "articulo",
+    "autores": [
+      "Bordo, Michael D.",
+      "Kydland, Finn E."
+    ],
+    "titulo": "The Gold Standard As a Rule: An Essay in Exploration",
+    "anio": 1995,
+    "publicacion": "Explorations in Economic History",
+    "doi": "10.1006/exeh.1995.1019",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "obstfeld-taylor-2004",
+    "tipo": "libro",
+    "autores": [
+      "Obstfeld, Maurice",
+      "Taylor, Alan M."
+    ],
+    "titulo": "Global Capital Markets: Integration, Crisis, and Growth",
+    "anio": 2004,
+    "editorial": "Cambridge University Press",
+    "doi": "10.1017/cbo9780511616525",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+  },
+  {
+    "id": "humphries-2013",
+    "tipo": "articulo",
+    "autores": [
+      "Humphries, Jane"
+    ],
+    "titulo": "The lure of aggregates and the pitfalls of the patriarchal perspective: a critique of the high wage economy interpretation of the British industrial revolution",
+    "anio": 2013,
+    "publicacion": "The Economic History Review",
+    "doi": "10.1111/j.1468-0289.2012.00663.x",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual. Crossref data la versión en línea en 2012."
+  },
+  {
+    "id": "steil-2013",
+    "tipo": "libro",
+    "autores": [
+      "Steil, Benn"
+    ],
+    "titulo": "The Battle of Bretton Woods: John Maynard Keynes, Harry Dexter White, and the Making of a New World Order",
+    "anio": 2013,
+    "editorial": "Princeton University Press",
+    "doi": "10.1515/9781400846573",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+  },
+  {
+    "id": "james-1996",
+    "tipo": "libro",
+    "autores": [
+      "James, Harold"
+    ],
+    "titulo": "International Monetary Cooperation Since Bretton Woods",
+    "anio": 1996,
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref confirma la obra a través de reseñas de 1996–1997. Editorial no cotejada. Pendiente de verificación manual."
+  },
+  {
+    "id": "taylor-1998",
+    "tipo": "articulo",
+    "autores": [
+      "Taylor, Alan M."
+    ],
+    "titulo": "On the Costs of Inward-Looking Development: Price Distortions, Growth, and Divergence in Latin America",
+    "anio": 1998,
+    "publicacion": "The Journal of Economic History",
+    "doi": "10.1017/s0022050700019860",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "riley-2005",
+    "tipo": "articulo",
+    "autores": [
+      "Riley, James C."
+    ],
+    "titulo": "Estimates of Regional and Global Life Expectancy, 1800–2001",
+    "anio": 2005,
+    "publicacion": "Population and Development Review",
+    "doi": "10.1111/j.1728-4457.2005.00083.x",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "alvaredo-et-al-2018",
+    "tipo": "libro",
+    "autores": [
+      "Alvaredo, Facundo",
+      "Chancel, Lucas",
+      "Piketty, Thomas",
+      "Saez, Emmanuel",
+      "Zucman, Gabriel"
+    ],
+    "titulo": "World Inequality Report 2018",
+    "anio": 2018,
+    "editorial": "Harvard University Press",
+    "doi": "10.4159/9780674984769",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref registra la obra con Alvaredo como único autor listado; los coautores se toman de la portada y no fueron cotejados en el catálogo. Pendiente de verificación manual."
+  },
+  {
+    "id": "un-wpp-2024",
+    "tipo": "dataset",
+    "autores": [
+      "United Nations, Department of Economic and Social Affairs, Population Division"
+    ],
+    "titulo": "World Population Prospects 2024",
+    "anio": 2024,
+    "publicacion": "Naciones Unidas",
+    "url": "https://population.un.org/wpp/",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "URL comprobada (HTTP 200) el 2026-09-14; el archivo de indicadores se descargó del mismo dominio. La cita y la licencia exactas se muestran en el sitio con JavaScript y no se cotejaron automáticamente: verificar. Existe DOI para la edición 2022 (10.18356/9789210014380)."
   }
 ]

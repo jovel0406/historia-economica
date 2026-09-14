@@ -5,7 +5,8 @@
   "periodo": {
     "inicio": 1870,
     "fin": 1914,
-    "precision": "aproximada"
+    "precision": "aproximada",
+    "nota_periodizacion": "Gran Bretaña estaba en el oro desde 1821, pero el sistema se volvió internacional cuando Alemania, Francia y Estados Unidos lo adoptaron en los años setenta del siglo XIX; terminó con la guerra de 1914 [@eichengreen-2008]."
   },
   "regiones": [
     "mundo",
@@ -15,11 +16,89 @@
   "unidades": [
     "colonialismo-e-imperialismo"
   ],
-  "resumen": "Régimen monetario internacional de tipos de cambio fijos anclados al oro, con Londres como centro financiero. Su estabilidad ha sido atribuida tanto a reglas automáticas como a la cooperación entre bancos centrales y a la credibilidad británica.",
-  "descripcion_larga": "",
-  "interpretaciones": [],
+  "resumen": "Entre 1870 y 1914 las principales economías fijaron sus monedas al oro y, con ello, entre sí. El sistema funcionó con pocas crisis cambiarias en el centro y muchas en la periferia. Por qué fue estable —reglas automáticas, cooperación entre bancos centrales o credibilidad política— sigue en discusión.",
+  "descripcion_larga": "## Qué se disputa\n\nLa explicación de la estabilidad. La lectura de las «reglas del juego» ve un mecanismo automático de ajuste; Eichengreen sostiene que la estabilidad descansaba en la credibilidad del compromiso de los gobiernos con la paridad y en la cooperación entre bancos centrales, dos cosas que no sobrevivieron a 1914 [@eichengreen-2008]. Bordo y Kydland lo describen como una regla con cláusulas de escape: los países podían suspender la convertibilidad en emergencias y se esperaba que volvieran a la paridad antigua [@bordo-kydland-1995]. Para la periferia, el oro fue un régimen de crisis recurrentes y ajustes deflacionarios [@bertola-ocampo-2012].\n\n## Qué se mide\n\nTipos de cambio, reservas y tasas de interés están bien documentados para el centro; los flujos de capital se reconstruyen a partir de balanzas de pagos incompletas [@obstfeld-taylor-2004].",
+  "interpretaciones": [
+    {
+      "escuela": "institucionalista",
+      "mecanismo": "El patrón oro fue una regla con cláusula de escape: creíble porque los gobiernos del centro estaban políticamente comprometidos con la paridad, lo que hacía que los capitales estabilizaran en vez de huir.",
+      "desarrollo": "Bordo y Kydland formalizan el patrón oro como una regla contingente: convertibilidad en tiempos normales, suspensión en guerras o crisis con la expectativa de retorno a la paridad; esa expectativa es lo que daba credibilidad [@bordo-kydland-1995]. Eichengreen agrega que la credibilidad dependía de que el desempleo no fuera todavía un objetivo político y de la cooperación entre bancos centrales [@eichengreen-2008].",
+      "autores_principales": [
+        "bordo-kydland-1995",
+        "eichengreen-2008"
+      ],
+      "evidencia_a_favor": [
+        "Los retornos a la paridad antigua tras suspensiones, en Gran Bretaña y Estados Unidos [@bordo-kydland-1995].",
+        "La ausencia de crisis cambiarias en el centro frente a su frecuencia en la periferia [@eichengreen-2008]."
+      ],
+      "evidencia_en_contra": [
+        "La periferia sufrió crisis recurrentes bajo las mismas reglas, lo que sugiere que la credibilidad era un privilegio del centro [@bertola-ocampo-2012].",
+        "La cooperación entre bancos centrales fue episódica."
+      ],
+      "que_la_refutaria": "Que los países del centro hubieran sufrido ataques especulativos frecuentes pese a su compromiso con la paridad, o que las suspensiones no hubieran ido seguidas de retorno a la paridad antigua.",
+      "contrastable_con": [],
+      "peso_academico": "dominante"
+    },
+    {
+      "escuela": "estructuralista-cepalina",
+      "mecanismo": "Para la periferia exportadora de materias primas, el patrón oro transmitía los ciclos del centro y obligaba a ajustes deflacionarios; la estabilidad del centro se pagaba con inestabilidad periférica.",
+      "desarrollo": "Bértola y Ocampo muestran que los países latinoamericanos entraron y salieron del oro repetidamente, y que la integración financiera de la primera globalización trajo auges y colapsos del crédito externo que anticipan los del siglo XX [@bertola-ocampo-2012]. Obstfeld y Taylor documentan la magnitud de los flujos de capital hacia la periferia en el período [@obstfeld-taylor-2004].",
+      "autores_principales": [
+        "bertola-ocampo-2012",
+        "obstfeld-taylor-2004"
+      ],
+      "evidencia_a_favor": [
+        "Frecuencia de suspensiones y crisis de deuda en América Latina bajo el oro [@bertola-ocampo-2012].",
+        "Correlación entre ciclos de capital del centro y crisis periféricas [@obstfeld-taylor-2004]."
+      ],
+      "evidencia_en_contra": [
+        "Parte de la inestabilidad periférica se explica por política fiscal interna, no por el régimen.",
+        "Algunos países periféricos (Argentina antes de 1914) crecieron rápido bajo el oro."
+      ],
+      "que_la_refutaria": "Que los países periféricos que mantuvieron la convertibilidad hubieran tenido ciclos más suaves que los que la abandonaron, o que las crisis periféricas no coincidieran con los ciclos de capital del centro.",
+      "contrastable_con": [],
+      "peso_academico": "sustancial"
+    }
+  ],
   "series": [],
-  "aristas": [],
-  "fuentes": [],
-  "estado_editorial": "esqueleto"
+  "aristas": [
+    {
+      "desde": "patron-oro-clasico",
+      "hacia": "primera-globalizacion",
+      "tipo": "amplifica",
+      "consenso": "alto",
+      "nota": "El tipo de cambio fijo redujo el riesgo de los flujos de capital y comercio de 1870–1914 [@obstfeld-taylor-2004].",
+      "fuentes": [
+        "obstfeld-taylor-2004"
+      ]
+    },
+    {
+      "desde": "primera-guerra-mundial",
+      "hacia": "patron-oro-clasico",
+      "tipo": "ruptura_de",
+      "consenso": "alto",
+      "nota": "La guerra suspendió la convertibilidad y destruyó las condiciones políticas de la credibilidad [@eichengreen-2008].",
+      "fuentes": [
+        "eichengreen-2008"
+      ]
+    },
+    {
+      "desde": "patron-oro-clasico",
+      "hacia": "patron-oro-de-entreguerras",
+      "tipo": "precondicion_de",
+      "consenso": "alto",
+      "nota": "La restauración de los años veinte intentó reconstruir el sistema anterior sin sus condiciones [@eichengreen-1992].",
+      "fuentes": [
+        "eichengreen-1992"
+      ]
+    }
+  ],
+  "fuentes": [
+    "eichengreen-2008",
+    "bordo-kydland-1995",
+    "bertola-ocampo-2012",
+    "obstfeld-taylor-2004",
+    "eichengreen-1992"
+  ],
+  "estado_editorial": "borrador"
 }

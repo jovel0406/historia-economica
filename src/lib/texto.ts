@@ -1,20 +1,53 @@
 import { marked } from "marked";
 import type { Consenso, EstadoEditorial, NivelEvidencia, Periodo, PesoAcademico, TipoArista } from "../schemas/index.ts";
 import { CITA_REGEX } from "../validacion/citas.ts";
-import { ANIO_ACTUAL } from "./contenido.ts";
+import { ANIO_ACTUAL, contenido } from "./contenido.ts";
 
 function enlazarCitas(texto: string): string {
   return texto.replace(CITA_REGEX, (_m, id: string) => `<a class="cita" href="/fuentes#${id}" title="Ver fuente ${id}">${id}</a>`);
 }
 
-/** Markdown → HTML, con `[@id]` convertido en enlace a la bibliografía. */
-export function renderMarkdown(md: string): string {
-  return marked.parse(enlazarCitas(md), { async: false, gfm: true });
+function escaparRegex(t: string): string {
+  return t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+let patronesGlosario: { id: string; re: RegExp }[] | undefined;
+
+/** Patrones del glosario (mejora 5): término y variantes, palabra completa, sin distinguir mayúsculas. */
+function patrones(): { id: string; re: RegExp }[] {
+  if (patronesGlosario !== undefined) return patronesGlosario;
+  const lista: { id: string; re: RegExp }[] = [];
+  for (const t of contenido().glosario.values()) {
+    const formas = [t.termino, ...t.variantes].sort((a, b) => b.length - a.length).map(escaparRegex);
+    lista.push({ id: t.id, re: new RegExp(`(^|[^\\w\\[@/#-])(${formas.join("|")})(?![\\w-])`, "iu") });
+  }
+  patronesGlosario = lista;
+  return lista;
+}
+
+/**
+ * Enlaza la primera aparición de cada término del glosario. Solo si el término no está ya dentro de un
+ * enlace o cita (el patrón exige que no lo preceda `[`, `@`, `/` o `#`).
+ */
+export function enlazarGlosario(md: string, omitir?: string): string {
+  let salida = md;
+  for (const { id, re } of patrones()) {
+    if (id === omitir) continue;
+    salida = salida.replace(re, (_m, antes: string, termino: string) => `${antes}[${termino}](/glosario#${id})`);
+  }
+  return salida;
+}
+
+/** Markdown → HTML, con `[@id]` convertido en enlace a la bibliografía y términos del glosario enlazados. */
+export function renderMarkdown(md: string, opciones: { sinGlosario?: boolean; omitirTermino?: string } = {}): string {
+  const conGlosario = opciones.sinGlosario ? md : enlazarGlosario(md, opciones.omitirTermino);
+  return marked.parse(enlazarCitas(conGlosario), { async: false, gfm: true });
 }
 
 /** Una sola línea (sin <p>), para listas de evidencia y notas. */
-export function renderInline(texto: string): string {
-  return marked.parseInline(enlazarCitas(texto), { async: false, gfm: true });
+export function renderInline(texto: string, opciones: { sinGlosario?: boolean } = {}): string {
+  const conGlosario = opciones.sinGlosario ? texto : enlazarGlosario(texto);
+  return marked.parseInline(enlazarCitas(conGlosario), { async: false, gfm: true });
 }
 
 export function anioTexto(a: number): string {

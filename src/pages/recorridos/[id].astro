@@ -1,0 +1,49 @@
+---
+import Base from "../../layouts/Base.astro";
+import { colorUnidad, contenido, recorridosOrdenados } from "../../lib/contenido.ts";
+import { ETIQUETA_ESTADO, periodoTexto, renderMarkdown } from "../../lib/texto.ts";
+export function getStaticPaths() {
+  return recorridosOrdenados().map((r) => ({ params: { id: r.id } }));
+}
+const r = contenido().recorridos.get(Astro.params.id!)!;
+const u = contenido().unidades.get(r.unidad);
+const nodo = (id: string) => contenido().nodos.get(id);
+---
+<Base titulo={r.titulo}>
+  <p class="sobretitulo">Recorrido · Unidad {u?.numero} · {u?.titulo}</p>
+  <h1>{r.titulo}</h1>
+  <p class="entradilla">{r.pregunta_de_apertura}</p>
+  <ol class="pasos lista-limpia">
+    {r.pasos.map((p, i) => {
+      const n = nodo(p.nodo);
+      return (
+        <li class="paso" style={`--c: ${colorUnidad(u?.numero)}`}>
+          <div class="num">{i + 1}</div>
+          <div>
+            <h2><a href={`/nodos/${p.nodo}`}>{n?.titulo}</a> <span class={`badge badge-${n?.estado_editorial}`}>{n && ETIQUETA_ESTADO[n.estado_editorial]}</span></h2>
+            <p class="meta">{n && periodoTexto(n.periodo)}</p>
+            <div class="prosa" set:html={renderMarkdown(p.texto)} />
+          </div>
+        </li>
+      );
+    })}
+    <li class="paso cierre" style={`--c: ${colorUnidad(u?.numero)}`}>
+      <div class="num">✦</div>
+      <div>
+        <p class="sobretitulo">Cierre en la Vista Debate</p>
+        <h2><a href={`/nodos/${r.cierre.nodo}#debate`}>{nodo(r.cierre.nodo)?.titulo}</a></h2>
+        <div class="prosa" set:html={renderMarkdown(r.cierre.texto)} />
+      </div>
+    </li>
+  </ol>
+  <p><a href="/recorridos">← Todos los recorridos</a></p>
+</Base>
+<style>
+  .pasos { margin: 2rem 0; }
+  .paso { display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; padding: 1.2rem 0; border-top: 1px solid var(--linea); }
+  .paso .num { font-family: var(--serif); font-size: 2rem; color: var(--c); line-height: 1; }
+  .paso h2 { margin: 0 0 0.2rem; font-size: 1.4rem; }
+  .paso h2 a { text-decoration: none; color: var(--tinta); }
+  .paso h2 a:hover { color: var(--c); }
+  .cierre { background: var(--papel-2); border-radius: var(--radio); padding: 1.2rem 1rem; }
+</style>

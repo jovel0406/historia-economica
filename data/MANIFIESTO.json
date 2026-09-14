@@ -75,6 +75,39 @@
         }
       ],
       "notas": "Descargado del sitio de Groningen. La versión 10.01 (Dataverse, doi:10.34894/QT5BCC, archivo pwt1001.xlsx, 6 551 843 bytes, SHA-1 7461933f7561767ffbd77db3ab984d60cb21e9ef según la API de Dataverse) no se pudo descargar automáticamente: el servidor exige una prueba de trabajo anti-bots. Queda como descarga manual."
+    },
+    {
+      "id": "un-wpp-2024",
+      "nombre": "World Population Prospects 2024, indicadores demográficos (variante Medium)",
+      "institucion": "Naciones Unidas, Departamento de Asuntos Económicos y Sociales, División de Población",
+      "url": "https://population.un.org/wpp/",
+      "version": "2024",
+      "fecha_descarga": "2026-09-14",
+      "licencia": "No cotejada automáticamente: la página de la WPP muestra sus condiciones con JavaScript. Pendiente de confirmar antes de reutilizar los datos.",
+      "cita_requerida": "Pendiente de cotejo con el sitio de la WPP 2024: registrar aquí la forma de citación exacta que indica la División de Población. Existe DOI para la edición 2022 (10.18356/9789210014380).",
+      "archivos": [
+        {
+          "ruta": "data/raw/WPP2024_Demographic_Indicators_Medium.csv.gz",
+          "sha256": "286ac36bb1415e2e1ade03acfef0a29f0e4c087e2f78e38c48f50c5df89082bc",
+          "bytes": 16557272
+        },
+        {
+          "ruta": "data/processed/wpp2024-esperanza-de-vida-paises.csv",
+          "sha256": "61d3dbaacf3276ae15f8299e96efbfc6e327dee7ac6b755c995ce92311a0dfc2",
+          "bytes": 36495
+        },
+        {
+          "ruta": "data/processed/wpp2024-esperanza-de-vida-regiones.csv",
+          "sha256": "45948f670cfdac2610fd159440d2ddc826ba9e2a087f10e7fad5ddedc9dec926",
+          "bytes": 41621
+        },
+        {
+          "ruta": "data/processed/wpp2024-esperanza-de-vida-mapa.csv",
+          "sha256": "af1697c861590261697065b9f36f9f60c15e78acaae3b404a0e4663ec65f3c05",
+          "bytes": 825712
+        }
+      ],
+      "notas": "Archivo WPP2024_Demographic_Indicators_Medium.csv.gz descargado del dominio oficial. Solo se ingieren estimaciones hasta 2023."
     }
   ]
 }

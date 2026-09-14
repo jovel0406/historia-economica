@@ -35,7 +35,10 @@
         "Las empresas estatales, el instrumento del Estado, fueron el sector menos productivo y el que más crédito absorbió [@zhu-2012]."
       ],
       "que_la_refutaria": "Que las regiones y sectores con mayor dirección estatal hubieran crecido más rápido que los de mayor liberalización, o que el gradualismo no hubiera evitado una caída inicial de la producción comparable a la de Europa oriental.",
-      "peso_academico": "sustancial"
+      "peso_academico": "sustancial",
+      "contrastable_con": [
+        "pwt100-pib-per-capita-paises"
+      ]
     },
     {
       "escuela": "institucionalista",
@@ -73,7 +76,10 @@
         "La calidad de las estadísticas chinas de los años ochenta limita la precisión de cualquier descomposición."
       ],
       "que_la_refutaria": "Que la contabilidad del crecimiento atribuyera la mayor parte del crecimiento a la acumulación de capital dirigida por el Estado y no a la productividad, o que el sector estatal hubiera crecido más rápido que el privado durante el período.",
-      "peso_academico": "sustancial"
+      "peso_academico": "sustancial",
+      "contrastable_con": [
+        "pwt100-pib-per-capita-paises"
+      ]
     }
   ],
   "series": [

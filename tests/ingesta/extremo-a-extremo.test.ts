@@ -142,3 +142,26 @@ describe("ejecutarAdaptador", () => {
     err.mockRestore();
   });
 });
+
+describe("WPP de extremo a extremo", () => {
+  it("ingiere un CSV comprimido sintético, escribe tres series y el validador lo acepta", async () => {
+    const { gzipSync } = await import("node:zlib");
+    const { ingerirWpp, RUTA_RAW } = await import("../../scripts/fetch/wpp.ts");
+    const raiz = raizTemporal();
+    mkdirSync(join(raiz, "data", "raw"), { recursive: true });
+    const csv = [
+      "\ufeffISO3_code,Location,LocTypeName,Variant,Time,LEx",
+      "CRI,Costa Rica,Country/Area,Medium,1950,55.1",
+      "CRI,Costa Rica,Country/Area,Medium,2023,80.2",
+      "ABW,Aruba,Country/Area,Medium,1950,60",
+      ",World,World,Medium,1950,46.4",
+      ",World,World,Medium,2030,75",
+    ].join("\n");
+    writeFileSync(join(raiz, RUTA_RAW), gzipSync(Buffer.from(csv)));
+    const salida = await ingerirWpp(ctxDe(raiz));
+    expect(salida.some((l) => l.includes("wpp2024-esperanza-de-vida-paises.csv: 2 observaciones"))).toBe(true);
+    expect(readFileSync(join(raiz, "data/processed/wpp2024-esperanza-de-vida-regiones.csv"), "utf8")).toBe("serie,region,anio,valor\nwpp2024-esperanza-de-vida-regiones,mundo,1950,46.4\n");
+    const { informe } = validarProyecto({ raiz });
+    expect(informe.errores).toEqual([]);
+  });
+});

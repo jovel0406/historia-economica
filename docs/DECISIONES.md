@@ -192,3 +192,85 @@ resultado dice qué escuelas la sostienen: ese es el «según quién».
 9. README con versiones reales: sí.
 10. DECISIONES.md: este archivo.
 Lo que sigue es editorial: verificar fuentes, pasar nodos a `revisado`, redactar esqueletos.
+
+## 2026-09-14 — Dieciocho mejoras (decisión propia: «implementa las 18»)
+
+### D30. Recorridos guiados (mejora 1)
+`content/recorridos/<id>.json`: unidad, pregunta de apertura, pasos (nodo + texto) y cierre en la Vista
+Debate. Uno por unidad. Son capa de lectura para clase; no reintroducen un relato lineal.
+
+### D31. Página por arista (mejora 2)
+`/aristas/<desde>--<tipo>--<hacia>` con escuelas a favor y en contra (y su interpretación en cada
+extremo), fuentes y series que cada nodo invoca. El índice lista las disputadas primero.
+
+### D32. Contrafactuales contrastables (mejora 3)
+`Interpretacion.contrastable_con: SeriesId[]`; el validador exige que las series existan. La página
+del nodo marca cada condición de refutación como «contrastable con …» o «no contrastable todavía».
+
+### D33. Cuatro esqueletos redactados (mejora 4)
+Primera Revolución Industrial, patrón oro clásico, Bretton Woods e ISI pasan a `borrador` con dos o
+tres interpretaciones y fuentes cotejadas en Crossref. Quedan 21 esqueletos.
+
+### D34. Glosario con autoenlace (mejora 5)
+`content/glosario.json`: término, variantes, definición con citas, fuentes obligatorias. `renderMarkdown`
+enlaza la primera aparición de cada término (palabra completa, sin distinguir mayúsculas, nunca dentro
+de un enlace o cita). La página del glosario omite el autoenlace del término que define.
+
+### D35. Esperanza de vida desde la WPP 2024; desigualdad pendiente (mejora 6)
+Adaptador para el archivo de indicadores de la World Population Prospects 2024 (16,5 MB, dominio
+oficial): tres series de esperanza de vida, solo estimaciones hasta 2023. Licencia y cita exactas
+quedan **pendientes de cotejo** porque la página las muestra con JavaScript; el manifiesto lo dice.
+La World Inequality Database se distribuye como un único archivo de 882 MB; no se ingirió y no se
+adivinó ninguna API alternativa. Salarios reales: sin fuente primaria pública verificada todavía.
+
+### D36. Márgenes de incertidumbre honestos (mejora 7)
+`Serie.margen_publicado` (por defecto false) y columnas opcionales `valor_inf`/`valor_sup` en el CSV.
+Si la fuente publica intervalos, el gráfico dibuja la banda; si no, lo dice bajo el gráfico en vez de
+inventar un ancho. Ninguna de las fuentes actuales publica márgenes por observación.
+
+### D37. Comparador de fuentes (mejora 8)
+En `/datos`: PIB per cápita de Maddison y de PWT superpuestos para un país, desde 1950, con la
+advertencia de que las unidades son construcciones distintas.
+
+### D38. Actualización manual de datasets (mejora 9)
+Documentada en README: descargar a mano `mpd2023_web.xlsx` y `pwt1001.xlsx`, verificar contra los
+SHA-1 oficiales registrados en el manifiesto y ajustar las constantes de los adaptadores. No se escribió
+código para hojas cuya estructura no se pudo inspeccionar.
+
+### D39. Tres escalas de la línea de tiempo (mejora 10)
+Completa, 1750–1950 y 1900–hoy, renderizadas en el build y conmutadas en el cliente. Se prefirió a un
+zoom continuo porque mantiene las etiquetas legibles y el SVG generado en el servidor.
+
+### D40. Mapa y tiempo sincronizados (mejora 11)
+`/espacio?anio=N` abre el mapa en el año disponible más cercano; bajo el mapa se listan los nodos cuyo
+período incluye el año elegido; cada nodo enlaza al mapa en su año de inicio.
+
+### D41. Búsqueda estática (mejora 12)
+`/buscar.json` se genera en el build con nodos, escuelas, fuentes, glosario y recorridos; la búsqueda
+corre en el cliente sin dependencias, con normalización de acentos.
+
+### D42. Exportación e impresión (mejora 13)
+`/nodos/<id>.md` exporta el nodo en Markdown con sus citas y el estado de verificación de cada fuente.
+Hoja de estilos de impresión que oculta navegación y controles.
+
+### D43. Accesibilidad de gráficos y mapa (mejora 14)
+Cada gráfico lleva una tabla de datos plegable (hasta 400 filas; el CSV tiene todas). El mapa ofrece
+«Ver como tabla» con el valor de cada país para el año elegido.
+
+### D44. Flujo de verificación de fuentes (mejora 15)
+`/verificacion` lista las pendientes con enlace al DOI y genera, por fuente, el comando
+`pnpm run bibliografia:verificar -- <id> --estado … --nota "…"` o el fragmento JSON. El script exige
+nota y fecha el registro; el commit es la constancia de quién verificó.
+
+### D45. Historial por nodo (mejora 16)
+Derivado de `git log --follow` sobre el archivo del nodo en el build. Sin Git, la sección no aparece.
+
+### D46. Revisión de sesgo léxico (mejora 17)
+`Escuela.vocabulario_propio` y regla `sesgo-lexico` (nivel info): un resumen que use vocabulario de
+exactamente una escuela recibe un aviso. `pnpm run sesgo` lo lista y termina con 1 si encuentra alguno,
+para usarlo en CI sin romper el build. Es una ayuda a §8, no un veredicto.
+
+### D47. Regresión estructural de las vistas (mejora 18)
+`tests/vistas/regresion.test.ts` construye el sitio y compara un resumen estructural de diez páginas
+(títulos, secciones, gráficos, nodos del SVG) con instantáneas versionadas. No son capturas de píxeles:
+eso exigiría Playwright y la descarga de un navegador; se documenta como paso siguiente si se quiere.

@@ -1,0 +1,155 @@
+[
+  {
+    "id": "gran-divergencia",
+    "termino": "Gran Divergencia",
+    "variantes": [
+      "gran divergencia"
+    ],
+    "definicion": "Separación del ingreso por habitante entre Europa noroccidental y las regiones más avanzadas de Asia entre los siglos XVI y XIX. El término lo popularizó Pomeranz, que la data hacia 1800 [@pomeranz-2000]; la contabilidad histórica la retrotrae [@broadberry-guan-li-2018].",
+    "fuentes": [
+      "pomeranz-2000",
+      "broadberry-guan-li-2018"
+    ]
+  },
+  {
+    "id": "pequena-divergencia",
+    "termino": "pequeña divergencia",
+    "variantes": [
+      "little divergence"
+    ],
+    "definicion": "Separación de salarios reales y urbanización entre el noroeste de Europa (Inglaterra, Holanda) y el resto del continente desde el siglo XVII, anterior a la Gran Divergencia [@allen-2001].",
+    "fuentes": [
+      "allen-2001"
+    ]
+  },
+  {
+    "id": "acres-fantasma",
+    "termino": "acres fantasma",
+    "variantes": [
+      "ghost acres"
+    ],
+    "definicion": "Tierra que Gran Bretaña no necesitó cultivar porque importó de las Américas azúcar, algodón y madera producidos allí; en la lectura de Pomeranz, junto con el carbón, aliviaron la restricción ecológica que frenaba a China [@pomeranz-2000].",
+    "fuentes": [
+      "pomeranz-2000"
+    ]
+  },
+  {
+    "id": "acumulacion-originaria",
+    "termino": "acumulación originaria",
+    "variantes": [
+      "acumulación primitiva"
+    ],
+    "definicion": "En Marx, el proceso histórico —cercamientos, colonias, esclavitud, deuda pública— por el que los productores directos fueron separados de sus medios de producción y se formó una clase obligada a vender su fuerza de trabajo [@marx-1867].",
+    "fuentes": [
+      "marx-1867"
+    ]
+  },
+  {
+    "id": "paridad-de-poder-adquisitivo",
+    "termino": "paridad de poder adquisitivo",
+    "variantes": [
+      "PPA",
+      "PPP",
+      "dólares internacionales"
+    ],
+    "definicion": "Tipo de conversión que iguala el poder de compra de las monedas usando los precios de una canasta común, en vez del tipo de cambio de mercado. Permite comparar niveles de ingreso entre países; es una construcción estadística con supuestos fuertes sobre qué canasta y qué año base usar [@feenstra-inklaar-timmer-2015].",
+    "fuentes": [
+      "feenstra-inklaar-timmer-2015"
+    ]
+  },
+  {
+    "id": "patron-oro",
+    "termino": "patrón oro",
+    "variantes": [
+      "gold standard"
+    ],
+    "definicion": "Régimen monetario en que la moneda es convertible en oro a una paridad fija y, por tanto, los tipos de cambio entre países del sistema quedan fijos. Su versión clásica rigió entre 1870 y 1914; la de entreguerras, entre mediados de los años veinte y los treinta [@eichengreen-2008].",
+    "fuentes": [
+      "eichengreen-2008"
+    ]
+  },
+  {
+    "id": "terminos-de-intercambio",
+    "termino": "términos de intercambio",
+    "variantes": [
+      "relación de intercambio"
+    ],
+    "definicion": "Cociente entre el índice de precios de las exportaciones y el de las importaciones de un país. La tesis de Prebisch sostiene que los de los exportadores de materias primas tienden a deteriorarse frente a los de los exportadores de manufacturas [@prebisch-1949].",
+    "fuentes": [
+      "prebisch-1949"
+    ]
+  },
+  {
+    "id": "industrializacion-por-sustitucion-de-importaciones",
+    "termino": "industrialización por sustitución de importaciones",
+    "variantes": [
+      "ISI",
+      "sustitución de importaciones",
+      "industrialización dirigida por el Estado"
+    ],
+    "definicion": "Estrategia de desarrollo que protege y promueve la producción local de bienes antes importados mediante aranceles, tipos de cambio, crédito dirigido y empresas públicas. Bértola y Ocampo prefieren llamarla «industrialización dirigida por el Estado» porque la sustitución fue solo uno de sus instrumentos [@bertola-ocampo-2012]; Hirschman analizó sus fases y límites [@hirschman-1968].",
+    "fuentes": [
+      "bertola-ocampo-2012",
+      "hirschman-1968"
+    ]
+  },
+  {
+    "id": "sistema-dual-de-precios",
+    "termino": "sistema dual de precios",
+    "variantes": [
+      "doble vía",
+      "dual-track"
+    ],
+    "definicion": "Mecanismo de la reforma china por el que las empresas debían entregar una cuota al precio planificado y podían vender el excedente a precio de mercado; permitió que el mercado creciera en el margen sin abolir el plan [@naughton-1995].",
+    "fuentes": [
+      "naughton-1995"
+    ]
+  },
+  {
+    "id": "consenso-de-washington",
+    "termino": "Consenso de Washington",
+    "variantes": [
+      "consenso de Washington"
+    ],
+    "definicion": "Lista de diez políticas —disciplina fiscal, apertura comercial y financiera, privatización, desregulación— formulada en 1989 como el paquete de reformas recomendado a América Latina. Rodrik revisa su balance y sus reformulaciones [@rodrik-2006].",
+    "fuentes": [
+      "rodrik-2006"
+    ]
+  },
+  {
+    "id": "contabilidad-del-crecimiento",
+    "termino": "contabilidad del crecimiento",
+    "variantes": [
+      "productividad total de los factores",
+      "PTF"
+    ],
+    "definicion": "Descomposición del crecimiento del producto en las contribuciones del capital, el trabajo y un residuo —la productividad total de los factores— que recoge lo que la acumulación no explica. Deriva del modelo de Solow [@solow-1956]; describe la forma del crecimiento sin explicar su causa.",
+    "fuentes": [
+      "solow-1956"
+    ]
+  },
+  {
+    "id": "nivel-de-evidencia",
+    "termino": "nivel de evidencia",
+    "variantes": [
+      "estimación conjetural",
+      "reconstrucción documentada",
+      "estadística oficial"
+    ],
+    "definicion": "Etiqueta que esta plataforma asigna a cada serie: *estadística oficial* (cuentas nacionales y censos), *reconstrucción documentada* (estimaciones a partir de fuentes históricas con método publicado) o *estimación conjetural* (toda serie anterior a 1820, siguiendo la advertencia de los propios compiladores de Maddison [@bolt-vanzanden-2020]).",
+    "fuentes": [
+      "bolt-vanzanden-2020"
+    ]
+  },
+  {
+    "id": "reglas-del-juego",
+    "termino": "reglas del juego",
+    "variantes": [
+      "cláusula de escape"
+    ],
+    "definicion": "En la historia del patrón oro, la expectativa de que los bancos centrales dejaran que las entradas y salidas de oro se transmitieran a la oferta monetaria. Bordo y Kydland reinterpretan el sistema como una regla con cláusula de escape: suspensión en emergencias y retorno a la paridad [@bordo-kydland-1995].",
+    "fuentes": [
+      "bordo-kydland-1995"
+    ]
+  }
+]

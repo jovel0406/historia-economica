@@ -1,0 +1,20 @@
+{
+  "id": "serie-margen",
+  "indicador": "salario_real",
+  "fuente_dataset": "dataset-fixture",
+  "cobertura_temporal": [
+    1900,
+    1950
+  ],
+  "cobertura_geografica": [
+    "europa-occidental"
+  ],
+  "unidad": "fixture",
+  "nivel_evidencia": "reconstruccion_documentada",
+  "nota_metodologica": "Fixture con margen.",
+  "advertencias": [],
+  "granularidad": "regiones",
+  "margen_publicado": true,
+  "nota_margen": "Fixture.",
+  "archivo": "data/processed/serie-margen.csv"
+}

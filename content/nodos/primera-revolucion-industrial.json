@@ -5,7 +5,8 @@
   "periodo": {
     "inicio": 1760,
     "fin": 1840,
-    "precision": "aproximada"
+    "precision": "disputada",
+    "nota_periodizacion": "Las fechas convencionales (1760–1830/1840) provienen de la historiografía clásica; la revisión cuantitativa mostró un crecimiento mucho más lento y gradual, lo que llevó a hablar de una «revolución» que duró un siglo [@crafts-1985] [@crafts-harley-1992]."
   },
   "regiones": [
     "reino-unido",
@@ -14,11 +15,98 @@
   "unidades": [
     "revolucion-industrial-y-despegue"
   ],
-  "resumen": "Mecanización del textil, máquina de vapor y hierro con coque en Gran Bretaña. Las fechas son convencionales: la aceleración del crecimiento fue más lenta y tardía de lo que sugiere el término «revolución».",
-  "descripcion_larga": "",
-  "interpretaciones": [],
+  "resumen": "Entre mediados del siglo XVIII y mediados del XIX, Gran Bretaña mecanizó el hilado y el tejido, aplicó la máquina de vapor y sustituyó carbón vegetal por coque en la siderurgia. Cuán rápido creció la economía en ese período y por qué la innovación ocurrió allí son preguntas abiertas: las estimaciones de producto son reconstrucciones que se revisaron a la baja.",
+  "descripcion_larga": "## Qué se disputa\n\nDos cosas. Primero, el **ritmo**: la historiografía clásica describía un despegue brusco; las reconstrucciones de producto de Crafts y Harley muestran un crecimiento lento hasta 1830 y concentrado en pocos sectores, sobre todo el algodón [@crafts-1985] [@crafts-harley-1992]. Segundo, la **causa**: precios relativos [@allen-2009], cultura e ideas [@mokyr-2016], instituciones [@north-1990], demanda atlántica [@inikori-2002] o relaciones de clase [@brenner-1976].\n\n## Qué se mide\n\nLas series de producto industrial y PIB para 1760–1840 son reconstrucciones a partir de producción física de algunos sectores, impuestos y precios; su nivel y su tasa de crecimiento cambian según los ponderadores [@crafts-harley-1992]. Los salarios reales dependen de la canasta [@allen-2001] y, según Humphries, ignoran el trabajo de mujeres y niños [@humphries-2013].\n\n## Por qué importa\n\nEs el episodio que define «crecimiento económico moderno». Su datación y su causa condicionan toda explicación de la Gran Divergencia, que lo contiene.",
+  "interpretaciones": [
+    {
+      "escuela": "precios-relativos",
+      "mecanismo": "Los salarios altos y la energía barata de Gran Bretaña hicieron rentables las máquinas que en otros países no lo eran.",
+      "desarrollo": "Allen calcula la rentabilidad de la hiladora, la máquina de vapor y la fundición con coque a los precios de distintos países y muestra que solo en Gran Bretaña convenía adoptarlas; la innovación fue inducida por los precios relativos, y esos precios venían del éxito comercial previo y del carbón [@allen-2009].",
+      "autores_principales": [
+        "allen-2009",
+        "allen-2001"
+      ],
+      "evidencia_a_favor": [
+        "Cálculos de rentabilidad de las máquinas clave a precios de Francia, India y Gran Bretaña [@allen-2009].",
+        "Salarios reales británicos altos en la comparación europea del siglo XVIII [@allen-2001]."
+      ],
+      "evidencia_en_contra": [
+        "Humphries sostiene que los salarios «altos» son un artefacto de mirar solo al varón adulto: el trabajo barato de mujeres y niños fue central en la fábrica temprana [@humphries-2013].",
+        "Explica la adopción, no la generación de ideas [@mokyr-2016]."
+      ],
+      "que_la_refutaria": "Que las máquinas clave hubieran sido rentables a los precios franceses o indios, o que el salario del hogar, incluidos mujeres y niños, no fuera alto en Gran Bretaña.",
+      "contrastable_con": [
+        "mpd2020-pib-per-capita-paises-pre1820"
+      ],
+      "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "cultural-capital-humano",
+      "mecanismo": "La Ilustración industrial —un mercado de ideas y una comunidad de artesanos capaces de aplicarlas— hizo que la innovación se sostuviera en vez de agotarse.",
+      "desarrollo": "Mokyr sitúa el origen en un cambio cultural entre 1500 y 1700: la valoración del conocimiento útil, la comunicación abierta entre científicos y técnicos, y una élite que competía por prestigio intelectual; la Revolución Industrial fue la fase en que ese conocimiento se aplicó a la producción [@mokyr-2016].",
+      "autores_principales": [
+        "mokyr-2016"
+      ],
+      "evidencia_a_favor": [
+        "La densidad de redes de ingenieros, instrumentistas y sociedades científicas en la Gran Bretaña del siglo XVIII [@mokyr-2016].",
+        "La continuidad de la innovación después de que cambiaran los precios relativos."
+      ],
+      "evidencia_en_contra": [
+        "La cultura se infiere del resultado; es difícil medirla de forma independiente.",
+        "Los precios relativos explican por qué la misma cultura no produjo lo mismo en Francia u Holanda [@allen-2009]."
+      ],
+      "que_la_refutaria": "Medidas independientes de circulación de conocimiento técnico que no distinguieran a Gran Bretaña de Francia u Holanda en el siglo XVIII.",
+      "contrastable_con": [],
+      "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "neoclasica-cliometrica",
+      "mecanismo": "No hubo un despegue brusco: el crecimiento fue lento y sectorial, y la «revolución» es en buena parte un artefacto de las estimaciones antiguas.",
+      "desarrollo": "Crafts reconstruyó el producto británico con ponderadores nuevos y encontró tasas de crecimiento mucho menores que las de la historiografía clásica; con Harley defendió esa lectura frente a sus críticos, mostrando que la aceleración se concentró en el algodón y el hierro mientras el resto de la economía cambiaba despacio [@crafts-1985] [@crafts-harley-1992].",
+      "autores_principales": [
+        "crafts-1985",
+        "crafts-harley-1992"
+      ],
+      "evidencia_a_favor": [
+        "Tasas de crecimiento del producto per cápita reconstruidas inferiores al 1 % anual hasta 1830 [@crafts-1985].",
+        "La concentración de la aceleración en pocos sectores [@crafts-harley-1992]."
+      ],
+      "evidencia_en_contra": [
+        "Los ponderadores y las series físicas subyacentes son discutidos; otras reconstrucciones dan más peso a los sectores nuevos.",
+        "Un crecimiento lento del producto es compatible con una transformación técnica radical concentrada."
+      ],
+      "que_la_refutaria": "Reconstrucciones del producto que, con ponderadores defendibles, mostraran una aceleración generalizada a más del 1 % anual per cápita antes de 1830.",
+      "contrastable_con": [
+        "mpd2020-pib-per-capita-paises-pre1820",
+        "mpd2020-pib-per-capita-paises"
+      ],
+      "peso_academico": "sustancial"
+    }
+  ],
   "series": [],
-  "aristas": [],
-  "fuentes": [],
-  "estado_editorial": "esqueleto"
+  "aristas": [
+    {
+      "desde": "primera-revolucion-industrial",
+      "hacia": "primera-globalizacion",
+      "tipo": "precondicion_de",
+      "consenso": "alto",
+      "nota": "El ferrocarril, el vapor y la caída de costos de transporte que integraron los mercados en 1870–1914 nacieron de la industrialización británica [@findlay-orourke-2007].",
+      "fuentes": [
+        "findlay-orourke-2007"
+      ]
+    }
+  ],
+  "fuentes": [
+    "crafts-1985",
+    "crafts-harley-1992",
+    "allen-2009",
+    "allen-2001",
+    "mokyr-2016",
+    "humphries-2013",
+    "north-1990",
+    "inikori-2002",
+    "brenner-1976",
+    "findlay-orourke-2007"
+  ],
+  "estado_editorial": "borrador"
 }

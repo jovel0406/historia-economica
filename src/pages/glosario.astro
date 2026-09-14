@@ -1,0 +1,28 @@
+---
+import Base from "../layouts/Base.astro";
+import { fuente, glosarioOrdenado } from "../lib/contenido.ts";
+import { renderMarkdown } from "../lib/texto.ts";
+const terminos = glosarioOrdenado();
+---
+<Base titulo="Glosario">
+  <p class="sobretitulo">Vocabulario</p>
+  <h1>Glosario</h1>
+  <p class="entradilla">Cada definición cita su fuente. Los términos se enlazan automáticamente desde los textos de los nodos la primera vez que aparecen.</p>
+  <dl class="glosario">
+    {terminos.map((t) => (
+      <div class="termino" id={t.id}>
+        <dt>{t.termino}{t.variantes.length > 0 && <span class="meta"> · también: {t.variantes.join(", ")}</span>}</dt>
+        <dd>
+          <div class="prosa" set:html={renderMarkdown(t.definicion, { omitirTermino: t.id })} />
+          <p class="meta">Fuentes: {t.fuentes.map((id) => { const f = fuente(id); return <><a class="cita" href={`/fuentes#${id}`}>{id}</a>{f && !f.verified ? " (sin verificar)" : ""} </>; })}</p>
+        </dd>
+      </div>
+    ))}
+  </dl>
+</Base>
+<style>
+  .termino { padding: 1rem 0; border-top: 1px solid var(--linea); }
+  .termino:target { background: var(--aviso-fondo); outline: 8px solid var(--aviso-fondo); }
+  dt { font-family: var(--serif); font-size: 1.3rem; margin-bottom: 0.3rem; }
+  dd { margin: 0; }
+</style>

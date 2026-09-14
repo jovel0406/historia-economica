@@ -94,6 +94,7 @@ export async function ingerirPwt(ctx: Contexto): Promise<string[]> {
     nota_metodologica: notaPib,
     advertencias: ["Fronteras actuales; los países que cambiaron de territorio (Alemania, ex URSS) requieren cuidado.", "Las PPA encadenadas hacen comparables niveles entre países pero no reproducen las tasas de crecimiento oficiales."],
     granularidad: "regiones",
+    margen_publicado: false,
   });
   escribir("pwt100-pib-per-capita-mapa", r.pibMapa, {
     indicador: "pib_per_capita",
@@ -104,6 +105,7 @@ export async function ingerirPwt(ctx: Contexto): Promise<string[]> {
     nota_metodologica: notaPib,
     advertencias: ["Solo se usa para el mapa.", "Fronteras actuales."],
     granularidad: "paises-iso3",
+    margen_publicado: false,
   });
   escribir("pwt100-apertura-comercial-paises", r.aperturaPaises, {
     indicador: "apertura_comercial",
@@ -114,6 +116,7 @@ export async function ingerirPwt(ctx: Contexto): Promise<string[]> {
     nota_metodologica: `Suma de las participaciones de exportaciones e importaciones de mercancías en el PIB por el lado del producto a PPA corrientes. Según la leyenda de PWT 10.0: csh_x = «${ley("csh_x")}»; csh_m = «${ley("csh_m")}» (con signo negativo en la base, aquí en valor absoluto). Excluye servicios: subestima la apertura de economías con exportaciones de servicios.`,
     advertencias: ["Solo mercancías; excluye servicios.", "Participaciones a PPA, no a tipo de cambio de mercado."],
     granularidad: "regiones",
+    margen_publicado: false,
   });
 
   actualizarManifiesto(ctx.raiz, {

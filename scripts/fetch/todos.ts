@@ -2,11 +2,13 @@
 import { contextoDesdeArgv } from "./comun.ts";
 import { ingerirMaddison } from "./maddison.ts";
 import { ingerirPwt } from "./pwt.ts";
+import { ingerirWpp } from "./wpp.ts";
 
 const ctx = contextoDesdeArgv();
 const adaptadores: [string, (c: typeof ctx) => Promise<string[]>][] = [
   ["maddison-2020", ingerirMaddison],
   ["pwt-100", ingerirPwt],
+  ["un-wpp-2024", ingerirWpp],
 ];
 let fallos = 0;
 for (const [nombre, fn] of adaptadores) {

@@ -1,0 +1,29 @@
+---
+import Base from "../../layouts/Base.astro";
+import { aristasTodas, contenido, escuela } from "../../lib/contenido.ts";
+import { ETIQUETA_ARISTA, ETIQUETA_CONSENSO } from "../../lib/texto.ts";
+const aristas = aristasTodas();
+const titulo = (id: string) => contenido().nodos.get(id)?.titulo ?? id;
+const nombre = (id: string) => escuela(id)?.nombre ?? id;
+---
+<Base titulo="Aristas">
+  <p class="sobretitulo">Grafo causal</p>
+  <h1>Relaciones causales, las disputadas primero</h1>
+  <p class="entradilla">Cada arista tiene página propia con las escuelas enfrentadas, sus fuentes y las series que cada una invoca. Las relaciones en disputa son el objeto central de esta plataforma.</p>
+  <ul class="lista-limpia">
+    {aristas.map(({ id, arista: a }) => (
+      <li class={`arista consenso-${a.consenso}`}>
+        <div class="arista-linea"><a href={`/aristas/${id}`}>{titulo(a.desde)} <span class="tipo">{ETIQUETA_ARISTA[a.tipo]}</span> {titulo(a.hacia)}</a> <span class={`badge badge-${a.consenso}`}>{ETIQUETA_CONSENSO[a.consenso]}</span></div>
+        {(a.sostenida_por || a.negada_por) && <p class="meta">{a.sostenida_por?.length ? `Sostenida por ${a.sostenida_por.map(nombre).join(", ")}. ` : ""}{a.negada_por?.length ? `Negada por ${a.negada_por.map(nombre).join(", ")}.` : ""}</p>}
+      </li>
+    ))}
+  </ul>
+</Base>
+<style>
+  .arista { padding: 0.9rem 0; border-bottom: 1px solid var(--linea); }
+  .arista-linea { font-family: var(--serif); font-size: 1.15rem; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: baseline; }
+  .arista-linea a { text-decoration: none; color: var(--tinta); }
+  .arista-linea a:hover { color: var(--acento); }
+  .tipo { font-family: var(--sans); font-size: 0.85rem; color: var(--tinta-3); }
+  .consenso-disputado .arista-linea { border-left: 3px dashed var(--acento); padding-left: 0.7rem; }
+</style>

@@ -1,0 +1,24 @@
+{
+  "id": "u7-mercado-e-instituciones",
+  "unidad": "reorientacion-hacia-el-mercado",
+  "titulo": "Reorientación hacia el mercado",
+  "pregunta_de_apertura": "¿Es la reforma china parte del giro neoliberal o un camino propio?",
+  "pasos": [
+    {
+      "nodo": "giro-neoliberal",
+      "texto": "Esqueleto con periodización disputada."
+    },
+    {
+      "nodo": "reforma-china-de-1978",
+      "texto": "Tres escuelas. Fijate en la arista disputada que la conecta con el giro neoliberal y en quién la sostiene."
+    },
+    {
+      "nodo": "colapso-de-la-urss",
+      "texto": "El contraste obligado: terapia de choque frente a gradualismo."
+    }
+  ],
+  "cierre": {
+    "nodo": "reforma-china-de-1978",
+    "texto": "Desarrollista frente a neoclásica: ¿crecimiento por dirección estatal o a pesar de ella?"
+  }
+}

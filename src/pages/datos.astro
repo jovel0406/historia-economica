@@ -6,6 +6,16 @@ import { ETIQUETA_EVIDENCIA } from "../lib/texto.ts";
 import { INDICADORES_CANONICOS, UMBRAL_MEDICION } from "../schemas/index.ts";
 
 const indicadores = INDICADORES_CANONICOS.map((id) => contenido().indicadores.get(id)).filter((i) => i !== undefined);
+// Comparador de fuentes (mejora 8): misma cifra, distintas fuentes, para los países presentes en ambas.
+const serieMpd = contenido().series.get("mpd2020-pib-per-capita-paises");
+const seriePwt = contenido().series.get("pwt100-pib-per-capita-paises");
+const comparador = serieMpd && seriePwt ? (() => {
+  const a = leerObservaciones(serieMpd).filter((o) => o.anio >= 1950);
+  const b = leerObservaciones(seriePwt);
+  const paises = [...new Set(a.map((o) => o.region))].filter((r) => b.some((o) => o.region === r)).sort();
+  return { paises, nombres: Object.fromEntries(paises.map((r) => [r, nombreRegion(r)])), fuentes: [{ id: "mpd2020", nombre: "Maddison Project Database 2020 (2011 US$ PPA)", filas: a.map((o) => [o.region, o.anio, o.valor]) }, { id: "pwt100", nombre: "Penn World Table 10.0 (rgdpe/pop, PPA encadenadas)", filas: b.map((o) => [o.region, o.anio, o.valor]) }] };
+})() : null;
+const MAX_FILAS_TABLA = 400;
 const CLASE_BADGE = { estadistica_oficial: "badge-alto", reconstruccion_documentada: "badge-medio", estimacion_conjetural: "badge-conjetural" } as const;
 ---
 <Base titulo="Datos">
@@ -14,7 +24,21 @@ const CLASE_BADGE = { estadistica_oficial: "badge-alto", reconstruccion_document
   <p class="entradilla">Cada serie lleva su nivel de evidencia a la vista, su nota metodológica a un clic, el enlace a la fuente primaria y la descarga del CSV exacto que dibuja el gráfico. Toda serie anterior a {UMBRAL_MEDICION} es una estimación conjetural y se dibuja con línea discontinua.</p>
   <nav class="chips" aria-label="Indicadores">
     {indicadores.map((i) => <a class="chip" href={`#${i.id}`}>{i.nombre}</a>)}
+    {comparador && <a class="chip" href="#comparador">Misma cifra, distintas fuentes</a>}
   </nav>
+
+  {comparador && (
+    <section id="comparador" class="indicador">
+      <h2>Misma cifra, distintas fuentes</h2>
+      <p class="prosa">Maddison y la Penn World Table dan valores distintos para el mismo país y año: distinta base de precios, distinto método de paridad, distintas revisiones. Verlas superpuestas muestra, sin decirlo, que las cifras son construcciones.</p>
+      <label class="meta">País <select data-comparador-pais>{comparador.paises.map((r) => <option value={r}>{comparador.nombres[r]}</option>)}</select></label>
+      <figure class="grafico" data-comparador>
+        <script is:inline type="application/json" set:html={JSON.stringify(comparador)} />
+        <div class="lienzo"></div>
+        <figcaption class="meta">PIB per cápita según cada fuente, desde 1950. Unidades distintas por construcción: no son directamente sumables ni restables.</figcaption>
+      </figure>
+    </section>
+  )}
 
   {indicadores.map((ind) => {
     const series = seriesDeIndicador(ind.id).filter((s) => s.granularidad === "regiones");
@@ -29,7 +53,7 @@ const CLASE_BADGE = { estadistica_oficial: "badge-alto", reconstruccion_document
           const ds = dataset(s.fuente_dataset);
           const regiones = [...new Set(obs.map((o) => o.region))];
           const nombres = Object.fromEntries(regiones.map((r) => [r, nombreRegion(r)]));
-          const payload = { unidad: s.unidad, conjetural: s.nivel_evidencia === "estimacion_conjetural", nombres, filas: obs.map((o) => [o.region, o.anio, o.valor]) };
+          const payload = { unidad: s.unidad, conjetural: s.nivel_evidencia === "estimacion_conjetural", margen: s.margen_publicado, nombres, filas: obs.map((o) => [o.region, o.anio, o.valor, o.valor_inf ?? null, o.valor_sup ?? null]) };
           return (
             <article class="tarjeta serie" id={`serie-${s.id}`}>
               <div class="chips">
@@ -42,6 +66,17 @@ const CLASE_BADGE = { estadistica_oficial: "badge-alto", reconstruccion_document
                 <div class="lienzo"></div>
                 <figcaption class="meta">{s.unidad}. Fuente: {ds ? <a href={ds.url}>{ds.nombre}</a> : s.fuente_dataset}.</figcaption>
               </figure>
+              <p class="meta margen">{s.margen_publicado ? <><span class="badge badge-alto">margen publicado</span> la banda sombreada es el intervalo que publica la fuente{s.nota_margen ? `: ${s.nota_margen}` : "."}</> : <><span class="badge badge-marginal">sin margen publicado</span> la fuente no publica márgenes de error para esta serie; {s.nivel_evidencia === "estimacion_conjetural" ? "la línea discontinua no implica precisión y el ancho real de la incertidumbre es desconocido" : "la línea no lleva banda porque no hay intervalo que dibujar"}{s.nota_margen ? `. ${s.nota_margen}` : "."}</>}</p>
+              <details>
+                <summary>Tabla de datos (accesible)</summary>
+                <div class="tabla-scroll">
+                  <table>
+                    <caption>{s.id}: {obs.length} observaciones{obs.length > MAX_FILAS_TABLA ? `, se muestran las primeras ${MAX_FILAS_TABLA}; el CSV tiene todas` : ""}. Unidad: {s.unidad}.</caption>
+                    <thead><tr><th scope="col">Región</th><th scope="col">Año</th><th scope="col">Valor</th></tr></thead>
+                    <tbody>{obs.slice(0, MAX_FILAS_TABLA).map((o) => <tr><td>{nombreRegion(o.region)}</td><td>{o.anio}</td><td>{o.valor.toLocaleString("es", { maximumFractionDigits: 2 })}</td></tr>)}</tbody>
+                  </table>
+                </div>
+              </details>
               <details>
                 <summary>Nota metodológica y advertencias</summary>
                 <p>{s.nota_metodologica}</p>
@@ -71,17 +106,25 @@ const CLASE_BADGE = { estadistica_oficial: "badge-alto", reconstruccion_document
   .acciones-serie { margin: 0.8rem 0 0; display: flex; gap: 0.6rem; flex-wrap: wrap; }
   .boton-sec { display: inline-block; border: 1px solid var(--tinta-3); border-radius: 999px; padding: 0.35rem 0.9rem; text-decoration: none; color: var(--tinta); font-size: 0.9rem; }
   .boton-sec:hover { border-color: var(--tinta); }
+  .margen { margin: 0.4rem 0 0; }
+  .tabla-scroll { overflow-x: auto; max-height: 24rem; overflow-y: auto; }
+  table { border-collapse: collapse; font-size: 0.85rem; width: 100%; }
+  th, td { text-align: left; padding: 0.25rem 0.6rem; border-bottom: 1px solid var(--linea); }
+  th { position: sticky; top: 0; background: white; }
+  caption { text-align: left; color: var(--tinta-3); padding: 0.3rem 0; }
+  select { font: inherit; padding: 0.3rem 0.5rem; border: 1px solid var(--linea); border-radius: 6px; background: white; }
 </style>
 
 <script>
   import * as Plot from "@observablehq/plot";
-  interface Carga { unidad: string; conjetural: boolean; nombres: Record<string, string>; filas: [string, number, number][] }
+  interface Carga { unidad: string; conjetural: boolean; margen: boolean; nombres: Record<string, string>; filas: [string, number, number, number | null, number | null][] }
   document.querySelectorAll<HTMLElement>("[data-grafico]").forEach((fig) => {
     const json = fig.querySelector('script[type="application/json"]')?.textContent;
     const lienzo = fig.querySelector<HTMLElement>(".lienzo");
     if (!json || !lienzo) return;
     const carga = JSON.parse(json) as Carga;
-    const datos = carga.filas.map(([region, anio, valor]) => ({ region: carga.nombres[region] ?? region, anio, valor }));
+    const datos = carga.filas.map(([region, anio, valor, inf, sup]) => ({ region: carga.nombres[region] ?? region, anio, valor, inf, sup }));
+    const conBanda = carga.margen && datos.some((d) => d.inf !== null && d.sup !== null);
     const ancho = Math.max(320, lienzo.clientWidth || 900);
     const grafico = Plot.plot({
       width: ancho,
@@ -92,6 +135,7 @@ const CLASE_BADGE = { estadistica_oficial: "badge-alto", reconstruccion_document
       y: { grid: true, label: carga.unidad.length > 48 ? carga.unidad.slice(0, 45) + "…" : carga.unidad, type: carga.conjetural ? "log" : "linear" },
       color: { legend: true },
       marks: [
+        conBanda ? Plot.areaY(datos.filter((d) => d.inf !== null && d.sup !== null), { x: "anio", y1: "inf", y2: "sup", fill: "region", fillOpacity: 0.18 }) : null,
         Plot.lineY(datos, { x: "anio", y: "valor", stroke: "region", strokeDasharray: carga.conjetural ? "4 4" : undefined, strokeWidth: 1.6, curve: "monotone-x" }),
         carga.conjetural ? Plot.dot(datos, { x: "anio", y: "valor", fill: "region", r: 2.5 }) : null,
         Plot.tip(datos, Plot.pointer({ x: "anio", y: "valor", title: (d: { region: string; anio: number; valor: number }) => `${d.region}, ${d.anio}: ${d.valor.toLocaleString("es", { maximumFractionDigits: 1 })}` })),
@@ -99,4 +143,24 @@ const CLASE_BADGE = { estadistica_oficial: "badge-alto", reconstruccion_document
     });
     lienzo.replaceChildren(grafico);
   });
+
+  // Comparador de fuentes (mejora 8).
+  const fig = document.querySelector<HTMLElement>("[data-comparador]");
+  const sel = document.querySelector<HTMLSelectElement>("[data-comparador-pais]");
+  if (fig && sel) {
+    interface CargaComp { paises: string[]; nombres: Record<string, string>; fuentes: { id: string; nombre: string; filas: [string, number, number][] }[] }
+    const c = JSON.parse(fig.querySelector('script[type="application/json"]')!.textContent!) as CargaComp;
+    const lienzo = fig.querySelector<HTMLElement>(".lienzo")!;
+    const dibujar = (): void => {
+      const pais = sel.value;
+      const datos = c.fuentes.flatMap((f) => f.filas.filter(([r]) => r === pais).map(([, anio, valor]) => ({ fuente: f.nombre, anio, valor })));
+      lienzo.replaceChildren(Plot.plot({
+        width: Math.max(320, lienzo.clientWidth || 900), height: 340, marginLeft: 64, style: { background: "transparent", fontSize: "12px" },
+        x: { label: "año", tickFormat: (d: number) => String(d) }, y: { grid: true, label: "PIB per cápita (unidades propias de cada fuente)" }, color: { legend: true },
+        marks: [Plot.lineY(datos, { x: "anio", y: "valor", stroke: "fuente", strokeWidth: 1.8 }), Plot.tip(datos, Plot.pointer({ x: "anio", y: "valor", title: (d: { fuente: string; anio: number; valor: number }) => `${d.fuente}\n${d.anio}: ${d.valor.toLocaleString("es", { maximumFractionDigits: 0 })}` }))],
+      }));
+    };
+    sel.addEventListener("change", dibujar);
+    dibujar();
+  }
 </script>

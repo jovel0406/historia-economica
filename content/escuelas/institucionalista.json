@@ -7,5 +7,10 @@
     "acemoglu-johnson-robinson-2005",
     "acemoglu-robinson-2012"
   ],
-  "critica_principal": "Circularidad y datación: las instituciones «buenas» suelen identificarse después de observar el crecimiento que pretenden explicar, y las reformas británicas de 1688 preceden por un siglo al despegue industrial. Casos como la China posterior a 1978 crecieron durante décadas bajo instituciones que la escuela clasificaría como extractivas [@xu-2011]."
+  "critica_principal": "Circularidad y datación: las instituciones «buenas» suelen identificarse después de observar el crecimiento que pretenden explicar, y las reformas británicas de 1688 preceden por un siglo al despegue industrial. Casos como la China posterior a 1978 crecieron durante décadas bajo instituciones que la escuela clasificaría como extractivas [@xu-2011].",
+  "vocabulario_propio": [
+    "instituciones extractivas",
+    "instituciones inclusivas",
+    "derechos de propiedad seguros"
+  ]
 }

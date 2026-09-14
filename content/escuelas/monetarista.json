@@ -6,5 +6,9 @@
     "friedman-schwartz-1963",
     "edwards-1995"
   ],
-  "critica_principal": "El canal de transmisión es discutido: la caída del dinero pudo ser consecuencia y no causa de la caída del gasto [@temin-1989], y bajo el patrón oro los bancos centrales tenían poco margen para actuar, lo que desplaza la explicación al régimen internacional [@eichengreen-1992]."
+  "critica_principal": "El canal de transmisión es discutido: la caída del dinero pudo ser consecuencia y no causa de la caída del gasto [@temin-1989], y bajo el patrón oro los bancos centrales tenían poco margen para actuar, lo que desplaza la explicación al régimen internacional [@eichengreen-1992].",
+  "vocabulario_propio": [
+    "contracción monetaria",
+    "oferta monetaria"
+  ]
 }

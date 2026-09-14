@@ -1,0 +1,63 @@
+---
+import Base from "../layouts/Base.astro";
+import { contenido } from "../lib/contenido.ts";
+import { dependenciasPorFuente } from "../../scripts/reporte-bibliografia.ts";
+const fuentes = [...contenido().fuentes.values()].sort((a, b) => a.id.localeCompare(b.id));
+const pendientes = fuentes.filter((f) => !f.verified);
+const deps = dependenciasPorFuente(contenido());
+---
+<Base titulo="Verificación de fuentes">
+  <p class="sobretitulo">Flujo editorial</p>
+  <h1>Verificar fuentes</h1>
+  <p class="entradilla">{pendientes.length} de {fuentes.length} fuentes esperan verificación manual. Para cada una: abrí el DOI o la URL, comprobá autores, título, año y editorial, y generá el fragmento o el comando que registra la verificación. Nada cambia en el sitio hasta que ese cambio se versiona en Git.</p>
+  <div class="aviso"><strong>Cómo registrar una verificación.</strong> Opción A: copiá el comando y ejecutalo en el repositorio (edita <code>content/fuentes/bibliografia.json</code>). Opción B: pegá el fragmento JSON sobre la entrada. En ambos casos, hacé commit: el historial es el registro de quién verificó y cuándo.</div>
+  <ul class="lista-limpia">
+    {pendientes.map((f) => {
+      const d = deps.get(f.id) ?? { nodos: [], escuelas: [], lentes: [] };
+      return (
+        <li class="fuente tarjeta" id={f.id} data-fuente={f.id}>
+          <div class="fuente-cab"><a class="cita" href={`/fuentes#${f.id}`}>{f.id}</a> <span class="chip">{f.tipo.replace("_", " ")}</span> {f.doi && <a href={`https://doi.org/${f.doi}`} target="_blank" rel="noopener">abrir DOI ↗</a>}{!f.doi && f.url && <a href={f.url} target="_blank" rel="noopener">abrir URL ↗</a>}</div>
+          <div>{f.autores.length ? f.autores.join("; ") : "(autores sin confirmar)"} ({f.anio ?? "s.f."}). <em>{f.titulo}</em>{f.publicacion && <>, {f.publicacion}</>}{f.editorial && <>. {f.editorial}</>}.</div>
+          <p class="meta">{f.nota_verificacion}</p>
+          <p class="meta">Usada en: {[d.nodos.length ? `nodos ${d.nodos.join(", ")}` : "", d.escuelas.length ? `escuelas ${d.escuelas.join(", ")}` : "", d.lentes.length ? `lentes ${d.lentes.join(", ")}` : ""].filter(Boolean).join(" · ") || "nadie todavía"}</p>
+          <details>
+            <summary>Registrar verificación</summary>
+            <label>Quién verificó y cómo <input type="text" data-nota placeholder="ej. Editor, cotejado con el catálogo de la editorial el 2026-09-20" /></label>
+            <label><input type="checkbox" data-dudosa /> marcar como dudosa en vez de verificada</label>
+            <p><strong>Comando:</strong></p>
+            <pre data-comando></pre>
+            <p><strong>Fragmento JSON:</strong></p>
+            <pre data-json></pre>
+          </details>
+        </li>
+      );
+    })}
+  </ul>
+</Base>
+<style>
+  .fuente { margin-top: 0.8rem; }
+  .fuente-cab { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; margin-bottom: 0.3rem; }
+  .fuente:target { outline: 3px solid var(--aviso-borde); }
+  details { margin-top: 0.5rem; font-size: 0.9rem; }
+  label { display: block; margin: 0.4rem 0; }
+  input[type=text] { font: inherit; width: 100%; max-width: 36rem; padding: 0.3rem 0.5rem; border: 1px solid var(--linea); border-radius: 6px; }
+  pre { background: var(--papel-2); padding: 0.6rem 0.8rem; border-radius: 6px; white-space: pre-wrap; font-size: 0.8rem; }
+</style>
+<script>
+  document.querySelectorAll<HTMLElement>("[data-fuente]").forEach((li) => {
+    const id = li.dataset.fuente!;
+    const nota = li.querySelector<HTMLInputElement>("[data-nota]")!;
+    const dudosa = li.querySelector<HTMLInputElement>("[data-dudosa]")!;
+    const cmd = li.querySelector<HTMLElement>("[data-comando]")!;
+    const json = li.querySelector<HTMLElement>("[data-json]")!;
+    const actualizar = (): void => {
+      const n = nota.value.trim() || "(quién y cómo)";
+      const estado = dudosa.checked ? "dudosa" : "verificada";
+      cmd.textContent = `pnpm run bibliografia:verificar -- ${id} --estado ${estado} --nota ${JSON.stringify(n)}`;
+      json.textContent = JSON.stringify(dudosa.checked ? { verified: false, citation_status: "dudosa", nota_verificacion: n } : { verified: true, citation_status: "verificada", nota_verificacion: n }, null, 2);
+    };
+    nota.addEventListener("input", actualizar);
+    dudosa.addEventListener("change", actualizar);
+    actualizar();
+  });
+</script>

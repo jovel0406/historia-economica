@@ -1,0 +1,32 @@
+{
+  "id": "wpp2024-esperanza-de-vida-regiones",
+  "indicador": "esperanza_de_vida",
+  "fuente_dataset": "un-wpp-2024",
+  "cobertura_temporal": [
+    1950,
+    2023
+  ],
+  "cobertura_geografica": [
+    "africa-subsahariana",
+    "america-del-norte",
+    "america-latina",
+    "asia-meridional",
+    "asia-oriental",
+    "europa-occidental",
+    "europa-oriental",
+    "mundo",
+    "oceania"
+  ],
+  "unidad": "años",
+  "nivel_evidencia": "estadistica_oficial",
+  "nota_metodologica": "Esperanza de vida al nacer (ambos sexos), columna LEx de la variante «Medium» de las estimaciones de la WPP 2024. Para 1950–2023 son estimaciones basadas en censos, registros vitales y encuestas, con modelización demográfica en los países con registros incompletos: estadística oficial en el sentido de esta plataforma, pero con calidad muy desigual entre países. Se excluyen las proyecciones posteriores a 2023.",
+  "advertencias": [
+    "Fronteras actuales.",
+    "Antes de 1990 muchos países carecen de registros vitales completos: la WPP interpola con modelos.",
+    "Los agregados regionales de la WPP no coinciden exactamente con las macrorregiones del proyecto (ver ADVERTENCIAS_MAPA)."
+  ],
+  "granularidad": "regiones",
+  "margen_publicado": false,
+  "nota_margen": "La WPP publica intervalos de proyección, no de estimación; no se ingieren.",
+  "archivo": "data/processed/wpp2024-esperanza-de-vida-regiones.csv"
+}

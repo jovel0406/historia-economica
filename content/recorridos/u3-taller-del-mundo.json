@@ -1,0 +1,24 @@
+{
+  "id": "u3-taller-del-mundo",
+  "unidad": "colonialismo-e-imperialismo",
+  "titulo": "Gran Bretaña, taller del mundo",
+  "pregunta_de_apertura": "¿La expansión colonial hizo rica a Gran Bretaña o Gran Bretaña ya era rica cuando se expandió?",
+  "pasos": [
+    {
+      "nodo": "economia-esclavista-atlantica",
+      "texto": "Tres escuelas y una tesis de 1944 todavía en disputa. Fijate en la cuantificación de Eltis y Engerman y en la respuesta de Inikori."
+    },
+    {
+      "nodo": "patron-oro-clasico",
+      "texto": "El régimen monetario del imperio: estable en el centro, inestable en la periferia. Leé la lectura cepalina."
+    },
+    {
+      "nodo": "imperialismo-y-reparto-de-africa",
+      "texto": "Esqueleto pendiente de redacción: un buen ejercicio es proponer sus dos primeras interpretaciones."
+    }
+  ],
+  "cierre": {
+    "nodo": "economia-esclavista-atlantica",
+    "texto": "Contrastá la escuela marxista con la cliométrica: discrepan en la frontera del sector que se mide."
+  }
+}

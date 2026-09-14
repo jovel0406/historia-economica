@@ -1,7 +1,8 @@
 ---
 import Base from "../../layouts/Base.astro";
 import AvisoFuentes from "../../components/AvisoFuentes.astro";
-import { aristasHacia, colorUnidad, contenido, escuela, fuentesDe, lenteDe, nodo, nodosOrdenados, unidadesDe } from "../../lib/contenido.ts";
+import { aristasHacia, colorUnidad, contenido, escuela, fuentesDe, idArista, lenteDe, nodo, nodosOrdenados, unidadesDe } from "../../lib/contenido.ts";
+import { historialDe } from "../../lib/historial.ts";
 import { DESCRIPCION_ESTADO, ETIQUETA_ARISTA, ETIQUETA_CONSENSO, ETIQUETA_ESTADO, ETIQUETA_EVIDENCIA, ETIQUETA_PESO, ETIQUETA_PRECISION, periodoTexto, renderInline, renderMarkdown } from "../../lib/texto.ts";
 const serie = (id: string) => contenido().series.get(id);
 
@@ -21,6 +22,8 @@ const aristas = [
   ...aristasHacia(n).map(({ arista }) => ({ a: arista, origen: "externa" as const })),
 ];
 const REGION_LENTE = { "costa-rica": "Costa Rica", "america-latina": "América Latina" } as const;
+const historial = historialDe(`content/nodos/${n.id}.json`);
+const contrastable = (ids: string[]) => ids.map((id) => ({ id, serie: contenido().series.get(id) }));
 ---
 <Base titulo={n.titulo} descripcion={n.resumen}>
   <article>
@@ -34,7 +37,7 @@ const REGION_LENTE = { "costa-rica": "Costa Rica", "america-latina": "América L
       <p class="periodo"><strong>{periodoTexto(n.periodo)}</strong> <span class="meta">· {ETIQUETA_PRECISION[n.periodo.precision]}</span></p>
       {n.periodo.nota_periodizacion && <p class="nota-periodo" set:html={renderInline(n.periodo.nota_periodizacion)} />}
       <p class="entradilla">{n.resumen}</p>
-      <p class="meta">Regiones: {n.regiones.join(", ")}</p>
+      <p class="meta">Regiones: {n.regiones.join(", ")} · <a href={`/nodos/${n.id}.md`}>Exportar como Markdown</a> · <a href="#" onclick="window.print(); return false;">Imprimir</a> · <a href={`/espacio?anio=${n.periodo.inicio}`}>Ver el mapa en {n.periodo.inicio}</a></p>
     </header>
 
     <AvisoFuentes nodo={n} />
@@ -66,7 +69,7 @@ const REGION_LENTE = { "costa-rica": "Costa Rica", "america-latina": "América L
     {n.interpretaciones.length > 0 && (
       <section>
         <p class="sobretitulo">Vista Debate</p>
-        <h2 style="margin-top:0">Interpretaciones en disputa</h2>
+        <h2 style="margin-top:0" id="debate">Interpretaciones en disputa</h2>
         <p class="prosa">Cada escuela propone un mecanismo. Se listan la evidencia a favor, la evidencia en contra y, sobre todo, qué observación la refutaría.</p>
         {n.interpretaciones.length > 2 && (
           <div class="comparar" data-comparar>
@@ -89,6 +92,7 @@ const REGION_LENTE = { "costa-rica": "Costa Rica", "america-latina": "América L
               <ul>{it.evidencia_en_contra.map((e) => <li set:html={renderInline(e)} />)}</ul>
               <h4>Qué la refutaría</h4>
               <p class="refutacion" set:html={renderInline(it.que_la_refutaria)} />
+              <p class="meta contraste">{it.contrastable_con.length === 0 ? <><span class="badge badge-marginal">no contrastable todavía</span> ninguna serie ingerida permite poner a prueba esta condición.</> : <><span class="badge badge-alto">contrastable</span> con {contrastable(it.contrastable_con).map(({ id, serie }, i) => <>{i > 0 ? ", " : ""}<a href={`/datos#serie-${id}`}>{id}</a>{serie ? ` (${ETIQUETA_EVIDENCIA[serie.nivel_evidencia]})` : ""}</>)}.</>}</p>
               {it.autores_principales.length > 0 && <p class="meta">Autores principales: {it.autores_principales.map((f, i) => <><a class="cita" href={`/fuentes#${f}`}>{f}</a>{i < it.autores_principales.length - 1 ? " " : ""}</>)}</p>}
             </div>
           ))}
@@ -104,6 +108,7 @@ const REGION_LENTE = { "costa-rica": "Costa Rica", "america-latina": "América L
           {aristas.map(({ a }) => (
             <li class={`arista consenso-${a.consenso}`} data-sostenida={(a.sostenida_por ?? []).join(" ")} data-negada={(a.negada_por ?? []).join(" ")}>
               <div class="arista-linea">
+                <a class="enlace-arista" href={`/aristas/${idArista(a)}`} title="Página de la arista">⤷</a>
                 <a href={`/nodos/${a.desde}`}>{nombreNodo(a.desde)}</a>
                 <span class="tipo">{ETIQUETA_ARISTA[a.tipo]}</span>
                 <a href={`/nodos/${a.hacia}`}>{nombreNodo(a.hacia)}</a>
@@ -157,6 +162,14 @@ const REGION_LENTE = { "costa-rica": "Costa Rica", "america-latina": "América L
       </section>
     )}
 
+    {historial.length > 0 && (
+      <section class="historial">
+        <h2>Historial de cambios</h2>
+        <p class="meta">Derivado del registro de Git de <code>content/nodos/{n.id}.json</code>: cada entrada es un commit que tocó este archivo.</p>
+        <ul class="lista-limpia">{historial.map((c) => <li><span class="meta">{c.fecha}</span> · <code>{c.hash}</code> · {c.asunto}</li>)}</ul>
+      </section>
+    )}
+
     {fuentes.length > 0 && (
       <section>
         <h2>Fuentes citadas</h2>
@@ -190,6 +203,10 @@ const REGION_LENTE = { "costa-rica": "Costa Rica", "america-latina": "América L
   .consenso-disputado .arista-linea { border-left: 3px dashed var(--acento); padding-left: 0.7rem; }
   .fuentes li, .series li { padding: 0.4rem 0; border-bottom: 1px solid var(--linea); font-size: 0.95rem; }
   .series li a { font-family: ui-monospace, monospace; font-size: 0.9rem; margin-right: 0.5rem; }
+  .contraste { margin-top: 0.5rem; }
+  .enlace-arista { text-decoration: none; font-size: 1rem; color: var(--tinta-3); }
+  .enlace-arista:hover { color: var(--acento); }
+  .historial li { padding: 0.3rem 0; border-bottom: 1px solid var(--linea); font-size: 0.9rem; }
   figure { margin: 0; }
   figure img { width: 100%; border-radius: 6px; }
 </style>

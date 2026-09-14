@@ -42,7 +42,11 @@
         "Los salarios reales muestran ventaja del noroeste europeo ya en el siglo XVII [@allen-2001]."
       ],
       "que_la_refutaria": "Series comparables de ingreso y salarios que mostraran una brecha sostenida entre el delta del Yangzi y el noroeste de Europa desde antes de 1700, junto con evidencia de que ni el carbón ni los recursos coloniales fueron restricciones vinculantes para el crecimiento británico.",
-      "peso_academico": "sustancial"
+      "peso_academico": "sustancial",
+      "contrastable_con": [
+        "mpd2020-pib-per-capita-paises-pre1820",
+        "mpd2020-pib-per-capita-regiones"
+      ]
     },
     {
       "escuela": "precios-relativos",
@@ -81,7 +85,10 @@
         "Holanda tenía instituciones comparables y no industrializó primero; China creció aceleradamente después de 1978 bajo instituciones que esta escuela clasificaría como extractivas [@xu-2011]."
       ],
       "que_la_refutaria": "Que regiones con instituciones equivalentes y acceso atlántico similar hubieran divergido de todos modos, o que el crecimiento británico se explicara con instituciones que no cambiaron entre 1600 y 1800.",
-      "peso_academico": "dominante"
+      "peso_academico": "dominante",
+      "contrastable_con": [
+        "mpd2020-pib-per-capita-paises-pre1820"
+      ]
     },
     {
       "escuela": "cultural-capital-humano",
@@ -121,7 +128,10 @@
         "No explica por qué España y Portugal, que más extrajeron, no industrializaron primero."
       ],
       "que_la_refutaria": "Que el crecimiento del centro se hubiera producido igual sin los flujos de excedente periférico, o que los países que más extrajeron de la periferia hubieran sido los primeros en crecer de forma sostenida.",
-      "peso_academico": "minoritaria"
+      "peso_academico": "minoritaria",
+      "contrastable_con": [
+        "mpd2020-pib-per-capita-regiones"
+      ]
     },
     {
       "escuela": "marxista",
@@ -143,7 +153,10 @@
         "La compulsión competitiva no explica por qué las innovaciones decisivas fueron las que fueron ni por qué se concentraron en el siglo XVIII [@allen-2009] [@mokyr-2016]."
       ],
       "que_la_refutaria": "Que regiones con estructuras agrarias de campesinado propietario, como el norte de Francia o los Países Bajos, hubieran alcanzado la productividad agrícola y el crecimiento urbano ingleses en las mismas fechas, o que la productividad agraria inglesa no fuera excepcional antes de 1750.",
-      "peso_academico": "minoritaria"
+      "peso_academico": "minoritaria",
+      "contrastable_con": [
+        "mpd2020-pib-per-capita-paises-pre1820"
+      ]
     }
   ],
   "series": [

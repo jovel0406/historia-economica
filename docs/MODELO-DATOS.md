@@ -15,6 +15,8 @@ de campos está en [SPEC.md §4](SPEC.md).
 | Region | `Region` | `content/regiones.json` | `id`; árbol con raíz `mundo` |
 | Indicator | `Indicador` | `content/indicadores.json` | exactamente los siete canónicos |
 | Unidad | `Unidad` | `content/unidades.json` | numeradas 1..n; los nodos las referencian en `unidades[]` |
+| Recorrido | `Recorrido` | `content/recorridos/<id>.json` | `id`; pasos → nodos |
+| Término | `Termino` | `content/glosario.json` | `id`; fuentes obligatorias |
 | Medio | `Medio` | dentro del nodo, `medios[]`; archivo bajo `public/medios/` | ruta |
 | Series | `Serie` | `data/series/<id>.json` (las escriben los adaptadores) | `id`; `archivo` → CSV; `granularidad` regiones o ISO3 |
 | Observation | `Observacion` / `FilaCsv` | `data/processed/*.csv` (columnas `serie,region,anio,valor[,nota]`) | (`serie`, `region`, `anio`) |

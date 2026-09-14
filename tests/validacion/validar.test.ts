@@ -52,9 +52,14 @@ describe("validarProyecto sobre el fixture inválido", () => {
   it("detecta referencias rotas a regiones, fuentes, escuelas, series y nodos", () => {
     expect(mensajes(REGLAS.referenciaRegion).join("\n")).toMatch(/atlantida/);
     expect(mensajes(REGLAS.referenciaUnidad).join("\n")).toMatch(/unidad-fantasma/);
-    expect(mensajes(REGLAS.referenciaCita)).toHaveLength(1);
+    expect(mensajes(REGLAS.referenciaCita)).toHaveLength(3);
     expect(mensajes(REGLAS.referenciaCita).join("\n")).toMatch(/descripcion_larga.*fuente-fantasma/);
     expect(mensajes(REGLAS.medioFaltante).join("\n")).toMatch(/no-existe\.png/);
+    expect(mensajes(REGLAS.referenciaSerieContraste).join("\n")).toMatch(/serie-fantasma/);
+    expect(mensajes(REGLAS.referenciaNodo).join("\n")).toMatch(/recorridos\/roto\.json.*paso 2/);
+    expect(mensajes(REGLAS.referenciaUnidad).join("\n")).toMatch(/roto\.json/);
+    expect(mensajes(REGLAS.referenciaFuente).join("\n")).toMatch(/glosario\.json t\.fuentes\.0/);
+    expect(mensajes(REGLAS.referenciaCita).join("\n")).toMatch(/glosario\.json/);
     expect(mensajes(REGLAS.referenciaFuente).join("\n")).toMatch(/refs-rotas\.json interpretaciones\.0\.autores_principales\.0/);
     expect(mensajes(REGLAS.referenciaFuente).join("\n")).toMatch(/aristas\.0\.fuentes\.0/);
     expect(mensajes(REGLAS.referenciaFuente).join("\n")).toMatch(/escuela-california\.json/);
@@ -78,6 +83,10 @@ describe("validarProyecto sobre el fixture inválido", () => {
   it("detecta series sin procedencia y hashes que no coinciden", () => {
     expect(mensajes(REGLAS.referenciaDataset).join("\n")).toMatch(/dataset-fantasma/);
     expect(mensajes(REGLAS.hash).join("\n")).toMatch(/serie-fixture\.csv/);
+  });
+
+  it("exige columnas de margen cuando la serie declara margen_publicado", () => {
+    expect(mensajes(REGLAS.filaCsv).join("\n")).toMatch(/margen_publicado/);
   });
 
   it("advierte sobre reconstrucción documentada antes de 1820", () => {

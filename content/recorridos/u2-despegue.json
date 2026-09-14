@@ -1,0 +1,24 @@
+{
+  "id": "u2-despegue",
+  "unidad": "revolucion-industrial-y-despegue",
+  "titulo": "El despegue de los países ricos",
+  "pregunta_de_apertura": "¿Por qué las mismas máquinas fueron rentables en Lancashire y no en Francia o la India?",
+  "pasos": [
+    {
+      "nodo": "primera-revolucion-industrial",
+      "texto": "Leé la interpretación de precios relativos y luego la crítica de Humphries sobre el trabajo de mujeres y niños."
+    },
+    {
+      "nodo": "primera-globalizacion",
+      "texto": "Un esqueleto: solo título, período y resumen. Notá qué falta para que sea un nodo con interpretaciones."
+    },
+    {
+      "nodo": "gran-divergencia",
+      "texto": "Volvé al nodo contenedor y buscá, en la Vista Datos, la serie de PIB per cápita por regiones desde 1820."
+    }
+  ],
+  "cierre": {
+    "nodo": "primera-revolucion-industrial",
+    "texto": "¿Qué la refutaría? Compará las condiciones de refutación de las tres interpretaciones y decidí cuál es contrastable con las series ingeridas."
+  }
+}

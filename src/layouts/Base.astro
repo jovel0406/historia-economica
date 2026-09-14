@@ -15,8 +15,11 @@ const enlaces = [
   { href: "/datos", texto: "Datos" },
   { href: "/grafo", texto: "Grafo" },
   { href: "/nodos", texto: "Nodos" },
+  { href: "/recorridos", texto: "Recorridos" },
   { href: "/escuelas", texto: "Escuelas" },
   { href: "/fuentes", texto: "Fuentes" },
+  { href: "/glosario", texto: "Glosario" },
+  { href: "/buscar", texto: "Buscar" },
 ];
 const activo = (href: string): "page" | undefined => (ruta === href || (href !== "/" && ruta.startsWith(href + "/")) ? "page" : undefined);
 ---

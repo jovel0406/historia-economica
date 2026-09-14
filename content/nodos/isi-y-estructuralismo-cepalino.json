@@ -6,7 +6,7 @@
     "inicio": 1930,
     "fin": 1982,
     "precision": "disputada",
-    "nota_periodizacion": "Fechas provisionales de un nodo esqueleto: se justificarán y se documentará quién las discute cuando se redacte el nodo."
+    "nota_periodizacion": "La industrialización dirigida por el Estado empezó como respuesta a la Depresión en los años treinta, fue teorizada por la CEPAL desde 1949 [@prebisch-1949] y terminó con la crisis de la deuda; Bértola y Ocampo prefieren «industrialización dirigida por el Estado» a «sustitución de importaciones» y datan el período 1945–1980 [@bertola-ocampo-2012]."
   },
   "regiones": [
     "america-latina",
@@ -19,11 +19,116 @@
     "bretton-woods-y-segunda-posguerra",
     "de-la-prosperidad-a-la-crisis-de-deuda"
   ],
-  "resumen": "Industrialización dirigida por el Estado en América Latina, con protección, empresas públicas y crédito dirigido, teorizada por la CEPAL. Sus logros y sus límites se discuten tanto como sus fechas.",
-  "descripcion_larga": "",
-  "interpretaciones": [],
+  "resumen": "Entre la Gran Depresión y la crisis de la deuda, los principales países latinoamericanos industrializaron con protección arancelaria, empresas públicas, crédito dirigido y planificación, con la CEPAL como referencia teórica. El crecimiento fue alto y la desigualdad persistió; si el modelo se agotó por sus propias contradicciones o por los shocks externos es la disputa central.",
+  "descripcion_larga": "## Qué pasó\n\nLa caída del comercio en los años treinta obligó a producir localmente lo que ya no se podía importar; después de 1945 la política deliberada —aranceles, tipos de cambio múltiples, bancos de desarrollo, empresas estatales— convirtió esa respuesta defensiva en estrategia [@bertola-ocampo-2012] [@thorp-1998]. Prebisch dio el fundamento: el deterioro de los términos de intercambio de la periferia hacía necesaria la industrialización [@prebisch-1949].\n\n## Qué se disputa\n\nHirschman describió temprano las «fases fáciles» de la sustitución y sus límites cuando había que pasar a bienes intermedios y de capital [@hirschman-1968]. La crítica ortodoxa atribuye a las distorsiones de precios un crecimiento menor al posible y la divergencia respecto de Asia oriental [@taylor-1998] [@edwards-1995]. La lectura estructuralista reivindica el crecimiento del período y atribuye el agotamiento a la vulnerabilidad externa y al financiamiento [@bertola-ocampo-2012]. La lectura desarrollista compara con Corea y Taiwán y ve una diferencia de disciplina, no de intervención [@amsden-1989].",
+  "interpretaciones": [
+    {
+      "escuela": "estructuralista-cepalina",
+      "mecanismo": "La estructura centro-periferia deteriora los términos de intercambio de los exportadores primarios; la industrialización dirigida era la respuesta racional y produjo el crecimiento más rápido de la historia regional.",
+      "desarrollo": "Prebisch formuló la tesis del deterioro de los términos de intercambio y la necesidad de industrializar [@prebisch-1949]. Bértola y Ocampo muestran que el período de industrialización dirigida fue el de mayor crecimiento del producto per cápita latinoamericano, y sitúan el agotamiento en la vulnerabilidad externa y los ciclos de financiamiento, no en la estrategia misma [@bertola-ocampo-2012]. Thorp lo sitúa en la historia larga del siglo XX regional [@thorp-1998].",
+      "autores_principales": [
+        "prebisch-1949",
+        "bertola-ocampo-2012",
+        "thorp-1998"
+      ],
+      "evidencia_a_favor": [
+        "Tasas de crecimiento del producto per cápita de 1945–1980 superiores a las de antes y después [@bertola-ocampo-2012].",
+        "Transformación estructural: urbanización e industria manufacturera."
+      ],
+      "evidencia_en_contra": [
+        "Las distorsiones de precios se asocian con menor crecimiento en la comparación internacional [@taylor-1998].",
+        "El sesgo antiexportador dejó a la región sin divisas cuando se cortó el crédito [@edwards-1995]."
+      ],
+      "que_la_refutaria": "Que los países latinoamericanos con menor protección e intervención hubieran crecido más rápido que los más intervencionistas durante 1945–1980.",
+      "contrastable_con": [
+        "pwt100-pib-per-capita-paises",
+        "pwt100-apertura-comercial-paises"
+      ],
+      "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "monetarista",
+      "mecanismo": "Las distorsiones de precios de la sustitución de importaciones —aranceles, tipos de cambio sobrevaluados, crédito dirigido— redujeron el crecimiento y crearon la fragilidad que estalló en 1982.",
+      "desarrollo": "Taylor estima los costos del desarrollo «hacia adentro» comparando las distorsiones de precios relativos del capital y el crecimiento en América Latina y muestra una asociación negativa robusta [@taylor-1998]. Edwards generaliza: el proteccionismo y la represión financiera explican la divergencia respecto de Asia oriental y la crisis [@edwards-1995].",
+      "autores_principales": [
+        "taylor-1998",
+        "edwards-1995"
+      ],
+      "evidencia_a_favor": [
+        "Asociación entre distorsiones de precios del capital y menor crecimiento [@taylor-1998].",
+        "Sesgo antiexportador y dependencia del crédito externo para financiar importaciones de bienes de capital."
+      ],
+      "evidencia_en_contra": [
+        "Corea y Taiwán también protegieron y dirigieron el crédito; la diferencia fue de disciplina exportadora, no de intervención [@amsden-1989].",
+        "El período de sustitución fue de crecimiento alto en términos absolutos [@bertola-ocampo-2012]."
+      ],
+      "que_la_refutaria": "Que los países con mayores distorsiones de precios hubieran crecido igual o más que los de menores distorsiones en la comparación regional e internacional.",
+      "contrastable_con": [
+        "pwt100-pib-per-capita-paises",
+        "pwt100-apertura-comercial-paises"
+      ],
+      "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "estado-desarrollista",
+      "mecanismo": "El problema no fue intervenir sino cómo: sin disciplina exportadora ni condicionar los subsidios a resultados, la protección se volvió renta en vez de aprendizaje.",
+      "desarrollo": "Amsden compara la industrialización tardía coreana con la latinoamericana: en ambas el Estado subsidió y protegió, pero en Corea los subsidios se condicionaron a metas de exportación y desempeño, mientras en América Latina se otorgaron sin contrapartida [@amsden-1989]. Hirschman había identificado el agotamiento de las «fases fáciles» y la dificultad política de pasar a la siguiente [@hirschman-1968].",
+      "autores_principales": [
+        "amsden-1989",
+        "hirschman-1968"
+      ],
+      "evidencia_a_favor": [
+        "Contraste entre subsidios condicionados en Corea y no condicionados en América Latina [@amsden-1989].",
+        "El estancamiento en la transición a bienes de capital descrito por Hirschman [@hirschman-1968]."
+      ],
+      "evidencia_en_contra": [
+        "La capacidad estatal coreana es difícil de replicar y puede deberse a factores previos (reforma agraria, guerra fría).",
+        "El argumento presupone que se puede identificar ex ante qué Estados disciplinarán."
+      ],
+      "que_la_refutaria": "Que países latinoamericanos que condicionaron subsidios a exportaciones no hubieran tenido mejor desempeño industrial que los que no lo hicieron.",
+      "contrastable_con": [],
+      "peso_academico": "sustancial"
+    }
+  ],
   "series": [],
-  "aristas": [],
-  "fuentes": [],
-  "estado_editorial": "esqueleto"
+  "aristas": [
+    {
+      "desde": "isi-y-estructuralismo-cepalino",
+      "hacia": "economias-de-exportacion-primaria-en-america-latina",
+      "tipo": "ruptura_de",
+      "consenso": "alto",
+      "nota": "La industrialización dirigida sustituyó al modelo primario-exportador cerrado por la Depresión [@bertola-ocampo-2012].",
+      "fuentes": [
+        "bertola-ocampo-2012"
+      ]
+    },
+    {
+      "desde": "isi-y-estructuralismo-cepalino",
+      "hacia": "milagro-de-asia-oriental",
+      "tipo": "alternativa_rechazada",
+      "consenso": "disputado",
+      "nota": "¿Fue Asia oriental un camino distinto al latinoamericano o el mismo con más disciplina? La lectura desarrollista ve continuidad; la ortodoxa, oposición [@amsden-1989] [@edwards-1995].",
+      "fuentes": [
+        "amsden-1989",
+        "edwards-1995"
+      ],
+      "sostenida_por": [
+        "monetarista",
+        "neoclasica-cliometrica"
+      ],
+      "negada_por": [
+        "estado-desarrollista"
+      ]
+    }
+  ],
+  "fuentes": [
+    "prebisch-1949",
+    "bertola-ocampo-2012",
+    "thorp-1998",
+    "hirschman-1968",
+    "taylor-1998",
+    "edwards-1995",
+    "amsden-1989"
+  ],
+  "estado_editorial": "borrador"
 }

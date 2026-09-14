@@ -1,0 +1,20 @@
+{
+  "id": "roto",
+  "unidad": "unidad-fantasma",
+  "titulo": "R",
+  "pregunta_de_apertura": "¿?",
+  "pasos": [
+    {
+      "nodo": "arista-a",
+      "texto": "ok"
+    },
+    {
+      "nodo": "nodo-fantasma",
+      "texto": "cita rota [@fuente-fantasma]"
+    }
+  ],
+  "cierre": {
+    "nodo": "nodo-fantasma",
+    "texto": "c"
+  }
+}

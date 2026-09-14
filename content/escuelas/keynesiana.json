@@ -8,5 +8,10 @@
     "temin-1989",
     "diaz-alejandro-1985"
   ],
-  "critica_principal": "La identificación empírica de un «shock de demanda» independiente del dinero es difícil, y modelos de equilibrio general sugieren que algunas políticas de sostén de la demanda, como las del New Deal, pudieron prolongar la depresión en vez de acortarla [@cole-ohanian-2004]."
+  "critica_principal": "La identificación empírica de un «shock de demanda» independiente del dinero es difícil, y modelos de equilibrio general sugieren que algunas políticas de sostén de la demanda, como las del New Deal, pudieron prolongar la depresión en vez de acortarla [@cole-ohanian-2004].",
+  "vocabulario_propio": [
+    "demanda agregada",
+    "demanda efectiva",
+    "prestamista de última instancia"
+  ]
 }

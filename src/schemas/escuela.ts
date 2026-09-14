@@ -24,5 +24,7 @@ export const Escuela = z.strictObject({
   autores_representativos: z.array(SourceId),
   /** La crítica principal que recibe la escuela. */
   critica_principal: TextoNoVacio,
+  /** Términos que solo esta escuela usa como propios (mejora 17): si un resumen los usa, el validador avisa de posible sesgo. */
+  vocabulario_propio: z.array(TextoNoVacio).default([]),
 });
 export type Escuela = z.infer<typeof Escuela>;

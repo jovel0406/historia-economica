@@ -25,5 +25,6 @@
     "Las PPA encadenadas hacen comparables niveles entre países pero no reproducen las tasas de crecimiento oficiales."
   ],
   "granularidad": "regiones",
+  "margen_publicado": false,
   "archivo": "data/processed/pwt100-pib-per-capita-paises.csv"
 }

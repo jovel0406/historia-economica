@@ -9,7 +9,24 @@ import { ANIO_ACTUAL, colorUnidad, nodosOrdenados, unidadesDe, unidadesOrdenadas
 import { ETIQUETA_ESTADO, ETIQUETA_PRECISION, periodoTexto } from "../lib/texto.ts";
 import { anchoEtiqueta, asignarCarriles, rangosUnidades } from "../vistas/tiempo/layout.ts";
 
-const nodos = nodosOrdenados();
+interface Props {
+  /** Dominio polilineal de la escala: [inicio, quiebre1, quiebre2, fin] y proporciones acumuladas del ancho. */
+  dominio?: [number, number, number, number];
+  proporciones?: [number, number];
+  ticks?: number[];
+  /** Los nodos que terminan antes de `dominio[0]` o empiezan después de `dominio[3]` se omiten. */
+  soloVisibles?: boolean;
+  idVista?: string;
+}
+const {
+  dominio = [1480, 1760, 1900, 2032],
+  proporciones = [0.2, 0.5],
+  ticks = [1500, 1550, 1600, 1650, 1700, 1750, 1800, 1825, 1850, 1875, 1900, 1910, 1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010, 2020],
+  soloVisibles = false,
+  idVista = "completa",
+} = Astro.props;
+const todosLosNodos = nodosOrdenados();
+const nodos = soloVisibles ? todosLosNodos.filter((n) => (n.periodo.fin ?? ANIO_ACTUAL) >= dominio[0] && n.periodo.inicio <= dominio[3]) : todosLosNodos;
 const unidades = unidadesOrdenadas();
 
 const ANCHO = 1900;
@@ -23,9 +40,9 @@ const ALTO_EJE = 34;
 // Escala polilineal: más espacio para los siglos con más nodos, sin ocultar la larga duración.
 const x = d3
   .scaleLinear()
-  .domain([1480, 1760, 1900, 2032])
-  .range([MI, MI + (ANCHO - MI - MD) * 0.2, MI + (ANCHO - MI - MD) * 0.5, ANCHO - MD]);
-const ticks = [1500, 1550, 1600, 1650, 1700, 1750, 1800, 1825, 1850, 1875, 1900, 1910, 1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010, 2020];
+  .domain(dominio)
+  .range([MI, MI + (ANCHO - MI - MD) * proporciones[0], MI + (ANCHO - MI - MD) * proporciones[1], ANCHO - MD])
+  .clamp(true);
 
 // Cinta de unidades.
 const rangos = rangosUnidades(unidades, nodos, ANIO_ACTUAL);
@@ -88,7 +105,7 @@ const ALTO = yCarril0 + nCarriles * ALTO_CARRIL + 16;
 const yDe = (id: string): number => yCarril0 + (carriles.get(id) ?? 0) * ALTO_CARRIL + (ALTO_CARRIL - ALTO_BANDA) / 2;
 const titulosUnidad = new Map(unidades.map((u) => [u.id, u.titulo]));
 ---
-<div class="tiempo" data-tiempo>
+<div class="tiempo" data-tiempo data-vista={idVista}>
   <div class="tiempo-controles">
     <div class="chips" role="group" aria-label="Filtrar por unidad">
       <button class="chip chip-unidad activo" data-filtro="todas" style="--c: var(--tinta-3)">Todas las unidades</button>
@@ -111,7 +128,7 @@ const titulosUnidad = new Map(unidades.map((u) => [u.id, u.titulo]));
     <svg viewBox={`0 0 ${ANCHO} ${ALTO}`} width={ANCHO} height={ALTO} role="img" aria-label="Línea de tiempo de los nodos, organizados por las unidades del curso">
       <defs>
         {items.filter((it) => it.disputada).map((it) => (
-          <linearGradient id={`grad-${it.id}`} x1="0" x2="1" y1="0" y2="0">
+          <linearGradient id={`grad-${idVista}-${it.id}`} x1="0" x2="1" y1="0" y2="0">
             <stop offset="0" stop-color={it.color} stop-opacity="0" />
             <stop offset="0.14" stop-color={it.color} stop-opacity="1" />
             <stop offset="0.86" stop-color={it.color} stop-opacity="1" />
@@ -147,9 +164,9 @@ const titulosUnidad = new Map(unidades.map((u) => [u.id, u.titulo]));
       {/* nodos */}
       {items.map((it) => {
         const y = yDe(it.id);
-        const relleno = it.disputada ? `url(#grad-${it.id})` : it.color;
+        const relleno = it.disputada ? `url(#grad-${idVista}-${it.id})` : it.color;
         return (
-          <a href={`/nodos/${it.id}`} class={`nodo nodo-${it.tipo} estado-${it.estado}`} data-unidades={it.unidades.join(" ")} data-escuelas={it.escuelas.join(" ")} data-titulo={it.titulo} data-periodo={it.periodo} data-resumen={it.resumen} data-estado={ETIQUETA_ESTADO[it.estado as keyof typeof ETIQUETA_ESTADO]} data-precision={ETIQUETA_PRECISION[it.precision as keyof typeof ETIQUETA_PRECISION]} data-color={it.color}>
+          <a href={`/nodos/${it.id}`} class={`nodo nodo-${it.tipo} estado-${it.estado}`} data-unidades={it.unidades.join(" ")} data-escuelas={it.escuelas.join(" ")} data-titulo={it.titulo} data-inicio={String(nodos.find((n) => n.id === it.id)?.periodo.inicio ?? "")} data-periodo={it.periodo} data-resumen={it.resumen} data-estado={ETIQUETA_ESTADO[it.estado as keyof typeof ETIQUETA_ESTADO]} data-precision={ETIQUETA_PRECISION[it.precision as keyof typeof ETIQUETA_PRECISION]} data-color={it.color}>
             {it.tipo === "proceso" ? (
               <rect x={it.x0} y={y} width={Math.max(4, it.x1 - it.x0)} height={ALTO_BANDA} rx="6" fill={relleno} stroke={it.color} />
             ) : (
@@ -172,7 +189,7 @@ const titulosUnidad = new Map(unidades.map((u) => [u.id, u.titulo]));
     <div class="tt-cabecera"><span class="tt-punto"></span><strong data-tt="titulo"></strong></div>
     <div class="tt-meta"><span data-tt="periodo"></span> · <span data-tt="precision"></span> · <span data-tt="estado"></span></div>
     <p data-tt="resumen"></p>
-    <div class="tt-pie">Clic para abrir el nodo</div>
+    <div class="tt-pie">Clic para abrir el nodo · <span data-tt-mapa></span></div>
   </div>
 </div>
 
@@ -216,8 +233,7 @@ const titulosUnidad = new Map(unidades.map((u) => [u.id, u.titulo]));
 </style>
 
 <script>
-  const raiz = document.querySelector<HTMLElement>("[data-tiempo]");
-  if (raiz) {
+  document.querySelectorAll<HTMLElement>("[data-tiempo]").forEach((raiz) => {
     const tooltip = raiz.querySelector<HTMLElement>("[data-tooltip]")!;
     const campo = (n: string) => tooltip.querySelector<HTMLElement>(`[data-tt="${n}"]`)!;
     const nodos = raiz.querySelectorAll<SVGAElement>("a.nodo");
@@ -230,6 +246,8 @@ const titulosUnidad = new Map(unidades.map((u) => [u.id, u.titulo]));
         campo("precision").textContent = el.dataset.precision ?? "";
         campo("estado").textContent = el.dataset.estado ?? "";
         campo("resumen").textContent = el.dataset.resumen ?? "";
+        const mapa = tooltip.querySelector<HTMLElement>("[data-tt-mapa]");
+        if (mapa) mapa.textContent = `mapa en ${el.dataset.inicio ?? ""} desde la página del nodo`;
         tooltip.style.setProperty("--tt-color", el.dataset.color ?? "");
         tooltip.hidden = false;
       });
@@ -259,5 +277,5 @@ const titulosUnidad = new Map(unidades.map((u) => [u.id, u.titulo]));
         unidades.forEach((u) => u.classList.toggle("atenuada", f !== "todas" && u.dataset.unidad !== f));
       });
     });
-  }
+  });
 </script>
