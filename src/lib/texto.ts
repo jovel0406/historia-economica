@@ -2,9 +2,10 @@ import { marked } from "marked";
 import type { Consenso, EstadoEditorial, NivelEvidencia, Periodo, PesoAcademico, TipoArista } from "../schemas/index.ts";
 import { CITA_REGEX } from "../validacion/citas.ts";
 import { ANIO_ACTUAL, contenido } from "./contenido.ts";
+import { enlace } from "./rutas.ts";
 
 function enlazarCitas(texto: string): string {
-  return texto.replace(CITA_REGEX, (_m, id: string) => `<a class="cita" href="/fuentes#${id}" title="Ver fuente ${id}">${id}</a>`);
+  return texto.replace(CITA_REGEX, (_m, id: string) => `<a class="cita" href="${enlace(`/fuentes#${id}`)}" title="Ver fuente ${id}">${id}</a>`);
 }
 
 function escaparRegex(t: string): string {
@@ -33,7 +34,7 @@ export function enlazarGlosario(md: string, omitir?: string): string {
   let salida = md;
   for (const { id, re } of patrones()) {
     if (id === omitir) continue;
-    salida = salida.replace(re, (_m, antes: string, termino: string) => `${antes}[${termino}](/glosario#${id})`);
+    salida = salida.replace(re, (_m, antes: string, termino: string) => `${antes}[${termino}](${enlace(`/glosario#${id}`)})`);
   }
   return salida;
 }

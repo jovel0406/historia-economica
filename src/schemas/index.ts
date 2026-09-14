@@ -13,3 +13,4 @@ export * from "./manifiesto.ts";
 export * from "./unidad.ts";
 export * from "./recorrido.ts";
 export * from "./glosario.ts";
+export * from "./proyecto.ts";

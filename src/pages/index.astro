@@ -1,4 +1,5 @@
 ---
+import { enlace } from "../lib/rutas.ts";
 import Base from "../layouts/Base.astro";
 import { colorUnidad, nodosDeUnidad, nodosOrdenados, unidadesOrdenadas } from "../lib/contenido.ts";
 const unidades = unidadesOrdenadas();
@@ -10,7 +11,7 @@ const redactados = nodos.filter((n) => n.estado_editorial !== "esqueleto").lengt
     <p class="sobretitulo">Una herramienta argumentativa, no una enciclopedia</p>
     <h1>¿Por qué el crecimiento económico moderno ocurrió cuándo y dónde ocurrió, y por qué se distribuyó tan desigualmente?</h1>
     <p class="entradilla">Los historiadores económicos no se ponen de acuerdo. Esta plataforma recorre la misma historia bajo escuelas interpretativas distintas, distingue lo medido de lo reconstruido y etiqueta el grado de consenso de cada relación causal.</p>
-    <p class="acciones"><a class="boton" href="/tiempo">Abrir la línea de tiempo</a> <a class="boton secundario" href="/nodos">Ver los nodos</a></p>
+    <p class="acciones"><a class="boton" href={enlace("/tiempo")}>Abrir la línea de tiempo</a> <a class="boton secundario" href={enlace("/nodos")}>Ver los nodos</a></p>
     <p class="meta">{nodos.length} nodos en la línea de tiempo · {redactados} con interpretaciones en disputa · el resto, esqueletos por redactar</p>
   </section>
 
@@ -25,7 +26,7 @@ const redactados = nodos.filter((n) => n.estado_editorial !== "esqueleto").lengt
           <li class="tarjeta unidad-tarjeta" style={`--c: ${colorUnidad(u.numero)}`}>
             <div class="numero">{u.numero}</div>
             <div>
-              <h3><a href={`/nodos#unidad-${u.numero}`}>{u.titulo}</a></h3>
+              <h3><a href={enlace(`/nodos#unidad-${u.numero}`)}>{u.titulo}</a></h3>
               <p class="meta">{u.contenido_central}</p>
               <p class="meta">{ns.length === 0 ? "sin nodos todavía" : `${ns.length} nodo${ns.length === 1 ? "" : "s"}: ${ns.map((n) => n.titulo).join(" · ")}`}</p>
             </div>

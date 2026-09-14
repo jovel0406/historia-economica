@@ -1,0 +1,33 @@
+# Integración continua: valida el contenido, comprueba tipos y corre los tests en cada push y pull request.
+# No despliega: de eso se encarga deploy.yml.
+name: Verificar
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # el historial por nodo se deriva de `git log`
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Validar el contenido
+        run: pnpm run validar
+      - name: Comprobar tipos
+        run: pnpm run check
+      - name: Tests
+        run: pnpm test
+      - name: Revisión de sesgo léxico (informativa)
+        run: pnpm run sesgo || true
+      - name: Fuentes pendientes de verificación (informativa)
+        run: pnpm run bibliografia:reporte

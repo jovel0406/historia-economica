@@ -13,6 +13,7 @@ import {
   Escuela,
   Manifiesto,
   Nodo,
+  Proyecto,
   Recorrido,
   Serie,
   UMBRAL_MEDICION,
@@ -24,6 +25,7 @@ import {
   type Region,
   type Termino,
   type Unidad,
+  marcadoresPendientes,
 } from "../schemas/index.ts";
 import { encontrarPlaceholders, leerJson, listarJson, sha256DeArchivo } from "./cargar.ts";
 import { citasEn } from "./citas.ts";
@@ -37,6 +39,7 @@ export interface Opciones {
 /** Todo el contenido cargado y validado contra los esquemas, indexado por id. */
 export interface Contenido {
   raiz: string;
+  proyecto: Proyecto;
   regiones: Map<string, Region>;
   indicadores: Map<string, Indicador>;
   unidades: Map<string, Unidad>;
@@ -76,6 +79,7 @@ export const REGLAS = {
   filaCsv: "fila-csv",
   referenciaSerieContraste: "referencia-serie-contraste",
   sesgoLexico: "sesgo-lexico",
+  autoriaPendiente: "autoria-pendiente",
   rawAusente: "raw-ausente",
   datoSinManifiesto: "dato-sin-manifiesto",
   hash: "hash",
@@ -87,6 +91,20 @@ export const REGLAS = {
   lenteFaltante: "lente-faltante",
   lenteDuplicada: "lente-duplicada",
 } as const;
+
+/** Proyecto de reserva cuando `content/proyecto.json` no se puede leer: el informe ya registró el error. */
+const PROYECTO_VACIO: Proyecto = {
+  titulo: "(sin proyecto.json)",
+  subtitulo: "(sin proyecto.json)",
+  descripcion: "(sin proyecto.json)",
+  autor: { nombre: "«SIN DEFINIR»", apellidos: "«SIN DEFINIR»", nombre_de_pila: "«SIN DEFINIR»" },
+  anio: new Date().getFullYear(),
+  version: "0.0.0",
+  repositorio: "«SIN DEFINIR»",
+  sitio: "«SIN DEFINIR»",
+  licencia_contenido: { spdx: "—", nombre: "—", url: "https://example.invalid", archivo: "—", cubre: "—" },
+  licencia_codigo: { spdx: "—", nombre: "—", url: "https://example.invalid", archivo: "—", cubre: "—" },
+};
 
 interface Ctx {
   raiz: string;
@@ -164,6 +182,25 @@ export function cargarProyecto(opciones: Opciones, informe = new Informe()): { c
   const content = join(opciones.raiz, "content");
   const data = join(opciones.raiz, "data");
   const archivoDe = new Map<string, string>();
+
+  let proyecto: Proyecto = PROYECTO_VACIO;
+  {
+    const rutaAbs = join(content, "proyecto.json");
+    const archivo = rel(ctx, rutaAbs);
+    const datos = cargarJson(ctx, rutaAbs, true);
+    const p = datos === undefined ? undefined : parsear(ctx, Proyecto, datos, archivo);
+    if (p !== undefined) {
+      proyecto = p;
+      const pendientes = marcadoresPendientes(p);
+      if (pendientes.length > 0) {
+        informe.advertencia(
+          REGLAS.autoriaPendiente,
+          archivo,
+          `la autoría todavía tiene ${pendientes.length} marcador(es) sin completar (${pendientes.join(", ")}). Completalos con \`pnpm run autoria\`; el build de producción no publica un sitio sin autoría definida`,
+        );
+      }
+    }
+  }
 
   const regiones = new Map<string, Region>();
   {
@@ -258,7 +295,7 @@ export function cargarProyecto(opciones: Opciones, informe = new Informe()): { c
   }
 
   return {
-    contenido: { raiz: opciones.raiz, regiones, indicadores, unidades, escuelas, fuentes, manifiesto, series, nodos, lentes, recorridos, glosario, archivoDe },
+    contenido: { raiz: opciones.raiz, proyecto, regiones, indicadores, unidades, escuelas, fuentes, manifiesto, series, nodos, lentes, recorridos, glosario, archivoDe },
     informe,
   };
 }

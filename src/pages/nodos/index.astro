@@ -1,4 +1,5 @@
 ---
+import { enlace } from "../../lib/rutas.ts";
 import Base from "../../layouts/Base.astro";
 import { colorUnidad, nodosDeUnidad, nodosOrdenados, unidadesOrdenadas } from "../../lib/contenido.ts";
 import { ETIQUETA_ESTADO, periodoTexto } from "../../lib/texto.ts";
@@ -19,7 +20,7 @@ const sinUnidad = nodosOrdenados().filter((n) => (n.unidades ?? []).length === 0
           <ul class="lista-limpia lista-nodos">
             {ns.map((n) => (
               <li>
-                <a href={`/nodos/${n.id}`}>{n.titulo}</a>
+                <a href={enlace(`/nodos/${n.id}`)}>{n.titulo}</a>
                 <span class="meta">{periodoTexto(n.periodo)} · {n.tipo}</span>
                 <span class={`badge badge-${n.estado_editorial}`}>{ETIQUETA_ESTADO[n.estado_editorial]}</span>
               </li>
@@ -32,7 +33,7 @@ const sinUnidad = nodosOrdenados().filter((n) => (n.unidades ?? []).length === 0
   {sinUnidad.length > 0 && (
     <section class="bloque-unidad">
       <h2>Sin unidad asignada</h2>
-      <ul class="lista-limpia lista-nodos">{sinUnidad.map((n) => <li><a href={`/nodos/${n.id}`}>{n.titulo}</a> <span class="meta">{periodoTexto(n.periodo)}</span></li>)}</ul>
+      <ul class="lista-limpia lista-nodos">{sinUnidad.map((n) => <li><a href={enlace(`/nodos/${n.id}`)}>{n.titulo}</a> <span class="meta">{periodoTexto(n.periodo)}</span></li>)}</ul>
     </section>
   )}
 </Base>

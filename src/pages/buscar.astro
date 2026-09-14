@@ -21,6 +21,7 @@ import Base from "../layouts/Base.astro";
 <script>
   interface Entrada { tipo: string; titulo: string; url: string; texto: string }
   const normalizar = (t: string): string => t.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
   const form = document.querySelector<HTMLFormElement>("[data-buscador]")!;
   const input = form.querySelector<HTMLInputElement>("input")!;
   const lista = document.querySelector<HTMLElement>("[data-resultados]")!;
@@ -32,12 +33,12 @@ import Base from "../layouts/Base.astro";
   async function buscar(): Promise<void> {
     const q = normalizar(input.value.trim());
     if (q.length < 2) { lista.innerHTML = ""; estado.textContent = "Escribí al menos dos letras."; return; }
-    if (!indice) indice = (await (await fetch("/buscar.json")).json()) as Entrada[];
+    if (!indice) indice = (await (await fetch(`${BASE}/buscar.json`)).json()) as Entrada[];
     const palabras = q.split(/\s+/);
     const hits = indice.map((e) => { const h = normalizar(`${e.titulo} ${e.texto}`); const puntos = palabras.reduce((acc, p) => acc + (normalizar(e.titulo).includes(p) ? 3 : 0) + (h.includes(p) ? 1 : 0), 0); return { e, puntos }; })
       .filter((x) => x.puntos > 0 && palabras.every((p) => normalizar(`${x.e.titulo} ${x.e.texto}`).includes(p))).sort((a, b) => b.puntos - a.puntos).slice(0, 40);
     estado.textContent = `${hits.length} resultado${hits.length === 1 ? "" : "s"}`;
-    lista.innerHTML = hits.map(({ e }) => `<li><span class="chip">${e.tipo}</span> <a href="${e.url}">${e.titulo}</a><br><span class="meta">${e.texto.replace(/\[@[^\]]+\]/g, "").slice(0, 160)}…</span></li>`).join("");
+    lista.innerHTML = hits.map(({ e }) => `<li><span class="chip">${e.tipo}</span> <a href="${BASE}${e.url}">${e.titulo}</a><br><span class="meta">${e.texto.replace(/\[@[^\]]+\]/g, "").slice(0, 160)}…</span></li>`).join("");
   }
   input.addEventListener("input", () => { void buscar(); });
   void buscar();

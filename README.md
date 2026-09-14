@@ -48,6 +48,7 @@ Queda como trabajo editorial, no técnico: verificar fuentes, pasar nodos de `bo
 | `pnpm test` / `pnpm run test:cobertura` | tests con Vitest; la cobertura exige ≥ 90 % en esquemas, validador e ingesta |
 | `pnpm run check` | `astro check` + `tsc --noEmit` |
 | `pnpm run build` | `validar:estricto && astro build`: si el contenido no pasa, no hay sitio |
+| `pnpm run autoria -- --nombre "…" --usuario …` | registra la autoría: completa `content/proyecto.json` y genera licencias, `CITATION.cff` y `humans.txt` |
 | `pnpm run bibliografia:verificar -- <id> --estado verificada\|dudosa --nota "…"` | registra una verificación manual de fuente |
 | `pnpm run sesgo` | lista resúmenes con vocabulario de una sola escuela; termina con 1 si hay alguno |
 | `pnpm run test:regresion` | construye el sitio y compara la estructura de diez páginas con las instantáneas |
@@ -116,7 +117,9 @@ src/lib/                     acceso al contenido validado y utilidades de texto 
 src/layouts/, src/styles/    diseño base
 src/components/              LineaDeTiempo.astro (SVG), AvisoFuentes.astro
 src/vistas/tiempo/layout.ts  geometría de la línea de tiempo (carriles, rangos de unidad), testeada
-src/pages/                   index, tiempo, espacio, datos (+ csv), grafo, nodos/ (+ .md), aristas/, recorridos/, escuelas, fuentes, glosario, buscar (+ json), verificacion
+src/pages/                   index, tiempo, espacio, datos (+ csv), grafo, nodos/ (+ .md), aristas/, recorridos/, escuelas, fuentes, glosario, buscar (+ json), verificacion, creditos
+content/proyecto.json        autoría, licencias y URLs del proyecto (fuente única)
+scripts/plantillas/          textos canónicos de las licencias, con su procedencia
 content/recorridos/          recorridos guiados, uno por unidad
 content/glosario.json        términos con definición citada
 public/medios/               imágenes de los nodos (cada una con crédito y licencia en el nodo)
@@ -136,9 +139,65 @@ muro anti-bots que la ingesta no esquiva. Para actualizarlas: descargar a mano `
 `pwt1001.xlsx` (nombres, tamaños y SHA-1 oficiales en las notas del manifiesto) y adaptar las
 constantes `URL_*`/`RUTA_RAW` de los adaptadores.
 
-## Despliegue
+## Publicar el sitio bajo tu autoría
 
-Sitio estático en **GitHub Pages** mediante `.github/workflows/deploy.yml`. El flujo corre
-`pnpm run build`, que valida el contenido en modo estricto antes de construir. Definí la variable
-`ASTRO_SITE` del repositorio con la URL pública. Los enlaces internos son absolutos, así que el sitio
-debe servirse desde la raíz de un dominio (sitio de usuario u organización, o dominio propio).
+El sitio es estático: cualquier alojamiento sirve. Estos pasos usan GitHub Pages, que es gratuito y
+despliega solo en cada `git push`.
+
+### 1. Registrar la autoría (una vez)
+
+```bash
+pnpm run autoria -- --nombre "Tu Nombre Completo" --usuario TU-USUARIO-GITHUB --email tu@correo --reescribir-commits
+```
+
+Ese comando completa `content/proyecto.json` y genera `LICENSE`, `LICENSE-CONTENIDO.txt`,
+`CITATION.cff` y `public/humans.txt` con tu nombre; con `--reescribir-commits` reescribe además el
+autor de todo el historial de Git. Acepta también `--orcid`, `--afiliacion`, `--seudonimo`,
+`--nombre-de-pila`, `--apellidos`, y `--repositorio`/`--sitio` si no usás GitHub.
+
+**Hasta que lo corras, `pnpm run build` falla a propósito**: el sitio no se publica con una autoría
+sin definir. Conviene fijar también tu identidad global de Git:
+
+```bash
+git config --global user.name "Tu Nombre Completo" && git config --global user.email "tu@correo"
+```
+
+### 2. Crear el repositorio y subirlo
+
+Creá el repositorio vacío en GitHub (sin README ni licencia, para que no choque) y después:
+
+```bash
+git remote add origin git@github.com:TU-USUARIO/historia-economica.git && git push -u origin main
+```
+
+Si no tenés clave SSH, usá `https://github.com/TU-USUARIO/historia-economica.git` y un token de acceso
+personal como contraseña, o instalá `gh` y ejecutá `gh auth login`.
+
+El nombre del repositorio decide la URL. `historia-economica` publica en
+`tu-usuario.github.io/historia-economica`; un repositorio llamado `tu-usuario.github.io` publica en la
+raíz del dominio. El flujo de despliegue deduce solo el prefijo correcto.
+
+### 3. Activar GitHub Pages
+
+En el repositorio: **Settings → Pages → Source: GitHub Actions**. Con eso, cada push a `main`
+ejecuta `.github/workflows/deploy.yml`, que valida el contenido en modo estricto y publica. El otro
+flujo, `verificar.yml`, corre validación, tipos y tests en cada push y pull request.
+
+Con dominio propio: definí la variable `ASTRO_SITE` del repositorio (Settings → Secrets and variables
+→ Actions → Variables) con la URL completa y `ASTRO_BASE` con `/`, y agregá un archivo `public/CNAME`
+con el dominio.
+
+### 4. Dónde queda registrada la autoría
+
+| Lugar | Qué registra |
+|---|---|
+| Historial de Git | autor y fecha de cada cambio, con tu nombre y correo |
+| `LICENSE` y `LICENSE-CONTENIDO.txt` | titular del copyright y condiciones de reutilización |
+| `CITATION.cff` | GitHub muestra «Cite this repository»; Zenodo genera un DOI si archivás una versión |
+| `/creditos` | autoría, cómo citar en texto y BibTeX, licencias y citas obligatorias de los datos |
+| Metadatos de cada página | `meta author`, `meta copyright`, `link rel="license"` y JSON-LD schema.org |
+| `humans.txt` | autoría legible en `tu-sitio/humans.txt` |
+| Pie de página | tu nombre y las licencias, en todas las páginas |
+
+Para un DOI citable: en Zenodo, conectá tu cuenta de GitHub, activá el repositorio y publicá una
+release. Zenodo lee `CITATION.cff` y acuña un DOI permanente a tu nombre.

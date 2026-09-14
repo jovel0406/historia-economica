@@ -1,4 +1,5 @@
 ---
+import { enlace } from "../../lib/rutas.ts";
 import Base from "../../layouts/Base.astro";
 import { colorUnidad, contenido, recorridosOrdenados } from "../../lib/contenido.ts";
 import { ETIQUETA_ESTADO, periodoTexto, renderMarkdown } from "../../lib/texto.ts";
@@ -20,7 +21,7 @@ const nodo = (id: string) => contenido().nodos.get(id);
         <li class="paso" style={`--c: ${colorUnidad(u?.numero)}`}>
           <div class="num">{i + 1}</div>
           <div>
-            <h2><a href={`/nodos/${p.nodo}`}>{n?.titulo}</a> <span class={`badge badge-${n?.estado_editorial}`}>{n && ETIQUETA_ESTADO[n.estado_editorial]}</span></h2>
+            <h2><a href={enlace(`/nodos/${p.nodo}`)}>{n?.titulo}</a> <span class={`badge badge-${n?.estado_editorial}`}>{n && ETIQUETA_ESTADO[n.estado_editorial]}</span></h2>
             <p class="meta">{n && periodoTexto(n.periodo)}</p>
             <div class="prosa" set:html={renderMarkdown(p.texto)} />
           </div>
@@ -31,12 +32,12 @@ const nodo = (id: string) => contenido().nodos.get(id);
       <div class="num">✦</div>
       <div>
         <p class="sobretitulo">Cierre en la Vista Debate</p>
-        <h2><a href={`/nodos/${r.cierre.nodo}#debate`}>{nodo(r.cierre.nodo)?.titulo}</a></h2>
+        <h2><a href={enlace(`/nodos/${r.cierre.nodo}#debate`)}>{nodo(r.cierre.nodo)?.titulo}</a></h2>
         <div class="prosa" set:html={renderMarkdown(r.cierre.texto)} />
       </div>
     </li>
   </ol>
-  <p><a href="/recorridos">← Todos los recorridos</a></p>
+  <p><a href={enlace("/recorridos")}>← Todos los recorridos</a></p>
 </Base>
 <style>
   .pasos { margin: 2rem 0; }

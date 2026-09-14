@@ -1,4 +1,5 @@
 ---
+import { enlace } from "../../lib/rutas.ts";
 import Base from "../../layouts/Base.astro";
 import { colorUnidad, contenido, recorridosOrdenados } from "../../lib/contenido.ts";
 const recorridos = recorridosOrdenados();
@@ -14,7 +15,7 @@ const unidad = (id: string) => contenido().unidades.get(id);
       return (
         <li class="tarjeta" style={`border-left: 4px solid ${colorUnidad(u?.numero)}`}>
           <p class="sobretitulo">Unidad {u?.numero}</p>
-          <h3><a href={`/recorridos/${r.id}`}>{r.titulo}</a></h3>
+          <h3><a href={enlace(`/recorridos/${r.id}`)}>{r.titulo}</a></h3>
           <p class="meta">{r.pregunta_de_apertura}</p>
           <p class="meta">{r.pasos.length} pasos · cierre en la Vista Debate de «{contenido().nodos.get(r.cierre.nodo)?.titulo}»</p>
         </li>

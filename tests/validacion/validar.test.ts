@@ -112,7 +112,7 @@ describe("validarProyecto sobre un directorio vacío", () => {
   it("marca como faltantes los archivos obligatorios", () => {
     const { informe } = validarProyecto({ raiz: resolve(import.meta.dirname, "../fixtures/no-existe") });
     const faltantes = informe.conRegla(REGLAS.archivoFaltante).map((h) => h.archivo).sort();
-    expect(faltantes).toEqual(["content/fuentes/bibliografia.json", "content/indicadores.json", "content/regiones.json", "content/unidades.json", "data/MANIFIESTO.json"]);
+    expect(faltantes).toEqual(["content/fuentes/bibliografia.json", "content/indicadores.json", "content/proyecto.json", "content/regiones.json", "content/unidades.json", "data/MANIFIESTO.json"]);
   });
 });
 
@@ -170,9 +170,14 @@ describe("CLI scripts/validar-contenido.ts", () => {
     expect(json.hallazgos.length).toBeGreaterThan(5);
   });
 
-  it("el contenido real pasa también en modo estricto (SPEC §11.1)", () => {
+  it("el contenido real pasa en desarrollo, y en modo estricto solo lo frena la autoría sin completar", () => {
     expect(correr("--raiz", RAIZ_REPO).codigo).toBe(0);
-    expect(correr("--raiz", RAIZ_REPO, "--strict").codigo).toBe(0);
+    const estricto = correr("--raiz", RAIZ_REPO, "--json", "--strict");
+    const json = JSON.parse(estricto.salida) as { falla: boolean; hallazgos: { nivel: string; regla: string }[] };
+    const advertencias = json.hallazgos.filter((h) => h.nivel === "advertencia");
+    // Mientras la autoría tenga marcadores, el build de producción no publica: es la única advertencia admitida.
+    expect(advertencias.map((h) => h.regla)).toEqual(["autoria-pendiente"]);
+    expect(json.hallazgos.filter((h) => h.nivel === "error")).toEqual([]);
   });
 
   it("los placeholders hacen fallar el modo estricto (SPEC §1.2)", () => {

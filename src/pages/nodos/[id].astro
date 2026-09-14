@@ -1,4 +1,5 @@
 ---
+import { enlace } from "../../lib/rutas.ts";
 import Base from "../../layouts/Base.astro";
 import AvisoFuentes from "../../components/AvisoFuentes.astro";
 import { aristasHacia, colorUnidad, contenido, escuela, fuentesDe, idArista, lenteDe, nodo, nodosOrdenados, unidadesDe } from "../../lib/contenido.ts";
@@ -29,7 +30,7 @@ const contrastable = (ids: string[]) => ids.map((id) => ({ id, serie: contenido(
   <article>
     <header class="cabecera-nodo">
       <div class="chips">
-        {unidades.map((u) => <a class="chip chip-unidad" href={`/nodos#unidad-${u.numero}`} style={`--c: ${colorUnidad(u.numero)}`}><span class="punto"></span>Unidad {u.numero} · {u.titulo}</a>)}
+        {unidades.map((u) => <a class="chip chip-unidad" href={enlace(`/nodos#unidad-${u.numero}`)} style={`--c: ${colorUnidad(u.numero)}`}><span class="punto"></span>Unidad {u.numero} · {u.titulo}</a>)}
         <span class="chip">{n.tipo}</span>
         <span class={`badge badge-${n.estado_editorial}`} title={DESCRIPCION_ESTADO[n.estado_editorial]}>{ETIQUETA_ESTADO[n.estado_editorial]}</span>
       </div>
@@ -37,7 +38,7 @@ const contrastable = (ids: string[]) => ids.map((id) => ({ id, serie: contenido(
       <p class="periodo"><strong>{periodoTexto(n.periodo)}</strong> <span class="meta">· {ETIQUETA_PRECISION[n.periodo.precision]}</span></p>
       {n.periodo.nota_periodizacion && <p class="nota-periodo" set:html={renderInline(n.periodo.nota_periodizacion)} />}
       <p class="entradilla">{n.resumen}</p>
-      <p class="meta">Regiones: {n.regiones.join(", ")} · <a href={`/nodos/${n.id}.md`}>Exportar como Markdown</a> · <a href="#" onclick="window.print(); return false;">Imprimir</a> · <a href={`/espacio?anio=${n.periodo.inicio}`}>Ver el mapa en {n.periodo.inicio}</a></p>
+      <p class="meta">Regiones: {n.regiones.join(", ")} · <a href={enlace(`/nodos/${n.id}.md`)}>Exportar como Markdown</a> · <a href="#" onclick="window.print(); return false;">Imprimir</a> · <a href={enlace(`/espacio?anio=${n.periodo.inicio}`)}>Ver el mapa en {n.periodo.inicio}</a></p>
     </header>
 
     <AvisoFuentes nodo={n} />
@@ -58,7 +59,7 @@ const contrastable = (ids: string[]) => ids.map((id) => ({ id, serie: contenido(
         <div class="tarjetas">
           {n.medios.map((m) => (
             <figure class="tarjeta">
-              <img src={`/${m.ruta}`} alt={m.alt} loading="lazy" />
+              <img src={enlace(`/${m.ruta}`)} alt={m.alt} loading="lazy" />
               <figcaption><strong>{m.titulo}</strong><br /><span class="meta">{m.credito} · {m.licencia}{m.url_origen && <> · <a href={m.url_origen}>origen</a></>}</span></figcaption>
             </figure>
           ))}
@@ -83,7 +84,7 @@ const contrastable = (ids: string[]) => ids.map((id) => ({ id, serie: contenido(
         <div class="tarjetas interpretaciones">
           {n.interpretaciones.map((it) => (
             <div class="tarjeta interpretacion" data-escuela={it.escuela} data-comparable={it.escuela}>
-              <div class="chips"><a class="chip" href={`/escuelas#${it.escuela}`}>{nombreEscuela(it.escuela)}</a><span class="badge">{ETIQUETA_PESO[it.peso_academico]}</span></div>
+              <div class="chips"><a class="chip" href={enlace(`/escuelas#${it.escuela}`)}>{nombreEscuela(it.escuela)}</a><span class="badge">{ETIQUETA_PESO[it.peso_academico]}</span></div>
               <h3 set:html={renderInline(it.mecanismo)} />
               <div class="prosa" set:html={renderMarkdown(it.desarrollo)} />
               <h4>A favor</h4>
@@ -92,8 +93,8 @@ const contrastable = (ids: string[]) => ids.map((id) => ({ id, serie: contenido(
               <ul>{it.evidencia_en_contra.map((e) => <li set:html={renderInline(e)} />)}</ul>
               <h4>Qué la refutaría</h4>
               <p class="refutacion" set:html={renderInline(it.que_la_refutaria)} />
-              <p class="meta contraste">{it.contrastable_con.length === 0 ? <><span class="badge badge-marginal">no contrastable todavía</span> ninguna serie ingerida permite poner a prueba esta condición.</> : <><span class="badge badge-alto">contrastable</span> con {contrastable(it.contrastable_con).map(({ id, serie }, i) => <>{i > 0 ? ", " : ""}<a href={`/datos#serie-${id}`}>{id}</a>{serie ? ` (${ETIQUETA_EVIDENCIA[serie.nivel_evidencia]})` : ""}</>)}.</>}</p>
-              {it.autores_principales.length > 0 && <p class="meta">Autores principales: {it.autores_principales.map((f, i) => <><a class="cita" href={`/fuentes#${f}`}>{f}</a>{i < it.autores_principales.length - 1 ? " " : ""}</>)}</p>}
+              <p class="meta contraste">{it.contrastable_con.length === 0 ? <><span class="badge badge-marginal">no contrastable todavía</span> ninguna serie ingerida permite poner a prueba esta condición.</> : <><span class="badge badge-alto">contrastable</span> con {contrastable(it.contrastable_con).map(({ id, serie }, i) => <>{i > 0 ? ", " : ""}<a href={enlace(`/datos#serie-${id}`)}>{id}</a>{serie ? ` (${ETIQUETA_EVIDENCIA[serie.nivel_evidencia]})` : ""}</>)}.</>}</p>
+              {it.autores_principales.length > 0 && <p class="meta">Autores principales: {it.autores_principales.map((f, i) => <><a class="cita" href={enlace(`/fuentes#${f}`)}>{f}</a>{i < it.autores_principales.length - 1 ? " " : ""}</>)}</p>}
             </div>
           ))}
         </div>
@@ -108,10 +109,10 @@ const contrastable = (ids: string[]) => ids.map((id) => ({ id, serie: contenido(
           {aristas.map(({ a }) => (
             <li class={`arista consenso-${a.consenso}`} data-sostenida={(a.sostenida_por ?? []).join(" ")} data-negada={(a.negada_por ?? []).join(" ")}>
               <div class="arista-linea">
-                <a class="enlace-arista" href={`/aristas/${idArista(a)}`} title="Página de la arista">⤷</a>
-                <a href={`/nodos/${a.desde}`}>{nombreNodo(a.desde)}</a>
+                <a class="enlace-arista" href={enlace(`/aristas/${idArista(a)}`)} title="Página de la arista">⤷</a>
+                <a href={enlace(`/nodos/${a.desde}`)}>{nombreNodo(a.desde)}</a>
                 <span class="tipo">{ETIQUETA_ARISTA[a.tipo]}</span>
-                <a href={`/nodos/${a.hacia}`}>{nombreNodo(a.hacia)}</a>
+                <a href={enlace(`/nodos/${a.hacia}`)}>{nombreNodo(a.hacia)}</a>
                 <span class={`badge badge-${a.consenso}`}>{ETIQUETA_CONSENSO[a.consenso]}</span>
               </div>
               <p class="meta" set:html={renderInline(a.nota)} />
@@ -136,7 +137,7 @@ const contrastable = (ids: string[]) => ids.map((id) => ({ id, serie: contenido(
             const s = serie(ref.serie);
             return (
               <li>
-                <a href={`/datos#serie-${ref.serie}`}>{ref.serie}</a>
+                <a href={enlace(`/datos#serie-${ref.serie}`)}>{ref.serie}</a>
                 {s && <span class={`badge ${s.nivel_evidencia === "estimacion_conjetural" ? "badge-conjetural" : s.nivel_evidencia === "estadistica_oficial" ? "badge-alto" : "badge-medio"}`}>{ETIQUETA_EVIDENCIA[s.nivel_evidencia]}</span>}
                 {s && <span class="meta"> {s.cobertura_temporal[0]}–{s.cobertura_temporal[1]}</span>}
                 {ref.nota && <p class="meta" set:html={renderInline(ref.nota)} />}
@@ -176,7 +177,7 @@ const contrastable = (ids: string[]) => ids.map((id) => ({ id, serie: contenido(
         <ul class="lista-limpia fuentes">
           {fuentes.map((f) => (
             <li id={f.id}>
-              <a class="cita" href={`/fuentes#${f.id}`}>{f.id}</a> {f.autores.length > 0 ? f.autores.join("; ") : "(autores sin confirmar)"} ({f.anio ?? "s.f."}). <em>{f.titulo}</em>{f.publicacion && <>, {f.publicacion}</>}{f.editorial && <>. {f.editorial}</>}.
+              <a class="cita" href={enlace(`/fuentes#${f.id}`)}>{f.id}</a> {f.autores.length > 0 ? f.autores.join("; ") : "(autores sin confirmar)"} ({f.anio ?? "s.f."}). <em>{f.titulo}</em>{f.publicacion && <>, {f.publicacion}</>}{f.editorial && <>. {f.editorial}</>}.
               {f.doi && <> <a href={`https://doi.org/${f.doi}`}>doi:{f.doi}</a></>}{f.url && !f.doi && <> <a href={f.url}>enlace</a></>}
               {!f.verified && <span class="badge badge-disputado" title={f.nota_verificacion}>sin verificar</span>}
             </li>

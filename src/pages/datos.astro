@@ -1,4 +1,5 @@
 ---
+import { enlace } from "../lib/rutas.ts";
 import Base from "../layouts/Base.astro";
 import { contenido } from "../lib/contenido.ts";
 import { dataset, leerObservaciones, nombreRegion, seriesDeIndicador } from "../lib/datos.ts";
@@ -83,12 +84,12 @@ const CLASE_BADGE = { estadistica_oficial: "badge-alto", reconstruccion_document
                 {s.advertencias.length > 0 && <ul>{s.advertencias.map((a) => <li>{a}</li>)}</ul>}
                 {ds && <p class="meta"><strong>Procedencia:</strong> {ds.nombre}, versión {ds.version}, descargado el {ds.fecha_descarga}. Licencia: {ds.licencia}. <strong>Cita requerida:</strong> {ds.cita_requerida}</p>}
               </details>
-              <p class="acciones-serie"><a class="boton-sec" href={`/datos/${s.id}.csv`}>Descargar CSV</a> {ds && <a class="boton-sec" href={ds.url}>Fuente primaria</a>}</p>
+              <p class="acciones-serie"><a class="boton-sec" href={enlace(`/datos/${s.id}.csv`)}>Descargar CSV</a> {ds && <a class="boton-sec" href={ds.url}>Fuente primaria</a>}</p>
             </article>
           );
         })}
         {mapa.length > 0 && (
-          <p class="meta">Series por país (código ISO3) usadas por la <a href="/espacio">Vista Espacio</a>: {mapa.map((s, i) => <>{i > 0 ? ", " : ""}<a href={`/datos/${s.id}.csv`}>{s.id}</a> ({ETIQUETA_EVIDENCIA[s.nivel_evidencia]})</>)}.</p>
+          <p class="meta">Series por país (código ISO3) usadas por la <a href={enlace("/espacio")}>Vista Espacio</a>: {mapa.map((s, i) => <>{i > 0 ? ", " : ""}<a href={enlace(`/datos/${s.id}.csv`)}>{s.id}</a> ({ETIQUETA_EVIDENCIA[s.nivel_evidencia]})</>)}.</p>
         )}
       </section>
     );

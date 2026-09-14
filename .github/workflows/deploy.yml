@@ -1,5 +1,6 @@
-# Despliegue en GitHub Pages (docs/DECISIONES.md, D13). Versiones de acciones verificadas el 2026-09-14.
-# `pnpm run build` ejecuta primero la validación estricta del contenido: si falla, no hay despliegue.
+# Despliegue en GitHub Pages (docs/DECISIONES.md, D13 y D48). Versiones verificadas el 2026-09-14.
+# `pnpm run build` valida el contenido en modo estricto antes de construir: si la validación falla
+# —incluida una autoría sin completar—, no hay despliegue.
 name: Desplegar en GitHub Pages
 
 on:
@@ -21,14 +22,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+
+      # Un repositorio llamado <usuario>.github.io se sirve desde la raíz; cualquier otro, desde
+      # /<nombre-del-repositorio>. Se deduce aquí para no tener que configurarlo a mano.
+      - name: Deducir la URL del sitio
+        id: url
+        run: |
+          repo="${GITHUB_REPOSITORY#*/}"
+          owner="${GITHUB_REPOSITORY%%/*}"
+          if [ "$repo" = "${owner}.github.io" ]; then
+            echo "site=https://${owner}.github.io" >> "$GITHUB_OUTPUT"
+            echo "base=/" >> "$GITHUB_OUTPUT"
+          else
+            echo "site=https://${owner}.github.io/${repo}" >> "$GITHUB_OUTPUT"
+            echo "base=/${repo}" >> "$GITHUB_OUTPUT"
+          fi
+
       - uses: withastro/action@v6
         with:
           node-version: "24"
           package-manager: pnpm@12.4.1
           build-cmd: pnpm run build
         env:
-          # Fijar en la configuración del repositorio (Settings → Variables): URL pública del sitio.
-          ASTRO_SITE: ${{ vars.ASTRO_SITE }}
+          # Con un dominio propio, definí la variable ASTRO_SITE del repositorio y dejá ASTRO_BASE en "/".
+          ASTRO_SITE: ${{ vars.ASTRO_SITE || steps.url.outputs.site }}
+          ASTRO_BASE: ${{ vars.ASTRO_BASE || steps.url.outputs.base }}
 
   desplegar:
     needs: construir

@@ -144,3 +144,7 @@ export function aristasTodas(): AristaConOrigen[] {
   const orden = { disputado: 0, marginal: 1, medio: 2, alto: 3 } as const;
   return [...vistas.values()].sort((x, y) => orden[x.arista.consenso] - orden[y.arista.consenso] || x.id.localeCompare(y.id));
 }
+
+export function proyecto() {
+  return contenido().proyecto;
+}

@@ -22,6 +22,7 @@ function raizTemporal(): string {
   mkdirSync(join(raiz, "content", "fuentes"), { recursive: true });
   const origen = join(process.cwd(), "content");
   for (const f of ["regiones.json", "indicadores.json", "unidades.json"]) writeFileSync(join(raiz, "content", f), readFileSync(join(origen, f)));
+  writeFileSync(join(raiz, "content", "proyecto.json"), readFileSync(join(process.cwd(), "tests/fixtures/valido/content/proyecto.json")));
   writeFileSync(join(raiz, "content", "fuentes", "bibliografia.json"), "[]");
   mkdirSync(join(raiz, "data"), { recursive: true });
   writeFileSync(join(raiz, "data", "MANIFIESTO.json"), JSON.stringify({ datasets: [] }));

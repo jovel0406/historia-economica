@@ -274,3 +274,41 @@ para usarlo en CI sin romper el build. Es una ayuda a §8, no un veredicto.
 `tests/vistas/regresion.test.ts` construye el sitio y compara un resumen estructural de diez páginas
 (títulos, secciones, gráficos, nodos del SVG) con instantáneas versionadas. No son capturas de píxeles:
 eso exigiría Playwright y la descarga de un navegador; se documenta como paso siguiente si se quiere.
+
+## 2026-09-14 — Publicación y autoría (pregunta propia: «cómo lanzo la versión web bajo mi autoría»)
+
+### D48. Enlaces conscientes del `base`
+El sitio usaba enlaces absolutos (`/tiempo`), de modo que solo funcionaba servido desde la raíz de un
+dominio. Se introdujo `src/lib/rutas.ts` con `enlace()`, que antepone `import.meta.env.BASE_URL`, y se
+convirtieron los 58 enlaces internos, incluidos los que se construyen dentro de scripts de cliente y el
+`fetch` del índice de búsqueda. `astro.config.mjs` toma `base` de `ASTRO_BASE`. Verificado con dos
+builds, en raíz y en `/historia-economica`. Esto permite publicar como sitio de usuario o como sitio de
+proyecto sin tocar el código.
+
+### D49. La autoría es contenido validado, no un texto suelto
+`content/proyecto.json` es la fuente única de autoría, licencias y URLs; de ahí salen la licencia, el
+`CITATION.cff`, los metadatos de cada página, el pie y la página `/creditos`. Sus valores nacen como
+marcadores «entre comillas angulares» y el validador emite una advertencia mientras queden: como el
+build de producción trata las advertencias como errores, **el sitio no puede publicarse con una autoría
+sin definir**. `pnpm run autoria` los completa y genera los artefactos en un paso.
+
+### D50. Textos de licencia copiados, no transcritos
+`scripts/plantillas/` guarda el texto legal de CC BY 4.0 (creativecommons.org) y de MIT (lista SPDX),
+descargados el 2026-09-14 y con su procedencia registrada en `PROCEDENCIA.md`. El script solo rellena
+año y titular. Reproducir de memoria un texto legal sería exactamente la falla que este proyecto
+prohíbe para las fuentes.
+
+### D51. Doble licencia y atribución de terceros
+Código bajo MIT, contenido y datos derivados bajo CC BY 4.0. Es la combinación compatible con las
+licencias de los datasets ingeridos, todas CC BY, que exigen atribución. La licencia del contenido y la
+página de créditos dicen expresamente que atribuir esta obra no exime de citar a Maddison, Penn World
+Table y Naciones Unidas en la forma que cada institución exige.
+
+### D52. El papel del modelo de lenguaje, dicho en la página de créditos
+El código se escribió con asistencia de un modelo de lenguaje bajo dirección del autor; ningún texto
+publicado como contenido es salida sin revisar de un modelo (SPEC §10). La página `/creditos` lo declara
+en vez de dejarlo implícito, y el historial de Git conserva los `Co-Authored-By` correspondientes.
+
+### D53. Flujo de integración continua separado del de despliegue
+`verificar.yml` corre validación, tipos y tests en cada push y pull request; `deploy.yml` solo publica
+desde `main` y deduce por sí mismo si el repositorio es un sitio de usuario o de proyecto.

@@ -1,4 +1,5 @@
 ---
+import { enlace } from "../lib/rutas.ts";
 import Base from "../layouts/Base.astro";
 import { contenido } from "../lib/contenido.ts";
 import { dependenciasPorFuente } from "../../scripts/reporte-bibliografia.ts";
@@ -16,7 +17,7 @@ const deps = dependenciasPorFuente(contenido());
       const d = deps.get(f.id) ?? { nodos: [], escuelas: [], lentes: [] };
       return (
         <li class="fuente tarjeta" id={f.id} data-fuente={f.id}>
-          <div class="fuente-cab"><a class="cita" href={`/fuentes#${f.id}`}>{f.id}</a> <span class="chip">{f.tipo.replace("_", " ")}</span> {f.doi && <a href={`https://doi.org/${f.doi}`} target="_blank" rel="noopener">abrir DOI ↗</a>}{!f.doi && f.url && <a href={f.url} target="_blank" rel="noopener">abrir URL ↗</a>}</div>
+          <div class="fuente-cab"><a class="cita" href={enlace(`/fuentes#${f.id}`)}>{f.id}</a> <span class="chip">{f.tipo.replace("_", " ")}</span> {f.doi && <a href={`https://doi.org/${f.doi}`} target="_blank" rel="noopener">abrir DOI ↗</a>}{!f.doi && f.url && <a href={f.url} target="_blank" rel="noopener">abrir URL ↗</a>}</div>
           <div>{f.autores.length ? f.autores.join("; ") : "(autores sin confirmar)"} ({f.anio ?? "s.f."}). <em>{f.titulo}</em>{f.publicacion && <>, {f.publicacion}</>}{f.editorial && <>. {f.editorial}</>}.</div>
           <p class="meta">{f.nota_verificacion}</p>
           <p class="meta">Usada en: {[d.nodos.length ? `nodos ${d.nodos.join(", ")}` : "", d.escuelas.length ? `escuelas ${d.escuelas.join(", ")}` : "", d.lentes.length ? `lentes ${d.lentes.join(", ")}` : ""].filter(Boolean).join(" · ") || "nadie todavía"}</p>

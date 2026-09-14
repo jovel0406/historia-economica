@@ -1,4 +1,5 @@
 ---
+import { enlace } from "../../lib/rutas.ts";
 import Base from "../../layouts/Base.astro";
 import { aristasTodas, contenido, escuela, fuente } from "../../lib/contenido.ts";
 import { ETIQUETA_ARISTA, ETIQUETA_CONSENSO, ETIQUETA_EVIDENCIA, ETIQUETA_PESO, periodoTexto, renderInline, renderMarkdown } from "../../lib/texto.ts";
@@ -15,8 +16,8 @@ const seriesDe = (n: typeof desde) => n.series.map((s) => ({ ref: s, serie: cont
 const fuentes = a.fuentes.map((id) => fuente(id)).filter((f) => f !== undefined);
 ---
 <Base titulo={`${desde.titulo} → ${hacia.titulo}`}>
-  <p class="sobretitulo">Arista · declarada en <a href={`/nodos/${declaradaEn}`}>{contenido().nodos.get(declaradaEn)?.titulo}</a></p>
-  <h1 class="titulo-arista"><a href={`/nodos/${a.desde}`}>{desde.titulo}</a> <span class="tipo">{ETIQUETA_ARISTA[a.tipo]}</span> <a href={`/nodos/${a.hacia}`}>{hacia.titulo}</a></h1>
+  <p class="sobretitulo">Arista · declarada en <a href={enlace(`/nodos/${declaradaEn}`)}>{contenido().nodos.get(declaradaEn)?.titulo}</a></p>
+  <h1 class="titulo-arista"><a href={enlace(`/nodos/${a.desde}`)}>{desde.titulo}</a> <span class="tipo">{ETIQUETA_ARISTA[a.tipo]}</span> <a href={enlace(`/nodos/${a.hacia}`)}>{hacia.titulo}</a></h1>
   <p><span class={`badge badge-${a.consenso}`}>{ETIQUETA_CONSENSO[a.consenso]}</span> <span class="meta">{periodoTexto(desde.periodo)} → {periodoTexto(hacia.periodo)}</span></p>
   <div class="prosa entradilla" set:html={renderInline(a.nota)} />
 
@@ -28,7 +29,7 @@ const fuentes = a.fuentes.map((id) => fuente(id)).filter((f) => f !== undefined)
           <h3 class="a-favor">Sostenida por</h3>
           {(a.sostenida_por ?? []).length === 0 ? <p class="meta">Ninguna escuela la reclama como propia; consenso {ETIQUETA_CONSENSO[a.consenso]}.</p> : (a.sostenida_por ?? []).map((e) => (
             <div class="tarjeta">
-              <h4><a href={`/escuelas#${e}`}>{nombre(e)}</a></h4>
+              <h4><a href={enlace(`/escuelas#${e}`)}>{nombre(e)}</a></h4>
               {[desde, hacia].map((n) => { const it = interpretacionesDe(n, e); return it ? <p class="meta"><strong>En «{n.titulo}»</strong> ({ETIQUETA_PESO[it.peso_academico]}): <span set:html={renderInline(it.mecanismo)} /></p> : null; })}
             </div>
           ))}
@@ -37,7 +38,7 @@ const fuentes = a.fuentes.map((id) => fuente(id)).filter((f) => f !== undefined)
           <h3 class="en-contra">Negada por</h3>
           {(a.negada_por ?? []).length === 0 ? <p class="meta">Ninguna escuela la niega explícitamente.</p> : (a.negada_por ?? []).map((e) => (
             <div class="tarjeta">
-              <h4><a href={`/escuelas#${e}`}>{nombre(e)}</a></h4>
+              <h4><a href={enlace(`/escuelas#${e}`)}>{nombre(e)}</a></h4>
               {[desde, hacia].map((n) => { const it = interpretacionesDe(n, e); return it ? <p class="meta"><strong>En «{n.titulo}»</strong> ({ETIQUETA_PESO[it.peso_academico]}): <span set:html={renderInline(it.mecanismo)} /></p> : null; })}
             </div>
           ))}
@@ -52,7 +53,7 @@ const fuentes = a.fuentes.map((id) => fuente(id)).filter((f) => f !== undefined)
       {[desde, hacia].map((n) => (
         <div>
           <h3>{n.titulo}</h3>
-          {seriesDe(n).length === 0 ? <p class="meta">Sin series asociadas todavía.</p> : <ul class="lista-limpia">{seriesDe(n).map(({ ref, serie }) => <li><a href={`/datos#serie-${ref.serie}`}>{ref.serie}</a> {serie && <span class={`badge ${serie.nivel_evidencia === "estimacion_conjetural" ? "badge-conjetural" : serie.nivel_evidencia === "estadistica_oficial" ? "badge-alto" : "badge-medio"}`}>{ETIQUETA_EVIDENCIA[serie.nivel_evidencia]}</span>}{ref.nota && <p class="meta" set:html={renderInline(ref.nota)} />}</li>)}</ul>}
+          {seriesDe(n).length === 0 ? <p class="meta">Sin series asociadas todavía.</p> : <ul class="lista-limpia">{seriesDe(n).map(({ ref, serie }) => <li><a href={enlace(`/datos#serie-${ref.serie}`)}>{ref.serie}</a> {serie && <span class={`badge ${serie.nivel_evidencia === "estimacion_conjetural" ? "badge-conjetural" : serie.nivel_evidencia === "estadistica_oficial" ? "badge-alto" : "badge-medio"}`}>{ETIQUETA_EVIDENCIA[serie.nivel_evidencia]}</span>}{ref.nota && <p class="meta" set:html={renderInline(ref.nota)} />}</li>)}</ul>}
         </div>
       ))}
     </div>
@@ -61,10 +62,10 @@ const fuentes = a.fuentes.map((id) => fuente(id)).filter((f) => f !== undefined)
   {fuentes.length > 0 && (
     <section>
       <h2>Fuentes de la arista</h2>
-      <ul class="lista-limpia">{fuentes.map((f) => <li><a class="cita" href={`/fuentes#${f.id}`}>{f.id}</a> {f.autores.join("; ")} ({f.anio ?? "s.f."}). <em>{f.titulo}</em>. {!f.verified && <span class="badge badge-disputado">sin verificar</span>}</li>)}</ul>
+      <ul class="lista-limpia">{fuentes.map((f) => <li><a class="cita" href={enlace(`/fuentes#${f.id}`)}>{f.id}</a> {f.autores.join("; ")} ({f.anio ?? "s.f."}). <em>{f.titulo}</em>. {!f.verified && <span class="badge badge-disputado">sin verificar</span>}</li>)}</ul>
     </section>
   )}
-  <p><a href="/aristas">← Todas las aristas</a> · <a href="/grafo">Ver en el grafo</a></p>
+  <p><a href={enlace("/aristas")}>← Todas las aristas</a> · <a href={enlace("/grafo")}>Ver en el grafo</a></p>
 </Base>
 <style>
   .titulo-arista { font-size: clamp(1.5rem, 3vw, 2.3rem); }

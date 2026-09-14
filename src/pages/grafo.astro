@@ -80,6 +80,7 @@ const conAristas = new Set(datos.aristas.flatMap((a) => [a.desde, a.hacia]));
   interface AristaG { id: string; desde: string; hacia: string; tipo: string; consenso: string; nota: string; sostenida: string[]; negada: string[]; source?: NodoG | string; target?: NodoG | string }
   interface Carga { nodos: NodoG[]; aristas: AristaG[]; escuelas: Record<string, string>; colorTipo: Record<string, string>; trazo: Record<string, string>; etiquetaTipo: Record<string, string>; etiquetaConsenso: Record<string, string> }
 
+  const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
   const raiz = document.querySelector<HTMLElement>("[data-grafo]");
   if (raiz) {
     const carga = JSON.parse(raiz.querySelector('script[type="application/json"]')!.textContent!) as Carga;
@@ -211,7 +212,7 @@ const conAristas = new Set(datos.aristas.flatMap((a) => [a.desde, a.hacia]));
         const de = carga.nodos.find((x) => x.id === a.desde)?.titulo ?? a.desde;
         const ha = carga.nodos.find((x) => x.id === a.hacia)?.titulo ?? a.hacia;
         const sost = a.sostenida.map((e) => carga.escuelas[e] ?? e).join(", ");
-        return `<li><a href="/nodos/${a.desde}">${de}</a> <span class="meta">${carga.etiquetaTipo[a.tipo]}</span> <a href="/nodos/${a.hacia}">${ha}</a> <span class="badge badge-${a.consenso}">${carga.etiquetaConsenso[a.consenso]}</span>${sost ? `<br><span class="meta">según: ${sost}</span>` : ""}</li>`;
+        return `<li><a href="${BASE}/nodos/${a.desde}">${de}</a> <span class="meta">${carga.etiquetaTipo[a.tipo]}</span> <a href="${BASE}/nodos/${a.hacia}">${ha}</a> <span class="badge badge-${a.consenso}">${carga.etiquetaConsenso[a.consenso]}</span>${sost ? `<br><span class="meta">según: ${sost}</span>` : ""}</li>`;
       }).join("");
     }
 

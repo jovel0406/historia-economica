@@ -1,4 +1,5 @@
 ---
+import { enlace } from "../../lib/rutas.ts";
 import Base from "../../layouts/Base.astro";
 import { aristasTodas, contenido, escuela } from "../../lib/contenido.ts";
 import { ETIQUETA_ARISTA, ETIQUETA_CONSENSO } from "../../lib/texto.ts";
@@ -13,7 +14,7 @@ const nombre = (id: string) => escuela(id)?.nombre ?? id;
   <ul class="lista-limpia">
     {aristas.map(({ id, arista: a }) => (
       <li class={`arista consenso-${a.consenso}`}>
-        <div class="arista-linea"><a href={`/aristas/${id}`}>{titulo(a.desde)} <span class="tipo">{ETIQUETA_ARISTA[a.tipo]}</span> {titulo(a.hacia)}</a> <span class={`badge badge-${a.consenso}`}>{ETIQUETA_CONSENSO[a.consenso]}</span></div>
+        <div class="arista-linea"><a href={enlace(`/aristas/${id}`)}>{titulo(a.desde)} <span class="tipo">{ETIQUETA_ARISTA[a.tipo]}</span> {titulo(a.hacia)}</a> <span class={`badge badge-${a.consenso}`}>{ETIQUETA_CONSENSO[a.consenso]}</span></div>
         {(a.sostenida_por || a.negada_por) && <p class="meta">{a.sostenida_por?.length ? `Sostenida por ${a.sostenida_por.map(nombre).join(", ")}. ` : ""}{a.negada_por?.length ? `Negada por ${a.negada_por.map(nombre).join(", ")}.` : ""}</p>}
       </li>
     ))}

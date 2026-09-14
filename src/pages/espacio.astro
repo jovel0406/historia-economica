@@ -104,6 +104,7 @@ const carga = { topologia, paises, nombresRegion, fuentes, umbralAnacronismo: 19
   interface Fuente { id: string; nombre: string; nivel: string; anios: number[]; paises: Record<string, Record<string, number>>; regiones: Record<string, Record<string, number>>; cita: string; url: string }
   interface Carga { topologia: Topology; paises: { ccn3: string; cca3: string; nombre: string; macrorregion: string | null }[]; nombresRegion: Record<string, string>; fuentes: Fuente[]; umbralAnacronismo: number; nodos: { id: string; titulo: string; inicio: number; fin: number | null; estado: string }[] }
 
+  const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
   const raiz = document.querySelector<HTMLElement>("[data-espacio]");
   if (raiz) {
     const carga = JSON.parse(raiz.querySelector('script[type="application/json"]')!.textContent!) as Carga;
@@ -177,7 +178,7 @@ const carga = { topologia, paises, nombresRegion, fuentes, umbralAnacronismo: 19
       if (!tabla.hidden) pintarTabla(anio);
       anioNodos.textContent = String(anio);
       const activos = carga.nodos.filter((n) => n.inicio <= anio && (n.fin ?? AHORA) >= anio);
-      listaNodos.innerHTML = activos.length === 0 ? "<li class=\"meta\">ningún nodo cubre este año</li>" : activos.map((n) => `<li><a class="chip" href="/nodos/${n.id}" style="${n.estado === "esqueleto" ? "border-style:dashed" : ""}">${n.titulo}</a></li>`).join("");
+      listaNodos.innerHTML = activos.length === 0 ? "<li class=\"meta\">ningún nodo cubre este año</li>" : activos.map((n) => `<li><a class="chip" href="${BASE}/nodos/${n.id}" style="${n.estado === "esqueleto" ? "border-style:dashed" : ""}">${n.titulo}</a></li>`).join("");
       badge.textContent = anio < 1820 ? "estimación conjetural" : fuente.nivel === "estadistica_oficial" ? "estadística oficial" : "reconstrucción documentada";
       badge.className = `badge ${anio < 1820 ? "badge-conjetural" : fuente.nivel === "estadistica_oficial" ? "badge-alto" : "badge-medio"}`;
     }

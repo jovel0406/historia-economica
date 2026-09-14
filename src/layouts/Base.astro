@@ -1,7 +1,24 @@
 ---
+import { enlace } from "../lib/rutas.ts";
 import "../styles/global.css";
-import { escuelasOrdenadas } from "../lib/contenido.ts";
+import { escuelasOrdenadas, proyecto } from "../lib/contenido.ts";
 const escuelas = escuelasOrdenadas();
+const p = proyecto();
+const autorMostrado = p.autor.seudonimo !== undefined ? `${p.autor.nombre} (${p.autor.seudonimo})` : p.autor.nombre;
+const canonica = /^https?:/.test(p.sitio) ? new URL(Astro.url.pathname, p.sitio).href : undefined;
+const datosEstructurados = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: `${p.titulo}. ${p.subtitulo}`,
+  description: p.descripcion,
+  inLanguage: "es",
+  author: { "@type": "Person", name: p.autor.nombre, ...(p.autor.orcid !== undefined ? { identifier: p.autor.orcid } : {}), ...(p.autor.afiliacion !== undefined ? { affiliation: p.autor.afiliacion } : {}) },
+  copyrightHolder: { "@type": "Person", name: p.autor.nombre },
+  copyrightYear: p.anio,
+  license: p.licencia_contenido.url,
+  ...(/^https?:/.test(p.sitio) ? { url: p.sitio } : {}),
+  ...(/^https?:/.test(p.repositorio) ? { codeRepository: p.repositorio } : {}),
+};
 interface Props {
   titulo: string;
   descripcion?: string;
@@ -20,8 +37,9 @@ const enlaces = [
   { href: "/fuentes", texto: "Fuentes" },
   { href: "/glosario", texto: "Glosario" },
   { href: "/buscar", texto: "Buscar" },
+  { href: "/creditos", texto: "Créditos" },
 ];
-const activo = (href: string): "page" | undefined => (ruta === href || (href !== "/" && ruta.startsWith(href + "/")) ? "page" : undefined);
+const activo = (href: string): "page" | undefined => { const h = enlace(href); return ruta === h || (href !== "/" && ruta.startsWith(h + "/")) ? "page" : undefined; };
 ---
 <!doctype html>
 <html lang="es">
@@ -30,6 +48,19 @@ const activo = (href: string): "page" | undefined => (ruta === href || (href !==
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{titulo} · Historia económica mundial</title>
     <meta name="description" content={descripcion} />
+    <meta name="author" content={p.autor.nombre} />
+    <meta name="copyright" content={`© ${p.anio} ${autorMostrado}. Contenido bajo ${p.licencia_contenido.spdx}; código bajo ${p.licencia_codigo.spdx}.`} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="license" href={p.licencia_contenido.url} />
+    <link rel="author" href={enlace("/creditos")} />
+    {canonica && <link rel="canonical" href={canonica} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={p.titulo} />
+    <meta property="og:title" content={titulo} />
+    <meta property="og:description" content={descripcion} />
+    <meta property="og:locale" content="es" />
+    {canonica && <meta property="og:url" content={canonica} />}
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(datosEstructurados)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
@@ -37,9 +68,9 @@ const activo = (href: string): "page" | undefined => (ruta === href || (href !==
   <body>
     <header class="cabecera">
       <div class="contenedor fila">
-        <a class="marca" href="/">Historia económica mundial <small>tiempo · espacio · datos · debate</small></a>
+        <a class="marca" href={enlace("/")}>Historia económica mundial <small>tiempo · espacio · datos · debate</small></a>
         <nav class="nav" aria-label="Principal">
-          {enlaces.map((e) => <a href={e.href} aria-current={activo(e.href)}>{e.texto}</a>)}
+          {enlaces.map((e) => <a href={enlace(e.href)} aria-current={activo(e.href)}>{e.texto}</a>)}
         </nav>
         <label class="selector-escuela" title="Selector global de escuela: reencuadra el sitio entero (SPEC §5.4)">
           <span class="etiqueta-sel">Leer según</span>
@@ -60,6 +91,7 @@ const activo = (href: string): "page" | undefined => (ruta === href || (href !==
     </div>
     <footer class="pie">
       <div class="contenedor">
+        <p class="autoria-pie">© {p.anio} <strong>{autorMostrado}</strong> · Contenido bajo <a href={p.licencia_contenido.url}>{p.licencia_contenido.spdx}</a>, código bajo <a href={p.licencia_codigo.url}>{p.licencia_codigo.spdx}</a> · <a href={enlace("/creditos")}>Créditos y cómo citar</a>{/^https?:/.test(p.repositorio) ? <> · <a href={p.repositorio}>Repositorio</a></> : null}</p>
         <p>Toda cifra es rastreable a su fuente; toda serie anterior a 1820 es una reconstrucción, no una medición. Las fuentes sin verificar se marcan como tales.</p>
         <p>Contenido versionado en Git. Sin cuentas, sin comentarios, sin texto generado publicado como contenido.</p>
       </div>

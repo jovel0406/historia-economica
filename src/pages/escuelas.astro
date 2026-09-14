@@ -1,4 +1,5 @@
 ---
+import { enlace } from "../lib/rutas.ts";
 import Base from "../layouts/Base.astro";
 import { escuelasOrdenadas, nodosOrdenados } from "../lib/contenido.ts";
 import { renderMarkdown } from "../lib/texto.ts";
@@ -19,8 +20,8 @@ const nodosDe = (id: string) => nodos.filter((n) => n.interpretaciones.some((i) 
         <div class="prosa" set:html={renderMarkdown(e.postulado_central)} />
         <h4>Crítica principal</h4>
         <div class="prosa" set:html={renderMarkdown(e.critica_principal)} />
-        {e.autores_representativos.length > 0 && <p class="meta">Autores representativos: {e.autores_representativos.map((f) => <><a class="cita" href={`/fuentes#${f}`}>{f}</a> </>)}</p>}
-        {nodosDe(e.id).length > 0 && <p class="meta">Interpreta: {nodosDe(e.id).map((n, i) => <><a href={`/nodos/${n.id}`}>{n.titulo}</a>{i < nodosDe(e.id).length - 1 ? ", " : ""}</>)}</p>}
+        {e.autores_representativos.length > 0 && <p class="meta">Autores representativos: {e.autores_representativos.map((f) => <><a class="cita" href={enlace(`/fuentes#${f}`)}>{f}</a> </>)}</p>}
+        {nodosDe(e.id).length > 0 && <p class="meta">Interpreta: {nodosDe(e.id).map((n, i) => <><a href={enlace(`/nodos/${n.id}`)}>{n.titulo}</a>{i < nodosDe(e.id).length - 1 ? ", " : ""}</>)}</p>}
       </div>
     ))}
   </div>

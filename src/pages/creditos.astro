@@ -1,0 +1,115 @@
+---
+import Base from "../layouts/Base.astro";
+import { contenido, proyecto } from "../lib/contenido.ts";
+import { enlace } from "../lib/rutas.ts";
+const p = proyecto();
+const datasets = contenido().manifiesto.datasets;
+const fuentes = [...contenido().fuentes.values()];
+const verificadas = fuentes.filter((f) => f.verified).length;
+const nodos = [...contenido().nodos.values()];
+const conDebate = nodos.filter((n) => n.interpretaciones.length > 0).length;
+const autorMostrado = p.autor.seudonimo !== undefined ? `${p.autor.nombre} (${p.autor.seudonimo})` : p.autor.nombre;
+const anio = p.anio;
+const citaTexto = `${p.autor.apellidos}, ${p.autor.nombre_de_pila} (${anio}). ${p.titulo}: ${p.subtitulo} (versión ${p.version}) [plataforma web]. ${p.sitio}`;
+const citaBibtex = [
+  `@misc{${p.autor.apellidos.split(/\s+/)[0]?.toLowerCase() ?? "autor"}${anio}historiaeconomica,`,
+  `  author  = {${p.autor.apellidos}, ${p.autor.nombre_de_pila}},`,
+  `  title   = {{${p.titulo}: ${p.subtitulo}}},`,
+  `  year    = {${anio}},`,
+  `  version = {${p.version}},`,
+  `  url     = {${p.sitio}},`,
+  `  note    = {Plataforma web. Contenido bajo ${p.licencia_contenido.spdx}; código bajo ${p.licencia_codigo.spdx}}`,
+  `}`,
+].join("\n");
+---
+<Base titulo="Créditos" descripcion={`Autoría, licencias y forma de citar ${p.titulo}.`}>
+  <p class="sobretitulo">Autoría y licencias</p>
+  <h1>Créditos</h1>
+
+  <section class="autor">
+    <h2 style="margin-top:0">Autoría</h2>
+    <p class="entradilla">Concepción, investigación, redacción del contenido, modelo de datos y desarrollo: <strong>{autorMostrado}</strong>.</p>
+    <ul class="lista-limpia meta">
+      {p.autor.afiliacion && <li>Afiliación: {p.autor.afiliacion}</li>}
+      {p.autor.orcid && <li>ORCID: <a href={p.autor.orcid}>{p.autor.orcid}</a></li>}
+      {p.autor.email && <li>Contacto: <a href={`mailto:${p.autor.email}`}>{p.autor.email}</a></li>}
+      {/^https?:/.test(p.repositorio) && <li>Repositorio: <a href={p.repositorio}>{p.repositorio}</a></li>}
+      <li>Versión {p.version} · {anio}</li>
+    </ul>
+    <p>El código fue escrito con asistencia de un modelo de lenguaje, bajo dirección, revisión y decisiones editoriales del autor. Ningún texto publicado como contenido —resúmenes, interpretaciones, notas, glosario— es salida sin revisar de un modelo: la plataforma prohíbe expresamente esa práctica y el historial de Git registra cada cambio.</p>
+  </section>
+
+  <section>
+    <h2>Cómo citar</h2>
+    <p class="prosa">Si usás la plataforma, su contenido o sus datos normalizados, citá así:</p>
+    <blockquote class="cita-larga">{citaTexto}</blockquote>
+    <details>
+      <summary>BibTeX</summary>
+      <pre>{citaBibtex}</pre>
+    </details>
+    <p class="meta">El repositorio incluye <code>CITATION.cff</code>, de modo que GitHub ofrece «Cite this repository» y Zenodo puede generar un DOI si se archiva una versión.</p>
+  </section>
+
+  <section>
+    <h2>Licencias</h2>
+    <div class="rejilla-2">
+      <div class="tarjeta">
+        <h3>{p.licencia_contenido.nombre}</h3>
+        <p class="meta">{p.licencia_contenido.spdx}</p>
+        <p>Cubre {p.licencia_contenido.cubre}. Podés copiarlo, redistribuirlo y adaptarlo, incluso comercialmente, siempre que atribuyas la autoría e indiques si hiciste cambios.</p>
+        <p class="meta"><a href={p.licencia_contenido.url}>Texto de la licencia</a></p>
+      </div>
+      <div class="tarjeta">
+        <h3>{p.licencia_codigo.nombre}</h3>
+        <p class="meta">{p.licencia_codigo.spdx}</p>
+        <p>Cubre {p.licencia_codigo.cubre}.</p>
+        <p class="meta"><a href={p.licencia_codigo.url}>Texto de la licencia</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Datos de terceros</h2>
+    <p class="prosa">Los datasets conservan la licencia y la forma de citación que exige cada institución. Atribuir esta plataforma <strong>no exime</strong> de citarlos: si reutilizás una serie, la cita obligatoria es la de abajo.</p>
+    {datasets.length === 0 ? <p class="meta">Sin datasets ingeridos.</p> : (
+      <ul class="lista-limpia">
+        {datasets.map((d) => (
+          <li class="dataset">
+            <h3>{d.nombre}</h3>
+            <p class="meta">{d.institucion} · versión {d.version} · descargado el {d.fecha_descarga} · <a href={d.url}>origen</a></p>
+            <p><strong>Licencia:</strong> {d.licencia}</p>
+            <p><strong>Cita requerida:</strong> {d.cita_requerida}</p>
+          </li>
+        ))}
+      </ul>
+    )}
+    <p class="meta">La procedencia completa, con el hash de cada archivo, está en <code>data/MANIFIESTO.json</code>. La bibliografía entera, en <a href={enlace("/fuentes")}>Fuentes</a>.</p>
+  </section>
+
+  <section>
+    <h2>Estado del trabajo</h2>
+    <p class="prosa">Lo que hay y lo que falta, sin adornos:</p>
+    <ul>
+      <li>{nodos.length} nodos en la línea de tiempo, de los cuales {conDebate} tienen interpretaciones en disputa; el resto son esqueletos con título, período y resumen.</li>
+      <li>{fuentes.length} fuentes bibliográficas, de las cuales {verificadas} verificadas manualmente por el autor. Las demás fueron cotejadas contra catálogos (Crossref, Open Library, repositorios institucionales) y se muestran marcadas como no verificadas donde se citan.</li>
+      <li>{datasets.length} datasets con procedencia y hash registrados.</li>
+    </ul>
+    <p class="meta">Toda serie anterior a 1820 es una estimación conjetural, no una medición, y la interfaz lo señala en cada gráfico. El mapa advierte que proyectar fronteras modernas sobre datos anteriores a 1900 es un anacronismo.</p>
+  </section>
+
+  <section>
+    <h2>Hecho con</h2>
+    <p class="prosa">Astro, TypeScript, Zod, D3, Observable Plot y Vitest. Sitio estático: sin backend, sin cuentas de usuario, sin rastreo ni cookies. Geometrías del mapa: Natural Earth (dominio público) vía los paquetes <code>world-atlas</code> y <code>world-countries</code>.</p>
+  </section>
+</Base>
+
+<style>
+  section { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--linea); }
+  .autor { border-top: none; padding-top: 0; }
+  .cita-larga { border-left: 3px solid var(--acento); margin: 1rem 0; padding: 0.6rem 1.1rem; background: var(--papel-2); font-family: var(--serif); }
+  pre { background: var(--papel-2); padding: 0.8rem 1rem; border-radius: 6px; overflow-x: auto; font-size: 0.82rem; }
+  .dataset { padding: 0.9rem 0; border-bottom: 1px solid var(--linea); }
+  .dataset h3 { margin: 0 0 0.2rem; font-size: 1.1rem; }
+  .dataset p { margin: 0.2rem 0; font-size: 0.95rem; }
+  details summary { cursor: pointer; color: var(--acento); }
+</style>
