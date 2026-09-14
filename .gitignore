@@ -15,3 +15,7 @@ coverage/
 .env.*
 *.log
 .DS_Store
+
+# configuración local de herramientas de desarrollo
+.claude/
+.vscode/
