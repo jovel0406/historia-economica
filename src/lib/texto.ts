@@ -114,3 +114,18 @@ export const ETIQUETA_EVIDENCIA: Record<NivelEvidencia, string> = {
   reconstruccion_documentada: "reconstrucción documentada",
   estimacion_conjetural: "estimación conjetural",
 };
+
+export const ETIQUETA_CATALOGO: Record<string, string> = {
+  crossref: "Crossref",
+  "open-library": "Open Library",
+  repositorio: "el repositorio de la institución",
+  "sitio-oficial": "el sitio oficial",
+};
+
+/** Fecha ISO a formato legible en español, ej. "13 de septiembre de 2026". */
+export function fechaLarga(iso: string): string {
+  const [a, m, d] = iso.split("-").map(Number);
+  const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+  if (a === undefined || m === undefined || d === undefined) return iso;
+  return `${d} de ${meses[m - 1] ?? m} de ${a}`;
+}

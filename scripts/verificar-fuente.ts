@@ -16,6 +16,7 @@ export function verificarFuente(raiz: string, id: string, estado: "verificada" |
   f.verified = estado === "verificada";
   f.citation_status = estado;
   f.nota_verificacion = `${nota.trim()} [${new Date().toISOString().slice(0, 10)}]`;
+  // El cotejo automático se conserva: es un dato distinto de la comprobación hecha a mano.
   writeFileSync(ruta, JSON.stringify(Bibliografia.parse(lista), null, 2) + "\n");
 }
 

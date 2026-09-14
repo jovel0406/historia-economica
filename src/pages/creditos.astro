@@ -36,12 +36,12 @@ const citaBibtex = [
       {/^https?:/.test(p.repositorio) && <li>Repositorio: <a href={p.repositorio}>{p.repositorio}</a></li>}
       <li>Versión {p.version} · {anio}</li>
     </ul>
-    <p>El desarrollo se hizo con herramientas de asistencia al código. Conviene aclarar el límite, porque es el que sostiene todo lo demás: ningún texto que se publica como contenido —resúmenes, interpretaciones, notas de arista, glosario— se genera automáticamente. Todo lo escribí y lo revisé yo, la plataforma prohíbe esa práctica de forma explícita, y el historial de cambios queda registrado commit por commit.</p>
+    <p>Ningún texto de esta plataforma se publica sin pasar por mi revisión. Los resúmenes, las interpretaciones, las notas de arista y el glosario están escritos y comprobados a mano, uno por uno. El proyecto prohíbe de forma explícita publicar texto generado automáticamente como contenido, y el historial de cambios lo registra commit por commit.</p>
   </section>
 
   <section>
     <h2>Cómo citar</h2>
-    <p class="prosa">Si te sirve algo de acá —un texto, una serie, el modelo de datos— citalo así:</p>
+    <p class="prosa">Si te sirve algo de acá, sea un texto, una serie o el modelo de datos, citalo así:</p>
     <blockquote class="cita-larga">{citaTexto}</blockquote>
     <details>
       <summary>BibTeX</summary>
@@ -70,7 +70,7 @@ const citaBibtex = [
 
   <section>
     <h2>Datos de terceros</h2>
-    <p class="prosa">Los datos no son míos. Cada institución pone sus condiciones y su forma de citación, y citarme a mí <strong>no te exime</strong> de citarlos a ellos: si reutilizás una serie, la cita que corresponde es la que está acá abajo.</p>
+    <p class="prosa">Los datos no son míos. Cada institución pone sus condiciones y su forma de citación, y citarme a mí <strong>no te exime</strong> de citarlos a ellos. Si reutilizás una serie, la cita que corresponde es la que está acá abajo.</p>
     {datasets.length === 0 ? <p class="meta">Sin datasets ingeridos.</p> : (
       <ul class="lista-limpia">
         {datasets.map((d) => (
@@ -94,12 +94,12 @@ const citaBibtex = [
       <li>{fuentes.length} fuentes bibliográficas, de las cuales {verificadas} verificadas manualmente por el autor. Las demás fueron cotejadas contra catálogos (Crossref, Open Library, repositorios institucionales) y se muestran marcadas como no verificadas donde se citan.</li>
       <li>{datasets.length} datasets con procedencia y hash registrados.</li>
     </ul>
-    <p class="meta">Dos advertencias que repito en todo el sitio porque importan: ninguna serie anterior a 1820 es una medición, son reconstrucciones hechas hacia atrás; y pintar fronteras nacionales de hoy sobre datos de antes de 1900 es un anacronismo, así que para esos años el mapa colorea macrorregiones y no países.</p>
+    <p class="meta">Dos advertencias que repito en todo el sitio porque importan. Ninguna serie anterior a 1820 es una medición, son reconstrucciones hechas hacia atrás; y pintar fronteras nacionales de hoy sobre datos de antes de 1900 es un anacronismo, así que para esos años el mapa colorea macrorregiones y no países.</p>
   </section>
 
   <section>
     <h2>Hecho con</h2>
-    <p class="prosa">Astro, TypeScript, Zod, D3, Observable Plot y Vitest. Es un sitio estático: no hay servidor, ni cuentas, ni cookies, ni nada que te rastree. Las geometrías del mapa vienen de Natural Earth, que es de dominio público, a través de los paquetes <code>world-atlas</code> y <code>world-countries</code>.</p>
+    <p class="prosa">Astro, TypeScript, Zod, D3, Observable Plot y Vitest. Es un sitio estático. No hay servidor, ni cuentas, ni cookies, ni nada que te rastree. Las geometrías del mapa vienen de Natural Earth, que es de dominio público, a través de los paquetes <code>world-atlas</code> y <code>world-countries</code>.</p>
   </section>
 </Base>
 

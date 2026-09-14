@@ -21,13 +21,13 @@
     "revolucion-industrial-y-despegue",
     "colonialismo-e-imperialismo"
   ],
-  "resumen": "Durante más de tres siglos, el comercio atlántico de personas esclavizadas —documentado viaje por viaje en la base de datos SlaveVoyages [@slave-voyages]— abasteció de trabajo forzado a las plantaciones de azúcar, tabaco y algodón de las Américas. Que ese sistema haya financiado o impulsado la industrialización británica es una de las tesis más discutidas de la disciplina.",
-  "descripcion_larga": "## El sistema\n\nBarcos europeos llevaban manufacturas a África, transportaban personas esclavizadas a las Américas y regresaban con azúcar, tabaco, algodón y plata. Las plantaciones del Caribe, Brasil y el sur de Estados Unidos fueron las empresas capitalistas más grandes de su tiempo. Los datos de viajes, embarcados y muertos en la travesía están reconstruidos a partir de registros portuarios y de aseguradoras [@slave-voyages]: son buenos para el conteo de viajes y peores para las condiciones a bordo.\n\n## La tesis de Williams\n\nEn 1944 Eric Williams sostuvo que los beneficios de la esclavitud y del comercio triangular financiaron la Revolución Industrial británica, y que la abolición llegó cuando el sistema dejó de ser rentable [@williams-1944]. La tesis fue rechazada por la historiografía cuantitativa de los años ochenta y noventa, que encontró el sector demasiado pequeño para explicar la industrialización [@eltis-engerman-2000], y revivida por Inikori, que desplaza el argumento de los beneficios a la demanda: el comercio atlántico fue el mercado que hizo crecer las manufacturas inglesas [@inikori-2002]. El debate se reabrió con la «nueva historia del capitalismo» y su réplica cliométrica [@wright-2020].\n\n## El otro lado del Atlántico\n\nPara África el efecto es menos disputado: las regiones que exportaron más personas esclavizadas son hoy más pobres, y el mecanismo propuesto es institucional —fragmentación política, desconfianza, debilitamiento de los Estados— [@nunn-2008].",
+  "resumen": "Durante más de tres siglos, el comercio atlántico de personas esclavizadas, documentado viaje por viaje en la base de datos SlaveVoyages [@slave-voyages], abasteció de trabajo forzado a las plantaciones de azúcar, tabaco y algodón de las Américas. Que ese sistema haya financiado o impulsado la industrialización británica es una de las tesis más discutidas de la disciplina.",
+  "descripcion_larga": "## El sistema\n\nBarcos europeos llevaban manufacturas a África, transportaban personas esclavizadas a las Américas y regresaban con azúcar, tabaco, algodón y plata. Las plantaciones del Caribe, Brasil y el sur de Estados Unidos fueron las empresas capitalistas más grandes de su tiempo. Los datos de viajes, embarcados y muertos en la travesía están reconstruidos a partir de registros portuarios y de aseguradoras [@slave-voyages]: son buenos para el conteo de viajes y peores para las condiciones a bordo.\n\n## La tesis de Williams\n\nEn 1944 Eric Williams sostuvo que los beneficios de la esclavitud y del comercio triangular financiaron la Revolución Industrial británica, y que la abolición llegó cuando el sistema dejó de ser rentable [@williams-1944]. La tesis fue rechazada por la historiografía cuantitativa de los años ochenta y noventa, que encontró el sector demasiado pequeño para explicar la industrialización [@eltis-engerman-2000], y revivida por Inikori, que desplaza el argumento de los beneficios a la demanda. El comercio atlántico fue el mercado que hizo crecer las manufacturas inglesas [@inikori-2002]. El debate se reabrió con la «nueva historia del capitalismo» y su réplica cliométrica [@wright-2020].\n\n## El otro lado del Atlántico\n\nPara África el efecto es menos disputado. Las regiones que exportaron más personas esclavizadas son hoy más pobres, y el mecanismo propuesto es institucional (fragmentación política, desconfianza, debilitamiento de los Estados) [@nunn-2008].",
   "interpretaciones": [
     {
       "escuela": "sistema-mundo-dependencia",
       "mecanismo": "Los beneficios y, sobre todo, la demanda generada por el sistema esclavista atlántico impulsaron la industrialización británica.",
-      "desarrollo": "Williams vinculó la acumulación de capital en el comercio triangular con la financiación de la industria y la infraestructura británicas [@williams-1944]. Inikori reformula la tesis: no importan tanto los beneficios como el mercado; la demanda de las plantaciones y de África por textiles, metales y barcos fue el motor de las manufacturas inglesas del siglo XVIII [@inikori-2002]. Darity ofrece un modelo formal de la relación entre plantaciones e industria [@darity-1990].",
+      "desarrollo": "Williams vinculó la acumulación de capital en el comercio triangular con la financiación de la industria y la infraestructura británicas [@williams-1944]. Inikori reformula la tesis. No importan tanto los beneficios como el mercado; la demanda de las plantaciones y de África por textiles, metales y barcos fue el motor de las manufacturas inglesas del siglo XVIII [@inikori-2002]. Darity ofrece un modelo formal de la relación entre plantaciones e industria [@darity-1990].",
       "autores_principales": [
         "williams-1944",
         "inikori-2002",
@@ -65,7 +65,7 @@
     },
     {
       "escuela": "institucionalista",
-      "mecanismo": "El comercio atlántico, esclavitud incluida, transformó las instituciones: fortaleció a los comerciantes en Europa y debilitó a los Estados en África.",
+      "mecanismo": "El comercio atlántico, esclavitud incluida, transformó las instituciones. Fortaleció a los comerciantes en Europa y debilitó a los Estados en África.",
       "desarrollo": "Acemoglu, Johnson y Robinson muestran que el comercio atlántico enriqueció a grupos mercantiles que, donde la corona ya estaba limitada, obtuvieron instituciones favorables a la inversión [@acemoglu-johnson-robinson-2005]. Nunn estima que las regiones africanas que exportaron más personas esclavizadas son hoy más pobres, y propone como mecanismo la fragmentación política y la erosión de la confianza [@nunn-2008]. En esta lectura, la esclavitud importa por sus efectos institucionales de larga duración, en ambos lados del Atlántico, más que por sus beneficios inmediatos.",
       "autores_principales": [
         "acemoglu-johnson-robinson-2005",
@@ -84,8 +84,8 @@
     },
     {
       "escuela": "marxista",
-      "mecanismo": "La esclavitud atlántica fue un momento de la acumulación originaria: creó capital, mercados y una división del trabajo a escala mundial sobre la que el capitalismo industrial pudo levantarse, aunque ella misma no fuera capitalista en su forma.",
-      "desarrollo": "Marx incluye la conversión de África en «coto de caza de esclavos» y las plantaciones americanas entre los «momentos fundamentales» de la acumulación originaria [@marx-1867]. Blackburn reconstruye la formación del sistema de plantación entre 1492 y 1800 y sostiene que los beneficios y la demanda del complejo esclavista fueron una contribución significativa, aunque no la única, a la acumulación británica [@blackburn-1997]. La tesis de Williams —de formación marxista— es la versión más discutida de este argumento [@williams-1944].",
+      "mecanismo": "La esclavitud atlántica fue un momento de la acumulación originaria, porque creó capital, mercados y una división del trabajo a escala mundial sobre la que el capitalismo industrial pudo levantarse, aunque ella misma no fuera capitalista en su forma.",
+      "desarrollo": "Marx incluye la conversión de África en «coto de caza de esclavos» y las plantaciones americanas entre los «momentos fundamentales» de la acumulación originaria [@marx-1867]. Blackburn reconstruye la formación del sistema de plantación entre 1492 y 1800 y sostiene que los beneficios y la demanda del complejo esclavista fueron una contribución significativa, aunque no la única, a la acumulación británica [@blackburn-1997]. La tesis de Williams, de formación marxista, es la versión más discutida de este argumento [@williams-1944].",
       "autores_principales": [
         "marx-1867",
         "blackburn-1997",
@@ -123,7 +123,7 @@
         "neoclasica-cliometrica",
         "cultural-capital-humano"
       ],
-      "nota": "La tesis de Williams: la esclavitud y el comercio triangular como condición de la industrialización británica [@williams-1944]. Negada por la cliometría, que encuentra el sector demasiado pequeño [@eltis-engerman-2000]; reformulada en términos de demanda por Inikori [@inikori-2002].",
+      "nota": "La tesis de Williams sostiene que la esclavitud y el comercio triangular fueron condición de la industrialización británica [@williams-1944]. Negada por la cliometría, que encuentra el sector demasiado pequeño [@eltis-engerman-2000]; reformulada en términos de demanda por Inikori [@inikori-2002].",
       "fuentes": [
         "williams-1944",
         "eltis-engerman-2000",

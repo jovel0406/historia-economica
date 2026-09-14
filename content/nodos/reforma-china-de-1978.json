@@ -20,7 +20,7 @@
   "interpretaciones": [
     {
       "escuela": "estado-desarrollista",
-      "mecanismo": "Un Estado capaz condujo la transición de forma gradual —«crecer fuera del plan»— siguiendo la ventaja comparativa en vez de forzar la industria pesada.",
+      "mecanismo": "Un Estado capaz condujo la transición de forma gradual, «creciendo fuera del plan», siguiendo la ventaja comparativa en vez de forzar la industria pesada.",
       "desarrollo": "Naughton muestra que la reforma china evitó el colapso de la producción que sufrieron las economías de Europa oriental gracias al gradualismo: el plan se mantuvo fijo en términos absolutos mientras el mercado crecía en el margen, y el Estado conservó capacidad de coordinación [@naughton-1995]. Lin, Cai y Li atribuyen el éxito al abandono de la estrategia de industria pesada y a la adopción de una estrategia acorde con la abundancia de trabajo [@lin-cai-li-2003]. La comparación con Corea y Taiwán refuerza la lectura de industrialización guiada [@amsden-1989] [@wade-1990].",
       "autores_principales": [
         "naughton-1995",
@@ -42,8 +42,8 @@
     },
     {
       "escuela": "institucionalista",
-      "mecanismo": "Instituciones transicionales —descentralización regional con competencia entre gobiernos locales, contratos de responsabilidad, propiedad ambigua pero incentivada— alinearon incentivos sin derechos de propiedad al estilo occidental.",
-      "desarrollo": "Xu describe el sistema chino como un «autoritarismo regionalmente descentralizado»: el centro controla los nombramientos y evalúa a los gobiernos locales por su desempeño económico, lo que genera competencia por el crecimiento entre provincias y municipios [@xu-2011]. Qian muestra cómo instituciones de segundo óptimo —el sistema dual, las empresas de cantón y aldea, el federalismo fiscal— funcionaron porque hicieron compatibles los intereses de los agentes con la reforma, aunque no se parecieran a las instituciones de los manuales [@qian-2017].",
+      "mecanismo": "Instituciones transicionales (descentralización regional con competencia entre gobiernos locales, contratos de responsabilidad, propiedad ambigua pero incentivada) alinearon incentivos sin derechos de propiedad al estilo occidental.",
+      "desarrollo": "Xu describe el sistema chino como un «autoritarismo regionalmente descentralizado»: el centro controla los nombramientos y evalúa a los gobiernos locales por su desempeño económico, lo que genera competencia por el crecimiento entre provincias y municipios [@xu-2011]. Qian muestra cómo instituciones de segundo óptimo (el sistema dual, las empresas de cantón y aldea, el federalismo fiscal) funcionaron porque hicieron compatibles los intereses de los agentes con la reforma, aunque no se parecieran a las instituciones de los manuales [@qian-2017].",
       "autores_principales": [
         "xu-2011",
         "qian-2017"

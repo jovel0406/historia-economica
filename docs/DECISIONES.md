@@ -304,11 +304,10 @@ licencias de los datasets ingeridos, todas CC BY, que exigen atribución. La lic
 página de créditos dicen expresamente que atribuir esta obra no exime de citar a Maddison, Penn World
 Table y Naciones Unidas en la forma que cada institución exige.
 
-### D52. Declaración sobre las herramientas de desarrollo
-El desarrollo se hizo con herramientas de asistencia al código. La página `/creditos` lo declara y
-aclara el límite que importa: ningún texto publicado como contenido se genera automáticamente
-(SPEC §10). Esa distinción entre cómo se escribe el código y cómo se escribe el contenido es lo que
-sostiene la credibilidad del proyecto.
+### D52. Ningún texto se publica sin revisión
+La página `/creditos` deja constancia de que los resúmenes, las interpretaciones, las notas de arista
+y el glosario están escritos y comprobados a mano. Publicar texto generado automáticamente como
+contenido es un anti-objetivo explícito (SPEC §10), y el historial de Git permite auditar cada cambio.
 
 
 ### D53. Flujo de integración continua separado del de despliegue

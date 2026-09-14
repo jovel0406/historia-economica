@@ -12,7 +12,7 @@ const desarrolladas = escuelas.filter((e) => e.desarrollo !== undefined).length;
   <p class="sobretitulo">Vista Debate</p>
   <h1>Once maneras de contar lo mismo</h1>
   <p class="entradilla">Cada escuela parte de una pregunta distinta, y por eso llega a una respuesta distinta con los mismos datos. Acá están su postulado central, la crítica más seria que reciben y, en {desarrolladas} de ellas, de dónde salieron y en qué no se ponen de acuerdo entre ellos.</p>
-  <p class="meta">Con el selector de arriba podés leer todo el sitio según una escuela: se resaltan sus interpretaciones y las aristas que sostiene, y se atenúan las que niega.</p>
+  <p class="meta">Con el selector de arriba podés leer todo el sitio según una escuela. Se resaltan sus interpretaciones y las aristas que sostiene, y se atenúan las que niega.</p>
 
   <nav class="chips indice" aria-label="Índice de escuelas">
     {escuelas.map((e) => <a class="chip" href={`#${e.id}`}>{e.nombre}{e.desarrollo !== undefined ? " ✦" : ""}</a>)}

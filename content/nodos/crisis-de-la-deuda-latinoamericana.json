@@ -23,7 +23,7 @@
   "interpretaciones": [
     {
       "escuela": "estructuralista-cepalina",
-      "mecanismo": "Shocks externos —tasas de interés, términos de intercambio, retiro del crédito— sobre economías estructuralmente vulnerables; el financiamiento internacional es procíclico y el ajuste recayó sobre los deudores.",
+      "mecanismo": "Shocks externos (tasas de interés, términos de intercambio, retiro del crédito) sobre economías estructuralmente vulnerables; el financiamiento internacional es procíclico y el ajuste recayó sobre los deudores.",
       "desarrollo": "Ocampo sitúa la crisis en una secuencia histórica de auges y colapsos del financiamiento externo hacia América Latina, donde la abundancia de crédito en el auge se convierte en su retiro brusco en la crisis; el ajuste, sin mecanismos internacionales de reestructuración ordenada, se hizo mediante recesión y transferencias netas al exterior [@ocampo-2014]. Bértola y Ocampo enmarcan el episodio en la larga historia de vulnerabilidad externa de la región [@bertola-ocampo-2012].",
       "autores_principales": [
         "ocampo-2014",
@@ -87,7 +87,7 @@
     },
     {
       "escuela": "keynesiana",
-      "mecanismo": "La liberalización financiera mal secuenciada —apertura de la cuenta de capital con supervisión débil y garantías implícitas— produjo auges de crédito y colapsos: inestabilidad financiera endógena.",
+      "mecanismo": "La liberalización financiera mal secuenciada, con apertura de la cuenta de capital, supervisión débil y garantías implícitas, produjo auges de crédito y colapsos, es decir, inestabilidad financiera endógena.",
       "desarrollo": "Díaz-Alejandro muestra, a partir del Cono Sur, que la desregulación financiera de finales de los setenta generó expansión del crédito, sobreendeudamiento privado y quiebras bancarias que el Estado terminó absorbiendo; la crisis de la deuda fue en parte una crisis bancaria privada socializada [@diaz-alejandro-1985]. El mecanismo es el de Kindleberger: euforia, exceso de crédito, pánico [@kindleberger-1973].",
       "autores_principales": [
         "diaz-alejandro-1985",

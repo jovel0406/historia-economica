@@ -1,7 +1,7 @@
 {
   "id": "precios-relativos",
   "nombre": "Precios relativos (salarios y energía)",
-  "postulado_central": "La Revolución Industrial fue una respuesta racional a la estructura de precios británica: salarios altos y energía barata hicieron rentable inventar y adoptar máquinas que sustituían trabajo por capital y carbón, y solo en Gran Bretaña esas máquinas eran rentables a los precios vigentes [@allen-2009]. La «gran divergencia» de salarios dentro de Europa precede a la industrialización [@allen-2001].",
+  "postulado_central": "La Revolución Industrial fue una respuesta racional a la estructura de precios británica. Los salarios altos y la energía barata hicieron rentable inventar y adoptar máquinas que sustituían trabajo por capital y carbón, y solo en Gran Bretaña esas máquinas eran rentables a los precios vigentes [@allen-2009]. La «gran divergencia» de salarios dentro de Europa precede a la industrialización [@allen-2001].",
   "autores_representativos": [
     "allen-2009",
     "allen-2001"

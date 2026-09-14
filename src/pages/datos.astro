@@ -31,7 +31,7 @@ const CLASE_BADGE = { estadistica_oficial: "badge-alto", reconstruccion_document
   {comparador && (
     <section id="comparador" class="indicador">
       <h2>Misma cifra, distintas fuentes</h2>
-      <p class="prosa">Maddison y la Penn World Table dan valores distintos para el mismo país y año: distinta base de precios, distinto método de paridad, distintas revisiones. Verlas superpuestas muestra, sin decirlo, que las cifras son construcciones.</p>
+      <p class="prosa">Maddison y la Penn World Table dan valores distintos para el mismo país y año, porque usan distinta base de precios, distinto método de paridad, distintas revisiones. Verlas superpuestas muestra, sin decirlo, que las cifras son construcciones.</p>
       <label class="meta">País <select data-comparador-pais>{comparador.paises.map((r) => <option value={r}>{comparador.nombres[r]}</option>)}</select></label>
       <figure class="grafico" data-comparador>
         <script is:inline type="application/json" set:html={JSON.stringify(comparador)} />

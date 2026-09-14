@@ -157,7 +157,7 @@ const titulosUnidad = new Map(unidades.map((u) => [u.id, u.titulo]));
           <g class="unidad" data-unidad={String(r.numero)} data-filtrable="unidad">
             <rect x={x(r.inicio)} y={y} width={w} height={ALTO_CINTA - 6} rx="4" fill={colorUnidad(r.numero)} />
             <text x={x(r.inicio) + 8} y={y + 14} fill={colorUnidad(r.numero)}>{etiqueta}</text>
-            <title>{`Unidad ${r.numero}: ${titulo} — rango derivado de sus nodos: ${r.inicio}–${r.fin}`}</title>
+            <title>{`Unidad ${r.numero}: ${titulo}. Rango derivado de sus nodos, ${r.inicio}–${r.fin}`}</title>
           </g>
         );
       })}

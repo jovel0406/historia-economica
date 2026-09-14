@@ -8,7 +8,7 @@ const unidad = (id: string) => contenido().unidades.get(id);
 <Base titulo="Recorridos">
   <p class="sobretitulo">Modo recorrido</p>
   <h1>Ocho recorridos, uno por unidad</h1>
-  <p class="entradilla">Cada recorrido encadena tres nodos con una pregunta de apertura y termina en la Vista Debate. No es un relato lineal: es una secuencia de preguntas para usar en clase.</p>
+  <p class="entradilla">Cada recorrido encadena tres nodos con una pregunta de apertura y termina en la Vista Debate. No es un relato lineal, sino una secuencia de preguntas para usar en clase.</p>
   <ol class="lista-limpia tarjetas">
     {recorridos.map((r) => {
       const u = unidad(r.unidad);

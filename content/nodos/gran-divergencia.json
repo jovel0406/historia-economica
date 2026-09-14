@@ -51,7 +51,7 @@
     {
       "escuela": "precios-relativos",
       "mecanismo": "Salarios altos y energía barata hicieron rentable en Gran Bretaña, y solo allí, inventar y adoptar máquinas que sustituían trabajo.",
-      "desarrollo": "Allen compara salarios y precios de energía entre ciudades de Europa y Asia y concluye que las tecnologías emblemáticas de la Revolución Industrial —la hiladora, la máquina de vapor, la fundición con coque— eran rentables a los precios de Londres o Lancashire pero no a los de París, Ámsterdam o la India. La innovación fue inducida por los precios relativos, y esos precios relativos venían del éxito comercial y colonial británico y del carbón [@allen-2009]. La divergencia de salarios dentro de Europa es anterior a la industrialización [@allen-2001].",
+      "desarrollo": "Allen compara salarios y precios de energía entre ciudades de Europa y Asia y concluye que las tecnologías emblemáticas de la Revolución Industrial (la hiladora, la máquina de vapor, la fundición con coque) eran rentables a los precios de Londres o Lancashire pero no a los de París, Ámsterdam o la India. La innovación fue inducida por los precios relativos, y esos precios relativos venían del éxito comercial y colonial británico y del carbón [@allen-2009]. La divergencia de salarios dentro de Europa es anterior a la industrialización [@allen-2001].",
       "autores_principales": [
         "allen-2009",
         "allen-2001"
@@ -92,7 +92,7 @@
     },
     {
       "escuela": "cultural-capital-humano",
-      "mecanismo": "Una cultura de la innovación —la Ilustración industrial— y la acumulación de capital humano hicieron que el conocimiento útil creciera y se aplicara de forma sostenida.",
+      "mecanismo": "Una cultura de la innovación, la llamada Ilustración industrial, y la acumulación de capital humano hicieron que el conocimiento útil creciera y se aplicara de forma sostenida.",
       "desarrollo": "Mokyr sostiene que entre 1500 y 1700 Europa desarrolló un mercado de ideas competitivo y transnacional, con una élite intelectual que valoraba el conocimiento útil y una comunidad de artesanos capaz de aplicarlo; esa Ilustración industrial explica por qué la innovación no se agotó como en episodios anteriores [@mokyr-2016]. Clark atribuye el cambio a comportamientos y capital humano acumulados durante siglos [@clark-2007]; Landes a rasgos culturales de largo plazo [@landes-1998].",
       "autores_principales": [
         "mokyr-2016",
@@ -135,8 +135,8 @@
     },
     {
       "escuela": "marxista",
-      "mecanismo": "La transformación de las relaciones de clase en el campo inglés —campesinos desposeídos, arrendatarios que compiten y terratenientes que cobran rentas de mercado— creó la compulsión a invertir y elevar la productividad que ninguna otra región tuvo.",
-      "desarrollo": "Brenner sostiene que ni el comercio ni la demografía explican por qué Inglaterra rompió el techo malthusiano: lo hizo la estructura de clases agraria surgida de las luchas de los siglos XV y XVI, que dejó a terratenientes, arrendatarios y jornaleros dependientes del mercado y, por tanto, obligados a mejorar [@brenner-1976]. El debate que siguió —con demógrafos, historiadores franceses y otros marxistas— está recogido en *The Brenner Debate* [@aston-philpin-1985]; Wood lo generaliza como una explicación del origen del capitalismo distinta de la del «comercio que crece» [@wood-1999]. Dobb había planteado el problema de la transición desde el feudalismo en términos similares [@dobb-1946]. En Marx, el punto de partida es la «llamada acumulación originaria»: la separación violenta del productor y la tierra [@marx-1867].",
+      "mecanismo": "La transformación de las relaciones de clase en el campo inglés (campesinos desposeídos, arrendatarios que compiten y terratenientes que cobran rentas de mercado) creó la compulsión a invertir y elevar la productividad que ninguna otra región tuvo.",
+      "desarrollo": "Brenner sostiene que ni el comercio ni la demografía explican por qué Inglaterra rompió el techo malthusiano: lo hizo la estructura de clases agraria surgida de las luchas de los siglos XV y XVI, que dejó a terratenientes, arrendatarios y jornaleros dependientes del mercado y, por tanto, obligados a mejorar [@brenner-1976]. El debate que siguió, con demógrafos, historiadores franceses y otros marxistas, está recogido en *The Brenner Debate* [@aston-philpin-1985]; Wood lo generaliza como una explicación del origen del capitalismo distinta de la del «comercio que crece» [@wood-1999]. Dobb había planteado el problema de la transición desde el feudalismo en términos similares [@dobb-1946]. En Marx, el punto de partida es la «llamada acumulación originaria»: la separación violenta del productor y la tierra [@marx-1867].",
       "autores_principales": [
         "brenner-1976",
         "aston-philpin-1985",

@@ -21,7 +21,7 @@ const conAristas = new Set(datos.aristas.flatMap((a) => [a.desde, a.hacia]));
   <div class="contenedor">
     <p class="sobretitulo">Vista Grafo</p>
     <h1 style="margin-bottom:0.3em">Grafo causal</h1>
-    <p class="entradilla">Nodos y aristas tipadas. El color de la arista es su tipo; el trazo, su grado de consenso: continuo si es alto, discontinuo si es medio, punteado si está en disputa. Hacé clic en un nodo para aislar su subgrafo ancestral: qué tuvo que pasar antes para que ocurriera, y según quién.</p>
+    <p class="entradilla">Nodos y aristas tipadas. El color de la arista es su tipo; el trazo, su grado de consenso: continuo si es alto, discontinuo si es medio, punteado si está en disputa. Hacé clic en un nodo para aislar su subgrafo ancestral, o sea qué tuvo que pasar antes para que ocurriera, y según quién.</p>
   </div>
   <div class="grafo" data-grafo>
     <script is:inline type="application/json" set:html={JSON.stringify(carga)} />

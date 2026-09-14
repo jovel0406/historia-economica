@@ -13,6 +13,22 @@ export type TipoFuente = z.infer<typeof TipoFuente>;
 export const CitationStatus = z.enum(["verificada", "pendiente_de_verificacion", "dudosa"]);
 export type CitationStatus = z.infer<typeof CitationStatus>;
 
+/**
+ * Cotejo automático contra un catálogo. Es un dato, no una frase: así la interfaz lo muestra
+ * compacto y `nota_verificacion` queda libre para lo que de verdad hay que contar de cada ficha.
+ * Cotejar no es verificar: solo `verified` marca la comprobación hecha a mano.
+ */
+export const Catalogo = z.enum(["crossref", "open-library", "repositorio", "sitio-oficial"]);
+export type Catalogo = z.infer<typeof Catalogo>;
+
+export const Cotejo = z.strictObject({
+  catalogo: Catalogo,
+  fecha: z.iso.date(),
+  /** El catálogo devolvió un DOI que resuelve a esta obra. */
+  doi_resuelto: z.boolean().default(false),
+});
+export type Cotejo = z.infer<typeof Cotejo>;
+
 /** Forma sintáctica de un DOI (prefijo 10.xxxx/sufijo). No comprueba que exista. */
 export const DOI_REGEX = /^10\.\d{4,9}\/\S+$/i;
 
@@ -28,6 +44,7 @@ export const Fuente = z
     editorial: TextoNoVacio.optional(),
     doi: z.string().regex(DOI_REGEX, "no tiene forma de DOI (10.xxxx/...)").optional(),
     url: z.url({ protocol: /^https?$/ }).optional(),
+    cotejo: Cotejo.optional(),
     verified: z.boolean().default(false),
     citation_status: CitationStatus.default("pendiente_de_verificacion"),
     nota_verificacion: TextoNoVacio.optional(),

@@ -9,9 +9,14 @@
     "anio": 2000,
     "editorial": "Princeton University Press",
     "doi": "10.1515/9781400823499",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal; el subtítulo no fue cotejado."
+    "nota_verificacion": "Crossref registra solo el título principal; el subtítulo no fue cotejado."
   },
   {
     "id": "allen-2009",
@@ -23,9 +28,13 @@
     "anio": 2009,
     "editorial": "Cambridge University Press",
     "doi": "10.1017/cbo9780511816680",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "allen-2001",
@@ -37,9 +46,13 @@
     "anio": 2001,
     "publicacion": "Explorations in Economic History",
     "doi": "10.1006/exeh.2001.0775",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "broadberry-guan-li-2018",
@@ -53,9 +66,13 @@
     "anio": 2018,
     "publicacion": "The Journal of Economic History",
     "doi": "10.1017/s0022050718000529",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "mokyr-2016",
@@ -67,9 +84,14 @@
     "anio": 2016,
     "editorial": "Princeton University Press",
     "doi": "10.2307/j.ctt1wf4dft",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+    "nota_verificacion": "Crossref registra solo el título principal."
   },
   {
     "id": "acemoglu-johnson-robinson-2005",
@@ -83,9 +105,13 @@
     "anio": 2005,
     "publicacion": "American Economic Review",
     "doi": "10.1257/0002828054201305",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "parthasarathi-2011",
@@ -97,9 +123,14 @@
     "anio": 2011,
     "editorial": "Cambridge University Press",
     "doi": "10.1017/cbo9780511993398",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+    "nota_verificacion": "Crossref registra solo el título principal."
   },
   {
     "id": "wallerstein-1974",
@@ -110,9 +141,14 @@
     "titulo": "The Modern World-System I: Capitalist Agriculture and the Origins of the European World-Economy in the Sixteenth Century",
     "anio": 1974,
     "doi": "10.1525/9780520948570",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Crossref confirma la obra por reseñas de 1976 y por la reedición de University of California Press (2011, DOI registrado). La editorial y el año de la primera edición no se cotejaron: se dejan en blanco/como conocidos. Pendiente de verificación manual."
+    "nota_verificacion": "Crossref confirma la obra por reseñas de 1976 y por la reedición de University of California Press (2011, DOI registrado). La editorial y el año de la primera edición no se cotejaron: se dejan en blanco/como conocidos."
   },
   {
     "id": "frank-1998",
@@ -124,9 +160,13 @@
     "anio": 1998,
     "editorial": "University of California Press",
     "doi": "10.1525/9780520921313",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "clark-2007",
@@ -138,9 +178,14 @@
     "anio": 2007,
     "editorial": "Princeton University Press",
     "doi": "10.1515/9781400827817",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+    "nota_verificacion": "Crossref registra solo el título principal."
   },
   {
     "id": "north-1990",
@@ -152,9 +197,13 @@
     "anio": 1990,
     "editorial": "Cambridge University Press",
     "doi": "10.1017/cbo9780511808678",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "landes-1998",
@@ -165,9 +214,13 @@
     "titulo": "The Wealth and Poverty of Nations",
     "anio": 1998,
     "editorial": "W. W. Norton",
+    "cotejo": {
+      "catalogo": "open-library",
+      "fecha": "2026-09-13",
+      "doi_resuelto": false
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Open Library el 2026-09-13. Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "acemoglu-robinson-2012",
@@ -178,9 +231,14 @@
     ],
     "titulo": "Why Nations Fail: The Origins of Power, Prosperity, and Poverty",
     "anio": 2012,
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Crossref confirma la obra solo a través de reseñas (2012). Editorial no cotejada. Pendiente de verificación manual."
+    "nota_verificacion": "Crossref confirma la obra solo a través de reseñas (2012). Editorial no cotejada."
   },
   {
     "id": "bolt-vanzanden-2024",
@@ -193,9 +251,13 @@
     "anio": 2024,
     "publicacion": "Journal of Economic Surveys",
     "doi": "10.1111/joes.12618",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "maddison-project-2023",
@@ -208,9 +270,14 @@
     "anio": 2023,
     "publicacion": "Groningen Growth and Development Centre",
     "url": "https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2023",
+    "cotejo": {
+      "catalogo": "sitio-oficial",
+      "fecha": "2026-09-13",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "URL comprobada (HTTP 200, título de página «Maddison Project Database 2023») el 2026-09-13. Licencia y cita requerida se registran en data/MANIFIESTO.json cuando se ingiera (Hito 3)."
+    "nota_verificacion": "Licencia y cita requerida se registran en data/MANIFIESTO.json cuando se ingiera (Hito 3)."
   },
   {
     "id": "maddison-2001",
@@ -222,9 +289,13 @@
     "anio": 2001,
     "editorial": "OECD Development Centre",
     "doi": "10.1787/9789264189980-en",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "pritchett-1997",
@@ -236,9 +307,13 @@
     "anio": 1997,
     "publicacion": "Journal of Economic Perspectives",
     "doi": "10.1257/jep.11.3.3",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "solow-1956",
@@ -250,9 +325,13 @@
     "anio": 1956,
     "publicacion": "The Quarterly Journal of Economics",
     "doi": "10.2307/1884513",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "allen-2011",
@@ -264,9 +343,13 @@
     "anio": 2011,
     "editorial": "Oxford University Press",
     "doi": "10.1093/actrade/9780199596652.001.0001",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "findlay-orourke-2007",
@@ -279,9 +362,14 @@
     "anio": 2007,
     "editorial": "Princeton University Press",
     "doi": "10.1515/9781400831883",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+    "nota_verificacion": "Crossref registra solo el título principal."
   },
   {
     "id": "hobsbawm-1968",
@@ -291,9 +379,14 @@
     ],
     "titulo": "Industry and Empire: An Economic History of Britain since 1750",
     "anio": 1968,
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Crossref confirma la obra solo a través de reseñas (1969). Editorial no cotejada. Pendiente de verificación manual."
+    "nota_verificacion": "Crossref confirma la obra solo a través de reseñas (1969). Editorial no cotejada."
   },
   {
     "id": "williams-1944",
@@ -303,9 +396,14 @@
     ],
     "titulo": "Capitalism and Slavery",
     "anio": 1944,
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Crossref confirma la obra a través de reseñas de 1945 (American Historical Review, American Sociological Review). Editorial de la primera edición no cotejada. Pendiente de verificación manual."
+    "nota_verificacion": "Crossref confirma la obra a través de reseñas de 1945 (American Historical Review, American Sociological Review). Editorial de la primera edición no cotejada."
   },
   {
     "id": "eltis-engerman-2000",
@@ -318,9 +416,13 @@
     "anio": 2000,
     "publicacion": "The Journal of Economic History",
     "doi": "10.1017/s0022050700024670",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "inikori-2002",
@@ -332,9 +434,13 @@
     "anio": 2002,
     "editorial": "Cambridge University Press",
     "doi": "10.1017/cbo9780511583940",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "nunn-2008",
@@ -346,9 +452,13 @@
     "anio": 2008,
     "publicacion": "The Quarterly Journal of Economics",
     "doi": "10.1162/qjec.2008.123.1.139",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "darity-1990",
@@ -360,9 +470,13 @@
     "anio": 1990,
     "publicacion": "Social Science History",
     "doi": "10.2307/1171367",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "wright-2020",
@@ -374,9 +488,13 @@
     "anio": 2020,
     "publicacion": "The Economic History Review",
     "doi": "10.1111/ehr.12962",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "slave-voyages",
@@ -385,9 +503,14 @@
     "titulo": "SlaveVoyages: The Trans-Atlantic and Intra-American Slave Trade Databases",
     "anio": null,
     "url": "https://www.slavevoyages.org/",
+    "cotejo": {
+      "catalogo": "sitio-oficial",
+      "fecha": "2026-09-13",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "URL comprobada (HTTP 200, título «SlaveVoyages») el 2026-09-13. Autoría institucional, versión, licencia y cita requerida se registran en data/MANIFIESTO.json cuando se ingiera."
+    "nota_verificacion": "Autoría institucional, versión, licencia y cita requerida se registran en data/MANIFIESTO.json cuando se ingiera."
   },
   {
     "id": "friedman-schwartz-1963",
@@ -400,9 +523,14 @@
     "anio": 1963,
     "editorial": "Princeton University Press",
     "doi": "10.1515/9781400829330",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Crossref registra la edición de Princeton de 2008 (DOI) y reseñas de 1964–1966 que confirman la primera edición. Pendiente de verificación manual."
+    "nota_verificacion": "Crossref registra la edición de Princeton de 2008 (DOI) y reseñas de 1964–1966 que confirman la primera edición."
   },
   {
     "id": "eichengreen-1992",
@@ -414,9 +542,14 @@
     "anio": 1992,
     "editorial": "Oxford University Press",
     "doi": "10.1093/0195101138.001.0001",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Crossref registra la edición en línea de Oxford (1996, DOI). Año de primera edición 1992 no cotejado. Pendiente de verificación manual."
+    "nota_verificacion": "Crossref registra la edición en línea de Oxford (1996, DOI). Año de primera edición 1992 no cotejado."
   },
   {
     "id": "bernanke-1983",
@@ -428,9 +561,14 @@
     "anio": 1983,
     "publicacion": "NBER Working Paper 1054",
     "doi": "10.3386/w1054",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Se cita la versión de trabajo del NBER; la versión publicada en American Economic Review no fue cotejada."
+    "nota_verificacion": "Se cita la versión de trabajo del NBER; la versión publicada en American Economic Review no fue cotejada."
   },
   {
     "id": "bernanke-james-1990",
@@ -443,9 +581,13 @@
     "anio": 1990,
     "publicacion": "NBER Working Paper 3488",
     "doi": "10.3386/w3488",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "eichengreen-temin-1997",
@@ -458,9 +600,13 @@
     "anio": 1997,
     "publicacion": "NBER Working Paper 6060",
     "doi": "10.3386/w6060",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "temin-1989",
@@ -471,9 +617,13 @@
     "titulo": "Lessons from the Great Depression",
     "anio": 1989,
     "editorial": "MIT Press",
+    "cotejo": {
+      "catalogo": "open-library",
+      "fecha": "2026-09-13",
+      "doi_resuelto": false
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Open Library el 2026-09-13. Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "kindleberger-1973",
@@ -484,9 +634,14 @@
     "titulo": "The World in Depression, 1929–1939",
     "anio": 1973,
     "editorial": "University of California Press",
+    "cotejo": {
+      "catalogo": "open-library",
+      "fecha": "2026-09-13",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Open Library el 2026-09-13. Pendiente de verificación manual. Crossref confirma además reseñas de 1973."
+    "nota_verificacion": "Crossref confirma además reseñas de 1973."
   },
   {
     "id": "romer-1992",
@@ -498,9 +653,13 @@
     "anio": 1992,
     "publicacion": "The Journal of Economic History",
     "doi": "10.1017/s002205070001189x",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "cole-ohanian-2004",
@@ -513,9 +672,13 @@
     "anio": 2004,
     "publicacion": "Journal of Political Economy",
     "doi": "10.1086/421169",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "keynes-1936",
@@ -526,9 +689,14 @@
     "titulo": "The General Theory of Employment, Interest and Money",
     "anio": 1936,
     "editorial": "Macmillan",
+    "cotejo": {
+      "catalogo": "open-library",
+      "fecha": "2026-09-13",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Open Library registra ediciones de Macmillan (fechas inconsistentes 1935/1939). Año 1936 no cotejado contra la primera edición. Pendiente de verificación manual."
+    "nota_verificacion": "Open Library registra ediciones de Macmillan (fechas inconsistentes 1935/1939). Año 1936 no cotejado contra la primera edición."
   },
   {
     "id": "eichengreen-2008",
@@ -540,9 +708,14 @@
     "anio": 2008,
     "editorial": "Princeton University Press",
     "doi": "10.1515/9781400828814",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Crossref registra la 2.ª edición (2009 en línea, DOI). Pendiente de verificación manual."
+    "nota_verificacion": "Crossref registra la 2.ª edición (2009 en línea, DOI)."
   },
   {
     "id": "ocampo-2014",
@@ -556,6 +729,11 @@
     "editorial": "CEPAL",
     "doi": "10.18356/d2e46298-es",
     "url": "https://repositorio.cepal.org/handle/11362/36761",
+    "cotejo": {
+      "catalogo": "repositorio",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
     "nota_verificacion": "DOI del capítulo cotejado en Crossref; título del libro cotejado en el repositorio de la CEPAL (HTTP 200) el 2026-09-13."
@@ -572,6 +750,11 @@
     "editorial": "CEPAL",
     "doi": "10.18356/d834d004-es",
     "url": "https://repositorio.cepal.org/handle/11362/36761",
+    "cotejo": {
+      "catalogo": "repositorio",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
     "nota_verificacion": "DOI del capítulo cotejado en Crossref; libro cotejado en el repositorio de la CEPAL el 2026-09-13."
@@ -586,9 +769,13 @@
     "anio": 1985,
     "publicacion": "Journal of Development Economics",
     "doi": "10.1016/0304-3878(85)90036-7",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "sachs-1989",
@@ -600,9 +787,13 @@
     "anio": 1989,
     "editorial": "University of Chicago Press",
     "doi": "10.7208/chicago/9780226733234.001.0001",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "edwards-1995",
@@ -613,9 +804,13 @@
     "titulo": "Crisis and Reform in Latin America: From Despair to Hope",
     "anio": 1995,
     "editorial": "Oxford University Press for the World Bank",
+    "cotejo": {
+      "catalogo": "open-library",
+      "fecha": "2026-09-13",
+      "doi_resuelto": false
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Open Library el 2026-09-13. Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "bertola-ocampo-2012",
@@ -628,9 +823,13 @@
     "anio": 2012,
     "editorial": "Oxford University Press",
     "doi": "10.1093/acprof:oso/9780199662135.001.0001",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "bulmer-thomas-2014",
@@ -642,9 +841,14 @@
     "anio": 2014,
     "editorial": "Cambridge University Press",
     "doi": "10.1017/cbo9781139208710",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Tercera edición; la primera es de 1994."
+    "nota_verificacion": "Tercera edición; la primera es de 1994."
   },
   {
     "id": "bulmer-thomas-1987",
@@ -656,9 +860,13 @@
     "anio": 1987,
     "editorial": "Cambridge University Press",
     "doi": "10.1017/cbo9780511572029",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "thorp-1998",
@@ -670,9 +878,13 @@
     "anio": 1998,
     "editorial": "Inter-American Development Bank",
     "doi": "10.18235/0012523",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "bates-coatsworth-williamson-2007",
@@ -686,9 +898,13 @@
     "anio": 2007,
     "publicacion": "The Journal of Economic History",
     "doi": "10.1017/s0022050707000447",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "prebisch-1949",
@@ -700,6 +916,11 @@
     "anio": 1949,
     "editorial": "CEPAL",
     "url": "https://repositorio.cepal.org/handle/11362/40010",
+    "cotejo": {
+      "catalogo": "repositorio",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
     "nota_verificacion": "Registro cotejado en el repositorio de la CEPAL (HTTP 200, título coincidente) el 2026-09-13. Existe reimpresión en Desarrollo Económico (1986, DOI 10.2307/3466824)."
@@ -714,9 +935,14 @@
     "titulo": "Dependencia y desarrollo en América Latina",
     "anio": 1969,
     "editorial": "Siglo XXI",
+    "cotejo": {
+      "catalogo": "open-library",
+      "fecha": "2026-09-13",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Open Library el 2026-09-13. Pendiente de verificación manual. Open Library registra ediciones de 1967 a 1972; el año de la primera edición no está claro en el catálogo."
+    "nota_verificacion": "Open Library registra ediciones de 1967 a 1972; el año de la primera edición no está claro en el catálogo."
   },
   {
     "id": "rodrik-2006",
@@ -728,9 +954,13 @@
     "anio": 2006,
     "publicacion": "Journal of Economic Literature",
     "doi": "10.1257/jel.44.4.973",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "nacion-2023-impago-1981",
@@ -768,9 +998,14 @@
     "anio": 1995,
     "editorial": "Cambridge University Press",
     "doi": "10.1017/cbo9780511664335",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+    "nota_verificacion": "Crossref registra solo el título principal."
   },
   {
     "id": "qian-2017",
@@ -782,9 +1017,14 @@
     "anio": 2017,
     "editorial": "The MIT Press",
     "doi": "10.7551/mitpress/8098.001.0001",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+    "nota_verificacion": "Crossref registra solo el título principal."
   },
   {
     "id": "xu-2011",
@@ -796,9 +1036,13 @@
     "anio": 2011,
     "publicacion": "Journal of Economic Literature",
     "doi": "10.1257/jel.49.4.1076",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "zhu-2012",
@@ -810,9 +1054,13 @@
     "anio": 2012,
     "publicacion": "Journal of Economic Perspectives",
     "doi": "10.1257/jep.26.4.103",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "huang-2008",
@@ -824,9 +1072,14 @@
     "anio": 2008,
     "editorial": "Cambridge University Press",
     "doi": "10.1017/cbo9780511754210",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+    "nota_verificacion": "Crossref registra solo el título principal."
   },
   {
     "id": "lin-cai-li-2003",
@@ -840,9 +1093,14 @@
     "anio": 2003,
     "editorial": "The Chinese University of Hong Kong Press",
     "doi": "10.1353/book82023",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Crossref registra la versión en línea de 2004 (DOI). El año de la edición revisada (2003) y de la primera (1996) no fueron cotejados. Pendiente de verificación manual."
+    "nota_verificacion": "Crossref registra la versión en línea de 2004 (DOI). El año de la edición revisada (2003) y de la primera (1996) no fueron cotejados."
   },
   {
     "id": "brandt-rawski-2008",
@@ -855,9 +1113,13 @@
     "anio": 2008,
     "editorial": "Cambridge University Press",
     "doi": "10.1017/cbo9780511754234",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "amsden-1989",
@@ -869,9 +1131,14 @@
     "anio": 1989,
     "editorial": "Oxford University Press",
     "doi": "10.1093/0195076036.001.0001",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Crossref registra la edición en línea de 1992 (DOI). Año de primera edición 1989 no cotejado. Pendiente de verificación manual."
+    "nota_verificacion": "Crossref registra la edición en línea de 1992 (DOI). Año de primera edición 1989 no cotejado."
   },
   {
     "id": "wade-1990",
@@ -883,9 +1150,14 @@
     "anio": 1990,
     "editorial": "Princeton University Press",
     "doi": "10.1515/9780691187181",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+    "nota_verificacion": "Crossref registra solo el título principal."
   },
   {
     "id": "gudmundson-1986",
@@ -896,9 +1168,14 @@
     "titulo": "Costa Rica before Coffee: Society and Economy on the Eve of the Export Boom",
     "anio": 1986,
     "editorial": "Louisiana State University Press",
+    "cotejo": {
+      "catalogo": "open-library",
+      "fecha": "2026-09-13",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Open Library el 2026-09-13. Pendiente de verificación manual. Crossref confirma además reseñas de 1987–1988."
+    "nota_verificacion": "Crossref confirma además reseñas de 1987–1988."
   },
   {
     "id": "marx-1867",
@@ -909,9 +1186,14 @@
     "titulo": "El capital. Crítica de la economía política. Libro I",
     "anio": 1867,
     "doi": "10.1515/9780691240466",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Crossref registra la edición de Princeton University Press (2024, DOI); Open Library registra ediciones en alemán (Dietz) y en español (FCE, Alianza). Editorial y año de la primera edición (1867) no cotejados contra un catálogo. Pendiente de verificación manual."
+    "nota_verificacion": "Crossref registra la edición de Princeton University Press (2024, DOI); Open Library registra ediciones en alemán (Dietz) y en español (FCE, Alianza). Editorial y año de la primera edición (1867) no cotejados contra un catálogo."
   },
   {
     "id": "brenner-1976",
@@ -923,9 +1205,13 @@
     "anio": 1976,
     "publicacion": "Past and Present",
     "doi": "10.1093/past/70.1.30",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "aston-philpin-1985",
@@ -938,9 +1224,14 @@
     "anio": 1985,
     "editorial": "Cambridge University Press",
     "doi": "10.1017/cbo9780511562358",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual. DOI del volumen inferido de los DOI de sus capítulos (10.1017/cbo9780511562358.xxx); reseñas de 1987 confirman la obra."
+    "nota_verificacion": "DOI del volumen inferido de los DOI de sus capítulos (10.1017/cbo9780511562358.xxx); reseñas de 1987 confirman la obra."
   },
   {
     "id": "wood-1999",
@@ -951,9 +1242,14 @@
     "titulo": "The Origin of Capitalism",
     "anio": 1999,
     "editorial": "Monthly Review Press",
+    "cotejo": {
+      "catalogo": "open-library",
+      "fecha": "2026-09-14",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Open Library el 2026-09-14. Pendiente de verificación manual. Crossref confirma además una reseña de 2000. Existe edición ampliada (Verso, 2002) y traducción al español (Siglo XXI, 2017)."
+    "nota_verificacion": "Crossref confirma además una reseña de 2000. Existe edición ampliada (Verso, 2002) y traducción al español (Siglo XXI, 2017)."
   },
   {
     "id": "harvey-2005",
@@ -965,9 +1261,13 @@
     "anio": 2005,
     "editorial": "Oxford University Press",
     "doi": "10.1093/oso/9780199283262.001.0001",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "dobb-1946",
@@ -978,9 +1278,14 @@
     "titulo": "Studies in the Development of Capitalism",
     "anio": 1946,
     "editorial": "Routledge & Kegan Paul",
+    "cotejo": {
+      "catalogo": "open-library",
+      "fecha": "2026-09-14",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Open Library el 2026-09-14. Pendiente de verificación manual. Crossref confirma además una reseña de 1947."
+    "nota_verificacion": "Crossref confirma además una reseña de 1947."
   },
   {
     "id": "blackburn-1997",
@@ -991,9 +1296,14 @@
     "titulo": "The Making of New World Slavery: From the Baroque to the Modern, 1492–1800",
     "anio": 1997,
     "editorial": "Verso",
+    "cotejo": {
+      "catalogo": "open-library",
+      "fecha": "2026-09-14",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Open Library el 2026-09-14. Pendiente de verificación manual. Crossref confirma reseñas de 1998–1999."
+    "nota_verificacion": "Crossref confirma reseñas de 1998–1999."
   },
   {
     "id": "dumenil-levy-2011",
@@ -1006,9 +1316,14 @@
     "anio": 2011,
     "editorial": "Harvard University Press",
     "doi": "10.4159/harvard.9780674059306",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Crossref registra la edición en línea de 2013 (DOI). Año de primera edición 2011 no cotejado. Pendiente de verificación manual."
+    "nota_verificacion": "Crossref registra la edición en línea de 2013 (DOI). Año de primera edición 2011 no cotejado."
   },
   {
     "id": "brenner-1998",
@@ -1020,9 +1335,13 @@
     "anio": 1998,
     "publicacion": "New Left Review (número especial)",
     "doi": "10.64590/le6",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "feenstra-inklaar-timmer-2015",
@@ -1036,9 +1355,14 @@
     "anio": 2015,
     "publicacion": "American Economic Review",
     "doi": "10.1257/aer.20130954",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual. Es la cita que exige la Penn World Table como condición de uso."
+    "nota_verificacion": "Es la cita que exige la Penn World Table como condición de uso."
   },
   {
     "id": "bolt-vanzanden-2020",
@@ -1066,9 +1390,14 @@
     "anio": 2020,
     "publicacion": "Groningen Growth and Development Centre",
     "url": "https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2020",
+    "cotejo": {
+      "catalogo": "sitio-oficial",
+      "fecha": "2026-09-14",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "URL comprobada (HTTP 200) el 2026-09-14. Licencia CC BY 4.0 según la página. Procedencia y hash en data/MANIFIESTO.json."
+    "nota_verificacion": "Licencia CC BY 4.0 según la página. Procedencia y hash en data/MANIFIESTO.json."
   },
   {
     "id": "pwt-100",
@@ -1082,9 +1411,14 @@
     "anio": 2021,
     "publicacion": "Groningen Growth and Development Centre",
     "url": "https://www.rug.nl/ggdc/productivity/pwt/pwt-releases/pwt100",
+    "cotejo": {
+      "catalogo": "sitio-oficial",
+      "fecha": "2026-09-14",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "URL comprobada (HTTP 200) el 2026-09-14. Licencia CC BY 4.0 según la página. El año de publicación (2021) no aparece en la página consultada: verificar. Procedencia y hash en data/MANIFIESTO.json."
+    "nota_verificacion": "Licencia CC BY 4.0 según la página. El año de publicación (2021) no aparece en la página consultada: verificar. Procedencia y hash en data/MANIFIESTO.json."
   },
   {
     "id": "bordo-eichengreen-1993",
@@ -1097,9 +1431,13 @@
     "anio": 1993,
     "editorial": "University of Chicago Press",
     "doi": "10.7208/chicago/9780226066905.001.0001",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "hirschman-1968",
@@ -1111,9 +1449,13 @@
     "anio": 1968,
     "publicacion": "The Quarterly Journal of Economics",
     "doi": "10.2307/1882243",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "crafts-1985",
@@ -1123,9 +1465,14 @@
     ],
     "titulo": "British Economic Growth during the Industrial Revolution",
     "anio": 1985,
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Crossref confirma la obra a través de reseñas de 1986–1987. Editorial no cotejada. Pendiente de verificación manual."
+    "nota_verificacion": "Crossref confirma la obra a través de reseñas de 1986–1987. Editorial no cotejada."
   },
   {
     "id": "crafts-harley-1992",
@@ -1138,9 +1485,13 @@
     "anio": 1992,
     "publicacion": "The Economic History Review",
     "doi": "10.2307/2597415",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "bordo-kydland-1995",
@@ -1153,9 +1504,13 @@
     "anio": 1995,
     "publicacion": "Explorations in Economic History",
     "doi": "10.1006/exeh.1995.1019",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "obstfeld-taylor-2004",
@@ -1168,9 +1523,14 @@
     "anio": 2004,
     "editorial": "Cambridge University Press",
     "doi": "10.1017/cbo9780511616525",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+    "nota_verificacion": "Crossref registra solo el título principal."
   },
   {
     "id": "humphries-2013",
@@ -1182,9 +1542,14 @@
     "anio": 2013,
     "publicacion": "The Economic History Review",
     "doi": "10.1111/j.1468-0289.2012.00663.x",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual. Crossref data la versión en línea en 2012."
+    "nota_verificacion": "Crossref data la versión en línea en 2012."
   },
   {
     "id": "steil-2013",
@@ -1196,9 +1561,14 @@
     "anio": 2013,
     "editorial": "Princeton University Press",
     "doi": "10.1515/9781400846573",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+    "nota_verificacion": "Crossref registra solo el título principal."
   },
   {
     "id": "james-1996",
@@ -1208,9 +1578,14 @@
     ],
     "titulo": "International Monetary Cooperation Since Bretton Woods",
     "anio": 1996,
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Crossref confirma la obra a través de reseñas de 1996–1997. Editorial no cotejada. Pendiente de verificación manual."
+    "nota_verificacion": "Crossref confirma la obra a través de reseñas de 1996–1997. Editorial no cotejada."
   },
   {
     "id": "taylor-1998",
@@ -1222,9 +1597,13 @@
     "anio": 1998,
     "publicacion": "The Journal of Economic History",
     "doi": "10.1017/s0022050700019860",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "riley-2005",
@@ -1236,9 +1615,13 @@
     "anio": 2005,
     "publicacion": "Population and Development Review",
     "doi": "10.1111/j.1728-4457.2005.00083.x",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "alvaredo-et-al-2018",
@@ -1254,9 +1637,14 @@
     "anio": 2018,
     "editorial": "Harvard University Press",
     "doi": "10.4159/9780674984769",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Crossref registra la obra con Alvaredo como único autor listado; los coautores se toman de la portada y no fueron cotejados en el catálogo. Pendiente de verificación manual."
+    "nota_verificacion": "Crossref registra la obra con Alvaredo como único autor listado; los coautores se toman de la portada y no fueron cotejados en el catálogo."
   },
   {
     "id": "un-wpp-2024",
@@ -1280,9 +1668,14 @@
     ],
     "titulo": "The Theory of Capitalist Development: Principles of Marxian Political Economy",
     "anio": 1942,
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Crossref confirma la obra a través de la reseña de Oscar Lange en The Journal of Philosophy (1943) y de una reimpresión de su capítulo primero en Monthly Review (1992). No hay DOI para la primera edición y la editorial no se cotejó. Pendiente de verificación manual."
+    "nota_verificacion": "Crossref confirma la obra a través de la reseña de Oscar Lange en The Journal of Philosophy (1943) y de una reimpresión de su capítulo primero en Monthly Review (1992). No hay DOI para la primera edición y la editorial no se cotejó."
   },
   {
     "id": "shaikh-2016",
@@ -1294,9 +1687,14 @@
     "anio": 2016,
     "editorial": "Oxford University Press",
     "doi": "10.1093/acprof:oso/9780199390632.001.0001",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal, «Capitalism»."
+    "nota_verificacion": "Crossref registra solo el título principal, «Capitalism»."
   },
   {
     "id": "harvey-2003",
@@ -1308,9 +1706,13 @@
     "anio": 2003,
     "editorial": "Oxford University Press",
     "doi": "10.1093/oso/9780199264315.001.0001",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "roemer-1982",
@@ -1322,9 +1724,13 @@
     "anio": 1982,
     "editorial": "Harvard University Press",
     "doi": "10.4159/harvard.9780674435865",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "cohen-1978",
@@ -1336,9 +1742,14 @@
     "anio": 1978,
     "editorial": "Princeton University Press",
     "doi": "10.1515/9780691213002",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Crossref registra la edición en línea con fecha 1979 y confirma reseñas de 1980. El año de la primera edición (1978) no se cotejó. Pendiente de verificación manual."
+    "nota_verificacion": "Crossref registra la edición en línea con fecha 1979 y confirma reseñas de 1980. El año de la primera edición (1978) no se cotejó."
   },
   {
     "id": "bowles-gintis-1990",
@@ -1351,9 +1762,13 @@
     "anio": 1990,
     "publicacion": "Politics & Society",
     "doi": "10.1177/003232929001800202",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "hobsbawm-1962",
@@ -1363,9 +1778,14 @@
     ],
     "titulo": "The Age of Revolution, 1789–1848",
     "anio": 1962,
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Crossref confirma la obra a través de la reseña de Theodore S. Hamerow en The American Historical Review (1963). Editorial no cotejada. Pendiente de verificación manual."
+    "nota_verificacion": "Crossref confirma la obra a través de la reseña de Theodore S. Hamerow en The American Historical Review (1963). Editorial no cotejada."
   },
   {
     "id": "friedman-1968",
@@ -1376,6 +1796,11 @@
     "titulo": "The Role of Monetary Policy",
     "anio": 1968,
     "publicacion": "American Economic Review",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
     "nota_verificacion": "Crossref NO devolvió DOI para este artículo pese a varias búsquedas; es el discurso presidencial ante la American Economic Association, publicado en American Economic Review 58(1). El número de volumen y las páginas no se cotejaron. Pendiente de verificación manual: es la ficha menos confirmada de esta bibliografía."
@@ -1390,9 +1815,13 @@
     "anio": 1968,
     "publicacion": "Journal of Political Economy",
     "doi": "10.1086/259438",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "lucas-1976",
@@ -1404,9 +1833,13 @@
     "anio": 1976,
     "publicacion": "Carnegie-Rochester Conference Series on Public Policy",
     "doi": "10.1016/s0167-2231(76)80003-6",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "sargent-1981",
@@ -1418,9 +1851,14 @@
     "anio": 1981,
     "publicacion": "Federal Reserve Bank of Minneapolis, Working Paper 158",
     "doi": "10.21034/wp.158",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual. Se cita la versión de trabajo de 1981; el capítulo del volumen editado por Hall (1982) no se cotejó."
+    "nota_verificacion": "Se cita la versión de trabajo de 1981; el capítulo del volumen editado por Hall (1982) no se cotejó."
   },
   {
     "id": "laidler-1981",
@@ -1432,9 +1870,13 @@
     "anio": 1981,
     "publicacion": "The Economic Journal",
     "doi": "10.2307/2231691",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "tobin-1981",
@@ -1446,9 +1888,13 @@
     "anio": 1981,
     "publicacion": "The Economic Journal",
     "doi": "10.2307/2231692",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "nelson-2020",
@@ -1460,9 +1906,13 @@
     "anio": 2020,
     "editorial": "University of Chicago Press",
     "doi": "10.7208/chicago/9780226683805.001.0001",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "hetzel-2008",
@@ -1474,9 +1924,14 @@
     "anio": 2008,
     "editorial": "Cambridge University Press",
     "doi": "10.1017/cbo9780511754173",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+    "nota_verificacion": "Crossref registra solo el título principal."
   },
   {
     "id": "hicks-1937",
@@ -1488,9 +1943,13 @@
     "anio": 1937,
     "publicacion": "Econometrica",
     "doi": "10.2307/1907242",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "minsky-1986",
@@ -1500,9 +1959,14 @@
     ],
     "titulo": "Stabilizing an Unstable Economy",
     "anio": 1986,
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Crossref confirma la obra a través de reseñas de 1987 y 1989 (Southern Economic Journal, The Economic Journal). Editorial no cotejada. Pendiente de verificación manual."
+    "nota_verificacion": "Crossref confirma la obra a través de reseñas de 1987 y 1989 (Southern Economic Journal, The Economic Journal). Editorial no cotejada."
   },
   {
     "id": "mankiw-1991",
@@ -1514,9 +1978,13 @@
     "anio": 1991,
     "publicacion": "NBER Working Paper 3885",
     "doi": "10.3386/w3885",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "krugman-1998",
@@ -1528,9 +1996,14 @@
     "anio": 1998,
     "publicacion": "Brookings Papers on Economic Activity",
     "doi": "10.2307/2534694",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual. Crossref lista a Dominguez y Rogoff junto a Krugman; son los comentaristas del artículo, no coautores, cosa que conviene comprobar."
+    "nota_verificacion": "Crossref lista a Dominguez y Rogoff junto a Krugman; son los comentaristas del artículo, no coautores, cosa que conviene comprobar."
   },
   {
     "id": "eggertsson-krugman-2012",
@@ -1543,9 +2016,13 @@
     "anio": 2012,
     "publicacion": "The Quarterly Journal of Economics",
     "doi": "10.1093/qje/qjs023",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
-    "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+    "citation_status": "pendiente_de_verificacion"
   },
   {
     "id": "akerlof-shiller-2009",
@@ -1558,9 +2035,14 @@
     "anio": 2009,
     "editorial": "Princeton University Press",
     "doi": "10.1515/9781400834723",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-13",
+      "doi_resuelto": false
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Crossref registra la edición en línea de 2010 y solo el título principal. El año de la primera edición (2009) no se cotejó. Pendiente de verificación manual."
+    "nota_verificacion": "Crossref registra la edición en línea de 2010 y solo el título principal. El año de la primera edición (2009) no se cotejó."
   },
   {
     "id": "blanchard-dellariccia-mauro-2010",
@@ -1575,8 +2057,13 @@
     "publicacion": "Reconstructing the World Economy",
     "editorial": "Fondo Monetario Internacional",
     "doi": "10.5089/9781589069770.072.ch002",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
-    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual. Crossref lista solo a Blanchard como autor del capítulo; la autoría conjunta debe comprobarse."
+    "nota_verificacion": "Crossref lista solo a Blanchard como autor del capítulo; la autoría conjunta debe comprobarse."
   }
 ]

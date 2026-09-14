@@ -1,13 +1,13 @@
 {
   "id": "institucionalista",
   "nombre": "Institucionalista",
-  "postulado_central": "Las instituciones —derechos de propiedad seguros, límites al poder del gobernante, reglas que premian la inversión y la innovación antes que la extracción— determinan los incentivos de los agentes y, con ellos, el crecimiento de largo plazo [@north-1990]. La divergencia entre países se explica por trayectorias institucionales distintas, a menudo fijadas en coyunturas críticas como el comercio atlántico [@acemoglu-johnson-robinson-2005] o la colonización [@acemoglu-robinson-2012].",
+  "postulado_central": "Las instituciones (derechos de propiedad seguros, límites al poder del gobernante, reglas que premian la inversión y la innovación antes que la extracción) determinan los incentivos de los agentes y, con ellos, el crecimiento de largo plazo [@north-1990]. La divergencia entre países se explica por trayectorias institucionales distintas, a menudo fijadas en coyunturas críticas como el comercio atlántico [@acemoglu-johnson-robinson-2005] o la colonización [@acemoglu-robinson-2012].",
   "autores_representativos": [
     "north-1990",
     "acemoglu-johnson-robinson-2005",
     "acemoglu-robinson-2012"
   ],
-  "critica_principal": "Circularidad y datación: las instituciones «buenas» suelen identificarse después de observar el crecimiento que pretenden explicar, y las reformas británicas de 1688 preceden por un siglo al despegue industrial. Casos como la China posterior a 1978 crecieron durante décadas bajo instituciones que la escuela clasificaría como extractivas [@xu-2011].",
+  "critica_principal": "Hay un problema de circularidad y otro de datación. Las instituciones «buenas» suelen identificarse después de observar el crecimiento que pretenden explicar, y las reformas británicas de 1688 preceden por un siglo al despegue industrial. Casos como la China posterior a 1978 crecieron durante décadas bajo instituciones que la escuela clasificaría como extractivas [@xu-2011].",
   "vocabulario_propio": [
     "instituciones extractivas",
     "instituciones inclusivas",
