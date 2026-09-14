@@ -1,33 +1,84 @@
 ---
-import { enlace } from "../lib/rutas.ts";
 import Base from "../layouts/Base.astro";
 import { escuelasOrdenadas, nodosOrdenados } from "../lib/contenido.ts";
+import { enlace } from "../lib/rutas.ts";
 import { renderMarkdown } from "../lib/texto.ts";
 const escuelas = escuelasOrdenadas();
 const nodos = nodosOrdenados();
 const nodosDe = (id: string) => nodos.filter((n) => n.interpretaciones.some((i) => i.escuela === id));
+const desarrolladas = escuelas.filter((e) => e.desarrollo !== undefined).length;
 ---
 <Base titulo="Escuelas interpretativas">
   <p class="sobretitulo">Vista Debate</p>
-  <h1>Escuelas interpretativas</h1>
-  <p class="entradilla">Cada escuela lleva su postulado central y la crítica principal que recibe. Ninguna se presenta como la correcta: el objetivo es poder recorrer la misma historia bajo lentes distintas.</p>
-  <div class="tarjetas">
-    {escuelas.map((e) => (
-      <div class="tarjeta" id={e.id}>
-        <h3>{e.nombre}</h3>
-        <p><button type="button" class="boton-sec" data-activar-escuela={e.id}>Leer el sitio según esta escuela</button></p>
-        <h4>Postulado central</h4>
-        <div class="prosa" set:html={renderMarkdown(e.postulado_central)} />
-        <h4>Crítica principal</h4>
-        <div class="prosa" set:html={renderMarkdown(e.critica_principal)} />
-        {e.autores_representativos.length > 0 && <p class="meta">Autores representativos: {e.autores_representativos.map((f) => <><a class="cita" href={enlace(`/fuentes#${f}`)}>{f}</a> </>)}</p>}
-        {nodosDe(e.id).length > 0 && <p class="meta">Interpreta: {nodosDe(e.id).map((n, i) => <><a href={enlace(`/nodos/${n.id}`)}>{n.titulo}</a>{i < nodosDe(e.id).length - 1 ? ", " : ""}</>)}</p>}
+  <h1>Once maneras de contar lo mismo</h1>
+  <p class="entradilla">Cada escuela parte de una pregunta distinta, y por eso llega a una respuesta distinta con los mismos datos. Acá están su postulado central, la crítica más seria que reciben y, en {desarrolladas} de ellas, de dónde salieron y en qué no se ponen de acuerdo entre ellos.</p>
+  <p class="meta">Con el selector de arriba podés leer todo el sitio según una escuela: se resaltan sus interpretaciones y las aristas que sostiene, y se atenúan las que niega.</p>
+
+  <nav class="chips indice" aria-label="Índice de escuelas">
+    {escuelas.map((e) => <a class="chip" href={`#${e.id}`}>{e.nombre}{e.desarrollo !== undefined ? " ✦" : ""}</a>)}
+  </nav>
+  <p class="meta">✦ escuela con desarrollo ampliado.</p>
+
+  {escuelas.map((e) => (
+    <section class="escuela" id={e.id} data-escuela={e.id}>
+      <div class="cab">
+        <h2>{e.nombre}</h2>
+        <button type="button" class="boton-sec" data-activar-escuela={e.id}>Leer el sitio según esta escuela</button>
       </div>
-    ))}
-  </div>
+
+      <h3>Qué sostiene</h3>
+      <div class="prosa" set:html={renderMarkdown(e.postulado_central)} />
+
+      <h3>La crítica que más le duele</h3>
+      <div class="prosa" set:html={renderMarkdown(e.critica_principal)} />
+
+      {e.desarrollo !== undefined && (
+        <details class="ampliado" open>
+          <summary>De dónde sale y qué sostiene, en detalle</summary>
+          <div class="prosa" set:html={renderMarkdown(e.desarrollo)} />
+        </details>
+      )}
+
+      {e.debates_internos !== undefined && (
+        <details class="ampliado">
+          <summary>En qué no se ponen de acuerdo entre ellos</summary>
+          <div class="prosa" set:html={renderMarkdown(e.debates_internos)} />
+        </details>
+      )}
+
+      <div class="pie-escuela">
+        {e.autores_representativos.length > 0 && (
+          <p class="meta">Autores de referencia: {e.autores_representativos.map((f, i) => <>{i > 0 ? " · " : ""}<a class="cita" href={enlace(`/fuentes#${f}`)}>{f}</a></>)}</p>
+        )}
+        {nodosDe(e.id).length > 0 && (
+          <p class="meta">Interpreta: {nodosDe(e.id).map((n, i) => <>{i > 0 ? ", " : ""}<a href={enlace(`/nodos/${n.id}`)}>{n.titulo}</a></>)}</p>
+        )}
+        {e.vocabulario_propio.length > 0 && (
+          <p class="meta">Vocabulario propio: {e.vocabulario_propio.join(" · ")}</p>
+        )}
+      </div>
+    </section>
+  ))}
 </Base>
+
 <style>
-  .boton-sec { font: inherit; font-size: 0.85rem; border: 1px solid var(--tinta-3); border-radius: 999px; padding: 0.3rem 0.8rem; background: transparent; cursor: pointer; color: var(--tinta); }
+  .indice { margin: 1.5rem 0 0.3rem; }
+  .indice .chip { text-decoration: none; }
+  .indice .chip:hover { border-color: var(--acento); color: var(--acento); }
+  .escuela { margin-top: 3rem; padding-top: 1.2rem; border-top: 2px solid var(--linea); scroll-margin-top: 5rem; }
+  .escuela:target { background: linear-gradient(var(--papel-2), transparent 8rem); }
+  .cab { display: flex; flex-wrap: wrap; gap: 0.8rem 1.4rem; align-items: baseline; justify-content: space-between; }
+  .escuela h2 { margin: 0; font-size: 1.9rem; }
+  .escuela h3 { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tinta-3); margin: 1.4rem 0 0.4rem; font-family: var(--sans); }
+  .escuela .prosa { max-width: 46rem; }
+  .escuela .prosa :global(h2) { font-size: 1.25rem; margin-top: 1.6em; }
+  .escuela .prosa :global(h3) { font-size: 1.05rem; text-transform: none; letter-spacing: 0; color: var(--tinta); font-family: var(--serif); }
+  .ampliado { margin-top: 1.4rem; border: 1px solid var(--linea); border-radius: var(--radio); background: white; padding: 0.8rem 1.2rem; }
+  .ampliado summary { cursor: pointer; font-family: var(--serif); font-size: 1.05rem; color: var(--acento); }
+  .ampliado[open] summary { margin-bottom: 0.6rem; border-bottom: 1px solid var(--linea); padding-bottom: 0.5rem; }
+  .pie-escuela { margin-top: 1.2rem; }
+  .pie-escuela .meta { margin: 0.25rem 0; }
+  .boton-sec { font: inherit; font-size: 0.85rem; border: 1px solid var(--tinta-3); border-radius: 999px; padding: 0.3rem 0.9rem; background: transparent; cursor: pointer; color: var(--tinta); white-space: nowrap; }
   .boton-sec:hover { border-color: var(--acento); color: var(--acento); }
-  .tarjeta h4 { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tinta-3); margin: 1rem 0 0.3rem; }
+  @media (max-width: 700px) { .cab { flex-direction: column; } }
 </style>

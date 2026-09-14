@@ -1271,5 +1271,312 @@
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
     "nota_verificacion": "URL comprobada (HTTP 200) el 2026-09-14; el archivo de indicadores se descargó del mismo dominio. La cita y la licencia exactas se muestran en el sitio con JavaScript y no se cotejaron automáticamente: verificar. Existe DOI para la edición 2022 (10.18356/9789210014380)."
+  },
+  {
+    "id": "sweezy-1942",
+    "tipo": "libro",
+    "autores": [
+      "Sweezy, Paul M."
+    ],
+    "titulo": "The Theory of Capitalist Development: Principles of Marxian Political Economy",
+    "anio": 1942,
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref confirma la obra a través de la reseña de Oscar Lange en The Journal of Philosophy (1943) y de una reimpresión de su capítulo primero en Monthly Review (1992). No hay DOI para la primera edición y la editorial no se cotejó. Pendiente de verificación manual."
+  },
+  {
+    "id": "shaikh-2016",
+    "tipo": "libro",
+    "autores": [
+      "Shaikh, Anwar"
+    ],
+    "titulo": "Capitalism: Competition, Conflict, Crises",
+    "anio": 2016,
+    "editorial": "Oxford University Press",
+    "doi": "10.1093/acprof:oso/9780199390632.001.0001",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal, «Capitalism»."
+  },
+  {
+    "id": "harvey-2003",
+    "tipo": "libro",
+    "autores": [
+      "Harvey, David"
+    ],
+    "titulo": "The New Imperialism",
+    "anio": 2003,
+    "editorial": "Oxford University Press",
+    "doi": "10.1093/oso/9780199264315.001.0001",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "roemer-1982",
+    "tipo": "libro",
+    "autores": [
+      "Roemer, John E."
+    ],
+    "titulo": "A General Theory of Exploitation and Class",
+    "anio": 1982,
+    "editorial": "Harvard University Press",
+    "doi": "10.4159/harvard.9780674435865",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "cohen-1978",
+    "tipo": "libro",
+    "autores": [
+      "Cohen, G. A."
+    ],
+    "titulo": "Karl Marx's Theory of History: A Defence",
+    "anio": 1978,
+    "editorial": "Princeton University Press",
+    "doi": "10.1515/9780691213002",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref registra la edición en línea con fecha 1979 y confirma reseñas de 1980. El año de la primera edición (1978) no se cotejó. Pendiente de verificación manual."
+  },
+  {
+    "id": "bowles-gintis-1990",
+    "tipo": "articulo",
+    "autores": [
+      "Bowles, Samuel",
+      "Gintis, Herbert"
+    ],
+    "titulo": "Contested Exchange: New Microfoundations for the Political Economy of Capitalism",
+    "anio": 1990,
+    "publicacion": "Politics & Society",
+    "doi": "10.1177/003232929001800202",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "hobsbawm-1962",
+    "tipo": "libro",
+    "autores": [
+      "Hobsbawm, Eric J."
+    ],
+    "titulo": "The Age of Revolution, 1789–1848",
+    "anio": 1962,
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref confirma la obra a través de la reseña de Theodore S. Hamerow en The American Historical Review (1963). Editorial no cotejada. Pendiente de verificación manual."
+  },
+  {
+    "id": "friedman-1968",
+    "tipo": "articulo",
+    "autores": [
+      "Friedman, Milton"
+    ],
+    "titulo": "The Role of Monetary Policy",
+    "anio": 1968,
+    "publicacion": "American Economic Review",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref NO devolvió DOI para este artículo pese a varias búsquedas; es el discurso presidencial ante la American Economic Association, publicado en American Economic Review 58(1). El número de volumen y las páginas no se cotejaron. Pendiente de verificación manual: es la ficha menos confirmada de esta bibliografía."
+  },
+  {
+    "id": "phelps-1968",
+    "tipo": "articulo",
+    "autores": [
+      "Phelps, Edmund S."
+    ],
+    "titulo": "Money-Wage Dynamics and Labor-Market Equilibrium",
+    "anio": 1968,
+    "publicacion": "Journal of Political Economy",
+    "doi": "10.1086/259438",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "lucas-1976",
+    "tipo": "articulo",
+    "autores": [
+      "Lucas, Robert E."
+    ],
+    "titulo": "Econometric policy evaluation: A critique",
+    "anio": 1976,
+    "publicacion": "Carnegie-Rochester Conference Series on Public Policy",
+    "doi": "10.1016/s0167-2231(76)80003-6",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "sargent-1981",
+    "tipo": "articulo",
+    "autores": [
+      "Sargent, Thomas J."
+    ],
+    "titulo": "The Ends of Four Big Inflations",
+    "anio": 1981,
+    "publicacion": "Federal Reserve Bank of Minneapolis, Working Paper 158",
+    "doi": "10.21034/wp.158",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual. Se cita la versión de trabajo de 1981; el capítulo del volumen editado por Hall (1982) no se cotejó."
+  },
+  {
+    "id": "laidler-1981",
+    "tipo": "articulo",
+    "autores": [
+      "Laidler, David"
+    ],
+    "titulo": "Monetarism: An Interpretation and an Assessment",
+    "anio": 1981,
+    "publicacion": "The Economic Journal",
+    "doi": "10.2307/2231691",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "tobin-1981",
+    "tipo": "articulo",
+    "autores": [
+      "Tobin, James"
+    ],
+    "titulo": "The Monetarist Counter-Revolution Today: An Appraisal",
+    "anio": 1981,
+    "publicacion": "The Economic Journal",
+    "doi": "10.2307/2231692",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "nelson-2020",
+    "tipo": "libro",
+    "autores": [
+      "Nelson, Edward"
+    ],
+    "titulo": "Milton Friedman and Economic Debate in the United States, 1932–1972, Volume 1",
+    "anio": 2020,
+    "editorial": "University of Chicago Press",
+    "doi": "10.7208/chicago/9780226683805.001.0001",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "hetzel-2008",
+    "tipo": "libro",
+    "autores": [
+      "Hetzel, Robert L."
+    ],
+    "titulo": "The Monetary Policy of the Federal Reserve: A History",
+    "anio": 2008,
+    "editorial": "Cambridge University Press",
+    "doi": "10.1017/cbo9780511754173",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+  },
+  {
+    "id": "hicks-1937",
+    "tipo": "articulo",
+    "autores": [
+      "Hicks, J. R."
+    ],
+    "titulo": "Mr. Keynes and the «Classics»: A Suggested Interpretation",
+    "anio": 1937,
+    "publicacion": "Econometrica",
+    "doi": "10.2307/1907242",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "minsky-1986",
+    "tipo": "libro",
+    "autores": [
+      "Minsky, Hyman P."
+    ],
+    "titulo": "Stabilizing an Unstable Economy",
+    "anio": 1986,
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref confirma la obra a través de reseñas de 1987 y 1989 (Southern Economic Journal, The Economic Journal). Editorial no cotejada. Pendiente de verificación manual."
+  },
+  {
+    "id": "mankiw-1991",
+    "tipo": "articulo",
+    "autores": [
+      "Mankiw, N. Gregory"
+    ],
+    "titulo": "The Reincarnation of Keynesian Economics",
+    "anio": 1991,
+    "publicacion": "NBER Working Paper 3885",
+    "doi": "10.3386/w3885",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "krugman-1998",
+    "tipo": "articulo",
+    "autores": [
+      "Krugman, Paul R."
+    ],
+    "titulo": "It's Baaack: Japan's Slump and the Return of the Liquidity Trap",
+    "anio": 1998,
+    "publicacion": "Brookings Papers on Economic Activity",
+    "doi": "10.2307/2534694",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual. Crossref lista a Dominguez y Rogoff junto a Krugman; son los comentaristas del artículo, no coautores, cosa que conviene comprobar."
+  },
+  {
+    "id": "eggertsson-krugman-2012",
+    "tipo": "articulo",
+    "autores": [
+      "Eggertsson, Gauti B.",
+      "Krugman, Paul"
+    ],
+    "titulo": "Debt, Deleveraging, and the Liquidity Trap: A Fisher-Minsky-Koo Approach",
+    "anio": 2012,
+    "publicacion": "The Quarterly Journal of Economics",
+    "doi": "10.1093/qje/qjs023",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "akerlof-shiller-2009",
+    "tipo": "libro",
+    "autores": [
+      "Akerlof, George A.",
+      "Shiller, Robert J."
+    ],
+    "titulo": "Animal Spirits: How Human Psychology Drives the Economy, and Why It Matters for Global Capitalism",
+    "anio": 2009,
+    "editorial": "Princeton University Press",
+    "doi": "10.1515/9781400834723",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref registra la edición en línea de 2010 y solo el título principal. El año de la primera edición (2009) no se cotejó. Pendiente de verificación manual."
+  },
+  {
+    "id": "blanchard-dellariccia-mauro-2010",
+    "tipo": "capitulo",
+    "autores": [
+      "Blanchard, Olivier",
+      "Dell'Ariccia, Giovanni",
+      "Mauro, Paolo"
+    ],
+    "titulo": "Rethinking Macroeconomic Policy",
+    "anio": 2010,
+    "publicacion": "Reconstructing the World Economy",
+    "editorial": "Fondo Monetario Internacional",
+    "doi": "10.5089/9781589069770.072.ch002",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-14 (DOI resuelto). Pendiente de verificación manual. Crossref lista solo a Blanchard como autor del capítulo; la autoría conjunta debe comprobarse."
   }
 ]

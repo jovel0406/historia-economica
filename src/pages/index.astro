@@ -8,17 +8,17 @@ const redactados = nodos.filter((n) => n.estado_editorial !== "esqueleto").lengt
 ---
 <Base titulo="Inicio">
   <section class="portada">
-    <p class="sobretitulo">Una herramienta argumentativa, no una enciclopedia</p>
+    <p class="sobretitulo">Una herramienta para discutir, no una enciclopedia</p>
     <h1>¿Por qué el crecimiento económico moderno ocurrió cuándo y dónde ocurrió, y por qué se distribuyó tan desigualmente?</h1>
-    <p class="entradilla">Los historiadores económicos no se ponen de acuerdo. Esta plataforma recorre la misma historia bajo escuelas interpretativas distintas, distingue lo medido de lo reconstruido y etiqueta el grado de consenso de cada relación causal.</p>
-    <p class="acciones"><a class="boton" href={enlace("/tiempo")}>Abrir la línea de tiempo</a> <a class="boton secundario" href={enlace("/nodos")}>Ver los nodos</a></p>
-    <p class="meta">{nodos.length} nodos en la línea de tiempo · {redactados} con interpretaciones en disputa · el resto, esqueletos por redactar</p>
+    <p class="entradilla">Los historiadores económicos llevan un siglo sin ponerse de acuerdo, y eso no es un defecto de la disciplina: es lo interesante. Acá podés recorrer la misma historia con las gafas de once escuelas distintas y ver cómo cambia el relato según cuál te pongas.</p>
+    <p class="acciones"><a class="boton" href={enlace("/tiempo")}>Abrir la línea de tiempo</a> <a class="boton secundario" href={enlace("/escuelas")}>Conocer las escuelas</a></p>
+    <p class="meta">{nodos.length} nodos en la línea de tiempo · {redactados} con interpretaciones en disputa · el resto son esqueletos, todavía sin redactar</p>
   </section>
 
   <section>
     <p class="sobretitulo">Unidades de referencia</p>
     <h2 style="margin-top:0">Ocho unidades, un solo grafo</h2>
-    <p class="prosa">Las unidades del curso organizan la lectura de la línea de tiempo. No son una periodización histórica: un mismo proceso puede atravesar varias, y el rango temporal de cada unidad se deriva de los nodos que contiene.</p>
+    <p class="prosa">Uso las ocho unidades del curso para organizar la lectura, no para periodizar la historia. Un mismo proceso puede atravesar varias, y el rango de años de cada unidad no lo inventé: sale de los nodos que contiene.</p>
     <ol class="unidades lista-limpia">
       {unidades.map((u) => {
         const ns = nodosDeUnidad(u.id);
@@ -37,12 +37,13 @@ const redactados = nodos.filter((n) => n.estado_editorial !== "esqueleto").lengt
   </section>
 
   <section class="principios">
-    <h2>Reglas de la casa</h2>
+    <h2>Mis reglas</h2>
+    <p class="prosa">Cuatro, y no las negocio. Si cumplirlas significa publicar menos, publico menos.</p>
     <div class="tarjetas">
-      <div class="tarjeta"><h3>Ninguna fuente inventada</h3><p>Cada referencia nace sin verificar y solo el autor la marca como verificada tras comprobarla. Los nodos que dependen de fuentes pendientes lo dicen.</p></div>
-      <div class="tarjeta"><h3>Medición ≠ reconstrucción</h3><p>Toda serie anterior a 1820 es una estimación conjetural y se muestra con ese badge. Eso es contenido, no letra chica.</p></div>
-      <div class="tarjeta"><h3>El consenso se etiqueta</h3><p>Una relación disputada nunca se dibuja igual que una establecida. Las aristas en disputa se trazan con línea discontinua y dicen qué escuelas las sostienen y cuáles las niegan.</p></div>
-      <div class="tarjeta"><h3>Qué la refutaría</h3><p>Ninguna interpretación entra sin decir qué observación concreta la refutaría. Si no se puede responder, no está bien formulada.</p></div>
+      <div class="tarjeta"><h3>Ninguna fuente inventada</h3><p>Toda referencia nace sin verificar y solo la doy por buena cuando la comprobé yo mismo contra el catálogo. Si un nodo se apoya en fuentes pendientes, te lo dice arriba de todo, no en letra chica.</p></div>
+      <div class="tarjeta"><h3>Medir no es reconstruir</h3><p>Nadie calculaba el producto nacional en 1700. Todo lo anterior a 1820 son estimaciones hechas hacia atrás, y acá van marcadas como tales en cada gráfico. Eso es parte del contenido, no un descargo legal.</p></div>
+      <div class="tarjeta"><h3>El consenso se etiqueta</h3><p>Una relación en disputa no se dibuja igual que una establecida: va con línea punteada y dice qué escuelas la sostienen y cuáles la rechazan. Ver dónde discrepan es el punto de todo esto.</p></div>
+      <div class="tarjeta"><h3>Qué la refutaría</h3><p>Ninguna interpretación entra sin responder qué observación concreta la dejaría sin pie. Si no se puede responder, la interpretación está mal formulada y no la publico.</p></div>
     </div>
   </section>
 </Base>

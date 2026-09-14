@@ -27,8 +27,8 @@ const citaBibtex = [
   <h1>Créditos</h1>
 
   <section class="autor">
-    <h2 style="margin-top:0">Autoría</h2>
-    <p class="entradilla">Concepción, investigación, redacción del contenido, modelo de datos y desarrollo: <strong>{autorMostrado}</strong>.</p>
+    <h2 style="margin-top:0">Quién hizo esto</h2>
+    <p class="entradilla">La idea, la investigación, los textos, el modelo de datos y el desarrollo son míos: <strong>{autorMostrado}</strong>.</p>
     <ul class="lista-limpia meta">
       {p.autor.afiliacion && <li>Afiliación: {p.autor.afiliacion}</li>}
       {p.autor.orcid && <li>ORCID: <a href={p.autor.orcid}>{p.autor.orcid}</a></li>}
@@ -36,12 +36,12 @@ const citaBibtex = [
       {/^https?:/.test(p.repositorio) && <li>Repositorio: <a href={p.repositorio}>{p.repositorio}</a></li>}
       <li>Versión {p.version} · {anio}</li>
     </ul>
-    <p>El código fue escrito con asistencia de un modelo de lenguaje, bajo dirección, revisión y decisiones editoriales del autor. Ningún texto publicado como contenido —resúmenes, interpretaciones, notas, glosario— es salida sin revisar de un modelo: la plataforma prohíbe expresamente esa práctica y el historial de Git registra cada cambio.</p>
+    <p>Escribí el código con ayuda de un modelo de lenguaje, dirigiendo yo el trabajo y tomando yo las decisiones editoriales. Lo digo acá porque me parece lo honesto, y porque conviene aclarar el límite: ningún texto que se publica como contenido —resúmenes, interpretaciones, notas de arista, glosario— salió de un modelo sin que yo lo revisara. La plataforma prohíbe esa práctica de forma explícita, y el historial de cambios queda registrado commit por commit.</p>
   </section>
 
   <section>
     <h2>Cómo citar</h2>
-    <p class="prosa">Si usás la plataforma, su contenido o sus datos normalizados, citá así:</p>
+    <p class="prosa">Si te sirve algo de acá —un texto, una serie, el modelo de datos— citalo así:</p>
     <blockquote class="cita-larga">{citaTexto}</blockquote>
     <details>
       <summary>BibTeX</summary>
@@ -70,7 +70,7 @@ const citaBibtex = [
 
   <section>
     <h2>Datos de terceros</h2>
-    <p class="prosa">Los datasets conservan la licencia y la forma de citación que exige cada institución. Atribuir esta plataforma <strong>no exime</strong> de citarlos: si reutilizás una serie, la cita obligatoria es la de abajo.</p>
+    <p class="prosa">Los datos no son míos. Cada institución pone sus condiciones y su forma de citación, y citarme a mí <strong>no te exime</strong> de citarlos a ellos: si reutilizás una serie, la cita que corresponde es la que está acá abajo.</p>
     {datasets.length === 0 ? <p class="meta">Sin datasets ingeridos.</p> : (
       <ul class="lista-limpia">
         {datasets.map((d) => (
@@ -87,19 +87,19 @@ const citaBibtex = [
   </section>
 
   <section>
-    <h2>Estado del trabajo</h2>
-    <p class="prosa">Lo que hay y lo que falta, sin adornos:</p>
+    <h2>En qué punto está</h2>
+    <p class="prosa">Esto no está terminado y prefiero decirlo yo antes de que lo descubras navegando:</p>
     <ul>
       <li>{nodos.length} nodos en la línea de tiempo, de los cuales {conDebate} tienen interpretaciones en disputa; el resto son esqueletos con título, período y resumen.</li>
       <li>{fuentes.length} fuentes bibliográficas, de las cuales {verificadas} verificadas manualmente por el autor. Las demás fueron cotejadas contra catálogos (Crossref, Open Library, repositorios institucionales) y se muestran marcadas como no verificadas donde se citan.</li>
       <li>{datasets.length} datasets con procedencia y hash registrados.</li>
     </ul>
-    <p class="meta">Toda serie anterior a 1820 es una estimación conjetural, no una medición, y la interfaz lo señala en cada gráfico. El mapa advierte que proyectar fronteras modernas sobre datos anteriores a 1900 es un anacronismo.</p>
+    <p class="meta">Dos advertencias que repito en todo el sitio porque importan: ninguna serie anterior a 1820 es una medición, son reconstrucciones hechas hacia atrás; y pintar fronteras nacionales de hoy sobre datos de antes de 1900 es un anacronismo, así que para esos años el mapa colorea macrorregiones y no países.</p>
   </section>
 
   <section>
     <h2>Hecho con</h2>
-    <p class="prosa">Astro, TypeScript, Zod, D3, Observable Plot y Vitest. Sitio estático: sin backend, sin cuentas de usuario, sin rastreo ni cookies. Geometrías del mapa: Natural Earth (dominio público) vía los paquetes <code>world-atlas</code> y <code>world-countries</code>.</p>
+    <p class="prosa">Astro, TypeScript, Zod, D3, Observable Plot y Vitest. Es un sitio estático: no hay servidor, ni cuentas, ni cookies, ni nada que te rastree. Las geometrías del mapa vienen de Natural Earth, que es de dominio público, a través de los paquetes <code>world-atlas</code> y <code>world-countries</code>.</p>
   </section>
 </Base>
 

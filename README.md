@@ -18,10 +18,10 @@ D30–D47 en `docs/DECISIONES.md`).
 
 - Fundamentos: esquemas Zod, validador con integridad referencial, citas `[@id]`, hashes del
   manifiesto y filas de CSV; 94 tests.
-- Contenido: 5 nodos con interpretaciones en disputa (`borrador`), 25 nodos `esqueleto`, 11
-  escuelas (las nueve mínimas, neoclásica-cliométrica y marxista), 5 lentes Costa Rica / América
-  Latina y 77 fuentes cotejadas contra catálogos, todas `verified: false` hasta que el autor las
-  verifique a mano.
+- Contenido: 9 nodos con interpretaciones en disputa, 21 `esqueleto`, 11 escuelas (las nueve mínimas,
+  neoclásica-cliométrica y marxista; tres de ellas con desarrollo ampliado y debates internos),
+  5 lentes Costa Rica / América Latina, glosario y 112 fuentes cotejadas contra catálogos, todas
+  `verified: false` hasta verificación manual.
 - Datos: ingesta de la Maddison Project Database 2020, la Penn World Table 10.0 y la World Population
   Prospects 2024 con procedencia y hashes en `data/MANIFIESTO.json`; 11 series con nivel de evidencia.
 - Vistas: Tiempo (D3), Espacio (mapa coroplético con advertencia de anacronismo y agregación a

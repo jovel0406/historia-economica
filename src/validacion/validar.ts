@@ -381,6 +381,8 @@ export function validarReferencias(contenido: Contenido, informe: Informe): void
     e.autores_representativos.forEach((f, i) => exigirFuente(archivo, f, `autores_representativos.${i}`));
     exigirCitas(archivo, e.postulado_central, "postulado_central");
     exigirCitas(archivo, e.critica_principal, "critica_principal");
+    if (e.desarrollo !== undefined) exigirCitas(archivo, e.desarrollo, "desarrollo");
+    if (e.debates_internos !== undefined) exigirCitas(archivo, e.debates_internos, "debates_internos");
   }
 
   // Series → manifiesto, regiones, archivo CSV.

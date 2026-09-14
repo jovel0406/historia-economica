@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Marcadores, SchoolId, SourceId, TextoNoVacio } from "./comunes.ts";
+import { Markdown, Marcadores, SchoolId, SourceId, TextoNoVacio } from "./comunes.ts";
 
 /** Escuelas interpretativas mínimas para la v1 (SPEC §4.6). El validador advierte si falta alguna. */
 export const ESCUELAS_MINIMAS_V1 = [
@@ -24,6 +24,10 @@ export const Escuela = z.strictObject({
   autores_representativos: z.array(SourceId),
   /** La crítica principal que recibe la escuela. */
   critica_principal: TextoNoVacio,
+  /** De dónde viene, qué sostiene y dónde se la ve trabajando. Markdown con citas [@id]. */
+  desarrollo: Markdown.optional(),
+  /** En qué no se ponen de acuerdo entre ellos: ninguna escuela es un bloque. */
+  debates_internos: Markdown.optional(),
   /** Términos que solo esta escuela usa como propios (mejora 17): si un resumen los usa, el validador avisa de posible sesgo. */
   vocabulario_propio: z.array(TextoNoVacio).default([]),
 });

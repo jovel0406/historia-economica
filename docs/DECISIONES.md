@@ -312,3 +312,29 @@ en vez de dejarlo implícito, y el historial de Git conserva los `Co-Authored-By
 ### D53. Flujo de integración continua separado del de despliegue
 `verificar.yml` corre validación, tipos y tests en cada push y pull request; `deploy.yml` solo publica
 desde `main` y deduce por sí mismo si el repositorio es un sitio de usuario o de proyecto.
+
+## 2026-09-14 — Ampliación de escuelas y voz propia
+
+### D54. `desarrollo` y `debates_internos` en las escuelas
+La escuela tenía solo postulado y crítica, lo que la dejaba como una etiqueta. Se agregaron dos campos
+markdown opcionales: `desarrollo` (de dónde sale, qué sostiene, dónde se la ve trabajando) y
+`debates_internos` (en qué no se ponen de acuerdo entre ellos). El segundo existe para evitar el efecto
+que el proyecto combate: tratar cada escuela como un bloque homogéneo. Escritos para marxista,
+monetarista y keynesiana; los demás quedan pendientes. La página de escuelas pasó de tarjetas a
+secciones con desplegables.
+
+### D55. Veintidós fuentes nuevas, una de ellas sin DOI
+Cotejadas en Crossref el 2026-09-14. La excepción es Friedman (1968), «The Role of Monetary Policy»:
+Crossref no devolvió DOI pese a varias búsquedas, así que la ficha va sin él y su nota lo dice
+expresamente. Es la referencia menos confirmada de la bibliografía y conviene verificarla primero.
+
+### D56. Voz en primera persona fuera de los nodos
+Portada, créditos y encabezados de escuelas se reescribieron en la voz del autor: primera persona,
+voseo, frases cortas. El límite es el de siempre: los resúmenes de nodo y las interpretaciones siguen
+siendo neutrales entre escuelas (SPEC §8), y ahí no entra la primera persona. La regla práctica es que
+el autor puede hablar de su proyecto, no de la historia.
+
+### D57. Auditoría de datos personales
+Se comprobó que ni el repositorio ni su historial completo contienen correos personales, claves SSH ni
+rutas locales. Lo único personal publicado, y a propósito, es el nombre del autor y su seudónimo. Los
+commits usan la dirección `@users.noreply.github.com`, que vincula a la cuenta sin exponer un correo.
