@@ -17,7 +17,9 @@
  *   --nombre-de-pila   si la división automática del nombre no es correcta
  *   --apellidos        idem
  *   --seudonimo        seudónimo a mostrar junto al nombre (por defecto, el que ya esté)
- *   --email            correo de contacto (por defecto, el que ya esté)
+ *   --email            correo de contacto que se publica en el sitio y en CITATION.cff
+ *   --email-commits    correo que identifica los commits; debe ser uno verificado en la cuenta de
+ *                      GitHub para que los commits se vinculen al perfil. Por defecto, --email.
  *   --orcid            ORCID completo, ej. https://orcid.org/0000-0002-1825-0097
  *   --afiliacion       institución
  *   --reescribir-commits   reescribe autor y committer de todo el historial con este nombre y correo
@@ -192,6 +194,15 @@ export function quitarCoautor(mensaje: string, prefijo: string): string {
  */
 export function reescribirCommits(raiz: string, nombre: string, email: string, prefijoCoautor?: string): string {
   if (!existsSync(join(raiz, ".git"))) throw new Error("no hay repositorio Git en esta ruta");
+  const pendiente = execFileSync("git", ["status", "--porcelain"], { cwd: raiz, encoding: "utf8" }).trim();
+  if (pendiente.length > 0) {
+    throw new Error(
+      `el árbol de trabajo tiene cambios sin confirmar y Git no reescribe el historial así.\n` +
+        `Confirmalos primero (los archivos de autoría acaban de escribirse) y volvé a ejecutar:\n` +
+        `  git add -A && git commit -m "Registrar la autoría del proyecto"\n` +
+        `Archivos pendientes:\n${pendiente}`,
+    );
+  }
   const env = { ...process.env, NOMBRE: nombre, EMAIL: email, FILTER_BRANCH_SQUELCH_WARNING: "1" };
   const guion = 'export GIT_AUTHOR_NAME="$NOMBRE"; export GIT_AUTHOR_EMAIL="$EMAIL"; export GIT_COMMITTER_NAME="$NOMBRE"; export GIT_COMMITTER_EMAIL="$EMAIL";';
   const args = ["filter-branch", "-f", "--env-filter", guion];
@@ -235,6 +246,7 @@ function principal(): void {
       afiliacion: { type: "string" },
       "reescribir-commits": { type: "boolean", default: false },
       "quitar-coautor": { type: "string" },
+      "email-commits": { type: "string" },
       raiz: { type: "string", default: process.cwd() },
     },
   });
@@ -274,9 +286,9 @@ function principal(): void {
   console.log("  (si la división no es correcta, repetí con --nombre-de-pila y --apellidos)");
   for (const f of escritos) console.log(`  escrito: ${f}`);
   if (values["reescribir-commits"]) {
-    const email = p.autor.email ?? "";
+    const email = values["email-commits"] ?? p.autor.email ?? "";
     if (email === "") {
-      console.error("  --reescribir-commits necesita un correo: pasá --email");
+      console.error("  --reescribir-commits necesita un correo: pasá --email-commits o --email");
       process.exitCode = 1;
       return;
     }

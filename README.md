@@ -153,7 +153,12 @@ pnpm autoria --nombre "Tu Nombre Completo" --usuario TU-USUARIO-GITHUB --email t
 Ese comando completa `content/proyecto.json` y genera `LICENSE`, `LICENSE-CONTENIDO.txt`,
 `CITATION.cff` y `public/humans.txt` con tu nombre; con `--reescribir-commits` reescribe además el
 autor de todo el historial de Git. Acepta también `--orcid`, `--afiliacion`, `--seudonimo`,
-`--nombre-de-pila`, `--apellidos`, y `--repositorio`/`--sitio` si no usás GitHub.
+`--nombre-de-pila`, `--apellidos`, `--quitar-coautor`, y `--repositorio`/`--sitio` si no usás GitHub.
+
+Dos correos distintos, a propósito: `--email` es el contacto que se publica en el sitio y en la
+citación; `--email-commits` es el que identifica los commits y **debe estar verificado en tu cuenta de
+GitHub** para que aparezcan atribuidos a tu perfil. Si no querés exponer ese correo en el historial,
+GitHub ofrece una dirección `@users.noreply.github.com` en Settings → Emails.
 
 **Hasta que lo corras, `pnpm run build` falla a propósito**: el sitio no se publica con una autoría
 sin definir. Conviene fijar también tu identidad global de Git:
