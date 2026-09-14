@@ -5,5 +5,5 @@
 - `MIT.txt`: descargado el 2026-09-14 de https://raw.githubusercontent.com/spdx/license-list-data/main/text/MIT.txt
   (texto de la lista oficial de licencias SPDX).
 
-No se transcribieron de memoria: `pnpm run autoria` los copia literalmente y solo rellena el año y el
+No se transcribieron de memoria: `pnpm autoria` los copia literalmente y solo rellena el año y el
 titular del copyright. Si se actualizan, registrar aquí el origen y la fecha.

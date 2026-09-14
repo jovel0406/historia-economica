@@ -6,7 +6,41 @@ import { construirProyecto, dividirNombre, escribirArtefactos, textoCitacion, te
 import { Proyecto, marcadoresPendientes } from "../../src/schemas/index.ts";
 
 const RAIZ = resolve(import.meta.dirname, "../..");
-const BASE = JSON.parse(readFileSync(join(RAIZ, "content", "proyecto.json"), "utf8")) as unknown;
+
+/**
+ * Proyecto sin completar, con los marcadores tal como nace el archivo. Se define aquí en vez de leer
+ * `content/proyecto.json` para que el test no dependa de si la autoría del repositorio ya se registró.
+ */
+const BASE: unknown = {
+  "titulo": "Historia económica mundial",
+  "subtitulo": "Tiempo, espacio, datos e interpretaciones en disputa",
+  "descripcion": "Plataforma interactiva para explorar por qué el crecimiento económico moderno ocurrió cuándo y dónde ocurrió, y por qué se distribuyó tan desigualmente, recorriendo la misma historia bajo escuelas interpretativas distintas.",
+  "autor": {
+    "nombre": "«NOMBRE COMPLETO»",
+    "apellidos": "«APELLIDOS»",
+    "nombre_de_pila": "«NOMBRE DE PILA»",
+    "seudonimo": "refuseniks",
+    "email": "autor@ejemplo.org"
+  },
+  "anio": 2026,
+  "version": "1.0.0",
+  "repositorio": "https://github.com/«USUARIO-GITHUB»/historia-economica",
+  "sitio": "https://«USUARIO-GITHUB».github.io/historia-economica",
+  "licencia_contenido": {
+    "spdx": "CC-BY-4.0",
+    "nombre": "Creative Commons Atribución 4.0 Internacional",
+    "url": "https://creativecommons.org/licenses/by/4.0/deed.es",
+    "archivo": "LICENSE-CONTENIDO.txt",
+    "cubre": "los textos, las interpretaciones, la bibliografía, el glosario y los datos normalizados de data/processed/"
+  },
+  "licencia_codigo": {
+    "spdx": "MIT",
+    "nombre": "Licencia MIT",
+    "url": "https://opensource.org/licenses/MIT",
+    "archivo": "LICENSE",
+    "cubre": "el código fuente: esquemas, validador, adaptadores de ingesta, componentes y páginas"
+  }
+};
 
 describe("dividirNombre", () => {
   it("toma la primera palabra como nombre de pila y el resto como apellidos", () => {
@@ -92,5 +126,23 @@ describe("artefactos de autoría", () => {
 
     // El repositorio real conserva sus marcadores sin completar.
     expect(marcadoresPendientes(BASE)).toHaveLength(5);
+  });
+});
+
+describe("quitarCoautor", () => {
+  it("borra solo los coautores que coinciden con el prefijo y respeta a los demás", async () => {
+    const { quitarCoautor } = await import("../../scripts/autoria.ts");
+    const mensaje = "Título\n\nCuerpo del commit.\n\nCo-Authored-By: Herramienta Automatica <bot@ejemplo.org>\nCo-Authored-By: Otra Persona <otra@ejemplo.org>\n";
+    const limpio = quitarCoautor(mensaje, "Herramienta");
+    expect(limpio).toContain("Co-Authored-By: Otra Persona <otra@ejemplo.org>");
+    expect(limpio).not.toContain("Herramienta Automatica");
+    expect(limpio.endsWith("\n")).toBe(true);
+    expect(limpio).not.toMatch(/\n\n\n/);
+  });
+
+  it("no toca un mensaje sin coautores y no deja líneas en blanco al final", async () => {
+    const { quitarCoautor } = await import("../../scripts/autoria.ts");
+    expect(quitarCoautor("Solo un título\n", "Herramienta")).toBe("Solo un título\n");
+    expect(quitarCoautor("Título\n\nCo-Authored-By: Herramienta X <a@b>\n\n", "Herramienta")).toBe("Título\n");
   });
 });

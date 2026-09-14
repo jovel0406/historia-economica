@@ -48,7 +48,7 @@ Queda como trabajo editorial, no técnico: verificar fuentes, pasar nodos de `bo
 | `pnpm test` / `pnpm run test:cobertura` | tests con Vitest; la cobertura exige ≥ 90 % en esquemas, validador e ingesta |
 | `pnpm run check` | `astro check` + `tsc --noEmit` |
 | `pnpm run build` | `validar:estricto && astro build`: si el contenido no pasa, no hay sitio |
-| `pnpm run autoria -- --nombre "…" --usuario …` | registra la autoría: completa `content/proyecto.json` y genera licencias, `CITATION.cff` y `humans.txt` |
+| `pnpm autoria --nombre "…" --usuario …` | registra la autoría: completa `content/proyecto.json` y genera licencias, `CITATION.cff` y `humans.txt` |
 | `pnpm run bibliografia:verificar -- <id> --estado verificada\|dudosa --nota "…"` | registra una verificación manual de fuente |
 | `pnpm run sesgo` | lista resúmenes con vocabulario de una sola escuela; termina con 1 si hay alguno |
 | `pnpm run test:regresion` | construye el sitio y compara la estructura de diez páginas con las instantáneas |
@@ -147,7 +147,7 @@ despliega solo en cada `git push`.
 ### 1. Registrar la autoría (una vez)
 
 ```bash
-pnpm run autoria -- --nombre "Tu Nombre Completo" --usuario TU-USUARIO-GITHUB --email tu@correo --reescribir-commits
+pnpm autoria --nombre "Tu Nombre Completo" --usuario TU-USUARIO-GITHUB --email tu@correo --reescribir-commits
 ```
 
 Ese comando completa `content/proyecto.json` y genera `LICENSE`, `LICENSE-CONTENIDO.txt`,

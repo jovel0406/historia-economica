@@ -1,5 +1,5 @@
 /**
- * `pnpm run autoria -- --nombre "Nombre Apellido" --usuario <usuario-github>`
+ * `pnpm autoria --nombre "Nombre Apellido" --usuario <usuario-github>`
  *
  * Registra la autoría del proyecto en un solo paso (ver docs/DECISIONES.md, D49):
  *   1. completa `content/proyecto.json`;
@@ -21,9 +21,11 @@
  *   --orcid            ORCID completo, ej. https://orcid.org/0000-0002-1825-0097
  *   --afiliacion       institución
  *   --reescribir-commits   reescribe autor y committer de todo el historial con este nombre y correo
+ *   --quitar-coautor       junto al anterior, borra de los mensajes los «Co-Authored-By» que empiecen
+ *                          por ese texto, ej. --quitar-coautor "Nombre del coautor"
  */
 import { execFileSync } from "node:child_process";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { parseArgs } from "node:util";
 import { Proyecto, marcadoresPendientes } from "../src/schemas/index.ts";
@@ -174,17 +176,52 @@ export function escribirArtefactos(raiz: string, p: Proyecto, fecha: string): st
   return escritos;
 }
 
-/** Reescribe autor y committer de todo el historial. Destructivo: cambia los hashes de los commits. */
-export function reescribirCommits(raiz: string, nombre: string, email: string): string {
+/** Quita de un mensaje de commit los «Co-Authored-By» cuyo valor empieza por `prefijo`. */
+export function quitarCoautor(mensaje: string, prefijo: string): string {
+  const p = prefijo.toLowerCase();
+  const lineas = mensaje.split("\n").filter((l) => {
+    const t = l.trim().toLowerCase();
+    return !(t.startsWith("co-authored-by:") && t.slice("co-authored-by:".length).trim().startsWith(p));
+  });
+  return `${lineas.join("\n").replace(/\s+$/, "")}\n`;
+}
+
+/**
+ * Reescribe autor y committer de todo el historial y, si se indica `prefijoCoautor`, elimina de los
+ * mensajes los «Co-Authored-By» de ese autor. Destructivo: cambia los hashes de todos los commits.
+ */
+export function reescribirCommits(raiz: string, nombre: string, email: string, prefijoCoautor?: string): string {
   if (!existsSync(join(raiz, ".git"))) throw new Error("no hay repositorio Git en esta ruta");
   const env = { ...process.env, NOMBRE: nombre, EMAIL: email, FILTER_BRANCH_SQUELCH_WARNING: "1" };
   const guion = 'export GIT_AUTHOR_NAME="$NOMBRE"; export GIT_AUTHOR_EMAIL="$EMAIL"; export GIT_COMMITTER_NAME="$NOMBRE"; export GIT_COMMITTER_EMAIL="$EMAIL";';
-  execFileSync("git", ["filter-branch", "-f", "--env-filter", guion, "--", "--all"], { cwd: raiz, env, stdio: ["ignore", "pipe", "pipe"] });
+  const args = ["filter-branch", "-f", "--env-filter", guion];
+  if (prefijoCoautor !== undefined && prefijoCoautor.trim().length > 0) {
+    const limpiador = join(raiz, "scripts", "quitar-coautor.mjs");
+    writeFileSync(
+      limpiador,
+      `// Generado por scripts/autoria.ts para \`git filter-branch --msg-filter\`. Se borra al terminar.\n` +
+        `import { readFileSync } from "node:fs";\n` +
+        `const prefijo = ${JSON.stringify(prefijoCoautor.toLowerCase())};\n` +
+        `const mensaje = readFileSync(0, "utf8");\n` +
+        `const lineas = mensaje.split("\\n").filter((l) => { const t = l.trim().toLowerCase(); return !(t.startsWith("co-authored-by:") && t.slice(16).trim().startsWith(prefijo)); });\n` +
+        `process.stdout.write(lineas.join("\\n").replace(/\\s+$/, "") + "\\n");\n`,
+    );
+    args.push("--msg-filter", `node ${JSON.stringify(limpiador)}`);
+    try {
+      execFileSync("git", [...args, "--", "--all"], { cwd: raiz, env, stdio: ["ignore", "pipe", "pipe"] });
+    } finally {
+      rmSync(limpiador, { force: true });
+    }
+  } else {
+    execFileSync("git", [...args, "--", "--all"], { cwd: raiz, env, stdio: ["ignore", "pipe", "pipe"] });
+  }
   return execFileSync("git", ["log", "--format=%an <%ae>", "-1"], { cwd: raiz, encoding: "utf8" }).trim();
 }
 
 function principal(): void {
   const { values } = parseArgs({
+    // Tolera posicionales sueltos (p. ej. el "--" que algunos gestores reenvían).
+    allowPositionals: true,
     options: {
       nombre: { type: "string" },
       usuario: { type: "string" },
@@ -197,12 +234,13 @@ function principal(): void {
       orcid: { type: "string" },
       afiliacion: { type: "string" },
       "reescribir-commits": { type: "boolean", default: false },
+      "quitar-coautor": { type: "string" },
       raiz: { type: "string", default: process.cwd() },
     },
   });
   const raiz = values.raiz;
   if (values.nombre === undefined || values.nombre.trim().length === 0) {
-    console.error('Falta --nombre. Ejemplo:\n  pnpm run autoria -- --nombre "Ana Pérez Ramírez" --usuario anaperez');
+    console.error('Falta --nombre. Ejemplo:\n  pnpm autoria --nombre "Ana Pérez Ramírez" --usuario anaperez');
     process.exitCode = 2;
     return;
   }
@@ -242,7 +280,7 @@ function principal(): void {
       process.exitCode = 1;
       return;
     }
-    const ultimo = reescribirCommits(raiz, p.autor.nombre, email);
+    const ultimo = reescribirCommits(raiz, p.autor.nombre, email, values["quitar-coautor"]);
     console.log(`  historial reescrito; último commit a nombre de: ${ultimo}`);
     console.log("  atención: los hashes cambiaron. Si ya empujaste el repositorio, hará falta `git push --force`.");
   }

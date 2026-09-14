@@ -3,16 +3,16 @@
   "subtitulo": "Tiempo, espacio, datos e interpretaciones en disputa",
   "descripcion": "Plataforma interactiva para explorar por qué el crecimiento económico moderno ocurrió cuándo y dónde ocurrió, y por qué se distribuyó tan desigualmente, recorriendo la misma historia bajo escuelas interpretativas distintas.",
   "autor": {
-    "nombre": "«NOMBRE COMPLETO»",
-    "apellidos": "«APELLIDOS»",
-    "nombre_de_pila": "«NOMBRE DE PILA»",
+    "nombre": "Jose Isaac Jovel Flores",
+    "apellidos": "Jovel Flores",
+    "nombre_de_pila": "Jose Isaac",
     "seudonimo": "refuseniks",
     "email": "74679870+jovel0406@users.noreply.github.com"
   },
   "anio": 2026,
   "version": "1.0.0",
-  "repositorio": "https://github.com/«USUARIO-GITHUB»/historia-economica",
-  "sitio": "https://«USUARIO-GITHUB».github.io/historia-economica",
+  "repositorio": "https://github.com/jovel0406/historia-economica",
+  "sitio": "https://jovel0406.github.io/historia-economica",
   "licencia_contenido": {
     "spdx": "CC-BY-4.0",
     "nombre": "Creative Commons Atribución 4.0 Internacional",

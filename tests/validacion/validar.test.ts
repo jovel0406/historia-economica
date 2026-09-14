@@ -170,14 +170,13 @@ describe("CLI scripts/validar-contenido.ts", () => {
     expect(json.hallazgos.length).toBeGreaterThan(5);
   });
 
-  it("el contenido real pasa en desarrollo, y en modo estricto solo lo frena la autoría sin completar", () => {
+  it("el contenido real pasa sin errores ni advertencias, también en modo estricto (SPEC §11.1)", () => {
     expect(correr("--raiz", RAIZ_REPO).codigo).toBe(0);
     const estricto = correr("--raiz", RAIZ_REPO, "--json", "--strict");
     const json = JSON.parse(estricto.salida) as { falla: boolean; hallazgos: { nivel: string; regla: string }[] };
-    const advertencias = json.hallazgos.filter((h) => h.nivel === "advertencia");
-    // Mientras la autoría tenga marcadores, el build de producción no publica: es la única advertencia admitida.
-    expect(advertencias.map((h) => h.regla)).toEqual(["autoria-pendiente"]);
-    expect(json.hallazgos.filter((h) => h.nivel === "error")).toEqual([]);
+    expect(json.hallazgos.filter((h) => h.nivel !== "info")).toEqual([]);
+    expect(json.falla).toBe(false);
+    expect(estricto.codigo).toBe(0);
   });
 
   it("los placeholders hacen fallar el modo estricto (SPEC §1.2)", () => {

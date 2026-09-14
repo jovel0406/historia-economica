@@ -196,7 +196,7 @@ export function cargarProyecto(opciones: Opciones, informe = new Informe()): { c
         informe.advertencia(
           REGLAS.autoriaPendiente,
           archivo,
-          `la autoría todavía tiene ${pendientes.length} marcador(es) sin completar (${pendientes.join(", ")}). Completalos con \`pnpm run autoria\`; el build de producción no publica un sitio sin autoría definida`,
+          `la autoría todavía tiene ${pendientes.length} marcador(es) sin completar (${pendientes.join(", ")}). Completalos con \`pnpm autoria\`; el build de producción no publica un sitio sin autoría definida`,
         );
       }
     }

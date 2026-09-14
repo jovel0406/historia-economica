@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "Si usás esta plataforma o su contenido, citala así."
+type: software
+title: "Historia económica mundial: Tiempo, espacio, datos e interpretaciones en disputa"
+abstract: "Plataforma interactiva para explorar por qué el crecimiento económico moderno ocurrió cuándo y dónde ocurrió, y por qué se distribuyó tan desigualmente, recorriendo la misma historia bajo escuelas interpretativas distintas."
+authors:
+  - family-names: "Jovel Flores"
+    given-names: "Jose Isaac"
+    alias: "refuseniks"
+    email: "74679870+jovel0406@users.noreply.github.com"
+version: "1.0.0"
+date-released: "2026-09-14"
+license: "MIT"
+license-url: "https://creativecommons.org/licenses/by/4.0/deed.es"
+repository-code: "https://github.com/jovel0406/historia-economica"
+url: "https://jovel0406.github.io/historia-economica"
+keywords:
+  - "historia económica"
+  - "gran divergencia"
+  - "crecimiento económico"
+  - "historiografía"
+  - "América Latina"
+  - "humanidades digitales"

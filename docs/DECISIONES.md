@@ -290,7 +290,7 @@ proyecto sin tocar el código.
 `CITATION.cff`, los metadatos de cada página, el pie y la página `/creditos`. Sus valores nacen como
 marcadores «entre comillas angulares» y el validador emite una advertencia mientras queden: como el
 build de producción trata las advertencias como errores, **el sitio no puede publicarse con una autoría
-sin definir**. `pnpm run autoria` los completa y genera los artefactos en un paso.
+sin definir**. `pnpm autoria` los completa y genera los artefactos en un paso.
 
 ### D50. Textos de licencia copiados, no transcritos
 `scripts/plantillas/` guarda el texto legal de CC BY 4.0 (creativecommons.org) y de MIT (lista SPDX),

@@ -1,0 +1,14 @@
+/* AUTORÍA */
+Autor: Jose Isaac Jovel Flores (refuseniks)
+Contacto: 74679870+jovel0406@users.noreply.github.com
+/* PROYECTO */
+Historia económica mundial. Tiempo, espacio, datos e interpretaciones en disputa
+Código: MIT · Contenido y datos derivados: CC-BY-4.0
+Repositorio: https://github.com/jovel0406/historia-economica
+Cómo citar: ver CITATION.cff y la página /creditos
+/* DATOS DE TERCEROS */
+Maddison Project Database (Groningen Growth and Development Centre), Penn World Table
+(Groningen) y World Population Prospects (Naciones Unidas). Cada dataset conserva su licencia y
+su forma de citación obligatoria, registradas en data/MANIFIESTO.json y publicadas en /fuentes.
+/* HECHO CON */
+Astro, TypeScript, Zod, D3, Observable Plot, Vitest. Sin backend, sin cuentas, sin rastreo.
