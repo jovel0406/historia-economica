@@ -36,7 +36,7 @@ export async function descargar(url: string, rutaAbs: string, ctx: Contexto): Pr
   if (ctx.reutilizarDescargas && existsSync(rutaAbs)) {
     return { bytes: readFileSync(rutaAbs).length, sha256: sha256(rutaAbs), reutilizado: true };
   }
-  const res = await fetch(url, { headers: { "User-Agent": "historia-economica/0.1 (ingesta; mailto:74679870+jovel0406@users.noreply.github.com)" } });
+  const res = await fetch(url, { headers: { "User-Agent": "historia-economica/1.0 (ingesta; +https://github.com/jovel0406/historia-economica)" } });
   if (!res.ok) throw new Error(`descarga fallida (${res.status} ${res.statusText}): ${url}`);
   const tipo = res.headers.get("content-type") ?? "";
   if (tipo.includes("text/html")) throw new Error(`la descarga devolvió HTML en vez de un archivo (¿página de bloqueo o de términos?): ${url}`);

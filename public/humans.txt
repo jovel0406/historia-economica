@@ -1,6 +1,5 @@
 /* AUTORÍA */
 Autor: Jose Isaac Jovel Flores (refuseniks)
-Contacto: 74679870+jovel0406@users.noreply.github.com
 /* PROYECTO */
 Historia económica mundial. Tiempo, espacio, datos e interpretaciones en disputa
 Código: MIT · Contenido y datos derivados: CC-BY-4.0

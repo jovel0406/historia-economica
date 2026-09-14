@@ -18,6 +18,7 @@
  *   --apellidos        idem
  *   --seudonimo        seudónimo a mostrar junto al nombre (por defecto, el que ya esté)
  *   --email            correo de contacto que se publica en el sitio y en CITATION.cff
+ *   --sin-email        no publica ningún correo de contacto (el repositorio queda como vía de contacto)
  *   --email-commits    correo que identifica los commits; debe ser uno verificado en la cuenta de
  *                      GitHub para que los commits se vinculen al perfil. Por defecto, --email.
  *   --orcid            ORCID completo, ej. https://orcid.org/0000-0002-1825-0097
@@ -34,6 +35,8 @@ import { Proyecto, marcadoresPendientes } from "../src/schemas/index.ts";
 
 export interface Entrada {
   nombre: string;
+  /** Si es true, se omite el correo de contacto publicado. */
+  sinEmail?: boolean | undefined;
   usuario?: string | undefined;
   repositorio?: string | undefined;
   sitio?: string | undefined;
@@ -67,7 +70,7 @@ export function construirProyecto(actual: unknown, e: Entrada): Proyecto {
     nombre_de_pila: e.nombreDePila ?? division.nombreDePila,
   };
   const seudonimo = e.seudonimo ?? base.autor.seudonimo;
-  const email = e.email ?? base.autor.email;
+  const email = e.sinEmail === true ? undefined : (e.email ?? base.autor.email);
   const orcid = e.orcid ?? base.autor.orcid;
   const afiliacion = e.afiliacion ?? base.autor.afiliacion;
   if (seudonimo !== undefined) autor.seudonimo = seudonimo;
@@ -242,6 +245,7 @@ function principal(): void {
       apellidos: { type: "string" },
       seudonimo: { type: "string" },
       email: { type: "string" },
+      "sin-email": { type: "boolean", default: false },
       orcid: { type: "string" },
       afiliacion: { type: "string" },
       "reescribir-commits": { type: "boolean", default: false },
@@ -271,6 +275,7 @@ function principal(): void {
     apellidos: values.apellidos,
     seudonimo: values.seudonimo,
     email: values.email,
+    sinEmail: values["sin-email"],
     orcid: values.orcid,
     afiliacion: values.afiliacion,
   });
