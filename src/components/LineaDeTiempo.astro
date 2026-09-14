@@ -1,0 +1,260 @@
+---
+/**
+ * Vista Tiempo (SPEC §5.1): bandas para procesos, marcadores para eventos, bordes difuminados
+ * cuando la periodización es disputada, y las ocho unidades del curso como capa de referencia (D11).
+ * El SVG se genera en el build con escalas de D3; el cliente solo agrega tooltips y filtros.
+ */
+import * as d3 from "d3";
+import { ANIO_ACTUAL, colorUnidad, nodosOrdenados, unidadesDe, unidadesOrdenadas } from "../lib/contenido.ts";
+import { ETIQUETA_ESTADO, ETIQUETA_PRECISION, periodoTexto } from "../lib/texto.ts";
+import { anchoEtiqueta, asignarCarriles, rangosUnidades } from "../vistas/tiempo/layout.ts";
+
+const nodos = nodosOrdenados();
+const unidades = unidadesOrdenadas();
+
+const ANCHO = 1900;
+const MI = 24;
+const MD = 60;
+const ALTO_CINTA = 26;
+const ALTO_CARRIL = 36;
+const ALTO_BANDA = 22;
+const ALTO_EJE = 34;
+
+// Escala polilineal: más espacio para los siglos con más nodos, sin ocultar la larga duración.
+const x = d3
+  .scaleLinear()
+  .domain([1480, 1760, 1900, 2032])
+  .range([MI, MI + (ANCHO - MI - MD) * 0.2, MI + (ANCHO - MI - MD) * 0.5, ANCHO - MD]);
+const ticks = [1500, 1550, 1600, 1650, 1700, 1750, 1800, 1825, 1850, 1875, 1900, 1910, 1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010, 2020];
+
+// Cinta de unidades.
+const rangos = rangosUnidades(unidades, nodos, ANIO_ACTUAL);
+const carrilesCinta = asignarCarriles(rangos.map((r) => ({ id: r.id, x0: x(r.inicio), x1: x(r.fin) })), 6);
+const filasCinta = Math.max(0, ...[...carrilesCinta.values()].map((c) => c + 1));
+
+// Nodos.
+interface Item {
+  id: string;
+  titulo: string;
+  tipo: "proceso" | "evento";
+  x0: number;
+  x1: number;
+  etiquetaDentro: boolean;
+  color: string;
+  estado: string;
+  precision: string;
+  periodo: string;
+  resumen: string;
+  unidades: number[];
+  disputada: boolean;
+}
+const items: Item[] = nodos.map((n) => {
+  const x0 = x(n.periodo.inicio);
+  const x1 = x(n.periodo.fin ?? ANIO_ACTUAL);
+  const ancho = anchoEtiqueta(n.titulo);
+  const us = unidadesDe(n);
+  return {
+    id: n.id,
+    titulo: n.titulo,
+    tipo: n.tipo,
+    x0,
+    x1,
+    etiquetaDentro: n.tipo === "proceso" && (x1 - x0) * (n.periodo.precision === "disputada" ? 0.72 : 1) >= ancho,
+    color: colorUnidad(us[0]?.numero),
+    estado: n.estado_editorial,
+    precision: n.periodo.precision,
+    periodo: periodoTexto(n.periodo),
+    resumen: n.resumen,
+    unidades: us.map((u) => u.numero),
+    disputada: n.periodo.precision === "disputada",
+  };
+});
+const carriles = asignarCarriles(
+  items.map((it) => ({
+    id: it.id,
+    x0: it.tipo === "evento" ? it.x0 - 8 : it.x0,
+    x1: it.etiquetaDentro ? it.x1 : Math.max(it.x1, it.x0) + anchoEtiqueta(it.titulo) + 10,
+  })),
+  10,
+);
+const nCarriles = Math.max(1, ...[...carriles.values()].map((c) => c + 1));
+
+const yCinta0 = 8;
+const yEje = yCinta0 + filasCinta * ALTO_CINTA + 10;
+const yCarril0 = yEje + ALTO_EJE;
+const ALTO = yCarril0 + nCarriles * ALTO_CARRIL + 16;
+const yDe = (id: string): number => yCarril0 + (carriles.get(id) ?? 0) * ALTO_CARRIL + (ALTO_CARRIL - ALTO_BANDA) / 2;
+const titulosUnidad = new Map(unidades.map((u) => [u.id, u.titulo]));
+---
+<div class="tiempo" data-tiempo>
+  <div class="tiempo-controles">
+    <div class="chips" role="group" aria-label="Filtrar por unidad">
+      <button class="chip chip-unidad activo" data-filtro="todas" style="--c: var(--tinta-3)">Todas las unidades</button>
+      {unidades.map((u) => (
+        <button class="chip chip-unidad" data-filtro={String(u.numero)} style={`--c: ${colorUnidad(u.numero)}`} title={u.contenido_central}>
+          <span class="punto"></span>{u.numero}. {u.titulo}
+        </button>
+      ))}
+    </div>
+    <ul class="leyenda lista-limpia">
+      <li><span class="muestra banda"></span> proceso (banda con duración)</li>
+      <li><span class="muestra rombo"></span> evento (marcador puntual)</li>
+      <li><span class="muestra difuminada"></span> bordes difuminados: periodización disputada</li>
+      <li><span class="muestra esqueleto"></span> contorno discontinuo: nodo esqueleto, sin interpretaciones aún</li>
+    </ul>
+  </div>
+
+  <div class="tiempo-desplazable">
+    <svg viewBox={`0 0 ${ANCHO} ${ALTO}`} width={ANCHO} height={ALTO} role="img" aria-label="Línea de tiempo de los nodos, organizados por las unidades del curso">
+      <defs>
+        {items.filter((it) => it.disputada).map((it) => (
+          <linearGradient id={`grad-${it.id}`} x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color={it.color} stop-opacity="0" />
+            <stop offset="0.14" stop-color={it.color} stop-opacity="1" />
+            <stop offset="0.86" stop-color={it.color} stop-opacity="1" />
+            <stop offset="1" stop-color={it.color} stop-opacity="0" />
+          </linearGradient>
+        ))}
+      </defs>
+
+      {/* rejilla y eje */}
+      {ticks.map((t) => (
+        <g class="tick">
+          <line x1={x(t)} x2={x(t)} y1={yCinta0} y2={ALTO - 8} />
+          <text x={x(t)} y={yEje + 20} text-anchor="middle">{t}</text>
+        </g>
+      ))}
+      <line class="eje" x1={MI} x2={ANCHO - MD} y1={yEje + 28} y2={yEje + 28} />
+
+      {/* cinta de unidades: rango derivado de sus nodos */}
+      {rangos.map((r) => {
+        const y = yCinta0 + (carrilesCinta.get(r.id) ?? 0) * ALTO_CINTA;
+        const w = x(r.fin) - x(r.inicio);
+        const titulo = titulosUnidad.get(r.id) ?? r.id;
+        const etiqueta = w > anchoEtiqueta(`${r.numero}. ${titulo}`, 11) ? `${r.numero}. ${titulo}` : String(r.numero);
+        return (
+          <g class="unidad" data-unidad={String(r.numero)} data-filtrable="unidad">
+            <rect x={x(r.inicio)} y={y} width={w} height={ALTO_CINTA - 6} rx="4" fill={colorUnidad(r.numero)} />
+            <text x={x(r.inicio) + 8} y={y + 14} fill={colorUnidad(r.numero)}>{etiqueta}</text>
+            <title>{`Unidad ${r.numero}: ${titulo} — rango derivado de sus nodos: ${r.inicio}–${r.fin}`}</title>
+          </g>
+        );
+      })}
+
+      {/* nodos */}
+      {items.map((it) => {
+        const y = yDe(it.id);
+        const relleno = it.disputada ? `url(#grad-${it.id})` : it.color;
+        return (
+          <a href={`/nodos/${it.id}`} class={`nodo nodo-${it.tipo} estado-${it.estado}`} data-unidades={it.unidades.join(" ")} data-titulo={it.titulo} data-periodo={it.periodo} data-resumen={it.resumen} data-estado={ETIQUETA_ESTADO[it.estado as keyof typeof ETIQUETA_ESTADO]} data-precision={ETIQUETA_PRECISION[it.precision as keyof typeof ETIQUETA_PRECISION]} data-color={it.color}>
+            {it.tipo === "proceso" ? (
+              <rect x={it.x0} y={y} width={Math.max(4, it.x1 - it.x0)} height={ALTO_BANDA} rx="6" fill={relleno} stroke={it.color} />
+            ) : (
+              <g>
+                {it.x1 - it.x0 > 2 && <rect x={it.x0} y={y + ALTO_BANDA / 2 - 2} width={it.x1 - it.x0} height="4" fill={it.color} opacity="0.55" />}
+                <path d={`M ${it.x0} ${y + 1} L ${it.x0 + 10} ${y + ALTO_BANDA / 2} L ${it.x0} ${y + ALTO_BANDA - 1} L ${it.x0 - 10} ${y + ALTO_BANDA / 2} Z`} fill={it.color} stroke={it.color} />
+              </g>
+            )}
+            {it.etiquetaDentro ? (
+              <text class="etiqueta dentro" x={it.x0 + (it.disputada ? Math.max(9, (it.x1 - it.x0) * 0.14) : 9)} y={y + 15}>{it.titulo}</text>
+            ) : (
+              <text class="etiqueta fuera" x={(it.tipo === "evento" ? Math.max(it.x1, it.x0) : it.x1) + 12} y={y + 15} fill={it.color}>{it.titulo}</text>
+            )}
+          </a>
+        );
+      })}
+    </svg>
+  </div>
+  <div class="tiempo-tooltip" hidden data-tooltip>
+    <div class="tt-cabecera"><span class="tt-punto"></span><strong data-tt="titulo"></strong></div>
+    <div class="tt-meta"><span data-tt="periodo"></span> · <span data-tt="precision"></span> · <span data-tt="estado"></span></div>
+    <p data-tt="resumen"></p>
+    <div class="tt-pie">Clic para abrir el nodo</div>
+  </div>
+</div>
+
+<style>
+  .tiempo { position: relative; }
+  .tiempo-controles { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; margin-bottom: 1rem; align-items: flex-start; }
+  .chip-unidad { cursor: pointer; font: inherit; font-size: 0.8rem; }
+  .chip-unidad.activo { background: color-mix(in srgb, var(--c) 18%, var(--papel)); border-color: var(--c); color: var(--tinta); }
+  .leyenda { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; font-size: 0.82rem; color: var(--tinta-2); }
+  .leyenda li { display: flex; align-items: center; gap: 0.5rem; }
+  .muestra { display: inline-block; width: 26px; height: 12px; border-radius: 4px; background: var(--tinta-3); }
+  .muestra.rombo { width: 12px; height: 12px; transform: rotate(45deg); border-radius: 2px; }
+  .muestra.difuminada { background: linear-gradient(90deg, transparent, var(--tinta-3) 30%, var(--tinta-3) 70%, transparent); }
+  .muestra.esqueleto { background: transparent; border: 1.5px dashed var(--tinta-3); }
+  .tiempo-desplazable { overflow-x: auto; border: 1px solid var(--linea); border-radius: var(--radio); background: white; padding: 6px 0; }
+  svg { display: block; font-family: var(--sans); }
+  .tick line { stroke: var(--papel-3); stroke-width: 1; }
+  .tick text { font-size: 11px; fill: var(--tinta-3); }
+  .eje { stroke: var(--linea); }
+  .unidad rect { opacity: 0.16; transition: opacity 0.2s; }
+  .unidad text { font-size: 11px; font-weight: 600; letter-spacing: 0.02em; }
+  .unidad.atenuada { opacity: 0.25; }
+  .nodo { cursor: pointer; transition: opacity 0.2s; }
+  .nodo rect, .nodo path { transition: filter 0.15s; }
+  .nodo:hover rect, .nodo:hover path { filter: brightness(1.12); }
+  .nodo-proceso rect { fill-opacity: 0.88; stroke-width: 0; }
+  .estado-esqueleto rect { fill-opacity: 0.22; stroke-width: 1.2; stroke-dasharray: 4 3; }
+  .estado-esqueleto path { fill-opacity: 0.35; stroke-dasharray: 3 2; }
+  .estado-esqueleto .etiqueta { opacity: 0.75; }
+  .etiqueta { font-size: 12px; pointer-events: none; }
+  .etiqueta.dentro { fill: white; font-weight: 600; }
+  .estado-esqueleto .etiqueta.dentro { fill: var(--tinta); font-weight: 400; }
+  .etiqueta.fuera { font-weight: 600; }
+  .nodo.atenuado { opacity: 0.12; }
+  .tiempo-tooltip { position: fixed; z-index: 30; max-width: 22rem; background: white; border: 1px solid var(--linea); border-radius: var(--radio); box-shadow: 0 10px 30px rgba(30, 27, 23, 0.14); padding: 0.8rem 1rem; font-size: 0.9rem; pointer-events: none; }
+  .tt-cabecera { display: flex; align-items: center; gap: 0.5rem; font-family: var(--serif); font-size: 1.05rem; }
+  .tt-punto { width: 0.7em; height: 0.7em; border-radius: 50%; background: var(--tt-color, var(--tinta-3)); flex: none; }
+  .tt-meta { color: var(--tinta-3); font-size: 0.8rem; margin: 0.2rem 0 0.5rem; }
+  .tiempo-tooltip p { margin: 0 0 0.5rem; color: var(--tinta-2); }
+  .tt-pie { font-size: 0.75rem; color: var(--tinta-3); letter-spacing: 0.06em; text-transform: uppercase; }
+</style>
+
+<script>
+  const raiz = document.querySelector<HTMLElement>("[data-tiempo]");
+  if (raiz) {
+    const tooltip = raiz.querySelector<HTMLElement>("[data-tooltip]")!;
+    const campo = (n: string) => tooltip.querySelector<HTMLElement>(`[data-tt="${n}"]`)!;
+    const nodos = raiz.querySelectorAll<SVGAElement>("a.nodo");
+    const unidades = raiz.querySelectorAll<SVGGElement>("g.unidad");
+
+    nodos.forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        campo("titulo").textContent = el.dataset.titulo ?? "";
+        campo("periodo").textContent = el.dataset.periodo ?? "";
+        campo("precision").textContent = el.dataset.precision ?? "";
+        campo("estado").textContent = el.dataset.estado ?? "";
+        campo("resumen").textContent = el.dataset.resumen ?? "";
+        tooltip.style.setProperty("--tt-color", el.dataset.color ?? "");
+        tooltip.hidden = false;
+      });
+      el.addEventListener("mousemove", (ev) => {
+        const m = 16;
+        const w = tooltip.offsetWidth;
+        const h = tooltip.offsetHeight;
+        const izq = ev.clientX + m + w > window.innerWidth ? ev.clientX - m - w : ev.clientX + m;
+        const arr = ev.clientY + m + h > window.innerHeight ? ev.clientY - m - h : ev.clientY + m;
+        tooltip.style.left = `${izq}px`;
+        tooltip.style.top = `${arr}px`;
+      });
+      el.addEventListener("mouseleave", () => {
+        tooltip.hidden = true;
+      });
+    });
+
+    const botones = raiz.querySelectorAll<HTMLButtonElement>("[data-filtro]");
+    botones.forEach((b) => {
+      b.addEventListener("click", () => {
+        const f = b.dataset.filtro ?? "todas";
+        botones.forEach((o) => o.classList.toggle("activo", o === b));
+        nodos.forEach((n) => {
+          const us = (n.dataset.unidades ?? "").split(" ").filter(Boolean);
+          n.classList.toggle("atenuado", f !== "todas" && !us.includes(f));
+        });
+        unidades.forEach((u) => u.classList.toggle("atenuada", f !== "todas" && u.dataset.unidad !== f));
+      });
+    });
+  }
+</script>

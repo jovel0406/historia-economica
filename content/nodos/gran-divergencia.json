@@ -1,0 +1,177 @@
+{
+  "id": "gran-divergencia",
+  "titulo": "Gran Divergencia",
+  "tipo": "proceso",
+  "periodo": {
+    "inicio": 1500,
+    "fin": 1850,
+    "precision": "disputada",
+    "nota_periodizacion": "La Escuela de California fecha la divergencia hacia 1800 [@pomeranz-2000]; la contabilidad nacional histórica la retrotrae al siglo XVIII o antes [@broadberry-guan-li-2018], y los salarios reales muestran una «pequeña divergencia» dentro de Europa desde el siglo XVII [@allen-2001]. El inicio en 1500 marca el comienzo de las series comparables, no un acontecimiento."
+  },
+  "regiones": [
+    "europa-occidental",
+    "reino-unido",
+    "asia-oriental",
+    "china",
+    "asia-meridional",
+    "india"
+  ],
+  "unidades": [
+    "problematizacion-del-crecimiento",
+    "revolucion-industrial-y-despegue"
+  ],
+  "resumen": "Entre los siglos XVI y XIX el ingreso por habitante de Europa noroccidental se separó del de las regiones más avanzadas de Asia. Cuándo empezó esa separación, cuánto medía y por qué ocurrió son las preguntas más disputadas de la historia económica. Las cifras disponibles para el período son reconstrucciones, no mediciones.",
+  "descripcion_larga": "## Qué se disputa\n\nTres cosas a la vez: la **datación** (¿1800, 1700, antes?), la **magnitud** (¿cuánto más rico era el noroeste de Europa que el delta del Yangzi?) y el **mecanismo** (carbón y colonias, precios relativos, instituciones, cultura, extracción). Las respuestas a la primera pregunta condicionan las otras dos: si la brecha ya existía en 1700, el carbón y las Américas no pueden ser la causa.\n\n## Qué se mide realmente\n\nToda serie de este período es una reconstrucción. Las estimaciones de PIB per cápita de largo plazo combinan salarios, precios, rendimientos agrícolas y población para años en que nadie calculaba un producto nacional [@bolt-vanzanden-2024] [@maddison-2001]. Las comparaciones de salarios reales dependen de la canasta de consumo elegida [@allen-2001]. Las reconstrucciones para China usan registros fiscales y de precios de cobertura desigual [@broadberry-guan-li-2018]. Nada de esto invalida el debate, pero obliga a leer cualquier cifra como una estimación conjetural con márgenes amplios.\n\n## La pequeña y la gran divergencia\n\nAntes de que Europa se separara de Asia, el noroeste de Europa (Inglaterra, Holanda) se separó del resto de Europa. Esa «pequeña divergencia» de salarios y urbanización está mejor documentada [@allen-2001] y es un dato que cualquier explicación de la gran divergencia debe acomodar: lo que hay que explicar no es «Europa» sino dos economías pequeñas del mar del Norte.\n\n## Por qué importa hoy\n\nDe la respuesta depende qué se piensa sobre la convergencia: si la brecha fue contingente, es reversible; si nace de instituciones o cultura de larga duración, la convergencia exige cambios más profundos. El crecimiento chino posterior a 1978 reabrió el debate desde el otro extremo: ¿reversión a una posición previa o ruptura?",
+  "interpretaciones": [
+    {
+      "escuela": "escuela-california",
+      "mecanismo": "Europa y el delta del Yangzi eran comparables hacia 1750; Gran Bretaña escapó de la restricción de tierra gracias al carbón accesible y a los recursos de las Américas.",
+      "desarrollo": "Pomeranz sostiene que los indicadores de consumo, esperanza de vida y desarrollo de mercados de las regiones centrales de China e Inglaterra eran parecidos hasta finales del siglo XVIII; la ruptura vino de dos golpes de suerte geográfica y política: carbón cerca de los centros manufactureros y «acres fantasma» coloniales que aliviaron la presión sobre la tierra [@pomeranz-2000]. Parthasarathi extiende el argumento a la India: la competencia con los textiles indios y la escasez de madera explican la trayectoria británica [@parthasarathi-2011]. Frank sitúa el centro de la economía mundial en Asia hasta 1800 [@frank-1998].",
+      "autores_principales": [
+        "pomeranz-2000",
+        "parthasarathi-2011",
+        "frank-1998"
+      ],
+      "evidencia_a_favor": [
+        "Indicadores de nivel de vida y de desarrollo de mercados comparables entre el delta del Yangzi e Inglaterra hasta finales del siglo XVIII, según la lectura de Pomeranz [@pomeranz-2000].",
+        "La ubicación del carbón británico cerca de los centros manufactureros, a diferencia de China, donde las cuencas estaban lejos del delta.",
+        "El peso de azúcar, algodón y madera de las Américas en el consumo británico del siglo XIX."
+      ],
+      "evidencia_en_contra": [
+        "Las series de PIB per cápita reconstruidas sitúan a China por debajo de Holanda e Inglaterra desde el siglo XVIII, con un declive desde la dinastía Song [@broadberry-guan-li-2018].",
+        "Los salarios reales muestran ventaja del noroeste europeo ya en el siglo XVII [@allen-2001]."
+      ],
+      "que_la_refutaria": "Series comparables de ingreso y salarios que mostraran una brecha sostenida entre el delta del Yangzi y el noroeste de Europa desde antes de 1700, junto con evidencia de que ni el carbón ni los recursos coloniales fueron restricciones vinculantes para el crecimiento británico.",
+      "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "precios-relativos",
+      "mecanismo": "Salarios altos y energía barata hicieron rentable en Gran Bretaña, y solo allí, inventar y adoptar máquinas que sustituían trabajo.",
+      "desarrollo": "Allen compara salarios y precios de energía entre ciudades de Europa y Asia y concluye que las tecnologías emblemáticas de la Revolución Industrial —la hiladora, la máquina de vapor, la fundición con coque— eran rentables a los precios de Londres o Lancashire pero no a los de París, Ámsterdam o la India. La innovación fue inducida por los precios relativos, y esos precios relativos venían del éxito comercial y colonial británico y del carbón [@allen-2009]. La divergencia de salarios dentro de Europa es anterior a la industrialización [@allen-2001].",
+      "autores_principales": [
+        "allen-2009",
+        "allen-2001"
+      ],
+      "evidencia_a_favor": [
+        "Comparaciones de salarios reales y precios de energía entre ciudades: Londres y Ámsterdam con salarios altos, Newcastle con carbón barato [@allen-2009].",
+        "Cálculos de rentabilidad de las máquinas clave a los precios de distintos países, que resultan negativos fuera de Gran Bretaña [@allen-2009]."
+      ],
+      "evidencia_en_contra": [
+        "El nivel «alto» de los salarios británicos depende de la canasta de bienes usada para compararlos.",
+        "No explica de dónde salieron las ideas ni por qué la innovación continuó cuando los precios relativos cambiaron [@mokyr-2016]."
+      ],
+      "que_la_refutaria": "Evidencia de que las tecnologías clave, como la hiladora o la máquina de vapor, eran rentables a los precios de Francia, Holanda o la India, o de que los salarios británicos dejaban de ser altos una vez corregida la canasta de consumo.",
+      "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "institucionalista",
+      "mecanismo": "El comercio atlántico fortaleció a grupos mercantiles que impusieron límites al poder monárquico; instituciones más seguras elevaron la inversión y la innovación.",
+      "desarrollo": "Acemoglu, Johnson y Robinson muestran que las regiones europeas con acceso al Atlántico y con monarquías ya limitadas crecieron más rápido después de 1500, y atribuyen el efecto a que el comercio enriqueció a comerciantes capaces de exigir protección de la propiedad y frenos al ejecutivo [@acemoglu-johnson-robinson-2005]. North sitúa en la seguridad de los derechos de propiedad y la reducción de costos de transacción la explicación general del desempeño económico [@north-1990]; Acemoglu y Robinson generalizan la distinción entre instituciones inclusivas y extractivas [@acemoglu-robinson-2012].",
+      "autores_principales": [
+        "acemoglu-johnson-robinson-2005",
+        "north-1990",
+        "acemoglu-robinson-2012"
+      ],
+      "evidencia_a_favor": [
+        "Diferencias de crecimiento urbano y de ingreso entre regiones europeas atlánticas y no atlánticas después de 1500, mayores donde la corona ya estaba limitada [@acemoglu-johnson-robinson-2005].",
+        "La correlación entre seguridad de la propiedad y desempeño económico en comparaciones de largo plazo [@north-1990]."
+      ],
+      "evidencia_en_contra": [
+        "Datación: las instituciones británicas posteriores a 1688 preceden por un siglo al despegue industrial.",
+        "Holanda tenía instituciones comparables y no industrializó primero; China creció aceleradamente después de 1978 bajo instituciones que esta escuela clasificaría como extractivas [@xu-2011]."
+      ],
+      "que_la_refutaria": "Que regiones con instituciones equivalentes y acceso atlántico similar hubieran divergido de todos modos, o que el crecimiento británico se explicara con instituciones que no cambiaron entre 1600 y 1800.",
+      "peso_academico": "dominante"
+    },
+    {
+      "escuela": "cultural-capital-humano",
+      "mecanismo": "Una cultura de la innovación —la Ilustración industrial— y la acumulación de capital humano hicieron que el conocimiento útil creciera y se aplicara de forma sostenida.",
+      "desarrollo": "Mokyr sostiene que entre 1500 y 1700 Europa desarrolló un mercado de ideas competitivo y transnacional, con una élite intelectual que valoraba el conocimiento útil y una comunidad de artesanos capaz de aplicarlo; esa Ilustración industrial explica por qué la innovación no se agotó como en episodios anteriores [@mokyr-2016]. Clark atribuye el cambio a comportamientos y capital humano acumulados durante siglos [@clark-2007]; Landes a rasgos culturales de largo plazo [@landes-1998].",
+      "autores_principales": [
+        "mokyr-2016",
+        "clark-2007",
+        "landes-1998"
+      ],
+      "evidencia_a_favor": [
+        "La densidad de redes científicas y de ingenieros y artesanos en Gran Bretaña en el siglo XVIII, y su vínculo con la técnica [@mokyr-2016].",
+        "La continuidad de la innovación después de que cambiaran los precios relativos, que las explicaciones de precios no capturan."
+      ],
+      "evidencia_en_contra": [
+        "La cultura suele inferirse del resultado que pretende explicar.",
+        "China y el mundo islámico tuvieron tradiciones científicas y de imprenta comparables sin el mismo desenlace; los cambios de comportamiento de Clark son difíciles de contrastar con evidencia independiente [@clark-2007]."
+      ],
+      "que_la_refutaria": "Medidas independientes de cultura innovadora o de capital humano que no difirieran entre Gran Bretaña y sus comparadores en el siglo XVIII, mientras la divergencia ocurría de todos modos.",
+      "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "sistema-mundo-dependencia",
+      "mecanismo": "Europa se convirtió en centro de una economía-mundo extrayendo excedente de la periferia: plata americana, esclavitud, colonias. La riqueza de unos y el atraso de otros son el mismo proceso.",
+      "desarrollo": "Wallerstein describe desde el siglo XVI una economía-mundo con centro, semiperiferia y periferia, donde la división del trabajo transfiere excedente hacia el centro [@wallerstein-1974]. Frank muestra que la plata americana permitió a Europa comprar su entrada en un comercio asiático que hasta 1800 era el centro de la economía mundial [@frank-1998]. Inikori documenta el peso de la demanda atlántica en las manufacturas inglesas [@inikori-2002].",
+      "autores_principales": [
+        "wallerstein-1974",
+        "frank-1998",
+        "inikori-2002"
+      ],
+      "evidencia_a_favor": [
+        "El papel de la plata americana en el comercio europeo con Asia [@frank-1998].",
+        "La demanda de exportaciones atlánticas para las manufacturas inglesas [@inikori-2002]."
+      ],
+      "evidencia_en_contra": [
+        "Las cuantificaciones del peso del comercio esclavista y colonial en el ingreso británico son bajas [@eltis-engerman-2000].",
+        "No explica por qué España y Portugal, que más extrajeron, no industrializaron primero."
+      ],
+      "que_la_refutaria": "Que el crecimiento del centro se hubiera producido igual sin los flujos de excedente periférico, o que los países que más extrajeron de la periferia hubieran sido los primeros en crecer de forma sostenida.",
+      "peso_academico": "minoritaria"
+    }
+  ],
+  "series": [],
+  "aristas": [
+    {
+      "desde": "gran-divergencia",
+      "hacia": "primera-revolucion-industrial",
+      "tipo": "contiene",
+      "consenso": "alto",
+      "nota": "La Revolución Industrial es el episodio central de la Gran Divergencia, no un fenómeno aparte: las explicaciones de una son explicaciones de la otra.",
+      "fuentes": [
+        "allen-2009",
+        "pomeranz-2000"
+      ]
+    },
+    {
+      "desde": "gran-divergencia",
+      "hacia": "primera-globalizacion",
+      "tipo": "precondicion_de",
+      "consenso": "medio",
+      "sostenida_por": [
+        "precios-relativos",
+        "institucionalista"
+      ],
+      "nota": "La brecha de productividad y las tecnologías del transporte nacidas en la industrialización hicieron posible la integración de mercados de 1870–1914 [@findlay-orourke-2007].",
+      "fuentes": [
+        "findlay-orourke-2007"
+      ]
+    }
+  ],
+  "fuentes": [
+    "pomeranz-2000",
+    "allen-2009",
+    "allen-2001",
+    "broadberry-guan-li-2018",
+    "mokyr-2016",
+    "acemoglu-johnson-robinson-2005",
+    "parthasarathi-2011",
+    "wallerstein-1974",
+    "frank-1998",
+    "clark-2007",
+    "north-1990",
+    "landes-1998",
+    "acemoglu-robinson-2012",
+    "bolt-vanzanden-2024",
+    "maddison-2001",
+    "inikori-2002",
+    "eltis-engerman-2000",
+    "xu-2011",
+    "findlay-orourke-2007"
+  ],
+  "estado_editorial": "borrador"
+}

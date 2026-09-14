@@ -1,0 +1,50 @@
+[
+  {
+    "id": "problematizacion-del-crecimiento",
+    "numero": 1,
+    "titulo": "Historia económica y problematización del crecimiento y desarrollo",
+    "contenido_central": "Larga duración y coyuntura; crecimiento vs. desarrollo; divergencia/convergencia; origen de las desigualdades"
+  },
+  {
+    "id": "revolucion-industrial-y-despegue",
+    "numero": 2,
+    "titulo": "Revolución Industrial y despegue de los países ricos",
+    "contenido_central": "Revolución Industrial, primera globalización, progreso tecnológico, difusión industrial y divergencias"
+  },
+  {
+    "id": "colonialismo-e-imperialismo",
+    "numero": 3,
+    "titulo": "Colonialismo e imperialismo",
+    "contenido_central": "Gran Bretaña como «taller del mundo», expansión capitalista, colonialismo y desarrollo desigual"
+  },
+  {
+    "id": "crisis-de-los-anos-30",
+    "numero": 4,
+    "titulo": "Crisis de los años 30",
+    "contenido_central": "Orden internacional, patrón oro, Gran Depresión y camino hacia la Segunda Guerra Mundial"
+  },
+  {
+    "id": "bretton-woods-y-segunda-posguerra",
+    "numero": 5,
+    "titulo": "Bretton Woods y segunda posguerra mundial",
+    "contenido_central": "Instituciones internacionales, expansión de posguerra, centro-periferia latinoamericana y descolonización"
+  },
+  {
+    "id": "de-la-prosperidad-a-la-crisis-de-deuda",
+    "numero": 6,
+    "titulo": "De la prosperidad a la crisis de deuda",
+    "contenido_central": "Fin de la expansión, declive y determinantes de la crisis"
+  },
+  {
+    "id": "reorientacion-hacia-el-mercado",
+    "numero": 7,
+    "titulo": "Reorientación hacia el mercado, geopolítica e instituciones",
+    "contenido_central": "Crisis del estatismo industrial, colapso socialista, nacionalismos, instituciones y desempeño económico"
+  },
+  {
+    "id": "crisis-de-2008-y-tendencias-mundiales",
+    "numero": 8,
+    "titulo": "Crisis de 2008 y tendencias mundiales",
+    "contenido_central": "Sistema financiero, regulación, globalización, pobreza, desigualdad y perspectivas del crecimiento"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "id": "isi-y-estructuralismo-cepalino",
+  "titulo": "Industrialización sustitutiva y estructuralismo cepalino",
+  "tipo": "proceso",
+  "periodo": {
+    "inicio": 1930,
+    "fin": 1982,
+    "precision": "disputada",
+    "nota_periodizacion": "Fechas provisionales de un nodo esqueleto: se justificarán y se documentará quién las discute cuando se redacte el nodo."
+  },
+  "regiones": [
+    "america-latina",
+    "brasil",
+    "mexico",
+    "argentina",
+    "costa-rica"
+  ],
+  "unidades": [
+    "bretton-woods-y-segunda-posguerra",
+    "de-la-prosperidad-a-la-crisis-de-deuda"
+  ],
+  "resumen": "Industrialización dirigida por el Estado en América Latina, con protección, empresas públicas y crédito dirigido, teorizada por la CEPAL. Sus logros y sus límites se discuten tanto como sus fechas.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

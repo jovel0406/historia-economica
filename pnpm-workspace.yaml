@@ -1,0 +1,8 @@
+# pnpm 12: los scripts de build de dependencias están bloqueados por defecto.
+# esbuild lo necesitan tsx y Vite; es el único aprobado.
+allowBuilds:
+  esbuild: true
+# pnpm 12 impone una edad mínima de publicación; zod 4.6.5 se excluye porque fue
+# verificada como versión estable vigente al iniciar el proyecto (ver docs/DECISIONES.md).
+minimumReleaseAgeExclude:
+  - zod@4.6.5

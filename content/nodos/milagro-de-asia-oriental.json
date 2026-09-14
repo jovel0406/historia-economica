@@ -1,0 +1,25 @@
+{
+  "id": "milagro-de-asia-oriental",
+  "titulo": "Milagro de Asia oriental",
+  "tipo": "proceso",
+  "periodo": {
+    "inicio": 1960,
+    "fin": 1997,
+    "precision": "aproximada"
+  },
+  "regiones": [
+    "asia-oriental",
+    "japon"
+  ],
+  "unidades": [
+    "bretton-woods-y-segunda-posguerra",
+    "reorientacion-hacia-el-mercado"
+  ],
+  "resumen": "Crecimiento sostenido de Japón, Corea del Sur, Taiwán, Hong Kong y Singapur con industrialización orientada a la exportación. Referencia central del debate entre Estado y mercado.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

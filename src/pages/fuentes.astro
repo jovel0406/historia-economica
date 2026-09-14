@@ -1,0 +1,38 @@
+---
+import Base from "../layouts/Base.astro";
+import { contenido } from "../lib/contenido.ts";
+const fuentes = [...contenido().fuentes.values()].sort((a, b) => a.id.localeCompare(b.id));
+const verificadas = fuentes.filter((f) => f.verified).length;
+const datasets = contenido().manifiesto.datasets;
+const ETIQUETA = { verificada: "verificada", pendiente_de_verificacion: "pendiente de verificación", dudosa: "dudosa" } as const;
+---
+<Base titulo="Fuentes">
+  <p class="sobretitulo">Bibliografía y datos</p>
+  <h1>Fuentes</h1>
+  <p class="entradilla">{fuentes.length} referencias; {verificadas} verificada{verificadas === 1 ? "" : "s"} manualmente por el autor. Las demás fueron cotejadas contra catálogos (Crossref, Open Library, repositorios institucionales) el día indicado en su nota, lo que no sustituye la verificación editorial.</p>
+
+  <h2>Datasets con procedencia registrada</h2>
+  {datasets.length === 0 ? (
+    <p class="meta">Todavía no hay datasets ingeridos. El manifiesto de procedencia (<code>data/MANIFIESTO.json</code>) se completa con el pipeline de ingesta.</p>
+  ) : (
+    <ul>{datasets.map((d) => <li><strong>{d.nombre}</strong> ({d.institucion}, versión {d.version}, descargado {d.fecha_descarga}). Licencia: {d.licencia}. Cita requerida: {d.cita_requerida}. <a href={d.url}>origen</a></li>)}</ul>
+  )}
+
+  <h2>Bibliografía</h2>
+  <ul class="lista-limpia fuentes">
+    {fuentes.map((f) => (
+      <li id={f.id} class="fuente">
+        <div class="fuente-cab"><a class="cita" href={`#${f.id}`}>{f.id}</a> <span class={`badge ${f.verified ? "badge-revisado" : f.citation_status === "dudosa" ? "badge-marginal" : "badge-disputado"}`}>{ETIQUETA[f.citation_status]}</span> <span class="chip">{f.tipo.replace("_", " ")}</span></div>
+        <div>{f.autores.length > 0 ? f.autores.join("; ") : "(autores sin confirmar)"} ({f.anio ?? "s.f."}). <em>{f.titulo}</em>{f.publicacion && <>, {f.publicacion}</>}{f.editorial && <>. {f.editorial}</>}.
+          {f.doi && <> <a href={`https://doi.org/${f.doi}`}>doi:{f.doi}</a></>}{f.url && <> <a href={f.url}>enlace</a></>}</div>
+        {f.nota_verificacion && <p class="meta">{f.nota_verificacion}</p>}
+      </li>
+    ))}
+  </ul>
+</Base>
+<style>
+  .fuente { padding: 0.8rem 0; border-bottom: 1px solid var(--linea); }
+  .fuente:target { background: var(--aviso-fondo); outline: 6px solid var(--aviso-fondo); }
+  .fuente-cab { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.2rem; }
+  .fuente .meta { margin: 0.3rem 0 0; font-size: 0.85rem; }
+</style>

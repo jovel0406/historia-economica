@@ -1,0 +1,11 @@
+{
+  "id": "cultural-capital-humano",
+  "nombre": "Cultural y de capital humano",
+  "postulado_central": "El crecimiento moderno nació de un cambio en la cultura y en el conocimiento útil: la Ilustración industrial creó un mercado de ideas donde ciencia y técnica se retroalimentaron [@mokyr-2016]; para otros autores, cambios de comportamiento y de capital humano acumulados durante siglos [@clark-2007] o rasgos culturales de largo plazo [@landes-1998] explican quién innovó y quién no.",
+  "autores_representativos": [
+    "mokyr-2016",
+    "clark-2007",
+    "landes-1998"
+  ],
+  "critica_principal": "La cultura es difícil de medir y suele inferirse del resultado que pretende explicar; China y el mundo islámico tuvieron tradiciones científicas y de imprenta comparables sin el mismo desenlace, y la tesis corre el riesgo de convertirse en un relato eurocéntrico de virtudes nacionales."
+}

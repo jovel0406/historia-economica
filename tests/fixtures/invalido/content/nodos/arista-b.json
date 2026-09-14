@@ -1,0 +1,8 @@
+{
+  "id": "arista-b", "titulo": "B", "tipo": "evento", "periodo": { "inicio": 1902, "fin": 1903, "precision": "exacta" }, "regiones": ["mundo"], "resumen": "B.", "descripcion_larga": "", "interpretaciones": [], "series": [],
+  "aristas": [
+    { "desde": "arista-a", "hacia": "arista-b", "tipo": "amplifica", "consenso": "medio", "nota": "x", "fuentes": [] },
+    { "desde": "arista-b", "hacia": "arista-a", "tipo": "respuesta_a", "consenso": "alto", "nota": "x", "fuentes": [] }
+  ],
+  "fuentes": [], "estado_editorial": "esqueleto"
+}

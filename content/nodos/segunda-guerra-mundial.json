@@ -1,0 +1,24 @@
+{
+  "id": "segunda-guerra-mundial",
+  "titulo": "Segunda Guerra Mundial",
+  "tipo": "evento",
+  "periodo": {
+    "inicio": 1939,
+    "fin": 1945,
+    "precision": "exacta"
+  },
+  "regiones": [
+    "mundo"
+  ],
+  "unidades": [
+    "crisis-de-los-anos-30",
+    "bretton-woods-y-segunda-posguerra"
+  ],
+  "resumen": "Economías de guerra, destrucción de capital en Europa y Asia, y ascenso definitivo de Estados Unidos como potencia económica y financiera. Punto de partida del orden de posguerra.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

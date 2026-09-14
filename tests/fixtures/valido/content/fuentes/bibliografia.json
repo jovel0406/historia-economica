@@ -1,0 +1,4 @@
+[
+  { "id": "fuente-uno", "tipo": "libro", "autores": ["Fixture, Autora"], "titulo": "Fixture de test uno", "anio": null, "verified": false, "citation_status": "pendiente_de_verificacion" },
+  { "id": "fuente-dos", "tipo": "dataset", "autores": [], "titulo": "Fixture de test dos", "anio": 2020, "verified": true, "citation_status": "verificada", "nota_verificacion": "Fixture: verificada por el test." }
+]

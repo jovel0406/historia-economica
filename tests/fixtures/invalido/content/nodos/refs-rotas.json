@@ -1,0 +1,21 @@
+{
+  "id": "refs-rotas",
+  "titulo": "Fixture: referencias rotas",
+  "tipo": "proceso",
+  "periodo": { "inicio": 1800, "fin": null, "precision": "aproximada" },
+  "regiones": ["atlantida"],
+  "unidades": ["unidad-fantasma"],
+  "resumen": "Fixture.",
+  "descripcion_larga": "Fixture con cita rota [@fuente-fantasma] y cita válida [@fuente-uno].",
+  "interpretaciones": [
+    { "escuela": "escuela-fantasma", "mecanismo": "x", "desarrollo": "", "autores_principales": ["fuente-fantasma"], "evidencia_a_favor": [], "evidencia_en_contra": [], "que_la_refutaria": "Fixture: quedaría refutada si el caso de prueba no mostrara el resultado esperado.", "peso_academico": "marginal" },
+    { "escuela": "institucionalista", "mecanismo": "x", "desarrollo": "", "autores_principales": [], "evidencia_a_favor": [], "evidencia_en_contra": [], "que_la_refutaria": "Fixture: quedaría refutada si el caso de prueba no mostrara el resultado esperado.", "peso_academico": "marginal" }
+  ],
+  "series": [{ "serie": "serie-fantasma" }],
+  "medios": [{ "ruta": "medios/no-existe.png", "titulo": "x", "alt": "x", "credito": "x", "licencia": "x" }],
+  "aristas": [
+    { "desde": "refs-rotas", "hacia": "nodo-fantasma", "tipo": "causa_directa_de", "consenso": "alto", "nota": "x", "fuentes": ["fuente-fantasma"], "sostenida_por": ["escuela-fantasma"] }
+  ],
+  "fuentes": ["fuente-uno"],
+  "estado_editorial": "borrador"
+}

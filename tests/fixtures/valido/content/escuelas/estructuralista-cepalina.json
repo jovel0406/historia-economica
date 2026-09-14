@@ -1,0 +1,7 @@
+{
+  "id": "estructuralista-cepalina",
+  "nombre": "Fixture estructuralista-cepalina",
+  "postulado_central": "Fixture de test: postulado de prueba.",
+  "autores_representativos": ["fuente-uno"],
+  "critica_principal": "Fixture de test: crítica de prueba."
+}

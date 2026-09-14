@@ -1,0 +1,21 @@
+{
+  "id": "proceso-revisado",
+  "titulo": "Fixture: proceso revisado",
+  "tipo": "proceso",
+  "periodo": { "inicio": 1700, "fin": 1850, "precision": "disputada", "nota_periodizacion": "Fixture: nota de periodización." },
+  "regiones": ["europa-occidental"],
+  "unidades": ["revolucion-industrial-y-despegue"],
+  "resumen": "Fixture: resumen neutral de prueba.",
+  "descripcion_larga": "Fixture: descripción larga.",
+  "interpretaciones": [
+    { "escuela": "escuela-california", "mecanismo": "Fixture: mecanismo uno.", "desarrollo": "Fixture.", "autores_principales": ["fuente-uno"], "evidencia_a_favor": ["a"], "evidencia_en_contra": ["b"], "que_la_refutaria": "Fixture: quedaría refutada si la serie de prueba mostrara el patrón opuesto en todo el período.", "peso_academico": "sustancial" },
+    { "escuela": "institucionalista", "mecanismo": "Fixture: mecanismo dos.", "desarrollo": "Fixture.", "autores_principales": ["fuente-dos"], "evidencia_a_favor": ["a"], "evidencia_en_contra": ["b"], "que_la_refutaria": "Fixture: quedaría refutada si un caso con las instituciones postuladas no mostrara el resultado esperado.", "peso_academico": "dominante" }
+  ],
+  "series": [{ "serie": "serie-fixture", "nota": "Fixture: por qué importa." }],
+  "aristas": [
+    { "desde": "proceso-revisado", "hacia": "evento-borrador", "tipo": "precondicion_de", "consenso": "disputado", "sostenida_por": ["escuela-california"], "negada_por": ["institucionalista"], "nota": "Fixture: arista disputada.", "fuentes": ["fuente-uno"] },
+    { "desde": "proceso-revisado", "hacia": "nodo-esqueleto", "tipo": "contiene", "consenso": "alto", "nota": "Fixture: arista hacia un esqueleto.", "fuentes": [] }
+  ],
+  "fuentes": ["fuente-uno", "fuente-dos"],
+  "estado_editorial": "revisado"
+}

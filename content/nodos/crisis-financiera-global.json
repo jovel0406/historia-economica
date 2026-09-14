@@ -1,0 +1,25 @@
+{
+  "id": "crisis-financiera-global",
+  "titulo": "Crisis financiera global",
+  "tipo": "evento",
+  "periodo": {
+    "inicio": 2007,
+    "fin": 2009,
+    "precision": "exacta"
+  },
+  "regiones": [
+    "estados-unidos",
+    "europa-occidental",
+    "mundo"
+  ],
+  "unidades": [
+    "crisis-de-2008-y-tendencias-mundiales"
+  ],
+  "resumen": "Colapso del crédito hipotecario y del sistema financiero estadounidense y europeo, seguido de la mayor contracción desde los años treinta. Reabrió los debates de la Gran Depresión sobre regulación, dinero y demanda.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

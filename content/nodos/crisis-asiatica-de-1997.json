@@ -1,0 +1,23 @@
+{
+  "id": "crisis-asiatica-de-1997",
+  "titulo": "Crisis asiática de 1997",
+  "tipo": "evento",
+  "periodo": {
+    "inicio": 1997,
+    "fin": 1998,
+    "precision": "exacta"
+  },
+  "regiones": [
+    "asia-oriental"
+  ],
+  "unidades": [
+    "reorientacion-hacia-el-mercado"
+  ],
+  "resumen": "Colapso cambiario y financiero de Tailandia, Corea, Indonesia y otros países tras años de entradas de capital. Puso en cuestión tanto el modelo desarrollista como la liberalización financiera rápida.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

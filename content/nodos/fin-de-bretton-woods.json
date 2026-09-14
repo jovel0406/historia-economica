@@ -1,0 +1,24 @@
+{
+  "id": "fin-de-bretton-woods",
+  "titulo": "Fin de Bretton Woods",
+  "tipo": "evento",
+  "periodo": {
+    "inicio": 1971,
+    "fin": 1973,
+    "precision": "exacta"
+  },
+  "regiones": [
+    "mundo",
+    "estados-unidos"
+  ],
+  "unidades": [
+    "de-la-prosperidad-a-la-crisis-de-deuda"
+  ],
+  "resumen": "Suspensión de la convertibilidad del dólar en oro (1971) y paso a tipos de cambio flotantes (1973). Abrió la era de la movilidad de capitales y la desregulación financiera.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

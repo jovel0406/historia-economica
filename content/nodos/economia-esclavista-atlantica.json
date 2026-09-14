@@ -1,0 +1,141 @@
+{
+  "id": "economia-esclavista-atlantica",
+  "titulo": "Economía esclavista atlántica",
+  "tipo": "proceso",
+  "periodo": {
+    "inicio": 1500,
+    "fin": 1888,
+    "precision": "aproximada",
+    "nota_periodizacion": "El cierre en 1888 corresponde a la abolición en Brasil, último país americano en abolir la esclavitud; el comercio transatlántico había sido prohibido por Gran Bretaña en 1807 y se extinguió en las décadas siguientes. El inicio hacia 1500 sigue a los primeros viajes registrados [@slave-voyages]."
+  },
+  "regiones": [
+    "africa-subsahariana",
+    "america-latina",
+    "brasil",
+    "america-del-norte",
+    "estados-unidos",
+    "europa-occidental",
+    "reino-unido"
+  ],
+  "unidades": [
+    "revolucion-industrial-y-despegue",
+    "colonialismo-e-imperialismo"
+  ],
+  "resumen": "Durante más de tres siglos, el comercio atlántico de personas esclavizadas —documentado viaje por viaje en la base de datos SlaveVoyages [@slave-voyages]— abasteció de trabajo forzado a las plantaciones de azúcar, tabaco y algodón de las Américas. Que ese sistema haya financiado o impulsado la industrialización británica es una de las tesis más discutidas de la disciplina.",
+  "descripcion_larga": "## El sistema\n\nBarcos europeos llevaban manufacturas a África, transportaban personas esclavizadas a las Américas y regresaban con azúcar, tabaco, algodón y plata. Las plantaciones del Caribe, Brasil y el sur de Estados Unidos fueron las empresas capitalistas más grandes de su tiempo. Los datos de viajes, embarcados y muertos en la travesía están reconstruidos a partir de registros portuarios y de aseguradoras [@slave-voyages]: son buenos para el conteo de viajes y peores para las condiciones a bordo.\n\n## La tesis de Williams\n\nEn 1944 Eric Williams sostuvo que los beneficios de la esclavitud y del comercio triangular financiaron la Revolución Industrial británica, y que la abolición llegó cuando el sistema dejó de ser rentable [@williams-1944]. La tesis fue rechazada por la historiografía cuantitativa de los años ochenta y noventa, que encontró el sector demasiado pequeño para explicar la industrialización [@eltis-engerman-2000], y revivida por Inikori, que desplaza el argumento de los beneficios a la demanda: el comercio atlántico fue el mercado que hizo crecer las manufacturas inglesas [@inikori-2002]. El debate se reabrió con la «nueva historia del capitalismo» y su réplica cliométrica [@wright-2020].\n\n## El otro lado del Atlántico\n\nPara África el efecto es menos disputado: las regiones que exportaron más personas esclavizadas son hoy más pobres, y el mecanismo propuesto es institucional —fragmentación política, desconfianza, debilitamiento de los Estados— [@nunn-2008].",
+  "interpretaciones": [
+    {
+      "escuela": "sistema-mundo-dependencia",
+      "mecanismo": "Los beneficios y, sobre todo, la demanda generada por el sistema esclavista atlántico impulsaron la industrialización británica.",
+      "desarrollo": "Williams vinculó la acumulación de capital en el comercio triangular con la financiación de la industria y la infraestructura británicas [@williams-1944]. Inikori reformula la tesis: no importan tanto los beneficios como el mercado; la demanda de las plantaciones y de África por textiles, metales y barcos fue el motor de las manufacturas inglesas del siglo XVIII [@inikori-2002]. Darity ofrece un modelo formal de la relación entre plantaciones e industria [@darity-1990].",
+      "autores_principales": [
+        "williams-1944",
+        "inikori-2002",
+        "darity-1990"
+      ],
+      "evidencia_a_favor": [
+        "La concentración de la industrialización temprana en regiones vinculadas al comercio atlántico (Lancashire, Bristol, Liverpool, Glasgow).",
+        "El peso del comercio con África y las Américas en las exportaciones manufactureras inglesas del siglo XVIII [@inikori-2002]."
+      ],
+      "evidencia_en_contra": [
+        "Estimaciones del sector esclavista como fracción pequeña del ingreso y de la inversión británicos [@eltis-engerman-2000].",
+        "La abolición de 1807 ocurrió cuando el comercio era rentable, no en decadencia, lo que debilita la segunda parte de la tesis de Williams."
+      ],
+      "que_la_refutaria": "Que las regiones industrializadoras de Gran Bretaña hubieran crecido al mismo ritmo sin mercados atlánticos, o que el volumen de demanda atlántica fuera insignificante frente a la demanda interna en los sectores que primero se mecanizaron.",
+      "peso_academico": "minoritaria"
+    },
+    {
+      "escuela": "neoclasica-cliometrica",
+      "mecanismo": "El sector esclavista era demasiado pequeño en relación con la economía británica para haber sido necesario o suficiente para la industrialización.",
+      "desarrollo": "Eltis y Engerman calculan el peso del azúcar y del comercio de esclavizados en el producto, la inversión y el comercio británicos y concluyen que, aunque no despreciable, no supera al de otros sectores a los que nadie atribuye la industrialización [@eltis-engerman-2000]. Wright revisa la literatura reciente y sostiene que la esclavitud fue importante para la expansión atlántica del siglo XVIII pero no para la revolución industrial, que dependió de mercados y tecnologías distintos [@wright-2020].",
+      "autores_principales": [
+        "eltis-engerman-2000",
+        "wright-2020"
+      ],
+      "evidencia_a_favor": [
+        "Contabilidad del peso del azúcar y del comercio de esclavizados en el ingreso, la inversión y el comercio británicos [@eltis-engerman-2000].",
+        "La industrialización continuó y se aceleró después de la abolición del comercio (1807) y de la esclavitud en las colonias británicas (1833)."
+      ],
+      "evidencia_en_contra": [
+        "La contabilidad de «sector pequeño» depende de dónde se trace la frontera del sector: excluye seguros, finanzas, astilleros y demanda de manufacturas [@inikori-2002].",
+        "Los contrafactuales de equilibrio ignoran efectos de escala y de aprendizaje concentrados en pocas regiones."
+      ],
+      "que_la_refutaria": "Que una delimitación amplia del complejo atlántico (plantaciones, comercio, finanzas, astilleros, demanda de manufacturas) arrojara una fracción del ingreso o de la inversión británicos lo bastante grande para explicar por sí sola la aceleración del crecimiento.",
+      "peso_academico": "dominante"
+    },
+    {
+      "escuela": "institucionalista",
+      "mecanismo": "El comercio atlántico, esclavitud incluida, transformó las instituciones: fortaleció a los comerciantes en Europa y debilitó a los Estados en África.",
+      "desarrollo": "Acemoglu, Johnson y Robinson muestran que el comercio atlántico enriqueció a grupos mercantiles que, donde la corona ya estaba limitada, obtuvieron instituciones favorables a la inversión [@acemoglu-johnson-robinson-2005]. Nunn estima que las regiones africanas que exportaron más personas esclavizadas son hoy más pobres, y propone como mecanismo la fragmentación política y la erosión de la confianza [@nunn-2008]. En esta lectura, la esclavitud importa por sus efectos institucionales de larga duración, en ambos lados del Atlántico, más que por sus beneficios inmediatos.",
+      "autores_principales": [
+        "acemoglu-johnson-robinson-2005",
+        "nunn-2008"
+      ],
+      "evidencia_a_favor": [
+        "Correlación entre exportaciones de esclavizados por región africana e ingreso actual, robusta a controles geográficos [@nunn-2008].",
+        "Mayor crecimiento de las regiones europeas atlánticas con instituciones limitadas después de 1500 [@acemoglu-johnson-robinson-2005]."
+      ],
+      "evidencia_en_contra": [
+        "Los mecanismos institucionales son difíciles de separar de otros efectos de largo plazo (enfermedades, geografía, colonización posterior).",
+        "Explica la divergencia de África y el ascenso europeo, pero no la magnitud de la contribución de la esclavitud a la industria."
+      ],
+      "que_la_refutaria": "Que las regiones africanas más afectadas por el comercio de esclavizados no fueran hoy más pobres una vez controlados geografía y colonización, o que en Europa la expansión atlántica no hubiera alterado los equilibrios políticos entre corona y comerciantes.",
+      "peso_academico": "sustancial"
+    }
+  ],
+  "series": [],
+  "aristas": [
+    {
+      "desde": "economia-esclavista-atlantica",
+      "hacia": "primera-revolucion-industrial",
+      "tipo": "precondicion_de",
+      "consenso": "disputado",
+      "sostenida_por": [
+        "sistema-mundo-dependencia"
+      ],
+      "negada_por": [
+        "neoclasica-cliometrica",
+        "cultural-capital-humano"
+      ],
+      "nota": "La tesis de Williams: la esclavitud y el comercio triangular como condición de la industrialización británica [@williams-1944]. Negada por la cliometría, que encuentra el sector demasiado pequeño [@eltis-engerman-2000]; reformulada en términos de demanda por Inikori [@inikori-2002].",
+      "fuentes": [
+        "williams-1944",
+        "eltis-engerman-2000",
+        "inikori-2002"
+      ]
+    },
+    {
+      "desde": "economia-esclavista-atlantica",
+      "hacia": "gran-divergencia",
+      "tipo": "amplifica",
+      "consenso": "disputado",
+      "sostenida_por": [
+        "sistema-mundo-dependencia",
+        "escuela-california"
+      ],
+      "negada_por": [
+        "cultural-capital-humano"
+      ],
+      "nota": "Para la Escuela de California, las plantaciones americanas son parte de los «acres fantasma» que aliviaron la restricción de tierra británica [@pomeranz-2000]; para la escuela de sistema-mundo, son la extracción que financió al centro [@wallerstein-1974]. La escuela cultural ve la divergencia como un fenómeno de ideas, no de recursos [@mokyr-2016].",
+      "fuentes": [
+        "pomeranz-2000",
+        "wallerstein-1974",
+        "mokyr-2016"
+      ]
+    }
+  ],
+  "fuentes": [
+    "slave-voyages",
+    "williams-1944",
+    "eltis-engerman-2000",
+    "inikori-2002",
+    "nunn-2008",
+    "darity-1990",
+    "wright-2020",
+    "acemoglu-johnson-robinson-2005",
+    "pomeranz-2000",
+    "wallerstein-1974",
+    "mokyr-2016"
+  ],
+  "estado_editorial": "borrador"
+}

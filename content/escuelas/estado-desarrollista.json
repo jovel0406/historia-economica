@@ -1,0 +1,12 @@
+{
+  "id": "estado-desarrollista",
+  "nombre": "Estado desarrollista",
+  "postulado_central": "La industrialización tardía exitosa de Asia oriental se explica por Estados capaces de «gobernar el mercado»: subsidios condicionados a resultados de exportación, disciplina sobre las empresas, aprendizaje tecnológico organizado [@amsden-1989] [@wade-1990]. En China, el gradualismo y el sistema dual de precios permitieron «crecer fuera del plan» sin desmantelarlo de golpe [@naughton-1995], siguiendo la ventaja comparativa en vez de forzar la industria pesada [@lin-cai-li-2003].",
+  "autores_representativos": [
+    "amsden-1989",
+    "wade-1990",
+    "naughton-1995",
+    "lin-cai-li-2003"
+  ],
+  "critica_principal": "Problema de selección: muchos Estados intervinieron y fracasaron, y no está claro qué distingue ex ante a los que acertaron. Explicaciones alternativas atribuyen el crecimiento chino a la reasignación de recursos hacia el sector privado y al aumento de la productividad, más que a la dirección estatal [@zhu-2012] [@huang-2008]."
+}

@@ -1,0 +1,12 @@
+{
+  "id": "estructuralista-cepalina",
+  "nombre": "Estructuralista cepalina",
+  "postulado_central": "La economía mundial se organiza en un centro industrial y una periferia productora de bienes primarios; el deterioro de los términos de intercambio, la heterogeneidad estructural y la vulnerabilidad externa condicionan el desarrollo latinoamericano, que requiere industrialización dirigida por el Estado y manejo activo del ciclo externo [@prebisch-1949] [@bertola-ocampo-2012] [@ocampo-2014].",
+  "autores_representativos": [
+    "prebisch-1949",
+    "bertola-ocampo-2012",
+    "ocampo-2014",
+    "thorp-1998"
+  ],
+  "critica_principal": "La industrialización sustitutiva generó sesgo antiexportador, ineficiencias y presiones fiscales que contribuyeron a la crisis de la deuda [@edwards-1995], y la tesis del deterioro secular de los términos de intercambio es empíricamente discutida."
+}

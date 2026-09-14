@@ -1,0 +1,4 @@
+[
+  { "nodo": "proceso-revisado", "region": "costa-rica", "texto": "Fixture: lente CR.", "fuentes": ["fuente-uno"] },
+  { "nodo": "proceso-revisado", "region": "america-latina", "texto": "Fixture: lente AL.", "fuentes": [] }
+]

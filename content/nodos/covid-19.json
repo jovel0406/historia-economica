@@ -1,0 +1,23 @@
+{
+  "id": "covid-19",
+  "titulo": "Pandemia de COVID-19",
+  "tipo": "evento",
+  "periodo": {
+    "inicio": 2020,
+    "fin": 2022,
+    "precision": "aproximada"
+  },
+  "regiones": [
+    "mundo"
+  ],
+  "unidades": [
+    "crisis-de-2008-y-tendencias-mundiales"
+  ],
+  "resumen": "Contracción simultánea de oferta y demanda por los confinamientos, respuesta fiscal y monetaria sin precedentes, y ruptura de cadenas de suministro. Las fechas de cierre varían según el criterio.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

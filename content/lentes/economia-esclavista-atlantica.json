@@ -1,0 +1,18 @@
+[
+  {
+    "nodo": "economia-esclavista-atlantica",
+    "region": "america-latina",
+    "texto": "Brasil y el Caribe fueron los principales destinos de los viajes registrados en la base de datos SlaveVoyages [@slave-voyages]; la plantación azucarera y luego la cafetalera brasileña dependieron del trabajo esclavizado hasta la abolición de 1888. La región latinoamericana es, en este nodo, parte del centro del sistema, no una periferia.",
+    "fuentes": [
+      "slave-voyages"
+    ]
+  },
+  {
+    "nodo": "economia-esclavista-atlantica",
+    "region": "costa-rica",
+    "texto": "Costa Rica quedó en el margen del sistema atlántico de plantación: su economía colonial era pequeña, con poca población y orientada al mercado interno y regional [@gudmundson-1986]. La presencia de personas esclavizadas en actividades como el cacao del Caribe existió, pero a una escala sin comparación con la del Caribe insular o Brasil; la cuantificación queda pendiente de fuentes específicas.",
+    "fuentes": [
+      "gudmundson-1986"
+    ]
+  }
+]

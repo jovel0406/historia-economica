@@ -1,0 +1,27 @@
+{
+  "id": "primera-globalizacion",
+  "titulo": "Primera globalización",
+  "tipo": "proceso",
+  "periodo": {
+    "inicio": 1870,
+    "fin": 1914,
+    "precision": "aproximada"
+  },
+  "regiones": [
+    "mundo",
+    "europa-occidental",
+    "america-latina",
+    "america-del-norte"
+  ],
+  "unidades": [
+    "revolucion-industrial-y-despegue",
+    "colonialismo-e-imperialismo"
+  ],
+  "resumen": "Integración de mercados de bienes, capital y trabajo bajo el patrón oro, el ferrocarril y el vapor: convergencia de precios entre continentes y migraciones masivas. Terminó con la guerra de 1914.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

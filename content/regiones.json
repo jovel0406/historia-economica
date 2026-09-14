@@ -1,0 +1,21 @@
+[
+  { "id": "mundo", "nombre": "Mundo", "tipo": "mundo" },
+  { "id": "europa-occidental", "nombre": "Europa occidental", "tipo": "macrorregion", "contenida_en": "mundo" },
+  { "id": "europa-oriental", "nombre": "Europa oriental", "tipo": "macrorregion", "contenida_en": "mundo" },
+  { "id": "america-del-norte", "nombre": "América del Norte", "tipo": "macrorregion", "contenida_en": "mundo" },
+  { "id": "america-latina", "nombre": "América Latina y el Caribe", "tipo": "macrorregion", "contenida_en": "mundo" },
+  { "id": "asia-oriental", "nombre": "Asia oriental", "tipo": "macrorregion", "contenida_en": "mundo" },
+  { "id": "asia-meridional", "nombre": "Asia meridional", "tipo": "macrorregion", "contenida_en": "mundo" },
+  { "id": "asia-occidental-y-norte-de-africa", "nombre": "Asia occidental y norte de África", "tipo": "macrorregion", "contenida_en": "mundo" },
+  { "id": "africa-subsahariana", "nombre": "África subsahariana", "tipo": "macrorregion", "contenida_en": "mundo" },
+  { "id": "oceania", "nombre": "Oceanía", "tipo": "macrorregion", "contenida_en": "mundo" },
+  { "id": "costa-rica", "nombre": "Costa Rica", "tipo": "pais", "contenida_en": "america-latina" },
+  { "id": "mexico", "nombre": "México", "tipo": "pais", "contenida_en": "america-latina" },
+  { "id": "brasil", "nombre": "Brasil", "tipo": "pais", "contenida_en": "america-latina" },
+  { "id": "argentina", "nombre": "Argentina", "tipo": "pais", "contenida_en": "america-latina" },
+  { "id": "reino-unido", "nombre": "Reino Unido", "tipo": "pais", "contenida_en": "europa-occidental", "nota": "Antes de 1801, Gran Bretaña; los datasets de largo plazo suelen aplicar la frontera moderna hacia atrás." },
+  { "id": "estados-unidos", "nombre": "Estados Unidos", "tipo": "pais", "contenida_en": "america-del-norte" },
+  { "id": "china", "nombre": "China", "tipo": "pais", "contenida_en": "asia-oriental" },
+  { "id": "japon", "nombre": "Japón", "tipo": "pais", "contenida_en": "asia-oriental" },
+  { "id": "india", "nombre": "India", "tipo": "pais", "contenida_en": "asia-meridional" }
+]

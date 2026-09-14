@@ -1,0 +1,29 @@
+---
+import Base from "../layouts/Base.astro";
+import { escuelasOrdenadas, nodosOrdenados } from "../lib/contenido.ts";
+import { renderMarkdown } from "../lib/texto.ts";
+const escuelas = escuelasOrdenadas();
+const nodos = nodosOrdenados();
+const nodosDe = (id: string) => nodos.filter((n) => n.interpretaciones.some((i) => i.escuela === id));
+---
+<Base titulo="Escuelas interpretativas">
+  <p class="sobretitulo">Vista Debate</p>
+  <h1>Escuelas interpretativas</h1>
+  <p class="entradilla">Cada escuela lleva su postulado central y la crítica principal que recibe. Ninguna se presenta como la correcta: el objetivo es poder recorrer la misma historia bajo lentes distintas.</p>
+  <div class="tarjetas">
+    {escuelas.map((e) => (
+      <div class="tarjeta" id={e.id}>
+        <h3>{e.nombre}</h3>
+        <h4>Postulado central</h4>
+        <div class="prosa" set:html={renderMarkdown(e.postulado_central)} />
+        <h4>Crítica principal</h4>
+        <div class="prosa" set:html={renderMarkdown(e.critica_principal)} />
+        {e.autores_representativos.length > 0 && <p class="meta">Autores representativos: {e.autores_representativos.map((f) => <><a class="cita" href={`/fuentes#${f}`}>{f}</a> </>)}</p>}
+        {nodosDe(e.id).length > 0 && <p class="meta">Interpreta: {nodosDe(e.id).map((n, i) => <><a href={`/nodos/${n.id}`}>{n.titulo}</a>{i < nodosDe(e.id).length - 1 ? ", " : ""}</>)}</p>}
+      </div>
+    ))}
+  </div>
+</Base>
+<style>
+  .tarjeta h4 { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tinta-3); margin: 1rem 0 0.3rem; }
+</style>

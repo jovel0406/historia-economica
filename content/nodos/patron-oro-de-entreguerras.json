@@ -1,0 +1,25 @@
+{
+  "id": "patron-oro-de-entreguerras",
+  "titulo": "Patrón oro de entreguerras",
+  "tipo": "proceso",
+  "periodo": {
+    "inicio": 1924,
+    "fin": 1936,
+    "precision": "aproximada"
+  },
+  "regiones": [
+    "mundo",
+    "europa-occidental",
+    "estados-unidos"
+  ],
+  "unidades": [
+    "crisis-de-los-anos-30"
+  ],
+  "resumen": "Restauración del patrón oro tras la guerra, con paridades discutidas y sin la cooperación de antes de 1914. Su papel en la transmisión de la Gran Depresión es una de las tesis mejor establecidas de la historia monetaria.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

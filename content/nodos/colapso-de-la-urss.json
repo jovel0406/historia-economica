@@ -1,0 +1,23 @@
+{
+  "id": "colapso-de-la-urss",
+  "titulo": "Colapso de la URSS",
+  "tipo": "evento",
+  "periodo": {
+    "inicio": 1989,
+    "fin": 1991,
+    "precision": "exacta"
+  },
+  "regiones": [
+    "europa-oriental"
+  ],
+  "unidades": [
+    "reorientacion-hacia-el-mercado"
+  ],
+  "resumen": "Fin de la planificación soviética y de la división de Europa. Las transiciones al mercado que siguieron —«terapia de choque» frente a gradualismo— son el contraste obligado de la reforma china.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

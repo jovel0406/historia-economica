@@ -1,0 +1,183 @@
+{
+  "id": "gran-depresion",
+  "titulo": "Gran Depresión",
+  "tipo": "evento",
+  "periodo": {
+    "inicio": 1929,
+    "fin": 1939,
+    "precision": "disputada",
+    "nota_periodizacion": "El inicio en 1929 es convencional (crac bursátil de octubre). El fin es disputado: 1933 para la recuperación estadounidense, cuyo motor fue la expansión monetaria tras abandonar el oro [@romer-1992]; antes para los países que devaluaron temprano y después para los que se aferraron al oro [@eichengreen-1992]; 1939 si se toma el rearme como cierre."
+  },
+  "regiones": [
+    "america-del-norte",
+    "estados-unidos",
+    "europa-occidental",
+    "america-latina",
+    "mundo"
+  ],
+  "unidades": [
+    "crisis-de-los-anos-30"
+  ],
+  "resumen": "La contracción iniciada en 1929 fue la más profunda y extendida de la historia del capitalismo industrial: cayeron la producción, los precios y el comercio en casi todos los países, con duraciones muy distintas según cuándo cada uno abandonó el patrón oro. Las escuelas discrepan sobre si el origen fue monetario, de demanda, financiero o del régimen internacional.",
+  "descripcion_larga": "## Qué pasó\n\nEntre 1929 y 1933 la producción industrial y los precios se desplomaron en Estados Unidos y en la mayor parte del mundo, el comercio internacional se contrajo en espiral y miles de bancos quebraron. La recuperación fue desigual: los países que abandonaron el patrón oro antes se recuperaron antes [@eichengreen-1992]. Las series de producto de este período son estadísticas oficiales tempranas, con revisiones importantes; los datos de desempleo son los menos comparables entre países.\n\n## Qué se disputa\n\nNadie discute la secuencia; se discute la causa y la propagación. La lectura monetarista culpa a la Reserva Federal por dejar contraer la oferta monetaria [@friedman-schwartz-1963]. La keynesiana ve un colapso autónomo del gasto que la política monetaria no podía revertir [@temin-1989], agravado por la ausencia de un prestamista internacional de última instancia [@kindleberger-1973]. La lectura del patrón oro reúne ambas: el régimen de cambio fijo transmitió la deflación entre países y ató las manos de los bancos centrales [@eichengreen-1992] [@bernanke-james-1990]. La lectura financiera destaca el colapso del crédito como mecanismo de propagación real [@bernanke-1983]. Y una lectura neoclásica sostiene que la depresión se prolongó por las políticas de cartelización y salarios altos del New Deal [@cole-ohanian-2004].\n\n## Por qué importa\n\nLa Gran Depresión es el experimento natural que define las escuelas macroeconómicas modernas. Cada explicación implica una receta distinta para las crisis posteriores, incluida la de 2008.",
+  "interpretaciones": [
+    {
+      "escuela": "monetarista",
+      "mecanismo": "La Reserva Federal permitió que la oferta monetaria se contrajera durante las oleadas de quiebras bancarias; una recesión ordinaria se convirtió así en gran depresión.",
+      "desarrollo": "Friedman y Schwartz reconstruyen el stock monetario estadounidense y muestran una contracción de gran magnitud entre 1929 y 1933, coincidente con las crisis bancarias y con la inacción de la Reserva Federal; atribuyen la profundidad de la depresión a esa falla de política, evitable [@friedman-schwartz-1963]. Bernanke extiende el argumento al canal del crédito: las quiebras bancarias destruyeron la capacidad de intermediación y elevaron el costo del financiamiento, con efectos reales adicionales a los del dinero [@bernanke-1983].",
+      "autores_principales": [
+        "friedman-schwartz-1963",
+        "bernanke-1983"
+      ],
+      "evidencia_a_favor": [
+        "La contracción del stock monetario estadounidense de 1929–1933 y su coincidencia temporal con las crisis bancarias [@friedman-schwartz-1963].",
+        "La recuperación de 1933 siguió al abandono del oro y a la expansión monetaria [@romer-1992]."
+      ],
+      "evidencia_en_contra": [
+        "La caída del dinero pudo ser consecuencia de la caída del gasto, no su causa [@temin-1989].",
+        "Bajo el patrón oro la Reserva Federal tenía poco margen para expandir sin provocar salidas de oro [@eichengreen-1992]."
+      ],
+      "que_la_refutaria": "Que una expansión monetaria sostenida en 1930–1931, compatible con el patrón oro, no hubiera detenido la contracción, o que la caída del gasto precediera sistemáticamente a la del dinero en las series mensuales.",
+      "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "keynesiana",
+      "mecanismo": "Un colapso autónomo de la demanda —consumo e inversión— que la política monetaria no podía revertir, agravado por la falta de un prestamista de última instancia internacional.",
+      "desarrollo": "Temin cuestiona la causalidad monetarista: la tasa de interés no subió como habría ocurrido con una contracción monetaria exógena, y la caída del consumo de 1930 es anterior a la del dinero [@temin-1989]. Kindleberger sostiene que la depresión fue tan larga y extendida porque Gran Bretaña ya no podía y Estados Unidos aún no quería estabilizar el sistema internacional: mantener mercados abiertos, prestar en la crisis, coordinar tipos de cambio [@kindleberger-1973]. La Teoría General ofrece el marco: el equilibrio con desempleo puede persistir sin política fiscal activa [@keynes-1936].",
+      "autores_principales": [
+        "temin-1989",
+        "kindleberger-1973",
+        "keynes-1936"
+      ],
+      "evidencia_a_favor": [
+        "La caída del consumo estadounidense de 1930, anterior a la contracción monetaria [@temin-1989].",
+        "La ausencia de coordinación internacional y de un prestamista de última instancia en 1931 [@kindleberger-1973]."
+      ],
+      "evidencia_en_contra": [
+        "Es difícil identificar un shock de demanda independiente del dinero y del crédito.",
+        "La recuperación de 1933 fue monetaria, no fiscal [@romer-1992]."
+      ],
+      "que_la_refutaria": "Que las series mensuales de 1929–1930 mostraran la contracción del dinero y del crédito claramente antes que la del consumo y la inversión, y que la recuperación se explicara por política fiscal y no por expansión monetaria.",
+      "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "institucionalista",
+      "mecanismo": "El patrón oro de entreguerras, como institución internacional, transmitió la deflación entre países y ató las manos de los bancos centrales.",
+      "desarrollo": "Eichengreen muestra que el patrón oro restaurado en los años veinte carecía de la credibilidad y la cooperación del de antes de 1914; la defensa de la paridad obligó a políticas deflacionarias y propagó la crisis, y la recuperación de cada país llegó cuando abandonó el oro [@eichengreen-1992]. Bernanke y James confirman con una comparación internacional que la adhesión al oro predice la profundidad de la deflación y de la crisis bancaria [@bernanke-james-1990]. Eichengreen y Temin destacan la «mentalidad del patrón oro» como restricción ideológica [@eichengreen-temin-1997].",
+      "autores_principales": [
+        "eichengreen-1992",
+        "bernanke-james-1990",
+        "eichengreen-temin-1997"
+      ],
+      "evidencia_a_favor": [
+        "Los países que abandonaron el oro antes se recuperaron antes; la fecha de salida predice la trayectoria de la producción [@eichengreen-1992].",
+        "La adhesión al oro predice la deflación y las crisis bancarias en la comparación internacional [@bernanke-james-1990]."
+      ],
+      "evidencia_en_contra": [
+        "Estados Unidos tenía reservas de oro suficientes para expandir sin abandonar el patrón, lo que devuelve la responsabilidad a la Reserva Federal [@friedman-schwartz-1963].",
+        "Explica la transmisión internacional mejor que el origen de la contracción."
+      ],
+      "que_la_refutaria": "Que países que permanecieron en el patrón oro se hubieran recuperado tan rápido como los que lo abandonaron, o que la fecha de salida del oro no predijera la trayectoria de la producción industrial.",
+      "peso_academico": "dominante"
+    },
+    {
+      "escuela": "neoclasica-cliometrica",
+      "mecanismo": "La depresión se prolongó porque las políticas del New Deal sostuvieron salarios y precios por encima de su nivel de equilibrio.",
+      "desarrollo": "Cole y Ohanian construyen un modelo de equilibrio general en el que las políticas de cartelización industrial y negociación colectiva del New Deal explican por qué la producción y el empleo estadounidenses siguieron deprimidos hasta finales de los años treinta, mucho después de que terminaran los shocks monetarios y financieros [@cole-ohanian-2004]. La interpretación no explica el inicio de la depresión sino su persistencia.",
+      "autores_principales": [
+        "cole-ohanian-2004"
+      ],
+      "evidencia_a_favor": [
+        "La lentitud de la recuperación del empleo estadounidense frente a la de la productividad después de 1933 [@cole-ohanian-2004].",
+        "Salarios reales en los sectores cartelizados por encima de la tendencia."
+      ],
+      "evidencia_en_contra": [
+        "El modelo supone mercados competitivos y pleno empleo como referencia, discutible en una economía con demanda deprimida.",
+        "Otros países sin New Deal tuvieron recuperaciones igualmente lentas o más lentas."
+      ],
+      "que_la_refutaria": "Que los sectores no cubiertos por las políticas del New Deal hubieran mostrado la misma lentitud de recuperación que los cubiertos, o que la brecha entre productividad y empleo desapareciera al corregir por otros factores.",
+      "peso_academico": "minoritaria"
+    }
+  ],
+  "series": [],
+  "aristas": [
+    {
+      "desde": "patron-oro-de-entreguerras",
+      "hacia": "gran-depresion",
+      "tipo": "amplifica",
+      "consenso": "medio",
+      "sostenida_por": [
+        "institucionalista",
+        "keynesiana"
+      ],
+      "nota": "El patrón oro restaurado transmitió la deflación y limitó las respuestas nacionales [@eichengreen-1992] [@bernanke-james-1990]. Los monetaristas aceptan la restricción pero sostienen que la Reserva Federal tenía margen para actuar [@friedman-schwartz-1963].",
+      "fuentes": [
+        "eichengreen-1992",
+        "bernanke-james-1990",
+        "friedman-schwartz-1963"
+      ]
+    },
+    {
+      "desde": "gran-depresion",
+      "hacia": "patron-oro-de-entreguerras",
+      "tipo": "ruptura_de",
+      "consenso": "alto",
+      "nota": "Los abandonos sucesivos del oro entre 1931 y 1936 disolvieron el sistema restaurado en los años veinte [@eichengreen-1992].",
+      "fuentes": [
+        "eichengreen-1992"
+      ]
+    },
+    {
+      "desde": "gran-depresion",
+      "hacia": "new-deal",
+      "tipo": "causa_directa_de",
+      "consenso": "alto",
+      "nota": "El programa de Roosevelt fue la respuesta política a la depresión; su efecto sobre la recuperación es lo disputado, no su origen [@cole-ohanian-2004] [@romer-1992].",
+      "fuentes": [
+        "cole-ohanian-2004",
+        "romer-1992"
+      ]
+    },
+    {
+      "desde": "gran-depresion",
+      "hacia": "isi-y-estructuralismo-cepalino",
+      "tipo": "precondicion_de",
+      "consenso": "medio",
+      "sostenida_por": [
+        "estructuralista-cepalina",
+        "institucionalista"
+      ],
+      "nota": "El colapso de los precios y mercados de exportación cerró el modelo primario-exportador latinoamericano y abrió paso a la industrialización dirigida por el Estado [@bertola-ocampo-2012] [@thorp-1998].",
+      "fuentes": [
+        "bertola-ocampo-2012",
+        "thorp-1998"
+      ]
+    },
+    {
+      "desde": "gran-depresion",
+      "hacia": "bretton-woods",
+      "tipo": "precondicion_de",
+      "consenso": "alto",
+      "nota": "El sistema de 1944 se diseñó explícitamente para evitar la deflación competitiva y la fragmentación comercial de los años treinta [@eichengreen-2008].",
+      "fuentes": [
+        "eichengreen-2008"
+      ]
+    }
+  ],
+  "fuentes": [
+    "friedman-schwartz-1963",
+    "eichengreen-1992",
+    "bernanke-1983",
+    "bernanke-james-1990",
+    "temin-1989",
+    "kindleberger-1973",
+    "romer-1992",
+    "cole-ohanian-2004",
+    "keynes-1936",
+    "eichengreen-temin-1997",
+    "eichengreen-2008",
+    "bertola-ocampo-2012",
+    "thorp-1998"
+  ],
+  "estado_editorial": "borrador"
+}

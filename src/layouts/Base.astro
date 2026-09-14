@@ -1,0 +1,50 @@
+---
+import "../styles/global.css";
+interface Props {
+  titulo: string;
+  descripcion?: string;
+  ancho?: "normal" | "completo";
+}
+const { titulo, descripcion = "Plataforma para explorar la transformación de la economía mundial a través del tiempo, el espacio, los datos y las interpretaciones en disputa.", ancho = "normal" } = Astro.props;
+const ruta = Astro.url.pathname;
+const enlaces = [
+  { href: "/tiempo", texto: "Línea de tiempo" },
+  { href: "/nodos", texto: "Nodos" },
+  { href: "/escuelas", texto: "Escuelas" },
+  { href: "/fuentes", texto: "Fuentes" },
+];
+const activo = (href: string): "page" | undefined => (ruta === href || (href !== "/" && ruta.startsWith(href + "/")) ? "page" : undefined);
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titulo} · Historia económica mundial</title>
+    <meta name="description" content={descripcion} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="cabecera">
+      <div class="contenedor fila">
+        <a class="marca" href="/">Historia económica mundial <small>tiempo · espacio · datos · debate</small></a>
+        <nav class="nav" aria-label="Principal">
+          {enlaces.map((e) => <a href={e.href} aria-current={activo(e.href)}>{e.texto}</a>)}
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class={ancho === "completo" ? "ancho-completo" : "contenedor"}>
+        <slot />
+      </div>
+    </main>
+    <footer class="pie">
+      <div class="contenedor">
+        <p>Toda cifra es rastreable a su fuente; toda serie anterior a 1820 es una reconstrucción, no una medición. Las fuentes sin verificar se marcan como tales.</p>
+        <p>Contenido versionado en Git. Sin cuentas, sin comentarios, sin texto generado publicado como contenido.</p>
+      </div>
+    </footer>
+  </body>
+</html>

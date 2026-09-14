@@ -1,0 +1,64 @@
+---
+import Base from "../layouts/Base.astro";
+import { colorUnidad, nodosDeUnidad, nodosOrdenados, unidadesOrdenadas } from "../lib/contenido.ts";
+const unidades = unidadesOrdenadas();
+const nodos = nodosOrdenados();
+const redactados = nodos.filter((n) => n.estado_editorial !== "esqueleto").length;
+---
+<Base titulo="Inicio">
+  <section class="portada">
+    <p class="sobretitulo">Una herramienta argumentativa, no una enciclopedia</p>
+    <h1>¿Por qué el crecimiento económico moderno ocurrió cuándo y dónde ocurrió, y por qué se distribuyó tan desigualmente?</h1>
+    <p class="entradilla">Los historiadores económicos no se ponen de acuerdo. Esta plataforma recorre la misma historia bajo escuelas interpretativas distintas, distingue lo medido de lo reconstruido y etiqueta el grado de consenso de cada relación causal.</p>
+    <p class="acciones"><a class="boton" href="/tiempo">Abrir la línea de tiempo</a> <a class="boton secundario" href="/nodos">Ver los nodos</a></p>
+    <p class="meta">{nodos.length} nodos en la línea de tiempo · {redactados} con interpretaciones en disputa · el resto, esqueletos por redactar</p>
+  </section>
+
+  <section>
+    <p class="sobretitulo">Unidades de referencia</p>
+    <h2 style="margin-top:0">Ocho unidades, un solo grafo</h2>
+    <p class="prosa">Las unidades del curso organizan la lectura de la línea de tiempo. No son una periodización histórica: un mismo proceso puede atravesar varias, y el rango temporal de cada unidad se deriva de los nodos que contiene.</p>
+    <ol class="unidades lista-limpia">
+      {unidades.map((u) => {
+        const ns = nodosDeUnidad(u.id);
+        return (
+          <li class="tarjeta unidad-tarjeta" style={`--c: ${colorUnidad(u.numero)}`}>
+            <div class="numero">{u.numero}</div>
+            <div>
+              <h3><a href={`/nodos#unidad-${u.numero}`}>{u.titulo}</a></h3>
+              <p class="meta">{u.contenido_central}</p>
+              <p class="meta">{ns.length === 0 ? "sin nodos todavía" : `${ns.length} nodo${ns.length === 1 ? "" : "s"}: ${ns.map((n) => n.titulo).join(" · ")}`}</p>
+            </div>
+          </li>
+        );
+      })}
+    </ol>
+  </section>
+
+  <section class="principios">
+    <h2>Reglas de la casa</h2>
+    <div class="tarjetas">
+      <div class="tarjeta"><h3>Ninguna fuente inventada</h3><p>Cada referencia nace sin verificar y solo el autor la marca como verificada tras comprobarla. Los nodos que dependen de fuentes pendientes lo dicen.</p></div>
+      <div class="tarjeta"><h3>Medición ≠ reconstrucción</h3><p>Toda serie anterior a 1820 es una estimación conjetural y se muestra con ese badge. Eso es contenido, no letra chica.</p></div>
+      <div class="tarjeta"><h3>El consenso se etiqueta</h3><p>Una relación disputada nunca se dibuja igual que una establecida. Las aristas en disputa se trazan con línea discontinua y dicen qué escuelas las sostienen y cuáles las niegan.</p></div>
+      <div class="tarjeta"><h3>Qué la refutaría</h3><p>Ninguna interpretación entra sin decir qué observación concreta la refutaría. Si no se puede responder, no está bien formulada.</p></div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .portada { padding: 1rem 0 3rem; border-bottom: 1px solid var(--linea); margin-bottom: 2.5rem; }
+  .portada h1 { max-width: 20ch; }
+  .acciones { display: flex; gap: 0.8rem; flex-wrap: wrap; margin: 1.6rem 0 0.8rem; }
+  .boton { display: inline-block; background: var(--tinta); color: var(--papel); text-decoration: none; padding: 0.7rem 1.3rem; border-radius: 999px; font-weight: 600; }
+  .boton:hover { background: var(--acento); color: white; }
+  .boton.secundario { background: transparent; color: var(--tinta); border: 1px solid var(--tinta-3); }
+  .boton.secundario:hover { border-color: var(--tinta); }
+  .unidades { display: grid; gap: 0.9rem; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+  .unidad-tarjeta { display: grid; grid-template-columns: 3.2rem 1fr; gap: 0.8rem; border-left: 4px solid var(--c); }
+  .unidad-tarjeta .numero { font-family: var(--serif); font-size: 2.2rem; color: var(--c); line-height: 1; }
+  .unidad-tarjeta h3 { font-size: 1.15rem; margin: 0 0 0.3rem; }
+  .unidad-tarjeta h3 a { color: var(--tinta); text-decoration: none; }
+  .unidad-tarjeta h3 a:hover { color: var(--c); }
+  .principios { margin-top: 3rem; }
+</style>

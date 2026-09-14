@@ -1,0 +1,24 @@
+{
+  "id": "new-deal",
+  "titulo": "New Deal",
+  "tipo": "evento",
+  "periodo": {
+    "inicio": 1933,
+    "fin": 1939,
+    "precision": "exacta"
+  },
+  "regiones": [
+    "estados-unidos",
+    "america-del-norte"
+  ],
+  "unidades": [
+    "crisis-de-los-anos-30"
+  ],
+  "resumen": "Programa de Roosevelt frente a la Depresión: abandono del oro, reforma bancaria, obra pública, regulación laboral y seguridad social. Su efecto sobre la recuperación es disputado.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

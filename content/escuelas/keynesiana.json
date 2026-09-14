@@ -1,0 +1,12 @@
+{
+  "id": "keynesiana",
+  "nombre": "Keynesiana",
+  "postulado_central": "La demanda agregada puede permanecer deficiente durante largos períodos sin que los mercados la corrijan; sin un prestamista de última instancia internacional y sin política fiscal activa, las depresiones se perpetúan [@keynes-1936] [@kindleberger-1973] [@temin-1989]. La inestabilidad financiera —auges de crédito seguidos de colapsos— es endógena al capitalismo y no un accidente de política [@diaz-alejandro-1985].",
+  "autores_representativos": [
+    "keynes-1936",
+    "kindleberger-1973",
+    "temin-1989",
+    "diaz-alejandro-1985"
+  ],
+  "critica_principal": "La identificación empírica de un «shock de demanda» independiente del dinero es difícil, y modelos de equilibrio general sugieren que algunas políticas de sostén de la demanda, como las del New Deal, pudieron prolongar la depresión en vez de acortarla [@cole-ohanian-2004]."
+}

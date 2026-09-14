@@ -1,0 +1,12 @@
+{
+  "id": "serie-fixture",
+  "indicador": "pib_per_capita",
+  "fuente_dataset": "dataset-fantasma",
+  "cobertura_temporal": [1700, 1850],
+  "cobertura_geografica": ["europa-occidental"],
+  "unidad": "fixture",
+  "nivel_evidencia": "reconstruccion_documentada",
+  "nota_metodologica": "Fixture: nota metodológica.",
+  "advertencias": ["Fixture: advertencia."],
+  "archivo": "data/processed/serie-fixture.csv"
+}

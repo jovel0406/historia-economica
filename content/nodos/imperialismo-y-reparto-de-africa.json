@@ -1,0 +1,24 @@
+{
+  "id": "imperialismo-y-reparto-de-africa",
+  "titulo": "Imperialismo y reparto de África",
+  "tipo": "proceso",
+  "periodo": {
+    "inicio": 1880,
+    "fin": 1914,
+    "precision": "aproximada"
+  },
+  "regiones": [
+    "africa-subsahariana",
+    "europa-occidental"
+  ],
+  "unidades": [
+    "colonialismo-e-imperialismo"
+  ],
+  "resumen": "Expansión colonial europea que sometió a casi toda África y buena parte de Asia. Si el imperialismo fue rentable para las metrópolis, y cuánto costó a las colonias, sigue en discusión.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

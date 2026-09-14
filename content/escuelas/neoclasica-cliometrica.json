@@ -1,0 +1,13 @@
+{
+  "id": "neoclasica-cliometrica",
+  "nombre": "Neoclásica y cliométrica",
+  "postulado_central": "El crecimiento se descompone en acumulación de capital, trabajo y productividad total de los factores [@solow-1956]; las preguntas históricas se responden cuantificando con contabilidad del crecimiento, contrafactuales y modelos de equilibrio. Con ese instrumental, el sector esclavista resulta demasiado pequeño para haber causado la industrialización británica [@eltis-engerman-2000], las políticas del New Deal aparecen prolongando la Depresión [@cole-ohanian-2004] y el crecimiento chino se atribuye a ganancias de productividad y reasignación [@zhu-2012].",
+  "autores_representativos": [
+    "solow-1956",
+    "eltis-engerman-2000",
+    "cole-ohanian-2004",
+    "zhu-2012",
+    "wright-2020"
+  ],
+  "critica_principal": "Los supuestos de equilibrio y mercados competitivos son poco realistas para economías preindustriales o en crisis; los «contrafactuales pequeños» dependen de la delimitación del sector que se mide, y la contabilidad del crecimiento describe la forma del crecimiento sin explicar su origen."
+}

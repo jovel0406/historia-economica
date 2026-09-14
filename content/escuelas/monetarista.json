@@ -1,0 +1,10 @@
+{
+  "id": "monetarista",
+  "nombre": "Monetarista",
+  "postulado_central": "La cantidad de dinero es el determinante principal de las fluctuaciones del ingreso nominal; las grandes contracciones son, ante todo, fallas de la política monetaria. La Gran Depresión se convirtió en gran porque la Reserva Federal permitió que la oferta monetaria se contrajera durante las quiebras bancarias [@friedman-schwartz-1963]. Aplicado a la periferia, el énfasis se traslada a la disciplina fiscal y monetaria interna como condición del crecimiento [@edwards-1995].",
+  "autores_representativos": [
+    "friedman-schwartz-1963",
+    "edwards-1995"
+  ],
+  "critica_principal": "El canal de transmisión es discutido: la caída del dinero pudo ser consecuencia y no causa de la caída del gasto [@temin-1989], y bajo el patrón oro los bancos centrales tenían poco margen para actuar, lo que desplaza la explicación al régimen internacional [@eichengreen-1992]."
+}

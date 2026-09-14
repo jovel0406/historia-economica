@@ -1,0 +1,7 @@
+{
+  "id": "sistema-mundo-dependencia",
+  "nombre": "Fixture sistema-mundo-dependencia",
+  "postulado_central": "Fixture de test: postulado de prueba.",
+  "autores_representativos": ["fuente-uno"],
+  "critica_principal": "Fixture de test: crítica de prueba."
+}

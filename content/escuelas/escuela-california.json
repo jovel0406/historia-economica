@@ -1,0 +1,11 @@
+{
+  "id": "escuela-california",
+  "nombre": "Escuela de California",
+  "postulado_central": "Hasta finales del siglo XVIII las regiones más avanzadas de Asia (el delta del Yangzi, Guyarat, Bengala) eran comparables a las de Europa noroccidental en niveles de vida, mercados y protoindustria. La divergencia fue tardía y contingente: Gran Bretaña escapó de la restricción ecológica gracias al carbón accesible y a los recursos de las Américas —los «acres fantasma»— [@pomeranz-2000] [@parthasarathi-2011], en una economía mundial que hasta entonces había tenido su centro en Asia [@frank-1998].",
+  "autores_representativos": [
+    "pomeranz-2000",
+    "frank-1998",
+    "parthasarathi-2011"
+  ],
+  "critica_principal": "La contabilidad nacional histórica sitúa la brecha mucho antes: las reconstrucciones del PIB per cápita chino muestran un declive desde la dinastía Song y una ventaja de Holanda e Inglaterra ya en el siglo XVIII [@broadberry-guan-li-2018], y los salarios reales del noroeste europeo se separaron del resto desde el siglo XVII [@allen-2001]."
+}

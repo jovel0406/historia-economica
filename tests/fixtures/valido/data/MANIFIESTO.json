@@ -1,0 +1,15 @@
+{
+  "datasets": [
+    {
+      "id": "dataset-fixture",
+      "nombre": "Dataset fixture",
+      "institucion": "Tests del proyecto",
+      "url": "https://example.invalid/dataset-fixture",
+      "version": "0",
+      "fecha_descarga": "2026-01-01",
+      "licencia": "Fixture",
+      "cita_requerida": "Fixture: cita de prueba.",
+      "archivos": [{ "ruta": "data/processed/serie-fixture.csv", "sha256": "1109b38aea28e85035a9d83438403391e4b38636e79a81e787258ef1ff64e7c8" }]
+    }
+  ]
+}

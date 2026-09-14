@@ -1,0 +1,151 @@
+{
+  "id": "reforma-china-de-1978",
+  "titulo": "Reforma china de 1978",
+  "tipo": "proceso",
+  "periodo": {
+    "inicio": 1978,
+    "fin": 2001,
+    "precision": "disputada",
+    "nota_periodizacion": "El inicio en 1978 es convencional. El fin es disputado: 1993, cuando el sistema dual de precios se unificó y la economía «creció fuera del plan» [@naughton-1995]; 2001, con el ingreso a la OMC; o un proceso todavía en curso."
+  },
+  "regiones": [
+    "asia-oriental",
+    "china"
+  ],
+  "unidades": [
+    "reorientacion-hacia-el-mercado"
+  ],
+  "resumen": "A partir del Tercer Pleno de diciembre de 1978, China desmanteló gradualmente la planificación central: descolectivizó la agricultura, permitió empresas rurales y privadas, abrió zonas económicas especiales y liberalizó precios en un sistema dual. El resultado fue el episodio de crecimiento sostenido más grande registrado. Las escuelas discrepan sobre si lo explica la dirección estatal, las instituciones transicionales o la liberalización.",
+  "descripcion_larga": "## Qué pasó\n\nLa reforma no siguió un plan. Empezó en el campo, con el sistema de responsabilidad familiar que devolvió a los hogares el control de la producción; siguió con las empresas de cantón y aldea, las zonas económicas especiales de la costa y un sistema dual en que los precios planificados coexistían con precios de mercado en el margen [@naughton-1995]. Las empresas estatales se reformaron tarde y a medias. La integración comercial se aceleró en los años noventa y culminó con el ingreso a la OMC en 2001.\n\n## Qué se disputa\n\nSi el crecimiento vino de la dirección del Estado y del gradualismo, de instituciones transicionales que alinearon incentivos sin derechos de propiedad formales [@qian-2017] [@xu-2011], o de la liberalización y la reasignación de recursos hacia el sector privado, que habría crecido a pesar del Estado más que gracias a él [@zhu-2012] [@huang-2008]. La respuesta importa porque de ella depende si la experiencia china es replicable y si el modelo es «desarrollista» o «capitalista con características chinas».\n\n## Qué se mide\n\nLas estadísticas oficiales chinas de producto son objeto de revisiones y de controversias sobre su fiabilidad, en particular para los años ochenta; las estimaciones alternativas se construyen a partir de indicadores físicos. Toda cifra de esta sección debe leerse con esa advertencia.",
+  "interpretaciones": [
+    {
+      "escuela": "estado-desarrollista",
+      "mecanismo": "Un Estado capaz condujo la transición de forma gradual —«crecer fuera del plan»— siguiendo la ventaja comparativa en vez de forzar la industria pesada.",
+      "desarrollo": "Naughton muestra que la reforma china evitó el colapso de la producción que sufrieron las economías de Europa oriental gracias al gradualismo: el plan se mantuvo fijo en términos absolutos mientras el mercado crecía en el margen, y el Estado conservó capacidad de coordinación [@naughton-1995]. Lin, Cai y Li atribuyen el éxito al abandono de la estrategia de industria pesada y a la adopción de una estrategia acorde con la abundancia de trabajo [@lin-cai-li-2003]. La comparación con Corea y Taiwán refuerza la lectura de industrialización guiada [@amsden-1989] [@wade-1990].",
+      "autores_principales": [
+        "naughton-1995",
+        "lin-cai-li-2003"
+      ],
+      "evidencia_a_favor": [
+        "La ausencia de una caída de la producción al inicio de la transición, a diferencia de la Europa poscomunista [@naughton-1995].",
+        "La secuencia agricultura, industria ligera, exportaciones, acorde con la dotación de factores [@lin-cai-li-2003]."
+      ],
+      "evidencia_en_contra": [
+        "El crecimiento más dinámico ocurrió en sectores y regiones donde el Estado intervino menos (empresas rurales, sector privado costero) [@huang-2008].",
+        "Las empresas estatales, el instrumento del Estado, fueron el sector menos productivo y el que más crédito absorbió [@zhu-2012]."
+      ],
+      "que_la_refutaria": "Que las regiones y sectores con mayor dirección estatal hubieran crecido más rápido que los de mayor liberalización, o que el gradualismo no hubiera evitado una caída inicial de la producción comparable a la de Europa oriental.",
+      "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "institucionalista",
+      "mecanismo": "Instituciones transicionales —descentralización regional con competencia entre gobiernos locales, contratos de responsabilidad, propiedad ambigua pero incentivada— alinearon incentivos sin derechos de propiedad al estilo occidental.",
+      "desarrollo": "Xu describe el sistema chino como un «autoritarismo regionalmente descentralizado»: el centro controla los nombramientos y evalúa a los gobiernos locales por su desempeño económico, lo que genera competencia por el crecimiento entre provincias y municipios [@xu-2011]. Qian muestra cómo instituciones de segundo óptimo —el sistema dual, las empresas de cantón y aldea, el federalismo fiscal— funcionaron porque hicieron compatibles los intereses de los agentes con la reforma, aunque no se parecieran a las instituciones de los manuales [@qian-2017].",
+      "autores_principales": [
+        "xu-2011",
+        "qian-2017"
+      ],
+      "evidencia_a_favor": [
+        "La correlación entre promoción de funcionarios locales y desempeño económico de sus jurisdicciones [@xu-2011].",
+        "El dinamismo de las empresas de cantón y aldea, con propiedad colectiva ambigua, en los años ochenta y noventa [@qian-2017]."
+      ],
+      "evidencia_en_contra": [
+        "La escuela institucionalista clásica predeciría estancamiento bajo instituciones extractivas, lo que la propia experiencia china contradice [@acemoglu-robinson-2012].",
+        "La competencia regional también produjo sobreinversión, proteccionismo interno y deuda local."
+      ],
+      "que_la_refutaria": "Que las provincias con mayor autonomía y competencia entre gobiernos locales no hubieran crecido más que las demás, o que la promoción de funcionarios no dependiera del desempeño económico de sus jurisdicciones.",
+      "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "neoclasica-cliometrica",
+      "mecanismo": "El crecimiento provino de ganancias de productividad y de la reasignación de recursos desde el sector estatal hacia el privado; la liberalización, no la dirección estatal, es lo que explica el despegue.",
+      "desarrollo": "Zhu descompone el crecimiento chino y encuentra que la productividad total de los factores, impulsada por la reasignación de trabajo y capital desde la agricultura y las empresas estatales hacia el sector no estatal, explica la mayor parte del crecimiento del producto por trabajador [@zhu-2012]. Huang sostiene que la década más genuinamente capitalista fue la de 1980, con emprendimiento rural y financiamiento privado, y que la recentralización de los años noventa favoreció a empresas estatales y urbanas a costa del dinamismo rural [@huang-2008].",
+      "autores_principales": [
+        "zhu-2012",
+        "huang-2008"
+      ],
+      "evidencia_a_favor": [
+        "La contribución de la productividad y de la reasignación sectorial al crecimiento en la contabilidad del crecimiento [@zhu-2012].",
+        "El crecimiento del ingreso rural y del emprendimiento privado en los años ochenta, anterior a las grandes inversiones estatales [@huang-2008]."
+      ],
+      "evidencia_en_contra": [
+        "La contabilidad del crecimiento describe la forma del crecimiento pero no explica por qué la reasignación fue posible sin colapso, que es lo que el gradualismo y las instituciones transicionales pretenden explicar [@naughton-1995] [@qian-2017].",
+        "La calidad de las estadísticas chinas de los años ochenta limita la precisión de cualquier descomposición."
+      ],
+      "que_la_refutaria": "Que la contabilidad del crecimiento atribuyera la mayor parte del crecimiento a la acumulación de capital dirigida por el Estado y no a la productividad, o que el sector estatal hubiera crecido más rápido que el privado durante el período.",
+      "peso_academico": "sustancial"
+    }
+  ],
+  "series": [],
+  "aristas": [
+    {
+      "desde": "reforma-china-de-1978",
+      "hacia": "china-en-la-omc",
+      "tipo": "precondicion_de",
+      "consenso": "alto",
+      "nota": "La apertura comercial gradual y las zonas económicas especiales prepararon la integración plena de 2001 [@naughton-1995].",
+      "fuentes": [
+        "naughton-1995"
+      ]
+    },
+    {
+      "desde": "milagro-de-asia-oriental",
+      "hacia": "reforma-china-de-1978",
+      "tipo": "precondicion_de",
+      "consenso": "medio",
+      "sostenida_por": [
+        "estado-desarrollista"
+      ],
+      "nota": "El éxito exportador de Japón, Corea y Taiwán sirvió de modelo y de fuente de inversión para la costa china [@amsden-1989] [@wade-1990].",
+      "fuentes": [
+        "amsden-1989",
+        "wade-1990"
+      ]
+    },
+    {
+      "desde": "giro-neoliberal",
+      "hacia": "reforma-china-de-1978",
+      "tipo": "contiene",
+      "consenso": "disputado",
+      "sostenida_por": [
+        "sistema-mundo-dependencia"
+      ],
+      "negada_por": [
+        "estado-desarrollista",
+        "institucionalista"
+      ],
+      "nota": "¿Es la reforma china parte del giro global hacia el mercado de los años ochenta o un camino propio? La lectura de sistema-mundo la integra en la reestructuración global del capitalismo; el enfoque desarrollista y el institucionalista subrayan su especificidad estatal e institucional [@naughton-1995] [@xu-2011].",
+      "fuentes": [
+        "naughton-1995",
+        "xu-2011"
+      ]
+    },
+    {
+      "desde": "reforma-china-de-1978",
+      "hacia": "revolucion-rusa-y-planificacion-sovietica",
+      "tipo": "ruptura_de",
+      "consenso": "medio",
+      "sostenida_por": [
+        "estado-desarrollista",
+        "institucionalista"
+      ],
+      "nota": "China abandonó la planificación central de tipo soviético, pero gradualmente y sin renunciar al control político, lo que hace disputable el término «ruptura» [@naughton-1995].",
+      "fuentes": [
+        "naughton-1995"
+      ]
+    }
+  ],
+  "fuentes": [
+    "naughton-1995",
+    "qian-2017",
+    "xu-2011",
+    "zhu-2012",
+    "huang-2008",
+    "lin-cai-li-2003",
+    "brandt-rawski-2008",
+    "amsden-1989",
+    "wade-1990",
+    "acemoglu-robinson-2012"
+  ],
+  "estado_editorial": "borrador"
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "nodo": "reforma-china-de-1978",
+    "region": "america-latina",
+    "texto": "El ascenso chino cambió la inserción de América Latina en la economía mundial: China se convirtió en el principal comprador de soja, cobre, hierro y petróleo de la región, y el auge de precios de las materias primas del siglo XXI está ligado a su demanda. Bértola y Ocampo analizan la reprimarización asociada [@bertola-ocampo-2012].",
+    "fuentes": [
+      "bertola-ocampo-2012"
+    ]
+  },
+  {
+    "nodo": "reforma-china-de-1978",
+    "region": "costa-rica",
+    "texto": "Costa Rica estableció relaciones diplomáticas con la República Popular China en 2007 y firmó un tratado de libre comercio que entró en vigor el 1 de agosto de 2011, el primero de Centroamérica con China [@comex-tlc-china]. El balance comercial y productivo del acuerdo es objeto de debate público.",
+    "fuentes": [
+      "comex-tlc-china"
+    ]
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "id": "consenso-de-washington",
+  "titulo": "Consenso de Washington",
+  "tipo": "evento",
+  "periodo": {
+    "inicio": 1989,
+    "fin": 1989,
+    "precision": "exacta"
+  },
+  "regiones": [
+    "america-latina",
+    "mundo"
+  ],
+  "unidades": [
+    "reorientacion-hacia-el-mercado"
+  ],
+  "resumen": "Formulación de las diez políticas de reforma —disciplina fiscal, apertura, privatización, desregulación— recomendadas a América Latina tras la crisis de la deuda. Su balance es objeto de una amplia literatura crítica.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "sistema-mundo-dependencia",
+  "nombre": "Sistema-mundo y dependencia",
+  "postulado_central": "Desde el siglo XVI existe una economía-mundo capitalista con un centro, una semiperiferia y una periferia; el desarrollo del centro y el subdesarrollo de la periferia son dos caras de un mismo proceso de extracción de excedente por medio de la plata americana, la esclavitud, el colonialismo y los términos de intercambio [@wallerstein-1974] [@cardoso-faletto-1969]. Los beneficios de la esclavitud y del comercio atlántico habrían financiado la industrialización británica [@williams-1944] [@inikori-2002].",
+  "autores_representativos": [
+    "wallerstein-1974",
+    "cardoso-faletto-1969",
+    "williams-1944",
+    "inikori-2002",
+    "frank-1998"
+  ],
+  "critica_principal": "Las cuantificaciones del peso del comercio esclavista y colonial en el ingreso británico son bajas [@eltis-engerman-2000], y el enfoque tiene dificultades para explicar por qué las potencias que más extrajeron (España, Portugal) no fueron las primeras en industrializar ni por qué algunos países periféricos convergieron."
+}

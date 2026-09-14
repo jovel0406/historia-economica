@@ -1,0 +1,24 @@
+{
+  "id": "shock-inflacionario-y-energetico",
+  "titulo": "Shock inflacionario y energético",
+  "tipo": "evento",
+  "periodo": {
+    "inicio": 2021,
+    "fin": 2023,
+    "precision": "aproximada"
+  },
+  "regiones": [
+    "mundo",
+    "europa-occidental"
+  ],
+  "unidades": [
+    "crisis-de-2008-y-tendencias-mundiales"
+  ],
+  "resumen": "Aumento de la inflación en las economías avanzadas por primera vez en décadas, con precios de la energía disparados tras la invasión de Ucrania. Reabrió el debate entre explicaciones de oferta y de demanda.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

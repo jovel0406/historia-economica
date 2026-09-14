@@ -1,0 +1,38 @@
+{
+  "name": "historia-economica",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Plataforma interactiva para explorar la transformación de la economía mundial: tiempo, espacio, datos e interpretaciones en disputa.",
+  "type": "module",
+  "packageManager": "pnpm@12.4.1",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "pnpm run validar:estricto && astro build",
+    "preview": "astro preview",
+    "check": "astro check && tsc --noEmit",
+    "validar": "tsx scripts/validar-contenido.ts",
+    "validar:estricto": "tsx scripts/validar-contenido.ts --strict",
+    "bibliografia:reporte": "tsx scripts/reporte-bibliografia.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:cobertura": "vitest run --coverage"
+  },
+  "dependencies": {
+    "astro": "7.3.2",
+    "d3": "7.9.0",
+    "marked": "18.0.13",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@types/d3": "^7.4.3",
+    "@types/node": "26.5.1",
+    "@vitest/coverage-v8": "5.0.0",
+    "tsx": "4.23.13",
+    "typescript": "6.0.3",
+    "vitest": "5.0.0"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "revolucion-rusa-y-planificacion-sovietica",
+  "titulo": "Revolución rusa y planificación soviética",
+  "tipo": "proceso",
+  "periodo": {
+    "inicio": 1917,
+    "fin": 1991,
+    "precision": "exacta"
+  },
+  "regiones": [
+    "europa-oriental"
+  ],
+  "unidades": [
+    "crisis-de-los-anos-30",
+    "reorientacion-hacia-el-mercado"
+  ],
+  "resumen": "El primer experimento de economía planificada a gran escala: industrialización forzada, colectivización y crecimiento extensivo, seguido de estancamiento y colapso. Referencia obligada para juzgar las transiciones posteriores.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

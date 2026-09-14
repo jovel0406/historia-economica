@@ -1,0 +1,26 @@
+{
+  "id": "edad-de-oro-del-capitalismo",
+  "titulo": "Edad de oro del capitalismo",
+  "tipo": "proceso",
+  "periodo": {
+    "inicio": 1945,
+    "fin": 1973,
+    "precision": "aproximada"
+  },
+  "regiones": [
+    "europa-occidental",
+    "america-del-norte",
+    "japon",
+    "mundo"
+  ],
+  "unidades": [
+    "bretton-woods-y-segunda-posguerra"
+  ],
+  "resumen": "Crecimiento rápido y sostenido de las economías industriales con pleno empleo, Estado de bienestar y convergencia de Europa y Japón hacia Estados Unidos. Terminó con el fin de Bretton Woods y el shock petrolero.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

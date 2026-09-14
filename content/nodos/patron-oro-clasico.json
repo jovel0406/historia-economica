@@ -1,0 +1,25 @@
+{
+  "id": "patron-oro-clasico",
+  "titulo": "Patrón oro clásico",
+  "tipo": "proceso",
+  "periodo": {
+    "inicio": 1870,
+    "fin": 1914,
+    "precision": "aproximada"
+  },
+  "regiones": [
+    "mundo",
+    "reino-unido",
+    "europa-occidental"
+  ],
+  "unidades": [
+    "colonialismo-e-imperialismo"
+  ],
+  "resumen": "Régimen monetario internacional de tipos de cambio fijos anclados al oro, con Londres como centro financiero. Su estabilidad ha sido atribuida tanto a reglas automáticas como a la cooperación entre bancos centrales y a la credibilidad británica.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

@@ -1,0 +1,168 @@
+{
+  "id": "crisis-de-la-deuda-latinoamericana",
+  "titulo": "Crisis de la deuda latinoamericana",
+  "tipo": "evento",
+  "periodo": {
+    "inicio": 1982,
+    "fin": 1989,
+    "precision": "aproximada",
+    "nota_periodizacion": "El inicio se fija convencionalmente en la moratoria mexicana de agosto de 1982, aunque Costa Rica había suspendido el pago del principal en 1981 [@nacion-2023-impago-1981]. El cierre en 1989 corresponde al Plan Brady, que permitió reestructurar la deuda bancaria; los efectos sobre el crecimiento se extienden por toda la «década perdida» [@ocampo-2014]."
+  },
+  "regiones": [
+    "america-latina",
+    "mexico",
+    "brasil",
+    "argentina",
+    "costa-rica"
+  ],
+  "unidades": [
+    "de-la-prosperidad-a-la-crisis-de-deuda"
+  ],
+  "resumen": "Entre 1982 y finales de la década, la mayoría de los países latinoamericanos dejó de poder pagar la deuda externa contraída con bancos comerciales en los años setenta. La combinación de tasas de interés altas, caída de los precios de exportación y retiro del crédito produjo la «década perdida». Las escuelas discrepan sobre el peso de los shocks externos frente a las políticas internas.",
+  "descripcion_larga": "## Qué pasó\n\nTras el primer shock petrolero, los bancos internacionales reciclaron los excedentes de los exportadores de petróleo prestando a gobiernos y empresas de América Latina a tasas variables. Cuando la Reserva Federal elevó las tasas en 1979–1981 y los precios de las materias primas cayeron, el servicio de la deuda se volvió impagable; el crédito nuevo se cortó de golpe y los países se vieron obligados a generar superávits comerciales mediante devaluaciones y recesión [@ocampo-2014]. La deuda se reestructuró en rondas sucesivas hasta el Plan Brady de 1989.\n\n## Qué se disputa\n\nLa lectura estructuralista ve una crisis de balanza de pagos provocada por shocks externos y por la prociclicidad del financiamiento internacional [@ocampo-2014]. La lectura ortodoxa ve el resultado de déficits fiscales, tipos de cambio sobrevaluados y las distorsiones de la industrialización sustitutiva [@edwards-1995]. La economía política de la deuda subraya el poder de los acreedores en las negociaciones y el sesgo de los ajustes [@stallings-2014]. Y la lectura de inestabilidad financiera, a partir del Cono Sur, ve una liberalización financiera mal secuenciada que terminó en colapso [@diaz-alejandro-1985].\n\n## Por qué importa\n\nLa crisis cerró el ciclo de industrialización dirigida por el Estado y abrió el de las reformas de mercado que se codificarían en el Consenso de Washington. Cómo se explica la crisis determina cómo se juzgan esas reformas.",
+  "interpretaciones": [
+    {
+      "escuela": "estructuralista-cepalina",
+      "mecanismo": "Shocks externos —tasas de interés, términos de intercambio, retiro del crédito— sobre economías estructuralmente vulnerables; el financiamiento internacional es procíclico y el ajuste recayó sobre los deudores.",
+      "desarrollo": "Ocampo sitúa la crisis en una secuencia histórica de auges y colapsos del financiamiento externo hacia América Latina, donde la abundancia de crédito en el auge se convierte en su retiro brusco en la crisis; el ajuste, sin mecanismos internacionales de reestructuración ordenada, se hizo mediante recesión y transferencias netas al exterior [@ocampo-2014]. Bértola y Ocampo enmarcan el episodio en la larga historia de vulnerabilidad externa de la región [@bertola-ocampo-2012].",
+      "autores_principales": [
+        "ocampo-2014",
+        "bertola-ocampo-2012"
+      ],
+      "evidencia_a_favor": [
+        "La simultaneidad de la crisis en países con políticas internas muy distintas, lo que apunta a causas comunes externas [@ocampo-2014].",
+        "La secuencia de auge de crédito bancario, alza de tasas y corte del financiamiento entre 1979 y 1982."
+      ],
+      "evidencia_en_contra": [
+        "Países con acceso a los mismos mercados de crédito (Colombia, Corea del Sur) evitaron la crisis o salieron rápido de ella, lo que sugiere que las políticas internas importaron [@edwards-1995].",
+        "La abundancia de crédito no obligaba a endeudarse a tasa variable ni a sostener tipos de cambio sobrevaluados."
+      ],
+      "que_la_refutaria": "Que los países con políticas fiscales y cambiarias prudentes hubieran sufrido la crisis con la misma intensidad que los demás, o que el retiro del crédito internacional no precediera al deterioro de las cuentas internas.",
+      "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "monetarista",
+      "mecanismo": "Déficits fiscales, tipos de cambio sobrevaluados y las distorsiones de la industrialización sustitutiva hicieron insostenible el endeudamiento; el shock externo solo reveló el desequilibrio.",
+      "desarrollo": "Edwards atribuye la crisis a políticas internas: expansión fiscal financiada con deuda, tipos de cambio fijos y sobrevaluados que estimularon la fuga de capitales, y un aparato proteccionista que impedía generar exportaciones para servir la deuda; las reformas de mercado de los años noventa serían la corrección de esos errores [@edwards-1995]. El volumen editado por Sachs documenta caso por caso la interacción entre políticas internas y condiciones externas [@sachs-1989].",
+      "autores_principales": [
+        "edwards-1995",
+        "sachs-1989"
+      ],
+      "evidencia_a_favor": [
+        "La fuga de capitales durante el auge de crédito en países con tipos de cambio sobrevaluados (México, Argentina, Venezuela) [@edwards-1995].",
+        "La mejor trayectoria de países con menor sesgo antiexportador."
+      ],
+      "evidencia_en_contra": [
+        "La sincronía regional de la crisis es difícil de explicar por políticas internas heterogéneas [@ocampo-2014].",
+        "Chile, que había liberalizado y tenía superávit fiscal, sufrió una de las contracciones más profundas [@diaz-alejandro-1985]."
+      ],
+      "que_la_refutaria": "Que países con equilibrio fiscal, tipo de cambio competitivo y apertura comercial hubieran sufrido la crisis con la misma intensidad, o que la fuga de capitales no estuviera asociada a la sobrevaluación.",
+      "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "sistema-mundo-dependencia",
+      "mecanismo": "El poder de los bancos acreedores y de los gobiernos del centro determinó la distribución de los costos del ajuste, que recayó sobre los deudores.",
+      "desarrollo": "Stallings analiza las negociaciones de la deuda de los años ochenta como un proceso político en que los acreedores, coordinados por los gobiernos del Norte y el FMI, impusieron condiciones que protegían a los bancos y transferían el costo a los países deudores; la fragmentación de estos impidió una respuesta colectiva [@stallings-2014]. Cardoso y Faletto ofrecen el marco de dependencia en que las decisiones económicas de la periferia están condicionadas por el centro [@cardoso-faletto-1969].",
+      "autores_principales": [
+        "stallings-2014",
+        "cardoso-faletto-1969"
+      ],
+      "evidencia_a_favor": [
+        "La coordinación de los acreedores frente a la falta de coordinación de los deudores, y la protección efectiva de los balances bancarios durante la década [@stallings-2014].",
+        "Las transferencias netas de recursos de América Latina al exterior durante los años ochenta [@ocampo-2014]."
+      ],
+      "evidencia_en_contra": [
+        "No explica por qué los países se endeudaron a tasas variables ni la heterogeneidad de resultados dentro de la región.",
+        "El Plan Brady terminó imponiendo pérdidas a los bancos, lo que matiza la tesis del poder unilateral de los acreedores."
+      ],
+      "que_la_refutaria": "Que las condiciones de reestructuración hubieran sido similares para deudores fuertes y débiles, o que los bancos hubieran absorbido pérdidas proporcionales a las de los deudores desde el inicio de la crisis.",
+      "peso_academico": "minoritaria"
+    },
+    {
+      "escuela": "keynesiana",
+      "mecanismo": "La liberalización financiera mal secuenciada —apertura de la cuenta de capital con supervisión débil y garantías implícitas— produjo auges de crédito y colapsos: inestabilidad financiera endógena.",
+      "desarrollo": "Díaz-Alejandro muestra, a partir del Cono Sur, que la desregulación financiera de finales de los setenta generó expansión del crédito, sobreendeudamiento privado y quiebras bancarias que el Estado terminó absorbiendo; la crisis de la deuda fue en parte una crisis bancaria privada socializada [@diaz-alejandro-1985]. El mecanismo es el de Kindleberger: euforia, exceso de crédito, pánico [@kindleberger-1973].",
+      "autores_principales": [
+        "diaz-alejandro-1985",
+        "kindleberger-1973"
+      ],
+      "evidencia_a_favor": [
+        "La secuencia de liberalización, auge del crédito privado y colapso bancario en Chile y Argentina [@diaz-alejandro-1985].",
+        "La conversión de deuda privada en pública durante las reestructuraciones."
+      ],
+      "evidencia_en_contra": [
+        "Aplica bien al Cono Sur pero peor a México o Brasil, donde la deuda era mayoritariamente pública desde el inicio.",
+        "No explica por qué los prestamistas internacionales no anticiparon el riesgo."
+      ],
+      "que_la_refutaria": "Que los países que no liberalizaron su sistema financiero hubieran sufrido crisis bancarias de igual magnitud, o que la deuda privada no hubiera sido un componente relevante de la deuda reestructurada en el Cono Sur.",
+      "peso_academico": "sustancial"
+    }
+  ],
+  "series": [],
+  "aristas": [
+    {
+      "desde": "crisis-del-petroleo",
+      "hacia": "crisis-de-la-deuda-latinoamericana",
+      "tipo": "precondicion_de",
+      "consenso": "alto",
+      "nota": "El reciclaje de los excedentes petroleros por los bancos internacionales alimentó el endeudamiento de los años setenta [@ocampo-2014].",
+      "fuentes": [
+        "ocampo-2014"
+      ]
+    },
+    {
+      "desde": "fin-de-bretton-woods",
+      "hacia": "crisis-de-la-deuda-latinoamericana",
+      "tipo": "precondicion_de",
+      "consenso": "medio",
+      "sostenida_por": [
+        "keynesiana",
+        "estructuralista-cepalina"
+      ],
+      "nota": "La flotación de las monedas y la desregulación financiera posterior a 1971 crearon el mercado de préstamos bancarios a tasa variable que después se volvió impagable [@eichengreen-2008].",
+      "fuentes": [
+        "eichengreen-2008"
+      ]
+    },
+    {
+      "desde": "crisis-de-la-deuda-latinoamericana",
+      "hacia": "isi-y-estructuralismo-cepalino",
+      "tipo": "ruptura_de",
+      "consenso": "medio",
+      "sostenida_por": [
+        "estructuralista-cepalina",
+        "monetarista"
+      ],
+      "nota": "La crisis cerró el ciclo de industrialización dirigida por el Estado; estructuralistas y ortodoxos coinciden en el hecho y discrepan en la causa [@bertola-ocampo-2012] [@edwards-1995].",
+      "fuentes": [
+        "bertola-ocampo-2012",
+        "edwards-1995"
+      ]
+    },
+    {
+      "desde": "crisis-de-la-deuda-latinoamericana",
+      "hacia": "consenso-de-washington",
+      "tipo": "causa_directa_de",
+      "consenso": "alto",
+      "nota": "Las reformas de mercado de los años noventa se formularon como respuesta a la crisis y como condición de los acuerdos de reestructuración [@edwards-1995] [@rodrik-2006].",
+      "fuentes": [
+        "edwards-1995",
+        "rodrik-2006"
+      ]
+    }
+  ],
+  "fuentes": [
+    "ocampo-2014",
+    "stallings-2014",
+    "diaz-alejandro-1985",
+    "sachs-1989",
+    "edwards-1995",
+    "bertola-ocampo-2012",
+    "cardoso-faletto-1969",
+    "kindleberger-1973",
+    "nacion-2023-impago-1981",
+    "eichengreen-2008",
+    "rodrik-2006"
+  ],
+  "estado_editorial": "borrador"
+}

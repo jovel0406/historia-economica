@@ -1,0 +1,164 @@
+---
+import Base from "../../layouts/Base.astro";
+import AvisoFuentes from "../../components/AvisoFuentes.astro";
+import { aristasHacia, colorUnidad, escuela, fuentesDe, lenteDe, nodo, nodosOrdenados, unidadesDe } from "../../lib/contenido.ts";
+import { DESCRIPCION_ESTADO, ETIQUETA_ARISTA, ETIQUETA_CONSENSO, ETIQUETA_ESTADO, ETIQUETA_PESO, ETIQUETA_PRECISION, periodoTexto, renderInline, renderMarkdown } from "../../lib/texto.ts";
+
+export function getStaticPaths() {
+  return nodosOrdenados().map((n) => ({ params: { id: n.id } }));
+}
+const { id } = Astro.params;
+const n = nodo(id!);
+if (n === undefined) throw new Error(`nodo desconocido: ${id}`);
+const unidades = unidadesDe(n);
+const lente = lenteDe(n);
+const fuentes = fuentesDe(n);
+const nombreNodo = (x: string): string => nodo(x)?.titulo ?? x;
+const nombreEscuela = (x: string): string => escuela(x)?.nombre ?? x;
+const aristas = [
+  ...n.aristas.map((a) => ({ a, origen: "propia" as const })),
+  ...aristasHacia(n).map(({ arista }) => ({ a: arista, origen: "externa" as const })),
+];
+const REGION_LENTE = { "costa-rica": "Costa Rica", "america-latina": "América Latina" } as const;
+---
+<Base titulo={n.titulo} descripcion={n.resumen}>
+  <article>
+    <header class="cabecera-nodo">
+      <div class="chips">
+        {unidades.map((u) => <a class="chip chip-unidad" href={`/nodos#unidad-${u.numero}`} style={`--c: ${colorUnidad(u.numero)}`}><span class="punto"></span>Unidad {u.numero} · {u.titulo}</a>)}
+        <span class="chip">{n.tipo}</span>
+        <span class={`badge badge-${n.estado_editorial}`} title={DESCRIPCION_ESTADO[n.estado_editorial]}>{ETIQUETA_ESTADO[n.estado_editorial]}</span>
+      </div>
+      <h1>{n.titulo}</h1>
+      <p class="periodo"><strong>{periodoTexto(n.periodo)}</strong> <span class="meta">· {ETIQUETA_PRECISION[n.periodo.precision]}</span></p>
+      {n.periodo.nota_periodizacion && <p class="nota-periodo" set:html={renderInline(n.periodo.nota_periodizacion)} />}
+      <p class="entradilla">{n.resumen}</p>
+      <p class="meta">Regiones: {n.regiones.join(", ")}</p>
+    </header>
+
+    <AvisoFuentes nodo={n} />
+
+    {n.estado_editorial === "esqueleto" && (
+      <div class="aviso"><strong>Nodo esqueleto.</strong> {DESCRIPCION_ESTADO.esqueleto} Está en la línea de tiempo para situar a los demás; sus interpretaciones se redactarán más adelante.</div>
+    )}
+
+    {n.descripcion_larga.trim().length > 0 && (
+      <section class="prosa">
+        <Fragment set:html={renderMarkdown(n.descripcion_larga)} />
+      </section>
+    )}
+
+    {n.medios && n.medios.length > 0 && (
+      <section>
+        <h2>Imágenes</h2>
+        <div class="tarjetas">
+          {n.medios.map((m) => (
+            <figure class="tarjeta">
+              <img src={`/${m.ruta}`} alt={m.alt} loading="lazy" />
+              <figcaption><strong>{m.titulo}</strong><br /><span class="meta">{m.credito} · {m.licencia}{m.url_origen && <> · <a href={m.url_origen}>origen</a></>}</span></figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {n.interpretaciones.length > 0 && (
+      <section>
+        <p class="sobretitulo">Vista Debate</p>
+        <h2 style="margin-top:0">Interpretaciones en disputa</h2>
+        <p class="prosa">Cada escuela propone un mecanismo. Se listan la evidencia a favor, la evidencia en contra y, sobre todo, qué observación la refutaría.</p>
+        <div class="tarjetas interpretaciones">
+          {n.interpretaciones.map((it) => (
+            <div class="tarjeta interpretacion">
+              <div class="chips"><a class="chip" href={`/escuelas#${it.escuela}`}>{nombreEscuela(it.escuela)}</a><span class="badge">{ETIQUETA_PESO[it.peso_academico]}</span></div>
+              <h3 set:html={renderInline(it.mecanismo)} />
+              <div class="prosa" set:html={renderMarkdown(it.desarrollo)} />
+              <h4>A favor</h4>
+              <ul>{it.evidencia_a_favor.map((e) => <li set:html={renderInline(e)} />)}</ul>
+              <h4>En contra</h4>
+              <ul>{it.evidencia_en_contra.map((e) => <li set:html={renderInline(e)} />)}</ul>
+              <h4>Qué la refutaría</h4>
+              <p class="refutacion" set:html={renderInline(it.que_la_refutaria)} />
+              {it.autores_principales.length > 0 && <p class="meta">Autores principales: {it.autores_principales.map((f, i) => <><a class="cita" href={`/fuentes#${f}`}>{f}</a>{i < it.autores_principales.length - 1 ? " " : ""}</>)}</p>}
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {aristas.length > 0 && (
+      <section>
+        <p class="sobretitulo">Grafo causal</p>
+        <h2 style="margin-top:0">Relaciones con otros nodos</h2>
+        <ul class="lista-limpia aristas">
+          {aristas.map(({ a }) => (
+            <li class={`arista consenso-${a.consenso}`}>
+              <div class="arista-linea">
+                <a href={`/nodos/${a.desde}`}>{nombreNodo(a.desde)}</a>
+                <span class="tipo">{ETIQUETA_ARISTA[a.tipo]}</span>
+                <a href={`/nodos/${a.hacia}`}>{nombreNodo(a.hacia)}</a>
+                <span class={`badge badge-${a.consenso}`}>{ETIQUETA_CONSENSO[a.consenso]}</span>
+              </div>
+              <p class="meta" set:html={renderInline(a.nota)} />
+              {(a.sostenida_por || a.negada_por) && (
+                <p class="meta">
+                  {a.sostenida_por && a.sostenida_por.length > 0 && <>Sostenida por: {a.sostenida_por.map(nombreEscuela).join(", ")}. </>}
+                  {a.negada_por && a.negada_por.length > 0 && <>Negada por: {a.negada_por.map(nombreEscuela).join(", ")}.</>}
+                </p>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {lente.length > 0 && (
+      <section>
+        <p class="sobretitulo">Lente regional</p>
+        <h2 style="margin-top:0">¿Qué pasaba acá?</h2>
+        <div class="rejilla-2">
+          {lente.map((l) => (
+            <div class="tarjeta lente">
+              <h3>{REGION_LENTE[l.region]}</h3>
+              <div class="prosa" set:html={renderMarkdown(l.texto)} />
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {fuentes.length > 0 && (
+      <section>
+        <h2>Fuentes citadas</h2>
+        <ul class="lista-limpia fuentes">
+          {fuentes.map((f) => (
+            <li id={f.id}>
+              <a class="cita" href={`/fuentes#${f.id}`}>{f.id}</a> {f.autores.length > 0 ? f.autores.join("; ") : "(autores sin confirmar)"} ({f.anio ?? "s.f."}). <em>{f.titulo}</em>{f.publicacion && <>, {f.publicacion}</>}{f.editorial && <>. {f.editorial}</>}.
+              {f.doi && <> <a href={`https://doi.org/${f.doi}`}>doi:{f.doi}</a></>}{f.url && !f.doi && <> <a href={f.url}>enlace</a></>}
+              {!f.verified && <span class="badge badge-disputado" title={f.nota_verificacion}>sin verificar</span>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </article>
+</Base>
+
+<style>
+  .cabecera-nodo { padding-bottom: 1.5rem; border-bottom: 1px solid var(--linea); margin-bottom: 1rem; }
+  .cabecera-nodo h1 { margin-top: 0.8rem; }
+  .periodo { font-size: 1.15rem; margin-bottom: 0.3rem; }
+  .nota-periodo { color: var(--tinta-2); max-width: 46rem; font-size: 0.95rem; }
+  .interpretaciones { grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); }
+  .interpretacion h3 { font-size: 1.2rem; margin: 0.8rem 0 0.6rem; }
+  .interpretacion h4 { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tinta-3); margin: 1.1rem 0 0.3rem; }
+  .interpretacion ul { padding-left: 1.1rem; margin: 0; }
+  .refutacion { border-left: 3px solid var(--acento); padding-left: 0.8rem; font-style: italic; }
+  .aristas li { padding: 0.9rem 0; border-bottom: 1px solid var(--linea); }
+  .arista-linea { display: flex; flex-wrap: wrap; gap: 0.5rem 0.7rem; align-items: baseline; font-family: var(--serif); font-size: 1.1rem; }
+  .arista-linea .tipo { font-family: var(--sans); font-size: 0.85rem; color: var(--tinta-3); }
+  .consenso-disputado .arista-linea { border-left: 3px dashed var(--acento); padding-left: 0.7rem; }
+  .fuentes li { padding: 0.4rem 0; border-bottom: 1px solid var(--linea); font-size: 0.95rem; }
+  figure { margin: 0; }
+  figure img { width: 100%; border-radius: 6px; }
+</style>

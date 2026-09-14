@@ -1,0 +1,6 @@
+[
+  { "id": "mundo", "nombre": "Mundo", "tipo": "mundo" },
+  { "id": "europa-occidental", "nombre": "Europa occidental", "tipo": "macrorregion", "contenida_en": "mundo" },
+  { "id": "america-latina", "nombre": "América Latina", "tipo": "macrorregion", "contenida_en": "mundo" },
+  { "id": "costa-rica", "nombre": "Costa Rica", "tipo": "pais", "contenida_en": "america-latina" }
+]

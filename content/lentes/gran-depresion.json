@@ -1,0 +1,19 @@
+[
+  {
+    "nodo": "gran-depresion",
+    "region": "america-latina",
+    "texto": "La Depresión marcó el fin del modelo primario-exportador: el colapso de los precios y del crédito obligó a devaluar, suspender pagos de deuda y proteger la industria, abriendo el ciclo de industrialización dirigida por el Estado [@bertola-ocampo-2012] [@thorp-1998]. Varios países latinoamericanos se recuperaron antes que Estados Unidos, precisamente porque abandonaron pronto el patrón oro.",
+    "fuentes": [
+      "bertola-ocampo-2012",
+      "thorp-1998"
+    ]
+  },
+  {
+    "nodo": "gran-depresion",
+    "region": "costa-rica",
+    "texto": "Centroamérica, exportadora de café y banano, sufrió la caída de precios y de demanda de sus dos productos; las respuestas de política —controles de cambio, moratorias, intervención en el mercado cafetalero— variaron entre países. Bulmer-Thomas analiza el episodio en el marco de la economía política de la región desde 1920 [@bulmer-thomas-1987]. Los detalles del caso costarricense quedan pendientes de fuentes específicas.",
+    "fuentes": [
+      "bulmer-thomas-1987"
+    ]
+  }
+]

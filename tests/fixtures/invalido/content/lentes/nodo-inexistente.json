@@ -1,0 +1,4 @@
+[
+  { "nodo": "nodo-inexistente", "region": "costa-rica", "texto": "x", "fuentes": ["fuente-fantasma"] },
+  { "nodo": "nodo-inexistente", "region": "costa-rica", "texto": "y", "fuentes": [] }
+]

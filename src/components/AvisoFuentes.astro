@@ -1,0 +1,13 @@
+---
+import type { Nodo } from "../schemas/index.ts";
+import { fuentesDe, fuentesSinVerificar } from "../lib/contenido.ts";
+interface Props { nodo: Nodo }
+const { nodo } = Astro.props;
+const total = fuentesDe(nodo).length;
+const pendientes = fuentesSinVerificar(nodo);
+---
+{pendientes.length > 0 && (
+  <div class="aviso" role="note">
+    <strong>Fuentes pendientes de verificación.</strong> Este nodo cita {total} fuente{total === 1 ? "" : "s"}; {pendientes.length === total ? "ninguna ha sido" : `${total - pendientes.length} han sido`} verificada{total - pendientes.length === 1 ? "" : "s"} manualmente por el autor. Las fichas fueron cotejadas contra catálogos (Crossref, Open Library, repositorios institucionales), pero eso no sustituye la verificación editorial.
+  </div>
+)}

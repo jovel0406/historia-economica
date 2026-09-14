@@ -1,0 +1,27 @@
+{
+  "id": "economias-de-exportacion-primaria-en-america-latina",
+  "titulo": "Economías de exportación primaria en América Latina",
+  "tipo": "proceso",
+  "periodo": {
+    "inicio": 1870,
+    "fin": 1930,
+    "precision": "aproximada"
+  },
+  "regiones": [
+    "america-latina",
+    "argentina",
+    "brasil",
+    "mexico",
+    "costa-rica"
+  ],
+  "unidades": [
+    "colonialismo-e-imperialismo"
+  ],
+  "resumen": "Crecimiento latinoamericano basado en exportaciones de materias primas, capital extranjero y ferrocarriles. Desigual entre países y dentro de ellos; terminó con la Gran Depresión.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

@@ -1,0 +1,19 @@
+[
+  {
+    "nodo": "crisis-de-la-deuda-latinoamericana",
+    "region": "costa-rica",
+    "texto": "Costa Rica fue el primer país de la región en dejar de pagar: en 1981 el gobierno comunicó a los bancos acreedores que solo pagaría intereses y no amortizaciones, más de un año antes de la moratoria mexicana [@nacion-2023-impago-1981]. La crisis se combinó con la caída del café y el conflicto centroamericano, y dio paso a los programas de ajuste estructural de mediados de los ochenta, cuyo contexto regional analiza Bulmer-Thomas [@bulmer-thomas-1987].",
+    "fuentes": [
+      "nacion-2023-impago-1981",
+      "bulmer-thomas-1987"
+    ]
+  },
+  {
+    "nodo": "crisis-de-la-deuda-latinoamericana",
+    "region": "america-latina",
+    "texto": "La «década perdida»: caída del ingreso por habitante, transferencias netas de recursos al exterior, inflación alta y, al final, reformas de mercado. Ocampo sitúa el episodio en la larga historia de auges y colapsos del financiamiento externo hacia la región [@ocampo-2014].",
+    "fuentes": [
+      "ocampo-2014"
+    ]
+  }
+]

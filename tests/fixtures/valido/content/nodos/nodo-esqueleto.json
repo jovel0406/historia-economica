@@ -1,0 +1,14 @@
+{
+  "id": "nodo-esqueleto",
+  "titulo": "Fixture: esqueleto",
+  "tipo": "proceso",
+  "periodo": { "inicio": 1760, "fin": 1840, "precision": "aproximada" },
+  "regiones": ["europa-occidental"],
+  "resumen": "Fixture: un esqueleto solo necesita lo mínimo.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

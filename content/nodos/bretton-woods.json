@@ -1,0 +1,24 @@
+{
+  "id": "bretton-woods",
+  "titulo": "Bretton Woods",
+  "tipo": "evento",
+  "periodo": {
+    "inicio": 1944,
+    "fin": 1944,
+    "precision": "exacta"
+  },
+  "regiones": [
+    "mundo",
+    "estados-unidos"
+  ],
+  "unidades": [
+    "bretton-woods-y-segunda-posguerra"
+  ],
+  "resumen": "Conferencia que diseñó el orden monetario de posguerra: tipos de cambio fijos pero ajustables, dólar convertible en oro, FMI y Banco Mundial. Buscaba evitar la deflación competitiva de los años treinta.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

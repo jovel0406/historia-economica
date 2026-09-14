@@ -1,0 +1,24 @@
+{
+  "id": "primera-revolucion-industrial",
+  "titulo": "Primera Revolución Industrial",
+  "tipo": "proceso",
+  "periodo": {
+    "inicio": 1760,
+    "fin": 1840,
+    "precision": "aproximada"
+  },
+  "regiones": [
+    "reino-unido",
+    "europa-occidental"
+  ],
+  "unidades": [
+    "revolucion-industrial-y-despegue"
+  ],
+  "resumen": "Mecanización del textil, máquina de vapor y hierro con coque en Gran Bretaña. Las fechas son convencionales: la aceleración del crecimiento fue más lenta y tardía de lo que sugiere el término «revolución».",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "primera-guerra-mundial",
+  "titulo": "Primera Guerra Mundial",
+  "tipo": "evento",
+  "periodo": {
+    "inicio": 1914,
+    "fin": 1918,
+    "precision": "exacta"
+  },
+  "regiones": [
+    "europa-occidental",
+    "europa-oriental",
+    "mundo"
+  ],
+  "unidades": [
+    "crisis-de-los-anos-30"
+  ],
+  "resumen": "Ruptura de la primera globalización: suspensión del patrón oro, inflación, deuda y reordenamiento del sistema financiero internacional con Estados Unidos como acreedor.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "crisis-del-petroleo",
+  "titulo": "Crisis del petróleo",
+  "tipo": "evento",
+  "periodo": {
+    "inicio": 1973,
+    "fin": 1979,
+    "precision": "exacta"
+  },
+  "regiones": [
+    "mundo",
+    "asia-occidental-y-norte-de-africa"
+  ],
+  "unidades": [
+    "de-la-prosperidad-a-la-crisis-de-deuda"
+  ],
+  "resumen": "Los dos shocks de precios del petróleo (1973 y 1979) terminaron con la edad de oro, produjeron estanflación en los países industriales y generaron los excedentes que se reciclaron como deuda hacia la periferia.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

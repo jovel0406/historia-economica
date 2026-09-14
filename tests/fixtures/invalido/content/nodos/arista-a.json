@@ -1,0 +1,8 @@
+{
+  "id": "arista-a", "titulo": "A", "tipo": "evento", "periodo": { "inicio": 1900, "fin": 1901, "precision": "exacta" }, "regiones": ["mundo"], "resumen": "A.", "descripcion_larga": "", "interpretaciones": [], "series": [],
+  "aristas": [
+    { "desde": "arista-a", "hacia": "arista-b", "tipo": "amplifica", "consenso": "alto", "nota": "x", "fuentes": [] },
+    { "desde": "arista-b", "hacia": "arista-a", "tipo": "respuesta_a", "consenso": "alto", "nota": "x", "fuentes": [] }
+  ],
+  "fuentes": [], "estado_editorial": "esqueleto"
+}

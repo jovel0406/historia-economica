@@ -1,0 +1,1 @@
+{ "id": "otro-id", "titulo": "x", "tipo": "evento", "periodo": { "inicio": 1900, "fin": 1901, "precision": "exacta" }, "regiones": ["mundo"], "resumen": "x", "descripcion_larga": "", "interpretaciones": [], "series": [], "aristas": [], "fuentes": [], "estado_editorial": "esqueleto" }

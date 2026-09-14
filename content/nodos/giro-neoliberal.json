@@ -1,0 +1,27 @@
+{
+  "id": "giro-neoliberal",
+  "titulo": "Giro neoliberal",
+  "tipo": "proceso",
+  "periodo": {
+    "inicio": 1979,
+    "fin": 2000,
+    "precision": "disputada",
+    "nota_periodizacion": "Fechas provisionales de un nodo esqueleto: se justificarán y se documentará quién las discute cuando se redacte el nodo."
+  },
+  "regiones": [
+    "mundo",
+    "reino-unido",
+    "estados-unidos",
+    "america-latina"
+  ],
+  "unidades": [
+    "reorientacion-hacia-el-mercado"
+  ],
+  "resumen": "Desregulación, privatización, apertura financiera y prioridad a la inflación sobre el empleo, desde los gobiernos de Thatcher y Reagan hasta las reformas de la periferia. Qué abarca el término, y si China y Asia oriental forman parte de él, se discute.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

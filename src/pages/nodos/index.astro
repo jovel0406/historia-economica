@@ -1,0 +1,46 @@
+---
+import Base from "../../layouts/Base.astro";
+import { colorUnidad, nodosDeUnidad, nodosOrdenados, unidadesOrdenadas } from "../../lib/contenido.ts";
+import { ETIQUETA_ESTADO, periodoTexto } from "../../lib/texto.ts";
+const unidades = unidadesOrdenadas();
+const sinUnidad = nodosOrdenados().filter((n) => (n.unidades ?? []).length === 0);
+---
+<Base titulo="Nodos">
+  <p class="sobretitulo">Acontecimientos y procesos</p>
+  <h1>Nodos por unidad</h1>
+  <p class="entradilla">Cada nodo se explica por sus mecanismos y sus disputas, no por una sucesión de hechos. Los esqueletos son nodos con título, período y resumen, pendientes de interpretaciones.</p>
+  {unidades.map((u) => {
+    const ns = nodosDeUnidad(u.id);
+    return (
+      <section id={`unidad-${u.numero}`} class="bloque-unidad" style={`--c: ${colorUnidad(u.numero)}`}>
+        <h2><span class="num">{u.numero}</span> {u.titulo}</h2>
+        <p class="meta">{u.contenido_central}</p>
+        {ns.length === 0 ? <p class="meta"><em>Sin nodos todavía.</em></p> : (
+          <ul class="lista-limpia lista-nodos">
+            {ns.map((n) => (
+              <li>
+                <a href={`/nodos/${n.id}`}>{n.titulo}</a>
+                <span class="meta">{periodoTexto(n.periodo)} · {n.tipo}</span>
+                <span class={`badge badge-${n.estado_editorial}`}>{ETIQUETA_ESTADO[n.estado_editorial]}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+    );
+  })}
+  {sinUnidad.length > 0 && (
+    <section class="bloque-unidad">
+      <h2>Sin unidad asignada</h2>
+      <ul class="lista-limpia lista-nodos">{sinUnidad.map((n) => <li><a href={`/nodos/${n.id}`}>{n.titulo}</a> <span class="meta">{periodoTexto(n.periodo)}</span></li>)}</ul>
+    </section>
+  )}
+</Base>
+<style>
+  .bloque-unidad { border-left: 4px solid var(--c, var(--linea)); padding-left: 1.2rem; margin-top: 2.5rem; }
+  .bloque-unidad h2 { margin-top: 0; font-size: 1.5rem; }
+  .bloque-unidad .num { color: var(--c); margin-right: 0.3rem; }
+  .lista-nodos li { display: flex; flex-wrap: wrap; gap: 0.3rem 0.8rem; align-items: baseline; padding: 0.45rem 0; border-bottom: 1px solid var(--linea); }
+  .lista-nodos a { font-family: var(--serif); font-size: 1.1rem; text-decoration: none; color: var(--tinta); }
+  .lista-nodos a:hover { color: var(--c); }
+</style>

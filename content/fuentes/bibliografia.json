@@ -1,0 +1,903 @@
+[
+  {
+    "id": "pomeranz-2000",
+    "tipo": "libro",
+    "autores": [
+      "Pomeranz, Kenneth"
+    ],
+    "titulo": "The Great Divergence: China, Europe, and the Making of the Modern World Economy",
+    "anio": 2000,
+    "editorial": "Princeton University Press",
+    "doi": "10.1515/9781400823499",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal; el subtítulo no fue cotejado."
+  },
+  {
+    "id": "allen-2009",
+    "tipo": "libro",
+    "autores": [
+      "Allen, Robert C."
+    ],
+    "titulo": "The British Industrial Revolution in Global Perspective",
+    "anio": 2009,
+    "editorial": "Cambridge University Press",
+    "doi": "10.1017/cbo9780511816680",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "allen-2001",
+    "tipo": "articulo",
+    "autores": [
+      "Allen, Robert C."
+    ],
+    "titulo": "The Great Divergence in European Wages and Prices from the Middle Ages to the First World War",
+    "anio": 2001,
+    "publicacion": "Explorations in Economic History",
+    "doi": "10.1006/exeh.2001.0775",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "broadberry-guan-li-2018",
+    "tipo": "articulo",
+    "autores": [
+      "Broadberry, Stephen",
+      "Guan, Hanhui",
+      "Li, David Daokui"
+    ],
+    "titulo": "China, Europe, and the Great Divergence: A Study in Historical National Accounting, 980–1850",
+    "anio": 2018,
+    "publicacion": "The Journal of Economic History",
+    "doi": "10.1017/s0022050718000529",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "mokyr-2016",
+    "tipo": "libro",
+    "autores": [
+      "Mokyr, Joel"
+    ],
+    "titulo": "A Culture of Growth: The Origins of the Modern Economy",
+    "anio": 2016,
+    "editorial": "Princeton University Press",
+    "doi": "10.2307/j.ctt1wf4dft",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+  },
+  {
+    "id": "acemoglu-johnson-robinson-2005",
+    "tipo": "articulo",
+    "autores": [
+      "Acemoglu, Daron",
+      "Johnson, Simon",
+      "Robinson, James"
+    ],
+    "titulo": "The Rise of Europe: Atlantic Trade, Institutional Change, and Economic Growth",
+    "anio": 2005,
+    "publicacion": "American Economic Review",
+    "doi": "10.1257/0002828054201305",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "parthasarathi-2011",
+    "tipo": "libro",
+    "autores": [
+      "Parthasarathi, Prasannan"
+    ],
+    "titulo": "Why Europe Grew Rich and Asia Did Not: Global Economic Divergence, 1600–1850",
+    "anio": 2011,
+    "editorial": "Cambridge University Press",
+    "doi": "10.1017/cbo9780511993398",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+  },
+  {
+    "id": "wallerstein-1974",
+    "tipo": "libro",
+    "autores": [
+      "Wallerstein, Immanuel"
+    ],
+    "titulo": "The Modern World-System I: Capitalist Agriculture and the Origins of the European World-Economy in the Sixteenth Century",
+    "anio": 1974,
+    "doi": "10.1525/9780520948570",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref confirma la obra por reseñas de 1976 y por la reedición de University of California Press (2011, DOI registrado). La editorial y el año de la primera edición no se cotejaron: se dejan en blanco/como conocidos. Pendiente de verificación manual."
+  },
+  {
+    "id": "frank-1998",
+    "tipo": "libro",
+    "autores": [
+      "Frank, Andre Gunder"
+    ],
+    "titulo": "ReOrient: Global Economy in the Asian Age",
+    "anio": 1998,
+    "editorial": "University of California Press",
+    "doi": "10.1525/9780520921313",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "clark-2007",
+    "tipo": "libro",
+    "autores": [
+      "Clark, Gregory"
+    ],
+    "titulo": "A Farewell to Alms: A Brief Economic History of the World",
+    "anio": 2007,
+    "editorial": "Princeton University Press",
+    "doi": "10.1515/9781400827817",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+  },
+  {
+    "id": "north-1990",
+    "tipo": "libro",
+    "autores": [
+      "North, Douglass C."
+    ],
+    "titulo": "Institutions, Institutional Change and Economic Performance",
+    "anio": 1990,
+    "editorial": "Cambridge University Press",
+    "doi": "10.1017/cbo9780511808678",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "landes-1998",
+    "tipo": "libro",
+    "autores": [
+      "Landes, David S."
+    ],
+    "titulo": "The Wealth and Poverty of Nations",
+    "anio": 1998,
+    "editorial": "W. W. Norton",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Open Library el 2026-09-13. Pendiente de verificación manual."
+  },
+  {
+    "id": "acemoglu-robinson-2012",
+    "tipo": "libro",
+    "autores": [
+      "Acemoglu, Daron",
+      "Robinson, James A."
+    ],
+    "titulo": "Why Nations Fail: The Origins of Power, Prosperity, and Poverty",
+    "anio": 2012,
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref confirma la obra solo a través de reseñas (2012). Editorial no cotejada. Pendiente de verificación manual."
+  },
+  {
+    "id": "bolt-vanzanden-2024",
+    "tipo": "articulo",
+    "autores": [
+      "Bolt, Jutta",
+      "van Zanden, Jan Luiten"
+    ],
+    "titulo": "Maddison-style estimates of the evolution of the world economy: A new 2023 update",
+    "anio": 2024,
+    "publicacion": "Journal of Economic Surveys",
+    "doi": "10.1111/joes.12618",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "maddison-project-2023",
+    "tipo": "dataset",
+    "autores": [
+      "Bolt, Jutta",
+      "van Zanden, Jan Luiten"
+    ],
+    "titulo": "Maddison Project Database 2023",
+    "anio": 2023,
+    "publicacion": "Groningen Growth and Development Centre",
+    "url": "https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2023",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "URL comprobada (HTTP 200, título de página «Maddison Project Database 2023») el 2026-09-13. Licencia y cita requerida se registran en data/MANIFIESTO.json cuando se ingiera (Hito 3)."
+  },
+  {
+    "id": "maddison-2001",
+    "tipo": "libro",
+    "autores": [
+      "Maddison, Angus"
+    ],
+    "titulo": "The World Economy: A Millennial Perspective",
+    "anio": 2001,
+    "editorial": "OECD Development Centre",
+    "doi": "10.1787/9789264189980-en",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "pritchett-1997",
+    "tipo": "articulo",
+    "autores": [
+      "Pritchett, Lant"
+    ],
+    "titulo": "Divergence, Big Time",
+    "anio": 1997,
+    "publicacion": "Journal of Economic Perspectives",
+    "doi": "10.1257/jep.11.3.3",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "solow-1956",
+    "tipo": "articulo",
+    "autores": [
+      "Solow, Robert M."
+    ],
+    "titulo": "A Contribution to the Theory of Economic Growth",
+    "anio": 1956,
+    "publicacion": "The Quarterly Journal of Economics",
+    "doi": "10.2307/1884513",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "allen-2011",
+    "tipo": "libro",
+    "autores": [
+      "Allen, Robert C."
+    ],
+    "titulo": "Global Economic History: A Very Short Introduction",
+    "anio": 2011,
+    "editorial": "Oxford University Press",
+    "doi": "10.1093/actrade/9780199596652.001.0001",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "findlay-orourke-2007",
+    "tipo": "libro",
+    "autores": [
+      "Findlay, Ronald",
+      "O'Rourke, Kevin H."
+    ],
+    "titulo": "Power and Plenty: Trade, War, and the World Economy in the Second Millennium",
+    "anio": 2007,
+    "editorial": "Princeton University Press",
+    "doi": "10.1515/9781400831883",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+  },
+  {
+    "id": "hobsbawm-1968",
+    "tipo": "libro",
+    "autores": [
+      "Hobsbawm, Eric J."
+    ],
+    "titulo": "Industry and Empire: An Economic History of Britain since 1750",
+    "anio": 1968,
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref confirma la obra solo a través de reseñas (1969). Editorial no cotejada. Pendiente de verificación manual."
+  },
+  {
+    "id": "williams-1944",
+    "tipo": "libro",
+    "autores": [
+      "Williams, Eric"
+    ],
+    "titulo": "Capitalism and Slavery",
+    "anio": 1944,
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref confirma la obra a través de reseñas de 1945 (American Historical Review, American Sociological Review). Editorial de la primera edición no cotejada. Pendiente de verificación manual."
+  },
+  {
+    "id": "eltis-engerman-2000",
+    "tipo": "articulo",
+    "autores": [
+      "Eltis, David",
+      "Engerman, Stanley L."
+    ],
+    "titulo": "The Importance of Slavery and the Slave Trade to Industrializing Britain",
+    "anio": 2000,
+    "publicacion": "The Journal of Economic History",
+    "doi": "10.1017/s0022050700024670",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "inikori-2002",
+    "tipo": "libro",
+    "autores": [
+      "Inikori, Joseph E."
+    ],
+    "titulo": "Africans and the Industrial Revolution in England: A Study in International Trade and Economic Development",
+    "anio": 2002,
+    "editorial": "Cambridge University Press",
+    "doi": "10.1017/cbo9780511583940",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "nunn-2008",
+    "tipo": "articulo",
+    "autores": [
+      "Nunn, Nathan"
+    ],
+    "titulo": "The Long-Term Effects of Africa's Slave Trades",
+    "anio": 2008,
+    "publicacion": "The Quarterly Journal of Economics",
+    "doi": "10.1162/qjec.2008.123.1.139",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "darity-1990",
+    "tipo": "articulo",
+    "autores": [
+      "Darity, William"
+    ],
+    "titulo": "British Industry and the West Indies Plantations",
+    "anio": 1990,
+    "publicacion": "Social Science History",
+    "doi": "10.2307/1171367",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "wright-2020",
+    "tipo": "articulo",
+    "autores": [
+      "Wright, Gavin"
+    ],
+    "titulo": "Slavery and Anglo-American capitalism revisited",
+    "anio": 2020,
+    "publicacion": "The Economic History Review",
+    "doi": "10.1111/ehr.12962",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "slave-voyages",
+    "tipo": "dataset",
+    "autores": [],
+    "titulo": "SlaveVoyages: The Trans-Atlantic and Intra-American Slave Trade Databases",
+    "anio": null,
+    "url": "https://www.slavevoyages.org/",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "URL comprobada (HTTP 200, título «SlaveVoyages») el 2026-09-13. Autoría institucional, versión, licencia y cita requerida se registran en data/MANIFIESTO.json cuando se ingiera."
+  },
+  {
+    "id": "friedman-schwartz-1963",
+    "tipo": "libro",
+    "autores": [
+      "Friedman, Milton",
+      "Schwartz, Anna Jacobson"
+    ],
+    "titulo": "A Monetary History of the United States, 1867–1960",
+    "anio": 1963,
+    "editorial": "Princeton University Press",
+    "doi": "10.1515/9781400829330",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref registra la edición de Princeton de 2008 (DOI) y reseñas de 1964–1966 que confirman la primera edición. Pendiente de verificación manual."
+  },
+  {
+    "id": "eichengreen-1992",
+    "tipo": "libro",
+    "autores": [
+      "Eichengreen, Barry"
+    ],
+    "titulo": "Golden Fetters: The Gold Standard and the Great Depression, 1919–1939",
+    "anio": 1992,
+    "editorial": "Oxford University Press",
+    "doi": "10.1093/0195101138.001.0001",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref registra la edición en línea de Oxford (1996, DOI). Año de primera edición 1992 no cotejado. Pendiente de verificación manual."
+  },
+  {
+    "id": "bernanke-1983",
+    "tipo": "articulo",
+    "autores": [
+      "Bernanke, Ben"
+    ],
+    "titulo": "Non-Monetary Effects of the Financial Crisis in the Propagation of the Great Depression",
+    "anio": 1983,
+    "publicacion": "NBER Working Paper 1054",
+    "doi": "10.3386/w1054",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Se cita la versión de trabajo del NBER; la versión publicada en American Economic Review no fue cotejada."
+  },
+  {
+    "id": "bernanke-james-1990",
+    "tipo": "articulo",
+    "autores": [
+      "Bernanke, Ben",
+      "James, Harold"
+    ],
+    "titulo": "The Gold Standard, Deflation, and Financial Crisis in the Great Depression: An International Comparison",
+    "anio": 1990,
+    "publicacion": "NBER Working Paper 3488",
+    "doi": "10.3386/w3488",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "eichengreen-temin-1997",
+    "tipo": "articulo",
+    "autores": [
+      "Eichengreen, Barry",
+      "Temin, Peter"
+    ],
+    "titulo": "The Gold Standard and the Great Depression",
+    "anio": 1997,
+    "publicacion": "NBER Working Paper 6060",
+    "doi": "10.3386/w6060",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "temin-1989",
+    "tipo": "libro",
+    "autores": [
+      "Temin, Peter"
+    ],
+    "titulo": "Lessons from the Great Depression",
+    "anio": 1989,
+    "editorial": "MIT Press",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Open Library el 2026-09-13. Pendiente de verificación manual."
+  },
+  {
+    "id": "kindleberger-1973",
+    "tipo": "libro",
+    "autores": [
+      "Kindleberger, Charles P."
+    ],
+    "titulo": "The World in Depression, 1929–1939",
+    "anio": 1973,
+    "editorial": "University of California Press",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Open Library el 2026-09-13. Pendiente de verificación manual. Crossref confirma además reseñas de 1973."
+  },
+  {
+    "id": "romer-1992",
+    "tipo": "articulo",
+    "autores": [
+      "Romer, Christina D."
+    ],
+    "titulo": "What Ended the Great Depression?",
+    "anio": 1992,
+    "publicacion": "The Journal of Economic History",
+    "doi": "10.1017/s002205070001189x",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "cole-ohanian-2004",
+    "tipo": "articulo",
+    "autores": [
+      "Cole, Harold L.",
+      "Ohanian, Lee E."
+    ],
+    "titulo": "New Deal Policies and the Persistence of the Great Depression: A General Equilibrium Analysis",
+    "anio": 2004,
+    "publicacion": "Journal of Political Economy",
+    "doi": "10.1086/421169",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "keynes-1936",
+    "tipo": "libro",
+    "autores": [
+      "Keynes, John Maynard"
+    ],
+    "titulo": "The General Theory of Employment, Interest and Money",
+    "anio": 1936,
+    "editorial": "Macmillan",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Open Library registra ediciones de Macmillan (fechas inconsistentes 1935/1939). Año 1936 no cotejado contra la primera edición. Pendiente de verificación manual."
+  },
+  {
+    "id": "eichengreen-2008",
+    "tipo": "libro",
+    "autores": [
+      "Eichengreen, Barry"
+    ],
+    "titulo": "Globalizing Capital: A History of the International Monetary System",
+    "anio": 2008,
+    "editorial": "Princeton University Press",
+    "doi": "10.1515/9781400828814",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref registra la 2.ª edición (2009 en línea, DOI). Pendiente de verificación manual."
+  },
+  {
+    "id": "ocampo-2014",
+    "tipo": "capitulo",
+    "autores": [
+      "Ocampo, José Antonio"
+    ],
+    "titulo": "La crisis latinoamericana de la deuda a la luz de la historia",
+    "anio": 2014,
+    "publicacion": "La crisis latinoamericana de la deuda desde la perspectiva histórica (CEPAL)",
+    "editorial": "CEPAL",
+    "doi": "10.18356/d2e46298-es",
+    "url": "https://repositorio.cepal.org/handle/11362/36761",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "DOI del capítulo cotejado en Crossref; título del libro cotejado en el repositorio de la CEPAL (HTTP 200) el 2026-09-13."
+  },
+  {
+    "id": "stallings-2014",
+    "tipo": "capitulo",
+    "autores": [
+      "Stallings, Barbara"
+    ],
+    "titulo": "La economía política de las negociaciones de la deuda: América Latina en la década de los ochenta",
+    "anio": 2014,
+    "publicacion": "La crisis latinoamericana de la deuda desde la perspectiva histórica (CEPAL)",
+    "editorial": "CEPAL",
+    "doi": "10.18356/d834d004-es",
+    "url": "https://repositorio.cepal.org/handle/11362/36761",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "DOI del capítulo cotejado en Crossref; libro cotejado en el repositorio de la CEPAL el 2026-09-13."
+  },
+  {
+    "id": "diaz-alejandro-1985",
+    "tipo": "articulo",
+    "autores": [
+      "Díaz-Alejandro, Carlos F."
+    ],
+    "titulo": "Good-bye financial repression, hello financial crash",
+    "anio": 1985,
+    "publicacion": "Journal of Development Economics",
+    "doi": "10.1016/0304-3878(85)90036-7",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "sachs-1989",
+    "tipo": "libro",
+    "autores": [
+      "Sachs, Jeffrey D. (ed.)"
+    ],
+    "titulo": "Developing Country Debt and the World Economy",
+    "anio": 1989,
+    "editorial": "University of Chicago Press",
+    "doi": "10.7208/chicago/9780226733234.001.0001",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "edwards-1995",
+    "tipo": "libro",
+    "autores": [
+      "Edwards, Sebastian"
+    ],
+    "titulo": "Crisis and Reform in Latin America: From Despair to Hope",
+    "anio": 1995,
+    "editorial": "Oxford University Press for the World Bank",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Open Library el 2026-09-13. Pendiente de verificación manual."
+  },
+  {
+    "id": "bertola-ocampo-2012",
+    "tipo": "libro",
+    "autores": [
+      "Bértola, Luis",
+      "Ocampo, José Antonio"
+    ],
+    "titulo": "The Economic Development of Latin America since Independence",
+    "anio": 2012,
+    "editorial": "Oxford University Press",
+    "doi": "10.1093/acprof:oso/9780199662135.001.0001",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "bulmer-thomas-2014",
+    "tipo": "libro",
+    "autores": [
+      "Bulmer-Thomas, Victor"
+    ],
+    "titulo": "The Economic History of Latin America since Independence",
+    "anio": 2014,
+    "editorial": "Cambridge University Press",
+    "doi": "10.1017/cbo9781139208710",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Tercera edición; la primera es de 1994."
+  },
+  {
+    "id": "bulmer-thomas-1987",
+    "tipo": "libro",
+    "autores": [
+      "Bulmer-Thomas, Victor"
+    ],
+    "titulo": "The Political Economy of Central America since 1920",
+    "anio": 1987,
+    "editorial": "Cambridge University Press",
+    "doi": "10.1017/cbo9780511572029",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "thorp-1998",
+    "tipo": "libro",
+    "autores": [
+      "Thorp, Rosemary"
+    ],
+    "titulo": "Progress, Poverty and Exclusion: An Economic History of Latin America in the 20th Century",
+    "anio": 1998,
+    "editorial": "Inter-American Development Bank",
+    "doi": "10.18235/0012523",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "bates-coatsworth-williamson-2007",
+    "tipo": "articulo",
+    "autores": [
+      "Bates, Robert H.",
+      "Coatsworth, John H.",
+      "Williamson, Jeffrey G."
+    ],
+    "titulo": "Lost Decades: Postindependence Performance in Latin America and Africa",
+    "anio": 2007,
+    "publicacion": "The Journal of Economic History",
+    "doi": "10.1017/s0022050707000447",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "prebisch-1949",
+    "tipo": "documento_oficial",
+    "autores": [
+      "Prebisch, Raúl"
+    ],
+    "titulo": "El desarrollo económico de la América Latina y algunos de sus principales problemas",
+    "anio": 1949,
+    "editorial": "CEPAL",
+    "url": "https://repositorio.cepal.org/handle/11362/40010",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Registro cotejado en el repositorio de la CEPAL (HTTP 200, título coincidente) el 2026-09-13. Existe reimpresión en Desarrollo Económico (1986, DOI 10.2307/3466824)."
+  },
+  {
+    "id": "cardoso-faletto-1969",
+    "tipo": "libro",
+    "autores": [
+      "Cardoso, Fernando Henrique",
+      "Faletto, Enzo"
+    ],
+    "titulo": "Dependencia y desarrollo en América Latina",
+    "anio": 1969,
+    "editorial": "Siglo XXI",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Open Library el 2026-09-13. Pendiente de verificación manual. Open Library registra ediciones de 1967 a 1972; el año de la primera edición no está claro en el catálogo."
+  },
+  {
+    "id": "rodrik-2006",
+    "tipo": "articulo",
+    "autores": [
+      "Rodrik, Dani"
+    ],
+    "titulo": "Goodbye Washington Consensus, Hello Washington Confusion? A Review of the World Bank's Economic Growth in the 1990s: Learning from a Decade of Reform",
+    "anio": 2006,
+    "publicacion": "Journal of Economic Literature",
+    "doi": "10.1257/jel.44.4.973",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "nacion-2023-impago-1981",
+    "tipo": "articulo",
+    "autores": [],
+    "titulo": "77 años de ‘La Nación’: El impago de la deuda externa en 1981",
+    "anio": null,
+    "publicacion": "La Nación (Costa Rica)",
+    "url": "https://www.nacion.com/economia/politica-economica/77-anos-de-la-nacion-el-impago-de-la-deuda-externa/MGXONVTFMRCBDFGWS7TMY5RHYQ/story/",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Localizada por búsqueda web el 2026-09-13; autoría y fecha exacta no cotejadas. Fuente periodística: usar solo para la lente, no como evidencia académica."
+  },
+  {
+    "id": "comex-tlc-china",
+    "tipo": "documento_oficial",
+    "autores": [
+      "Ministerio de Comercio Exterior de Costa Rica (COMEX)"
+    ],
+    "titulo": "Tratado de Libre Comercio Costa Rica–China",
+    "anio": null,
+    "publicacion": "Portal de tratados de COMEX",
+    "url": "https://www.comex.go.cr/tratados/china/",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Localizada por búsqueda web el 2026-09-13; el portal indica entrada en vigor el 1 de agosto de 2011. Fecha de publicación de la página no cotejada."
+  },
+  {
+    "id": "naughton-1995",
+    "tipo": "libro",
+    "autores": [
+      "Naughton, Barry"
+    ],
+    "titulo": "Growing Out of the Plan: Chinese Economic Reform, 1978–1993",
+    "anio": 1995,
+    "editorial": "Cambridge University Press",
+    "doi": "10.1017/cbo9780511664335",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+  },
+  {
+    "id": "qian-2017",
+    "tipo": "libro",
+    "autores": [
+      "Qian, Yingyi"
+    ],
+    "titulo": "How Reform Worked in China: The Transition from Plan to Market",
+    "anio": 2017,
+    "editorial": "The MIT Press",
+    "doi": "10.7551/mitpress/8098.001.0001",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+  },
+  {
+    "id": "xu-2011",
+    "tipo": "articulo",
+    "autores": [
+      "Xu, Chenggang"
+    ],
+    "titulo": "The Fundamental Institutions of China's Reforms and Development",
+    "anio": 2011,
+    "publicacion": "Journal of Economic Literature",
+    "doi": "10.1257/jel.49.4.1076",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "zhu-2012",
+    "tipo": "articulo",
+    "autores": [
+      "Zhu, Xiaodong"
+    ],
+    "titulo": "Understanding China's Growth: Past, Present, and Future",
+    "anio": 2012,
+    "publicacion": "Journal of Economic Perspectives",
+    "doi": "10.1257/jep.26.4.103",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "huang-2008",
+    "tipo": "libro",
+    "autores": [
+      "Huang, Yasheng"
+    ],
+    "titulo": "Capitalism with Chinese Characteristics: Entrepreneurship and the State",
+    "anio": 2008,
+    "editorial": "Cambridge University Press",
+    "doi": "10.1017/cbo9780511754210",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+  },
+  {
+    "id": "lin-cai-li-2003",
+    "tipo": "libro",
+    "autores": [
+      "Lin, Justin Yifu",
+      "Cai, Fang",
+      "Li, Zhou"
+    ],
+    "titulo": "The China Miracle: Development Strategy and Economic Reform",
+    "anio": 2003,
+    "editorial": "The Chinese University of Hong Kong Press",
+    "doi": "10.1353/book82023",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref registra la versión en línea de 2004 (DOI). El año de la edición revisada (2003) y de la primera (1996) no fueron cotejados. Pendiente de verificación manual."
+  },
+  {
+    "id": "brandt-rawski-2008",
+    "tipo": "libro",
+    "autores": [
+      "Brandt, Loren (ed.)",
+      "Rawski, Thomas G. (ed.)"
+    ],
+    "titulo": "China's Great Economic Transformation",
+    "anio": 2008,
+    "editorial": "Cambridge University Press",
+    "doi": "10.1017/cbo9780511754234",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual."
+  },
+  {
+    "id": "amsden-1989",
+    "tipo": "libro",
+    "autores": [
+      "Amsden, Alice H."
+    ],
+    "titulo": "Asia's Next Giant: South Korea and Late Industrialization",
+    "anio": 1989,
+    "editorial": "Oxford University Press",
+    "doi": "10.1093/0195076036.001.0001",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref registra la edición en línea de 1992 (DOI). Año de primera edición 1989 no cotejado. Pendiente de verificación manual."
+  },
+  {
+    "id": "wade-1990",
+    "tipo": "libro",
+    "autores": [
+      "Wade, Robert"
+    ],
+    "titulo": "Governing the Market: Economic Theory and the Role of Government in East Asian Industrialization",
+    "anio": 1990,
+    "editorial": "Princeton University Press",
+    "doi": "10.1515/9780691187181",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Crossref el 2026-09-13 (DOI resuelto). Pendiente de verificación manual. Crossref registra solo el título principal."
+  },
+  {
+    "id": "gudmundson-1986",
+    "tipo": "libro",
+    "autores": [
+      "Gudmundson, Lowell"
+    ],
+    "titulo": "Costa Rica before Coffee: Society and Economy on the Eve of the Export Boom",
+    "anio": 1986,
+    "editorial": "Louisiana State University Press",
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Ficha cotejada contra Open Library el 2026-09-13. Pendiente de verificación manual. Crossref confirma además reseñas de 1987–1988."
+  }
+]

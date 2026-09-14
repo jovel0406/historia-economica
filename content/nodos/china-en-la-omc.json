@@ -1,0 +1,26 @@
+{
+  "id": "china-en-la-omc",
+  "titulo": "China en la OMC",
+  "tipo": "evento",
+  "periodo": {
+    "inicio": 2001,
+    "fin": 2001,
+    "precision": "exacta"
+  },
+  "regiones": [
+    "china",
+    "asia-oriental",
+    "mundo"
+  ],
+  "unidades": [
+    "reorientacion-hacia-el-mercado",
+    "crisis-de-2008-y-tendencias-mundiales"
+  ],
+  "resumen": "Ingreso de China a la Organización Mundial del Comercio. Aceleró la integración de China en las cadenas globales de valor y reconfiguró el comercio, el empleo industrial y los precios en el resto del mundo.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}

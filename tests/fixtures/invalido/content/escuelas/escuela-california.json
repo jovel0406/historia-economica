@@ -1,0 +1,7 @@
+{
+  "id": "escuela-california",
+  "nombre": "Fixture escuela-california",
+  "postulado_central": "Fixture de test: postulado de prueba.",
+  "autores_representativos": ["fuente-inexistente"],
+  "critica_principal": "Fixture de test: crítica de prueba."
+}

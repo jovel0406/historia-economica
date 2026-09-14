@@ -1,0 +1,44 @@
+[
+  {
+    "id": "pib_per_capita",
+    "nombre": "PIB per cápita",
+    "descripcion": "Producto por habitante. Antes del siglo XIX no es una medición sino una reconstrucción a partir de salarios, precios y estimaciones de población; cada serie declara su nivel de evidencia.",
+    "unidad_canonica": "dólares internacionales a paridad de poder adquisitivo, con el año base que fije cada serie"
+  },
+  {
+    "id": "esperanza_de_vida",
+    "nombre": "Esperanza de vida al nacer",
+    "descripcion": "Años que viviría en promedio una cohorte nacida en un año dado si se mantuvieran las tasas de mortalidad de ese año. Sensible sobre todo a la mortalidad infantil.",
+    "unidad_canonica": "años"
+  },
+  {
+    "id": "tasa_urbanizacion",
+    "nombre": "Tasa de urbanización",
+    "descripcion": "Proporción de la población que vive en asentamientos urbanos. El umbral de tamaño que define «urbano» varía entre fuentes y épocas; cada serie lo indica en su nota metodológica.",
+    "unidad_canonica": "porcentaje de la población total"
+  },
+  {
+    "id": "apertura_comercial",
+    "nombre": "Apertura comercial",
+    "descripcion": "Suma de exportaciones e importaciones dividida por el PIB. Mide exposición al comercio exterior, no política comercial: una economía pequeña es «abierta» por tamaño.",
+    "unidad_canonica": "(exportaciones + importaciones) / PIB, en porcentaje"
+  },
+  {
+    "id": "desigualdad",
+    "nombre": "Desigualdad de ingreso",
+    "descripcion": "Dos medidas: índice de Gini y participación del decil superior en el ingreso. Cada serie declara cuál usa, si es ingreso antes o después de impuestos, y si la unidad es el individuo o el hogar.",
+    "unidad_canonica": "índice de Gini (0–100) o participación del 10 % superior (porcentaje del ingreso total)"
+  },
+  {
+    "id": "energia_per_capita",
+    "nombre": "Consumo de energía per cápita",
+    "descripcion": "Energía primaria consumida por habitante. Las series largas suelen excluir biomasa tradicional, lo que subestima las economías preindustriales; cada serie lo aclara.",
+    "unidad_canonica": "kilovatios-hora por persona y año, salvo que la serie indique otra"
+  },
+  {
+    "id": "salario_real",
+    "nombre": "Salario real",
+    "descripcion": "Salario nominal deflactado por una canasta de consumo. Depende por completo de la canasta elegida; es el indicador central del debate sobre la Gran Divergencia y de la comparación de niveles de vida preindustriales.",
+    "unidad_canonica": "índice o razón de bienestar, según defina cada serie"
+  }
+]

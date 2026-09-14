@@ -1,0 +1,25 @@
+{
+  "id": "descolonizacion",
+  "titulo": "Descolonización",
+  "tipo": "proceso",
+  "periodo": {
+    "inicio": 1945,
+    "fin": 1975,
+    "precision": "aproximada"
+  },
+  "regiones": [
+    "africa-subsahariana",
+    "asia-meridional",
+    "asia-occidental-y-norte-de-africa"
+  ],
+  "unidades": [
+    "bretton-woods-y-segunda-posguerra"
+  ],
+  "resumen": "Independencia de la mayor parte de Asia y África. Las nuevas naciones heredaron fronteras, instituciones y estructuras económicas coloniales; sus trayectorias posteriores divergieron enormemente.",
+  "descripcion_larga": "",
+  "interpretaciones": [],
+  "series": [],
+  "aristas": [],
+  "fuentes": [],
+  "estado_editorial": "esqueleto"
+}
