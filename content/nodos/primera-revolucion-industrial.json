@@ -81,6 +81,31 @@
         "mpd2020-pib-per-capita-paises"
       ],
       "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "marxista",
+      "mecanismo": "La fábrica no fue solo una técnica nueva sino una forma nueva de organizar y disciplinar el trabajo, y esa transformación social es lo que hay que explicar.",
+      "desarrollo": "Marx dedica a la jornada laboral y a la maquinaria las páginas más extensas de *El capital*, y su argumento no es que la máquina abarate la producción sino que permite someter el ritmo del trabajo al del capital [@marx-1867]. Thompson cambió la forma de escribir esta historia al mostrar que la clase obrera inglesa no apareció como resultado mecánico de la industria, sino que se hizo a sí misma en el conflicto por el tiempo, la disciplina y la costumbre [@thompson-1963]. Brenner sitúa el origen antes, en la estructura agraria que ya había obligado a competir a arrendatarios y terratenientes [@brenner-1976] [@aston-philpin-1985]. Hobsbawm integró ambas cosas en una historia del período [@hobsbawm-1962].",
+      "autores_principales": [
+        "marx-1867",
+        "thompson-1963",
+        "brenner-1976",
+        "hobsbawm-1962"
+      ],
+      "evidencia_a_favor": [
+        "La resistencia organizada al régimen fabril, desde el ludismo a las primeras uniones, documentada por Thompson [@thompson-1963].",
+        "El aumento de la jornada y la intensidad del trabajo en las primeras décadas, difícil de explicar si la mecanización solo ahorraba esfuerzo.",
+        "La singularidad de la estructura agraria inglesa frente al campesinado propietario francés [@brenner-1976]."
+      ],
+      "evidencia_en_contra": [
+        "Las reconstrucciones cuantitativas muestran un crecimiento lento y sectorial, no la transformación abrupta que sugiere el relato [@crafts-1985].",
+        "Los salarios reales terminaron subiendo, lo que complica una lectura centrada solo en el aumento de la explotación [@allen-2009]."
+      ],
+      "que_la_refutaria": "Que la organización del trabajo en las primeras fábricas no difiriera de la de los talleres previos salvo por la máquina, o que la estructura agraria inglesa no fuera distinta de la del continente antes de 1750.",
+      "contrastable_con": [
+        "mpd2020-pib-per-capita-paises-pre1820"
+      ],
+      "peso_academico": "sustancial"
     }
   ],
   "series": [],
@@ -94,6 +119,28 @@
       "fuentes": [
         "findlay-orourke-2007"
       ]
+    },
+    {
+      "desde": "primera-revolucion-industrial",
+      "hacia": "gran-divergencia",
+      "tipo": "contiene",
+      "consenso": "disputado",
+      "sostenida_por": [
+        "precios-relativos",
+        "cultural-capital-humano",
+        "institucionalista"
+      ],
+      "negada_por": [
+        "marxista",
+        "sistema-mundo-dependencia"
+      ],
+      "nota": "¿Es la Revolución Industrial el episodio que explica la Gran Divergencia, o solo su manifestación más visible? Para la lectura marxista lo decisivo ocurrió antes, en la transformación de las relaciones agrarias que hizo posible la fábrica [@brenner-1976] [@wood-1999]; para las explicaciones de precios, ideas e instituciones, el corazón del asunto está en la propia industrialización [@allen-2009] [@mokyr-2016].",
+      "fuentes": [
+        "brenner-1976",
+        "wood-1999",
+        "allen-2009",
+        "mokyr-2016"
+      ]
     }
   ],
   "fuentes": [
@@ -106,7 +153,12 @@
     "north-1990",
     "inikori-2002",
     "brenner-1976",
-    "findlay-orourke-2007"
+    "findlay-orourke-2007",
+    "marx-1867",
+    "thompson-1963",
+    "aston-philpin-1985",
+    "hobsbawm-1962",
+    "wood-1999"
   ],
   "estado_editorial": "borrador"
 }

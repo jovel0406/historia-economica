@@ -58,6 +58,48 @@
       "que_la_refutaria": "Que los países periféricos que mantuvieron la convertibilidad hubieran tenido ciclos más suaves que los que la abandonaron, o que las crisis periféricas no coincidieran con los ciclos de capital del centro.",
       "contrastable_con": [],
       "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "marxista",
+      "mecanismo": "El patrón oro fue la infraestructura monetaria de la exportación de capital: garantizaba al rentista del centro que su inversión en la periferia le volvería en la misma moneda.",
+      "desarrollo": "Lenin describió la fase imperialista por la primacía del capital financiero y la exportación de capital sobre la exportación de mercancías, y el patrón oro es lo que hacía calculable esa exportación [@lenin-1917]. Luxemburgo había ligado la expansión a la necesidad de un exterior donde realizar la plusvalía [@luxemburg-1913]. Arrighi integra el período en un ciclo largo de hegemonía británica con Londres como centro financiero [@arrighi-1994]. La disciplina que el régimen imponía a la periferia, con deflación y ajuste interno, es la contracara de esa garantía [@bertola-ocampo-2012].",
+      "autores_principales": [
+        "lenin-1917",
+        "luxemburg-1913",
+        "arrighi-1994"
+      ],
+      "evidencia_a_favor": [
+        "El volumen de exportación de capital británico hacia la periferia en el período, el mayor en relación con el producto que se conozca [@obstfeld-taylor-2004].",
+        "La asimetría del ajuste: los países deficitarios de la periferia deflacionaban, los acreedores del centro no [@bertola-ocampo-2012]."
+      ],
+      "evidencia_en_contra": [
+        "El régimen también disciplinaba a los países del centro, que defendían su paridad con costos internos reales.",
+        "Algunos receptores de capital, como Canadá o Australia, se desarrollaron bajo el mismo régimen, lo que debilita una lectura puramente extractiva."
+      ],
+      "que_la_refutaria": "Que la exportación de capital del centro hacia la periferia hubiera sido igual de intensa bajo regímenes de tipo de cambio flotante, o que el ajuste hubiera recaído por igual sobre acreedores y deudores.",
+      "contrastable_con": [],
+      "peso_academico": "minoritaria"
+    },
+    {
+      "escuela": "monetarista",
+      "mecanismo": "Funcionó porque era una regla monetaria creíble y automática: la cantidad de dinero quedaba fuera del alcance de los gobiernos, y eso ancló las expectativas de precios durante cuatro décadas.",
+      "desarrollo": "Bordo y Schwartz reunieron la evaluación cuantitativa del régimen y documentaron su desempeño en estabilidad de precios de largo plazo, aunque con mayor volatilidad de corto plazo que los regímenes posteriores [@bordo-schwartz-1984]. La lectura es directamente friedmaniana: lo que importa es que exista una regla que los gobiernos no puedan violar a discreción [@friedman-schwartz-1963]. Bordo y Kydland formalizan esa regla con su cláusula de escape [@bordo-kydland-1995].",
+      "autores_principales": [
+        "bordo-schwartz-1984",
+        "friedman-schwartz-1963",
+        "bordo-kydland-1995"
+      ],
+      "evidencia_a_favor": [
+        "La estabilidad del nivel de precios a lo largo de décadas, sin tendencia inflacionaria acumulada [@bordo-schwartz-1984].",
+        "El anclaje de las expectativas, visible en las tasas de interés de largo plazo del período."
+      ],
+      "evidencia_en_contra": [
+        "La volatilidad de precios y de producto de corto plazo fue mayor que bajo los regímenes posteriores [@bordo-schwartz-1984].",
+        "La estabilidad podía descansar en la credibilidad política más que en el automatismo, lo que la hace irrepetible sin esas condiciones [@eichengreen-2008]."
+      ],
+      "que_la_refutaria": "Que el nivel de precios hubiera mostrado una tendencia inflacionaria sostenida bajo el régimen, o que las expectativas de largo plazo no hubieran estado ancladas en las tasas de interés.",
+      "contrastable_con": [],
+      "peso_academico": "sustancial"
     }
   ],
   "series": [],
@@ -98,7 +140,12 @@
     "bordo-kydland-1995",
     "bertola-ocampo-2012",
     "obstfeld-taylor-2004",
-    "eichengreen-1992"
+    "eichengreen-1992",
+    "lenin-1917",
+    "luxemburg-1913",
+    "arrighi-1994",
+    "bordo-schwartz-1984",
+    "friedman-schwartz-1963"
   ],
   "estado_editorial": "borrador"
 }

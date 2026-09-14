@@ -101,7 +101,6 @@ exports[`regresión estructural de las vistas > index.html conserva su estructur
   ],
   "h2": [
     "Ocho unidades, un solo grafo",
-    "Mis reglas",
   ],
   "interpretaciones": 0,
   "nodosTiempo": 0,
@@ -113,7 +112,7 @@ exports[`regresión estructural de las vistas > index.html conserva su estructur
 exports[`regresión estructural de las vistas > nodos/gran-divergencia/index.html conserva su estructura 1`] = `
 {
   "avisos": 0,
-  "enlacesGlosario": 10,
+  "enlacesGlosario": 11,
   "figuras": 0,
   "h1": [
     "Gran Divergencia",

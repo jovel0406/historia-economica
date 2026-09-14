@@ -103,6 +103,31 @@
       ],
       "que_la_refutaria": "Que los países que no liberalizaron su sistema financiero hubieran sufrido crisis bancarias de igual magnitud, o que la deuda privada no hubiera sido un componente relevante de la deuda reestructurada en el Cono Sur.",
       "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "marxista",
+      "mecanismo": "La deuda fue el mecanismo por el que se transfirió excedente de la periferia al centro cuando la rentabilidad del centro se estancó; el ajuste no fue un error técnico sino una transferencia.",
+      "desarrollo": "Marini sostuvo que la economía dependiente compensa el intercambio desigual con la superexplotación del trabajo, de modo que el ajuste recae necesariamente sobre los salarios [@marini-1973]. Dos Santos había formulado la dependencia como una relación estructural y no como un atraso a superar [@dos-santos-1970]. Emmanuel ofreció la versión más formal del intercambio desigual [@emmanuel-1972]; Amin la extendió al desarrollo desigual [@amin-1976]. Harvey lee los años ochenta como el momento en que la deuda se convierte en instrumento de disciplina, una acumulación por desposesión aplicada a Estados enteros [@harvey-2003] [@harvey-2005].",
+      "autores_principales": [
+        "marini-1973",
+        "dos-santos-1970",
+        "emmanuel-1972",
+        "harvey-2003"
+      ],
+      "evidencia_a_favor": [
+        "Las transferencias netas de recursos de América Latina al exterior durante toda la década, con signo invertido respecto de los años setenta [@ocampo-2014].",
+        "La caída de la participación salarial en el ingreso durante el ajuste, sostenida durante años.",
+        "La coincidencia con el estancamiento de la rentabilidad en las economías centrales desde los setenta [@brenner-1998]."
+      ],
+      "evidencia_en_contra": [
+        "No explica por qué algunos países periféricos con la misma inserción evitaron la crisis o salieron rápido de ella [@edwards-1995].",
+        "El Plan Brady terminó imponiendo pérdidas a los bancos acreedores, difícil de encajar en una lectura de transferencia unidireccional."
+      ],
+      "que_la_refutaria": "Que las transferencias netas de recursos hubieran sido neutras o favorables a los deudores durante la década, o que la participación salarial no hubiera caído durante los programas de ajuste.",
+      "contrastable_con": [
+        "pwt100-pib-per-capita-paises"
+      ],
+      "peso_academico": "sustancial"
     }
   ],
   "series": [
@@ -178,7 +203,14 @@
     "kindleberger-1973",
     "nacion-2023-impago-1981",
     "eichengreen-2008",
-    "rodrik-2006"
+    "rodrik-2006",
+    "marini-1973",
+    "dos-santos-1970",
+    "emmanuel-1972",
+    "amin-1976",
+    "harvey-2003",
+    "harvey-2005",
+    "brenner-1998"
   ],
   "estado_editorial": "revisado"
 }

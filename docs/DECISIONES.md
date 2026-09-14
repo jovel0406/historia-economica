@@ -375,3 +375,32 @@ Marxista, keynesiana y monetarista incorporan a Luxemburgo, Lenin, Baran y Sweez
 Arrighi, Thompson y Federici; a Kalecki, Robinson, Kaldor, Stiglitz y Summers; y a Cagan, Brunner y
 Taylor. Cada incorporación añade además un debate interno, porque el objetivo no es alargar listas de
 nombres sino mostrar que dentro de cada escuela también se discute.
+
+## 2026-09-14 — Equilibrio entre escuelas
+
+### D63. La lectura marxista estaba sistemáticamente minimizada
+Aparecía en cuatro nodos y siempre con peso «minoritaria»; la monetarista, en cuatro y siempre con
+«sustancial». Eso no era una evaluación caso por caso sino un sesgo de origen. Ahora la marxista
+interpreta diez nodos y la monetarista siete, cada una con el peso que corresponde a su presencia real
+en la literatura de ese episodio concreto.
+
+Dos pesos se corrigieron con justificación explícita. En la Gran Divergencia, el debate que abrió
+Brenner en 1976 se publicó como volumen propio y es lectura estándar sobre la transición al
+capitalismo, así que «sustancial» describe mejor su lugar que «minoritaria». En la economía esclavista
+atlántica, la tesis de Williams y su revisión de las últimas dos décadas son corriente mayor, hasta el
+punto de que la réplica cuantitativa de Wright se escribió para responderle.
+
+Donde la lectura marxista es genuinamente minoritaria dentro de la literatura académica, como en la
+crisis de 2008 o en China contemporánea, sigue marcada así. Equilibrar no es igualar: el campo
+`peso_academico` describe la literatura, no la simpatía del autor.
+
+### D64. La monetarista gana contraste donde faltaba
+Se añadió su lectura al patrón oro clásico (el régimen como regla creíble, con Bordo y Schwartz), a
+Bretton Woods (Friedman defendía tipos flexibles diez años antes de que el sistema funcionara) y a
+China contemporánea (el crédito dirigido como precio fijado por decreto). En los tres casos discute
+con una interpretación marxista sobre el mismo episodio, que es el objetivo.
+
+### D65. Fuera la sección de reglas de la portada
+Las cuatro reglas del proyecto se explicaban en la portada. Son una declaración de método dirigida a
+quien produce el sitio, no a quien lo lee, y ocupaban el espacio que debería llevar al contenido.
+Siguen vigentes, documentadas en la especificación y comprobadas por el validador.

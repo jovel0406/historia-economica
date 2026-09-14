@@ -2516,5 +2516,115 @@
     "verified": false,
     "citation_status": "pendiente_de_verificacion",
     "nota_verificacion": "Crossref confirma la obra a través de reseñas de 1965 y 1968. Editorial (Victor Gollancz) no cotejada."
+  },
+  {
+    "id": "marini-1973",
+    "tipo": "libro",
+    "autores": [
+      "Marini, Ruy Mauro"
+    ],
+    "titulo": "Dialéctica de la dependencia",
+    "anio": 1973,
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": false
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref no devuelve ningún registro de esta obra: las coincidencias del apellido corresponden a otra autora. Editorial (Era) y año no cotejados. Es una de las fichas menos confirmadas de esta bibliografía."
+  },
+  {
+    "id": "emmanuel-1972",
+    "tipo": "libro",
+    "autores": [
+      "Emmanuel, Arghiri"
+    ],
+    "titulo": "Unequal Exchange: A Study in the Imperialism of Trade",
+    "anio": 1972,
+    "doi": "10.4324/9781003101529-6",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref registra un extracto en una antología de 2022, no la obra completa. Editorial (Monthly Review Press) y año de la primera edición no cotejados."
+  },
+  {
+    "id": "dos-santos-1970",
+    "tipo": "articulo",
+    "autores": [
+      "Dos Santos, Theotonio"
+    ],
+    "titulo": "The Structure of Dependence",
+    "anio": 1970,
+    "publicacion": "The American Economic Review",
+    "doi": "10.1007/978-1-349-24443-0_12",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref registra la reimpresión en una antología de 1996. El DOI de la publicación original en American Economic Review no fue devuelto."
+  },
+  {
+    "id": "friedman-1953",
+    "tipo": "capitulo",
+    "autores": [
+      "Friedman, Milton"
+    ],
+    "titulo": "The Case for Flexible Exchange Rates",
+    "anio": 1953,
+    "publicacion": "Essays in Positive Economics",
+    "doi": "10.1007/978-1-349-24443-0_16",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref registra la reimpresión de 1996 en una antología. Crossref confirma además el volumen original mediante una reseña de 1954. Editorial (University of Chicago Press) no cotejada."
+  },
+  {
+    "id": "bordo-schwartz-1984",
+    "tipo": "libro",
+    "autores": [
+      "Bordo, Michael D. (ed.)",
+      "Schwartz, Anna J. (ed.)"
+    ],
+    "titulo": "A Retrospective on the Classical Gold Standard, 1821–1931",
+    "anio": 1984,
+    "editorial": "University of Chicago Press",
+    "doi": "10.7208/chicago/9780226066929.001.0001",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion"
+  },
+  {
+    "id": "kliman-2011",
+    "tipo": "libro",
+    "autores": [
+      "Kliman, Andrew"
+    ],
+    "titulo": "The Failure of Capitalist Production: Underlying Causes of the Great Recession",
+    "anio": 2011,
+    "doi": "10.2307/j.ctt183p1nt",
+    "cotejo": {
+      "catalogo": "crossref",
+      "fecha": "2026-09-14",
+      "doi_resuelto": true
+    },
+    "verified": false,
+    "citation_status": "pendiente_de_verificacion",
+    "nota_verificacion": "Crossref registra la obra con fecha 2011 y solo el título principal. Editorial (Pluto Press) no cotejada."
   }
 ]

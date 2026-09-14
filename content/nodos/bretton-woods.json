@@ -57,6 +57,48 @@
       "que_la_refutaria": "Que el diseño final hubiera incorporado obligaciones simétricas para países superavitarios, o que Estados Unidos no hubiera obtenido ventajas sistemáticas del papel del dólar.",
       "contrastable_con": [],
       "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "monetarista",
+      "mecanismo": "El sistema estaba condenado por su propio diseño: los tipos de cambio fijos obligan a cada país a importar la política monetaria del emisor de la moneda de reserva, y eso es insostenible cuando los intereses divergen.",
+      "desarrollo": "Friedman había defendido tipos de cambio flexibles diez años antes de que el sistema funcionara plenamente, con un argumento simple: si los precios internos son rígidos, es mejor que se ajuste el tipo de cambio a que se ajusten el empleo y los salarios [@friedman-1953]. Desde esa posición, el fin de 1971 no fue un fracaso sino la corrección de un error de diseño, y el período posterior de metas de inflación con flotación es la forma madura del mismo principio [@hetzel-2008].",
+      "autores_principales": [
+        "friedman-1953",
+        "hetzel-2008",
+        "friedman-schwartz-1963"
+      ],
+      "evidencia_a_favor": [
+        "El sistema funcionó plenamente poco más de una década antes de romperse por la tensión que Friedman había anticipado [@friedman-1953].",
+        "Los países que adoptaron flotación con metas de inflación lograron después estabilidad de precios sin controles de capital [@hetzel-2008]."
+      ],
+      "evidencia_en_contra": [
+        "El período de tipos fijos coincide con el mayor crecimiento del siglo, difícil de atribuir a un diseño defectuoso [@bordo-eichengreen-1993].",
+        "La flotación posterior trajo volatilidad cambiaria y crisis recurrentes en la periferia [@ocampo-2014]."
+      ],
+      "que_la_refutaria": "Que el sistema de paridades fijas hubiera sobrevivido a la divergencia de políticas monetarias entre Estados Unidos y Europa sin necesidad de controles de capital cada vez más estrictos.",
+      "contrastable_con": [],
+      "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "marxista",
+      "mecanismo": "Fue la institucionalización monetaria de una hegemonía: el dólar como dinero mundial dio a Estados Unidos el privilegio de financiar sus déficits emitiendo su propia moneda.",
+      "desarrollo": "Arrighi sitúa Bretton Woods en la fase de expansión material del ciclo hegemónico estadounidense, equivalente a lo que Londres fue en el ciclo anterior [@arrighi-1994]. Mandel leyó la edad de oro que siguió como una onda larga expansiva sostenida por condiciones excepcionales, no como el estado normal del capitalismo [@mandel-1975]. Amin subrayó que el orden se construyó mientras la mayor parte del mundo seguía bajo dominio colonial, lo que condiciona cualquier balance sobre su carácter multilateral [@amin-1976].",
+      "autores_principales": [
+        "arrighi-1994",
+        "mandel-1975",
+        "amin-1976"
+      ],
+      "evidencia_a_favor": [
+        "El privilegio del dólar como única moneda convertible en oro y su papel de reserva mundial [@steil-2013].",
+        "La exclusión de la mayor parte del mundo colonizado de la negociación de 1944 [@amin-1976]."
+      ],
+      "evidencia_en_contra": [
+        "El orden benefició también a Europa y Japón, que crecieron más rápido que Estados Unidos durante su vigencia [@bordo-eichengreen-1993].",
+        "La tesis del ciclo hegemónico es difícil de contrastar y se ha aplicado a sucesiones que después no ocurrieron."
+      ],
+      "que_la_refutaria": "Que Estados Unidos no hubiera obtenido ventajas sistemáticas del papel internacional del dólar, o que el diseño hubiera incorporado obligaciones simétricas para los países superavitarios, como proponía el plan británico.",
+      "contrastable_con": [],
+      "peso_academico": "minoritaria"
     }
   ],
   "series": [],
@@ -90,7 +132,14 @@
     "bordo-eichengreen-1993",
     "eichengreen-2008",
     "steil-2013",
-    "james-1996"
+    "james-1996",
+    "friedman-1953",
+    "hetzel-2008",
+    "friedman-schwartz-1963",
+    "arrighi-1994",
+    "mandel-1975",
+    "amin-1976",
+    "ocampo-2014"
   ],
   "estado_editorial": "borrador"
 }

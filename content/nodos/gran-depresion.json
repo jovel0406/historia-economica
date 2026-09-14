@@ -103,6 +103,30 @@
       ],
       "que_la_refutaria": "Que los sectores no cubiertos por las políticas del New Deal hubieran mostrado la misma lentitud de recuperación que los cubiertos, o que la brecha entre productividad y empleo desapareciera al corregir por otros factores.",
       "peso_academico": "minoritaria"
+    },
+    {
+      "escuela": "marxista",
+      "mecanismo": "Una crisis de sobreacumulación: la capacidad productiva instalada en los años veinte superó lo que la distribución del ingreso vigente permitía comprar, y el sistema la resolvió destruyendo capital.",
+      "desarrollo": "La lectura marxista no ve un error de política sino el desenlace previsible de una expansión sostenida con desigualdad creciente. Baran y Sweezy generalizaron el problema como incapacidad de una economía de grandes corporaciones para absorber su propio excedente, y leyeron los años treinta como el caso extremo [@baran-sweezy-1966]. Mandel situó la Depresión en una onda larga descendente que empieza antes de 1929 [@mandel-1975]. Kalecki, desde una tradición vecina, señaló que la inversión depende de expectativas de ganancia y no de la tasa de interés, lo que explica por qué la política monetaria podía ser impotente [@kalecki-1943]. Hobsbawm reconstruyó las consecuencias políticas [@hobsbawm-1962].",
+      "autores_principales": [
+        "baran-sweezy-1966",
+        "mandel-1975",
+        "kalecki-1943"
+      ],
+      "evidencia_a_favor": [
+        "La concentración del ingreso en los años veinte estadounidenses y el peso creciente del crédito al consumo para sostener la demanda.",
+        "La capacidad industrial ociosa durante toda la década de 1930, que indica un problema de realización y no de oferta.",
+        "La impotencia de las tasas bajas para reactivar la inversión, tal como predice el argumento de Kalecki [@kalecki-1943]."
+      ],
+      "evidencia_en_contra": [
+        "El mismo mecanismo predeciría crisis de magnitud comparable en otros períodos de alta desigualdad que no se produjeron.",
+        "Los países que abandonaron el patrón oro se recuperaron antes sin cambiar su distribución del ingreso, lo que apunta al régimen monetario [@eichengreen-1992]."
+      ],
+      "que_la_refutaria": "Que la recuperación de los países que devaluaron temprano se hubiera producido sin cambios en la distribución ni en la capacidad ociosa, o que la desigualdad estadounidense no hubiera aumentado durante los años veinte.",
+      "contrastable_con": [
+        "mpd2020-pib-per-capita-paises"
+      ],
+      "peso_academico": "minoritaria"
     }
   ],
   "series": [
@@ -188,7 +212,11 @@
     "eichengreen-temin-1997",
     "eichengreen-2008",
     "bertola-ocampo-2012",
-    "thorp-1998"
+    "thorp-1998",
+    "baran-sweezy-1966",
+    "mandel-1975",
+    "kalecki-1943",
+    "hobsbawm-1962"
   ],
   "estado_editorial": "revisado"
 }

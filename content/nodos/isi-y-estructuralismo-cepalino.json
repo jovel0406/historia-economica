@@ -88,6 +88,31 @@
       "que_la_refutaria": "Que países latinoamericanos que condicionaron subsidios a exportaciones no hubieran tenido mejor desempeño industrial que los que no lo hicieron.",
       "contrastable_con": [],
       "peso_academico": "sustancial"
+    },
+    {
+      "escuela": "marxista",
+      "mecanismo": "La industrialización dependiente no rompió la dependencia sino que la reprodujo en otra forma: industria para el mercado interno de las clases altas, financiada con endeudamiento y sostenida con salarios bajos.",
+      "desarrollo": "La crítica marxista a la CEPAL vino desde la izquierda, no desde la ortodoxia. Marini sostuvo que la industrialización latinoamericana no amplió el consumo obrero sino que se orientó al consumo suntuario, y que por eso dependía de comprimir salarios en vez de elevarlos, lo contrario de lo que había ocurrido en los países centrales [@marini-1973]. Dos Santos formuló la dependencia como una estructura que se reproduce en cada fase, incluida la industrial [@dos-santos-1970]. Frank llevó el argumento al extremo con la tesis del desarrollo del subdesarrollo [@frank-1998]. Cardoso y Faletto ofrecieron la versión menos mecánica, con alianzas de clase que varían por país [@cardoso-faletto-1969].",
+      "autores_principales": [
+        "marini-1973",
+        "dos-santos-1970",
+        "cardoso-faletto-1969",
+        "frank-1998"
+      ],
+      "evidencia_a_favor": [
+        "La orientación de la nueva industria hacia bienes de consumo duradero para sectores de ingresos altos, no hacia el consumo de masas.",
+        "La persistencia de la desigualdad y de la heterogeneidad estructural durante todo el período de industrialización [@bertola-ocampo-2012].",
+        "La dependencia tecnológica y de bienes de capital, que mantuvo la restricción externa."
+      ],
+      "evidencia_en_contra": [
+        "El período fue el de mayor crecimiento del ingreso por habitante de la historia regional, difícil de calificar como reproducción del atraso [@bertola-ocampo-2012].",
+        "Corea y Taiwán, también dependientes, lograron transformar su estructura productiva, lo que sugiere que la dependencia no es un destino [@amsden-1989]."
+      ],
+      "que_la_refutaria": "Que la composición de la industria latinoamericana se hubiera orientado al consumo de masas y que la participación salarial hubiera crecido con la industrialización, como ocurrió en los países centrales.",
+      "contrastable_con": [
+        "pwt100-pib-per-capita-paises"
+      ],
+      "peso_academico": "sustancial"
     }
   ],
   "series": [],
@@ -119,6 +144,28 @@
       "negada_por": [
         "estado-desarrollista"
       ]
+    },
+    {
+      "desde": "isi-y-estructuralismo-cepalino",
+      "hacia": "giro-neoliberal",
+      "tipo": "alternativa_rechazada",
+      "consenso": "disputado",
+      "sostenida_por": [
+        "marxista",
+        "sistema-mundo-dependencia",
+        "estructuralista-cepalina"
+      ],
+      "negada_por": [
+        "monetarista",
+        "neoclasica-cliometrica"
+      ],
+      "nota": "¿El giro hacia el mercado fue la corrección técnica de un modelo agotado, o un proyecto político para restaurar la rentabilidad y el poder de clase tras el estancamiento de los setenta? La primera lectura lo trata como aprendizaje [@edwards-1995]; la segunda, como respuesta a una crisis de acumulación [@harvey-2005] [@dumenil-levy-2011] [@brenner-1998].",
+      "fuentes": [
+        "edwards-1995",
+        "harvey-2005",
+        "dumenil-levy-2011",
+        "brenner-1998"
+      ]
     }
   ],
   "fuentes": [
@@ -128,7 +175,14 @@
     "hirschman-1968",
     "taylor-1998",
     "edwards-1995",
-    "amsden-1989"
+    "amsden-1989",
+    "marini-1973",
+    "dos-santos-1970",
+    "cardoso-faletto-1969",
+    "frank-1998",
+    "harvey-2005",
+    "dumenil-levy-2011",
+    "brenner-1998"
   ],
   "estado_editorial": "borrador"
 }

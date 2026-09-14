@@ -130,6 +130,30 @@
       "que_la_refutaria": "Que los salarios reales hubieran crecido al mismo ritmo que la productividad durante todo el período, o que la inversión se hubiera sostenido sin recurso creciente a la deuda.",
       "contrastable_con": [],
       "peso_academico": "minoritaria"
+    },
+    {
+      "escuela": "monetarista",
+      "mecanismo": "El crédito dirigido es el problema, no la solución: un sistema bancario estatal que presta según prioridades políticas asigna mal el capital y acumula pasivos que alguien tendrá que reconocer.",
+      "desarrollo": "La expansión del crédito chino tras 2008 fue de las mayores registradas en tiempos de paz, y se canalizó por gobiernos locales y empresas estatales antes que por el mecanismo de precios [@lardy-2019]. En clave friedmaniana, reprimir la tasa de interés y dirigir el crédito equivale a fijar un precio clave por decreto, con las consecuencias habituales: exceso de demanda donde el precio está bajo y escasez donde no [@friedman-schwartz-1963]. Hsieh y Klenow cuantifican cuánto producto se pierde por esa asignación [@hsieh-klenow-2009].",
+      "autores_principales": [
+        "lardy-2019",
+        "friedman-schwartz-1963",
+        "hsieh-klenow-2009",
+        "taylor-1993"
+      ],
+      "evidencia_a_favor": [
+        "El crecimiento de la deuda de gobiernos locales y del sector inmobiliario tras el estímulo de 2008 [@lardy-2019].",
+        "La brecha de productividad entre empresas que acceden al crédito barato y las que no [@hsieh-klenow-2009]."
+      ],
+      "evidencia_en_contra": [
+        "China sostuvo tasas de crecimiento altas durante dos décadas con ese mismo sistema financiero, lo que complica la predicción de colapso.",
+        "El control del crédito permitió amortiguar la crisis de 2008 mejor que las economías de mercado financiero libre [@lardy-2019]."
+      ],
+      "que_la_refutaria": "Que las empresas con acceso preferente al crédito estatal hubieran mostrado la misma productividad que las privadas sin acceso, o que la expansión del crédito posterior a 2008 no hubiera dejado un aumento sostenido del apalancamiento.",
+      "contrastable_con": [
+        "pwt100-pib-per-capita-paises"
+      ],
+      "peso_academico": "sustancial"
     }
   ],
   "series": [
@@ -242,7 +266,8 @@
     "acemoglu-robinson-2012",
     "pomeranz-2000",
     "bertola-ocampo-2012",
-    "taylor-1993"
+    "taylor-1993",
+    "friedman-schwartz-1963"
   ],
   "estado_editorial": "revisado"
 }

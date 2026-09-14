@@ -85,11 +85,12 @@
     {
       "escuela": "marxista",
       "mecanismo": "La esclavitud atlántica fue un momento de la acumulación originaria, porque creó capital, mercados y una división del trabajo a escala mundial sobre la que el capitalismo industrial pudo levantarse, aunque ella misma no fuera capitalista en su forma.",
-      "desarrollo": "Marx incluye la conversión de África en «coto de caza de esclavos» y las plantaciones americanas entre los «momentos fundamentales» de la acumulación originaria [@marx-1867]. Blackburn reconstruye la formación del sistema de plantación entre 1492 y 1800 y sostiene que los beneficios y la demanda del complejo esclavista fueron una contribución significativa, aunque no la única, a la acumulación británica [@blackburn-1997]. La tesis de Williams, de formación marxista, es la versión más discutida de este argumento [@williams-1944].",
+      "desarrollo": "Marx incluye la conversión de África en «coto de caza de esclavos» y las plantaciones americanas entre los «momentos fundamentales» de la acumulación originaria [@marx-1867]. Blackburn reconstruye la formación del sistema de plantación entre 1492 y 1800 y sostiene que los beneficios y la demanda del complejo esclavista fueron una contribución significativa, aunque no la única, a la acumulación británica [@blackburn-1997]. La tesis de Williams, de formación marxista, es la versión más discutida de este argumento [@williams-1944]. La discusión resurgió con fuerza en las últimas dos décadas, hasta el punto de que la réplica cuantitativa de Wright se escribió precisamente para responderle [@wright-2020].",
       "autores_principales": [
         "marx-1867",
         "blackburn-1997",
-        "williams-1944"
+        "williams-1944",
+        "wright-2020"
       ],
       "evidencia_a_favor": [
         "La estimación de Blackburn del peso de los beneficios del complejo esclavista en la formación de capital británica del siglo XVIII [@blackburn-1997].",
@@ -100,7 +101,7 @@
         "La categoría de «acumulación originaria» es difícil de delimitar empíricamente y puede abarcar casi cualquier proceso previo."
       ],
       "que_la_refutaria": "Que la formación de capital británica del siglo XVIII hubiera sido igual sin los beneficios y la demanda del complejo esclavista, o que las regiones y familias enriquecidas por las plantaciones no hubieran invertido en manufactura, banca o infraestructura.",
-      "peso_academico": "minoritaria"
+      "peso_academico": "sustancial"
     }
   ],
   "series": [
